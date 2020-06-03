@@ -152,7 +152,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '631ca25cb3e0449aa420715f50dc6b73'; // Your client id
 var client_secret = 'c2a34c1230904ddbab060d36b9020b01'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+var redirect_uri = 'https://young-peak-41948.herokuapp.com'; // Your redirect uri
 const PORT = process.env.PORT || 5000;
 const isDev = process.env.NODE_ENV !== 'production';
 const path = require('path');
