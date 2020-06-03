@@ -387,7 +387,7 @@ if (!isDev && cluster.isMaster) {
   });*/
   app.get('/loginOne', function (req, res) {
     dynamicStatic.setPath(__dirname + '/public');
-    res.render(__dirname + '/public');
+    res.render(express.static(__dirname + '/public'));
   });
   app.get('/callback', function(req, res) {
 
