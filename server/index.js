@@ -144,21 +144,57 @@ console.log('Listening on 8888');
 app.listen(PORT, function () {
   console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
 });*/
-const express = require('express');
-const path = require('path');
-const cluster = require('cluster');
-const numCPUs = require('os').cpus().length;
+var express = require('express'); // Express web server framework
+var request = require('request'); // "Request" library
+var cors = require('cors');
+var querystring = require('querystring');
+var cookieParser = require('cookie-parser');
 
-const isDev = process.env.NODE_ENV !== 'production';
+var client_id = '631ca25cb3e0449aa420715f50dc6b73'; // Your client id
+var client_secret = 'c2a34c1230904ddbab060d36b9020b01'; // Your secret
+var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 const PORT = process.env.PORT || 5000;
+const isDev = process.env.NODE_ENV !== 'production';
+const path = require('path');
 
 // Multi-process to utilize all CPU cores.
 
+var generateRandomString = function(length) {
+  var text = '';
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+};
+
+  var stateKey = 'spotify_auth_state';
   const app = express();
 
   // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
+app.get('/login', function(req, res) {
+
+  var state = generateRandomString(16);
+  res.cookie(stateKey, state);
+
+  // your application requests authorization
+  //var scope = 'user-read-private user-read-email';
+  const scopesArr = ['user-modify-playback-state','user-read-currently-playing','user-read-playback-state','user-library-modify',
+    'user-library-read','playlist-read-private','playlist-read-collaborative','playlist-modify-public',
+    'playlist-modify-private','user-read-recently-played','user-top-read'];
+  const scope = scopesArr.join(' ');
+  res.redirect('https://accounts.spotify.com/authorize?' +
+      querystring.stringify({
+        response_type: 'code',
+        client_id: client_id,
+        scope: scope,
+        redirect_uri: redirect_uri,
+        state: state
+      }));
+});
   // Answer API requests.
   app.get('/api', function (req, res) {
     res.set('Content-Type', 'application/json');
