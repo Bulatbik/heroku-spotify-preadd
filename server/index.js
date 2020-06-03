@@ -297,6 +297,10 @@ app.get('/refresh_token', function(req, res) {
     console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
   });
 */
+
+var client_id = '631ca25cb3e0449aa420715f50dc6b73'; // Your client id
+var client_secret = 'c2a34c1230904ddbab060d36b9020b01'; // Your secret
+var redirect_uri = 'https://young-peak-41948.herokuapp.com'; // Your redirect uri
 var env = process.env.NODE_ENV || "development";
 
 if (env === "development" || env === "test") {
@@ -369,9 +373,9 @@ if (!isDev && cluster.isMaster) {
         "https://accounts.spotify.com/authorize?" +
         querystring.stringify({
           response_type: "code",
-          client_id: process.env.CLIENT_ID,
+          client_id: client_id,
           scope,
-          redirect_uri: process.env.REDIRECT_URI,
+          redirect_uri: redirect_uri,
           state
         })
     );
@@ -405,7 +409,7 @@ if (!isDev && cluster.isMaster) {
           Authorization:
               "Basic " +
               new Buffer(
-                  process.env.CLIENT_ID + ":" + process.env.CLIENT_SECRET
+                  client_id + ":" + client_secret
               ).toString("base64")
         },
         json: true
@@ -456,7 +460,7 @@ if (!isDev && cluster.isMaster) {
         Authorization:
             "Basic " +
             new Buffer(
-                process.env.CLIENT_ID + ":" + process.env.CLIENT_SECRET
+                client_id + ":" + client_secret
             ).toString("base64")
       },
       form: {
