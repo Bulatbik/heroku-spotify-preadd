@@ -345,10 +345,10 @@ if (!isDev && cluster.isMaster) {
   const app = express();
 
   // Priority serve any static files.
-  //app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
-  app.use(dynamicStatic);
+ // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
+  //app.use(dynamicStatic);
 
-  //app.use(express.static(__dirname + '/public')).use(cors()).use(cookieParser());
+  app.use(express.static(path.resolve(__dirname, + '../react-ui/build'))).use(cors()).use(cookieParser());
   var generateRandomString = function(length) {
     var text = "";
     var possible =
@@ -361,9 +361,9 @@ if (!isDev && cluster.isMaster) {
   };
 
   var stateKey = "spotify_auth_state";
-  dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
+  //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
   app.get("/login", function(req, res) {
-    dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
+    //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
     // your application requests authorization
@@ -386,7 +386,7 @@ if (!isDev && cluster.isMaster) {
     // res.render...
   });*/
   app.get('/loginOne', function (req, res) {
-    dynamicStatic.setPath(__dirname + '/public');
+   // dynamicStatic.setPath(__dirname + '/public');
    // res.render(__dirname + '/public');
     res.sendFile(path.join(__dirname+'/public/index.html'));
   });
