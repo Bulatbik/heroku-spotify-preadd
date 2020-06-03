@@ -157,6 +157,8 @@ const PORT = process.env.PORT || 5000;
   const app = express();
 
   // Priority serve any static files.
+  app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
+
   // Answer API requests.
   app.get('/api', function (req, res) {
     res.set('Content-Type', 'application/json');
@@ -171,3 +173,4 @@ const PORT = process.env.PORT || 5000;
   app.listen(PORT, function () {
     console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
   });
+
