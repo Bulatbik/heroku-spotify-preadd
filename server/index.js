@@ -348,7 +348,7 @@ if (!isDev && cluster.isMaster) {
  // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
   //app.use(dynamicStatic);
 
-  app.use(express.static(path.resolve(__dirname, + '../react-ui/build'))).use(cors()).use(cookieParser());
+  app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
   var generateRandomString = function(length) {
     var text = "";
     var possible =
