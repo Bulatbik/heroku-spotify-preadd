@@ -173,10 +173,10 @@ var generateRandomString = function(length) {
   const app = express();
 
   // Priority serve any static files.
-  //app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
-app.use(express.static(__dirname + '/public'))
-    .use(cors())
-    .use(cookieParser());
+  app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
+//app.use(express.static(__dirname + '/public'))
+ //   .use(cors())
+  //  .use(cookieParser());
 app.get('/login', function(req, res) {
 
   var state = generateRandomString(16);
