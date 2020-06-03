@@ -345,7 +345,7 @@ if (!isDev && cluster.isMaster) {
 
   // Priority serve any static files.
   app
-      .use(express.static(path.resolve(__dirname, "../react-ui/build")))
+      .use(express.static(path.resolve(__dirname, "/public","../react-ui/build")))
       .use(cors())
       .use(cookieParser());
 
