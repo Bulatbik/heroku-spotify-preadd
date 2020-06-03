@@ -6,8 +6,8 @@ function App() {
   const [message, setMessage] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
   const [url, setUrl] = useState('/api');
-
   const fetchData = useCallback(() => {
+      alert("hey");
     fetch(url)
       .then(response => {
         if (!response.ok) {
