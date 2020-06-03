@@ -107,7 +107,11 @@ class App extends Component {
             })
     }
     addToLibrary(){
-        spotifyApi.addToMySavedTracks(this.state.trackIds)
+        spotifyApi.addToMySavedTracks(this.state.trackIds).then((e,r) =>{
+            console.log(e);
+            console.log(r);
+
+        })
     }
     render() {
         return (
