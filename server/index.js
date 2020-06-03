@@ -324,7 +324,7 @@ const dynamicStatic = require('express-dynamic-static')();
 
 const isDev = process.env.NODE_ENV !== "production";
 const PORT = process.env.PORT || 5000;
-
+const router = express.Router();
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
   console.error(`Node cluster master ${process.pid} is running`);
@@ -386,8 +386,9 @@ if (!isDev && cluster.isMaster) {
     // res.render...
   });*/
   app.get('/loginOne', function (req, res) {
-    dynamicStatic.setPath(__dirname + '/public');
-    res.render(express.static(__dirname + '/public'));
+    //dynamicStatic.setPath(__dirname + '/public');
+   // res.render(__dirname + '/public');
+    res.sendFile(path.join(__dirname+'/public/index.html'));
   });
   app.get('/callback', function(req, res) {
 
