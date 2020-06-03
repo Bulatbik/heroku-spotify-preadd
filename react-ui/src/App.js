@@ -128,11 +128,6 @@ class App extends Component {
                     Check Now Playing
                 </button>
                 }
-                { this.state.loggedIn &&
-                  <button onClick={() => this.addToLibrary()}>
-                Add it to your library
-                </button>
-            }
             </div>
 
         );
