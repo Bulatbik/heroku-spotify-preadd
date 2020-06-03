@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useState, Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import SpotifyWebApi from "spotify-web-api-js";
+const spotifyApi = new SpotifyWebApi();
 /*function App() {
   const [message, setMessage] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
@@ -71,6 +72,14 @@ class App extends Component {
         super(props);
         const params = this.getHashParams();
         console.log(params);
+        const token = params.access_token;
+        if (token) {
+            spotifyApi.setAccessToken(token);
+        }
+        this.state = {
+            loggedIn: token ? true : false,
+            nowPlaying: { name: 'Not Checked', albumArt: '' }
+        }
     }
     getHashParams() {
         var hashParams = {};
@@ -83,11 +92,34 @@ class App extends Component {
         }
         return hashParams;
     }
+    getNowPlaying(){
+        spotifyApi.getMyCurrentPlaybackState()
+            .then((response) => {
+                this.setState({
+                    nowPlaying: {
+                        name: response.item.name,
+                        albumArt: response.item.album.images[0].url
+                    }
+                });
+            })
+    }
     render() {
         return (
             <div className="App">
-                <a href=' https://young-peak-41948.herokuapp.com/login' > Login to Spotify </a>
+                <a href='https://young-peak-41948.herokuapp.com/login' > Login to Spotify </a>
+                <div>
+                    Now Playing: { this.state.nowPlaying.name }
+                </div>
+                <div>
+                    <img src={this.state.nowPlaying.albumArt} style={{ height: 150 }}/>
+                </div>
+                { this.state.loggedIn &&
+                <button onClick={() => this.getNowPlaying()}>
+                    Check Now Playing
+                </button>
+                }
             </div>
+
         );
     }
 }
