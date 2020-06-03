@@ -77,7 +77,8 @@ class App extends Component {
         }
         this.state = {
             loggedIn: token ? true : false,
-            nowPlaying: { name: 'Not Checked', albumArt: '' }
+            nowPlaying: { name: 'Not Checked', albumArt: '' },
+            trackToAdd: {trackIds: []}
         }
     }
     getHashParams() {
@@ -98,9 +99,15 @@ class App extends Component {
                     nowPlaying: {
                         name: response.item.name,
                         albumArt: response.item.album.images[0].url
+                    },
+                    trackToAdd: {
+                        trackIds: response.item.id
                     }
                 });
             })
+    }
+    addToLibrary(){
+        spotifyApi.addToMySavedTracks(this.state.trackIds)
     }
     render() {
         return (
@@ -117,6 +124,11 @@ class App extends Component {
                     Check Now Playing
                 </button>
                 }
+                { this.state.loggedIn &&
+                  <button onClick={() => this.addToLibrary()}>
+                Add it to your library
+                </button>
+            }
             </div>
 
         );

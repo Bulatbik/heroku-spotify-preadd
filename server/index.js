@@ -368,7 +368,7 @@ if (!isDev && cluster.isMaster) {
     res.cookie(stateKey, state);
     // your application requests authorization
     var scope =
-        "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read";
+        "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read user-library-modify";
     res.redirect(
         "https://accounts.spotify.com/authorize?" +
         querystring.stringify({
