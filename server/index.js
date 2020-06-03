@@ -364,7 +364,6 @@ if (!isDev && cluster.isMaster) {
   dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
   app.get("/login", function(req, res) {
    // dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
-    dynamicStatic.setPath(__dirname + '/public');
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
     // your application requests authorization
@@ -386,11 +385,10 @@ if (!isDev && cluster.isMaster) {
 
     // res.render...
   });*/
-  app.get('/about', function (req, res) {
-    res.send('about')
+  app.get('/loginOne', function (req, res) {
+    dynamicStatic.setPath(__dirname + '/public');
+    res.render(__dirname + '/public');
   });
-
-
   app.get('/callback', function(req, res) {
 
     // your application requests refresh and access tokens
