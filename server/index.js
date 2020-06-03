@@ -365,11 +365,9 @@ if (!isDev && cluster.isMaster) {
   app.get("/login", function(req, res) {
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
-
     // your application requests authorization
     var scope =
         "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read";
-    dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
     res.redirect(
         "https://accounts.spotify.com/authorize?" +
         querystring.stringify({
@@ -381,6 +379,11 @@ if (!isDev && cluster.isMaster) {
         })
     );
   });
+  app.get('/', (req, res) => {
+    dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
+
+    // res.render...
+  }
   app.get('/about', function (req, res) {
     res.send('about')
   })
