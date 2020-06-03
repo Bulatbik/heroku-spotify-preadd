@@ -344,9 +344,7 @@ if (!isDev && cluster.isMaster) {
   const app = express();
 
   // Priority serve any static files.
-  app.use(express.static(__dirname + '/public'))
-      .use(cors())
-      .use(cookieParser());
+  app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
 
   var generateRandomString = function(length) {
     var text = "";
@@ -362,6 +360,9 @@ if (!isDev && cluster.isMaster) {
   var stateKey = "spotify_auth_state";
 
   app.get("/login", function(req, res) {
+    app.use(express.static(__dirname + '/public'))
+        .use(cors())
+        .use(cookieParser());
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
 
