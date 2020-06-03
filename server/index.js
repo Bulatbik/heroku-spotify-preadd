@@ -380,7 +380,7 @@ if (!isDev && cluster.isMaster) {
         })
     );
   });
-  app.get('/', function(req, res) {
+  app.get('*', function(req, res) {
     dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
 
     // res.render...
