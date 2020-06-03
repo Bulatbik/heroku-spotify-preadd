@@ -173,7 +173,7 @@ var generateRandomString = function(length) {
   const app = express();
 
   // Priority serve any static files.
-  app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
+  app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors());//.use(cookieParser());
 
 app.get('/login', function(req, res) {
 
@@ -287,9 +287,9 @@ app.get('/refresh_token', function(req, res) {
   });
 
   // All remaining requests return the React app, so it can handle routing.
-  app.get('*', function(request, response) {
-    response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
-  });
+//  app.get('*', function(request, response) {
+ //   response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
+ // });
 
   app.listen(PORT, function () {
     console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
