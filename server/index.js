@@ -380,7 +380,8 @@ if (!isDev && cluster.isMaster) {
     );
   });
 
-  app.get("/callback", function(req, res) {
+  app.get('/callback', function(req, res) {
+
     // your application requests refresh and access tokens
     // after checking the state parameter
 
@@ -389,39 +390,34 @@ if (!isDev && cluster.isMaster) {
     var storedState = req.cookies ? req.cookies[stateKey] : null;
 
     if (state === null || state !== storedState) {
-      res.redirect(
-          "/#" +
+      res.redirect('/#' +
           querystring.stringify({
-            error: "state_mismatch"
-          })
-      );
+            error: 'state_mismatch'
+          }));
     } else {
       res.clearCookie(stateKey);
       var authOptions = {
-        url: "https://accounts.spotify.com/api/token",
+        url: 'https://accounts.spotify.com/api/token',
         form: {
           code: code,
-          redirect_uri: process.env.REDIRECT_URI,
-          grant_type: "authorization_code"
+          redirect_uri: redirect_uri,
+          grant_type: 'authorization_code'
         },
         headers: {
-          Authorization:
-              "Basic " +
-              new Buffer(
-                  client_id + ":" + client_secret
-              ).toString("base64")
+          'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
         },
         json: true
       };
 
       request.post(authOptions, function(error, response, body) {
         if (!error && response.statusCode === 200) {
+
           var access_token = body.access_token,
               refresh_token = body.refresh_token;
 
           var options = {
-            url: "https://api.spotify.com/v1/me",
-            headers: { Authorization: "Bearer " + access_token },
+            url: 'https://api.spotify.com/v1/me',
+            headers: { 'Authorization': 'Bearer ' + access_token },
             json: true
           };
 
@@ -431,20 +427,16 @@ if (!isDev && cluster.isMaster) {
           });
 
           // we can also pass the token to the browser to make requests from there
-          res.redirect(
-              `${process.env.FRONT_URL}/#` +
+          res.redirect('https://young-peak-41948.herokuapp.com/#' +
               querystring.stringify({
                 access_token: access_token,
                 refresh_token: refresh_token
-              })
-          );
+              }));
         } else {
-          res.redirect(
-              "/#" +
+          res.redirect('https://young-peak-41948.herokuapp.com/#' +
               querystring.stringify({
-                error: "invalid_token"
-              })
-          );
+                error: 'invalid_token'
+              }));
         }
       });
     }
