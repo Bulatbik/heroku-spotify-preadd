@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+/*function App() {
   const [message, setMessage] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
   const [url, setUrl] = useState('/api');
@@ -63,6 +63,32 @@ function App() {
     </div>
   );
 
-}
+}*/
+//export default App;
 
+class App extends Component {
+    constructor(props){
+        super(props);
+        const params = this.getHashParams();
+        console.log(params);
+    }
+    getHashParams() {
+        var hashParams = {};
+        var e, r = /([^&;=]+)=?([^&;]*)/g,
+            q = window.location.hash.substring(1);
+        e = r.exec(q)
+        while (e) {
+            hashParams[e[1]] = decodeURIComponent(e[2]);
+            e = r.exec(q);
+        }
+        return hashParams;
+    }
+    render() {
+        return (
+            <div className="App">
+                <a href=' https://young-peak-41948.herokuapp.com/login' > Login to Spotify </a>
+            </div>
+        );
+    }
+}
 export default App;
