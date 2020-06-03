@@ -377,6 +377,7 @@ if (!isDev && cluster.isMaster) {
           state
         })
     );
+    app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
   });
 
   app.get('/callback', function(req, res) {
