@@ -361,7 +361,7 @@ if (!isDev && cluster.isMaster) {
   };
 
   var stateKey = "spotify_auth_state";
-  dynamicStatic.setPath(__dirname + '/public').use(cors()).use(cookieParser());
+  dynamicStatic.setPath(__dirname + '/public');
   app.get("/login", function(req, res) {
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
@@ -369,7 +369,7 @@ if (!isDev && cluster.isMaster) {
     // your application requests authorization
     var scope =
         "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read";
-    dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build')).use(cors()).use(cookieParser());
+    dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
     res.redirect(
         "https://accounts.spotify.com/authorize?" +
         querystring.stringify({
