@@ -319,6 +319,7 @@ const express = require("express");
 const path = require("path");
 const cluster = require("cluster");
 const numCPUs = require("os").cpus().length;
+const dynamicStatic = require('express-dynamic-static')();
 //const aws = require("aws-sdk");
 
 const isDev = process.env.NODE_ENV !== "production";
@@ -344,7 +345,9 @@ if (!isDev && cluster.isMaster) {
   const app = express();
 
   // Priority serve any static files.
-  app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
+  //app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
+  app.use(dynamicStatic);
+
   //app.use(express.static(__dirname + '/public')).use(cors()).use(cookieParser());
   var generateRandomString = function(length) {
     var text = "";
@@ -358,15 +361,15 @@ if (!isDev && cluster.isMaster) {
   };
 
   var stateKey = "spotify_auth_state";
-
+  dynamicStatic.setPath(__dirname + '/public').use(cors()).use(cookieParser());
   app.get("/login", function(req, res) {
-
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
 
     // your application requests authorization
     var scope =
         "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read";
+    dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build')).use(cors()).use(cookieParser());
     res.redirect(
         "https://accounts.spotify.com/authorize?" +
         querystring.stringify({
@@ -377,8 +380,11 @@ if (!isDev && cluster.isMaster) {
           state
         })
     );
-    app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
   });
+  app.get('/about', function (req, res) {
+    res.send('about')
+  })
+
 
   app.get('/callback', function(req, res) {
 
