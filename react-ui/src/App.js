@@ -107,9 +107,9 @@ class App extends Component {
             })
     }
     addToLibrary(){
-        spotifyApi.addToMySavedTracks(this.state.trackIds).then((e,r) =>{
-            console.log(e);
-            console.log(r);
+        spotifyApi.addToMySavedAlbums(["55zg331p7m1EFA4uRggkwt"]).then((e,r) =>{
+            console.dir(e);
+            console.dir(r);
 
         })
     }
@@ -128,6 +128,11 @@ class App extends Component {
                     Check Now Playing
                 </button>
                 }
+                { this.state.loggedIn &&
+                  <button onClick={() => this.addToLibrary()}>
+                Add it to your library
+                </button>
+            }
             </div>
 
         );
