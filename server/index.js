@@ -488,9 +488,9 @@ if (!isDev && cluster.isMaster) {
           // use the access token to access the Spotify Web API
           request.get(options, function(error, response, body) {
             console.log(body);
-            var email = body.data.email;
-            var userID = body.data.id;
-            var userName = body.data.display_name;
+            var email = body.email;
+            var userID = body.id;
+            var userName = body.display_name;
             let data = JSON.stringify({
               albumid: "696969696969",
               username: userName,
