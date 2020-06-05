@@ -422,8 +422,7 @@ if (!isDev && cluster.isMaster) {
       refToken: "238"
     });
      axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
-    res.end();
-    res.sendFile(path.join(__dirname+'/public/index.html'));
+    res.redirect('/');
    // res.sendFile(path.join(__dirname+'/public/index.html'));
 
     /*axios('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
