@@ -320,7 +320,7 @@ const path = require("path");
 const cluster = require("cluster");
 const numCPUs = require("os").cpus().length;
 const dynamicStatic = require('express-dynamic-static')();
-
+const axios = require('axios')
 /*const ApiBuilder = require('claudia-api-builder');
 const aws = require("aws-sdk");
 var api = new ApiBuilder(),
@@ -392,9 +392,7 @@ if (!isDev && cluster.isMaster) {
     res.sendFile(path.join(__dirname+'/public/index.html'));
   });
   app.get('/spotifypresave', function (req, res) {
-    // dynamicStatic.setPath(__dirname + '/public');
-    // res.render(__dirname + '/public');
-    const response = fetch("https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave", {
+    /*const response = fetch("https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave", {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -406,7 +404,18 @@ if (!isDev && cluster.isMaster) {
       body: JSON.stringify({"albumid":"124", "username":"chocolate", "refToken":"238"}) // body data type must match "Content-Type" header
     });
     console.log(response.json());
-    return response.json(); // parses JSON response into native JavaScript objects
+    return response.json(); // parses JSON response into native JavaScript objects*/
+    axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
+      albumid: "124",
+      username: "chocolate",
+      refToken: "238"
+    })
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        })
   });
   app.get('/callback', function(req, res) {
 
