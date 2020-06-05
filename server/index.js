@@ -416,7 +416,13 @@ if (!isDev && cluster.isMaster) {
         .catch(err => {
           console.log(err);
         })*/
-    axios('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
+    let data = JSON.stringify({
+      albumid: "124",
+      username: "chocolate",
+      refToken: "238"
+    });
+    const response = axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
+    /*axios('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
       method: 'POST',
       mode: 'no-cors',
       headers: {
@@ -426,7 +432,7 @@ if (!isDev && cluster.isMaster) {
       withCredentials: true,
       credentials: 'same-origin',
     }).then(response => {console.log(response);
-    })
+    })*/
   });
   app.get('/callback', function(req, res) {
 
