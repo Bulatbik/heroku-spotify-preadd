@@ -321,7 +321,7 @@ const cluster = require("cluster");
 const numCPUs = require("os").cpus().length;
 const dynamicStatic = require('express-dynamic-static')();
 const axios = require('axios');
-var hashFromAppJS = require('../react-ui/src/App');
+//var hashFromAppJS = require('../react-ui/src/App');
 /*const ApiBuilder = require('claudia-api-builder');
 const aws = require("aws-sdk");
 var api = new ApiBuilder(),
@@ -361,15 +361,6 @@ if (!isDev && cluster.isMaster) {
   // Priority serve any static files.
  // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
   //app.use(dynamicStatic);
-  function getHashParams() {
-    var hashParams = {};
-    var e, r = /([^&;=]+)=?([^&;]*)/g,
-        q = hashFromAppJS;
-    while ( e = r.exec(q)) {
-      hashParams[e[1]] = decodeURIComponent(e[2]);
-    }
-    return hashParams;
-  }
 
   app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
   var stateKey = "spotify_auth_state";
@@ -427,6 +418,15 @@ if (!isDev && cluster.isMaster) {
         .catch(err => {
           console.log(err);
         })*/
+    function getHashParams() {
+      var hashParams = {};
+      var e, r = /([^&;=]+)=?([^&;]*)/g,
+          q = window.location.hash.substring(1);
+      while ( e = r.exec(q)) {
+        hashParams[e[1]] = decodeURIComponent(e[2]);
+      }
+      return hashParams;
+    }
     var params = getHashParams();
 
     var access_token = params.access_token,
