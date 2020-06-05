@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "heroku-cra-node-executor",
+    "name": "heroku-cra-node",
+    "region": "us-east-2"
+  },
+  "api": {
+    "id": "n3owwdpps6",
+    "module": "server/indexDynamo"
+  }
+}

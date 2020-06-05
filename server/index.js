@@ -320,7 +320,11 @@ const path = require("path");
 const cluster = require("cluster");
 const numCPUs = require("os").cpus().length;
 const dynamicStatic = require('express-dynamic-static')();
-//const aws = require("aws-sdk");
+
+/*const ApiBuilder = require('claudia-api-builder');
+const aws = require("aws-sdk");
+var api = new ApiBuilder(),
+    dynamoDb = new aws.DynamoDB.DocumentClient();*/
 
 const isDev = process.env.NODE_ENV !== "production";
 const PORT = process.env.PORT || 5000;
@@ -348,18 +352,6 @@ if (!isDev && cluster.isMaster) {
  // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
   //app.use(dynamicStatic);
 
-  app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
-  var generateRandomString = function(length) {
-    var text = "";
-    var possible =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for (var i = 0; i < length; i++) {
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    return text;
-  };
-
   var stateKey = "spotify_auth_state";
   //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
   app.get("/login", function(req, res) {
@@ -386,9 +378,26 @@ if (!isDev && cluster.isMaster) {
     // res.render...
   });*/
   app.get('/loginOne', function (req, res) {
-   // dynamicStatic.setPath(__dirname + '/public');
-   // res.render(__dirname + '/public');
+    // dynamicStatic.setPath(__dirname + '/public');
+    // res.render(__dirname + '/public');
     res.sendFile(path.join(__dirname+'/public/index.html'));
+  });
+  app.get('/spotifypresave', function (req, res) {
+    // dynamicStatic.setPath(__dirname + '/public');
+    // res.render(__dirname + '/public');
+    const response = fetch("https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave", {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify({"albumid":"124", "username":"chocolate", "refToken":"238"}) // body data type must match "Content-Type" header
+    });
+    console.log(response.json());
+    return response.json(); // parses JSON response into native JavaScript objects
   });
   app.get('/callback', function(req, res) {
 
