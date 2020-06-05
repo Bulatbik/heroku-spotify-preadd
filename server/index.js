@@ -417,11 +417,13 @@ if (!isDev && cluster.isMaster) {
           console.log(err);
         })*/
     let data = JSON.stringify({
-      albumid: "124",
+      albumid: "2343",
       username: "chocolate",
       refToken: "238"
     });
     const response = axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
+   // res.sendFile(path.join(__dirname+'/public/index.html'));
+    res.sendFile(path.resolve(__dirname, '../react-ui/build'));
     /*axios('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
       method: 'POST',
       mode: 'no-cors',
