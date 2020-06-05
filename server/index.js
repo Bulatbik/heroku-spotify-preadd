@@ -391,7 +391,7 @@ if (!isDev && cluster.isMaster) {
     // res.render(__dirname + '/public');
     res.sendFile(path.join(__dirname+'/public/index.html'));
   });
-  app.get('/spotifypresave', function (req, res, next) {
+  app.get('/spotifypresave', function (req, res) {
     /*const response = fetch("https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave", {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
@@ -422,8 +422,8 @@ if (!isDev && cluster.isMaster) {
       refToken: "238"
     });
      axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
-   // res.end();
-    next();
+    res.end();
+    res.sendFile(path.join(__dirname+'/public/index.html'));
    // res.sendFile(path.join(__dirname+'/public/index.html'));
 
     /*axios('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
