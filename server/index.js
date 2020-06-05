@@ -300,7 +300,7 @@ app.get('/refresh_token', function(req, res) {
 
 var client_id = '631ca25cb3e0449aa420715f50dc6b73'; // Your client id
 var client_secret = 'c2a34c1230904ddbab060d36b9020b01'; // Your secret
-var redirect_uri = 'https://young-peak-41948.herokuapp.com/spotifypresave'; // Your redirect uri
+var redirect_uri = 'https://young-peak-41948.herokuapp.com/callback'; // Your redirect uri
 var env = process.env.NODE_ENV || "development";
 
 if (env === "development" || env === "test") {
@@ -393,31 +393,8 @@ if (!isDev && cluster.isMaster) {
     // res.render(__dirname + '/public');
     res.sendFile(path.join(__dirname+'/public/index.html'));
   });
-  app.get('/spotifypresave', function (req, res) {
-    /*const response = fetch("https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave", {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: JSON.stringify({"albumid":"124", "username":"chocolate", "refToken":"238"}) // body data type must match "Content-Type" header
-    });
-    console.log(response.json());
-    return response.json(); // parses JSON response into native JavaScript objects*/
-   /* axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
-      albumid: "124",
-      username: "chocolate",
-      refToken: "238"
-    })
-        .then(res => {
-          console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        })*/
+ /* app.get('/spotifypresave', function (req, res) {
+
     function getHashParams() {
       var hashParams = {};
       var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -466,20 +443,7 @@ if (!isDev && cluster.isMaster) {
       }
     }
     res.redirect('/');
-   // res.sendFile(path.join(__dirname+'/public/index.html'));
-
-    /*axios('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      withCredentials: true,
-      credentials: 'same-origin',
-    }).then(response => {console.log(response);
-    })*/
-  });
+  });*/
   app.get('/callback', function(req, res) {
 
     // your application requests refresh and access tokens
@@ -524,8 +488,21 @@ if (!isDev && cluster.isMaster) {
           // use the access token to access the Spotify Web API
           request.get(options, function(error, response, body) {
             console.log(body);
+            var email = body.data.email;
+            var userID = body.data.id;
+            var userName = body.data.display_name;
+            let data = JSON.stringify({
+              albumid: "696969696969",
+              username: userName,
+              email: email,
+              userID: userID,
+              refToken: refresh_token
+            });
+            axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
           });
+          //////////
 
+          //////////
           // we can also pass the token to the browser to make requests from there
           res.redirect('https://young-peak-41948.herokuapp.com/#' +
               querystring.stringify({
