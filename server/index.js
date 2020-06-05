@@ -391,7 +391,7 @@ if (!isDev && cluster.isMaster) {
     // res.render(__dirname + '/public');
     res.sendFile(path.join(__dirname+'/public/index.html'));
   });
- /* app.get('/spotifypresave', function (req, res) {
+  app.get('/spotifypresave', function (req, res) {
     // dynamicStatic.setPath(__dirname + '/public');
     // res.render(__dirname + '/public');
     const response = fetch("https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave", {
@@ -407,7 +407,7 @@ if (!isDev && cluster.isMaster) {
     });
     console.log(response.json());
     return response.json(); // parses JSON response into native JavaScript objects
-  });*/
+  });
   app.get('/callback', function(req, res) {
 
     // your application requests refresh and access tokens
