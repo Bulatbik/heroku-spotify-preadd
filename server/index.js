@@ -416,12 +416,44 @@ if (!isDev && cluster.isMaster) {
         .catch(err => {
           console.log(err);
         })*/
-    let data = JSON.stringify({
-      albumid: "0000000",
-      username: "bulat",
-      refToken: "238"
-    });
-     axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
+    var params = getHashParams();
+
+    var access_token = params.access_token,
+        refresh_token = params.refresh_token,
+        error = params.error;
+    var email;
+    var userID;
+    var userName;
+    if (error) {
+      alert('There was an error during the authentication');
+    } else {
+      if (access_token) {
+        // render oauth info
+        $.ajax({
+          url: 'https://api.spotify.com/v1/me',
+          headers: {
+            'Authorization': 'Bearer ' + access_token
+          },
+          success: function(response) {
+
+          }
+        });
+        const response  = axios.get('https://api.spotify.com/v1/me',{headers:{'Authorization': 'Bearer ' + access_token}});
+        email = response.data.email;
+        userID = response.data.id;
+        userName = response.data.display_name;
+        let data = JSON.stringify({
+          albumid: "696969696969",
+          username: userName,
+          email: email,
+          userID: userID,
+          refToken: refresh_token
+        });
+        axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
+      } else {
+        alert("mistake")
+      }
+    }
     res.redirect('/');
    // res.sendFile(path.join(__dirname+'/public/index.html'));
 
@@ -498,6 +530,15 @@ if (!isDev && cluster.isMaster) {
       });
     }
   });
+  function getHashParams() {
+    var hashParams = {};
+    var e, r = /([^&;=]+)=?([^&;]*)/g,
+        q = window.location.hash.substring(1);
+    while ( e = r.exec(q)) {
+      hashParams[e[1]] = decodeURIComponent(e[2]);
+    }
+    return hashParams;
+  }
 
   app.get("/refresh_token", function(req, res) {
     // requesting access token from refresh token
