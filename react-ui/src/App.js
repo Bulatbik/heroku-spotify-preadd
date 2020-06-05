@@ -138,4 +138,5 @@ class App extends Component {
         );
     }
 }
+module.exports = window.location.hash.substring(1);
 export default App;
