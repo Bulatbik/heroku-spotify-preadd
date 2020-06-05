@@ -405,7 +405,7 @@ if (!isDev && cluster.isMaster) {
     });
     console.log(response.json());
     return response.json(); // parses JSON response into native JavaScript objects*/
-    axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
+   /* axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
       albumid: "124",
       username: "chocolate",
       refToken: "238"
@@ -415,7 +415,18 @@ if (!isDev && cluster.isMaster) {
         })
         .catch(err => {
           console.log(err);
-        })
+        })*/
+    axios('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      withCredentials: true,
+      credentials: 'same-origin',
+    }).then(response => {console.log(response);
+    })
   });
   app.get('/callback', function(req, res) {
 
