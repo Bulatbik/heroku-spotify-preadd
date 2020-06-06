@@ -321,7 +321,7 @@ const cluster = require("cluster");
 const numCPUs = require("os").cpus().length;
 const dynamicStatic = require('express-dynamic-static')();
 const axios = require('axios');
-const schedule = require("node-schedule");
+//const schedule = require("node-schedule");
 
 const isDev = process.env.NODE_ENV !== "production";
 const PORT = process.env.PORT || 5000;
@@ -336,13 +336,13 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
-function scheduler() {
+/*function scheduler() {
  let response = axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
    console.log(response);
 }
 schedule.scheduleJob('* * * * *', () => {
   scheduler();
-}); // run everyday at midnight
+}); // run everyday at midnight*/
 if (!isDev && cluster.isMaster) {
   console.error(`Node cluster master ${process.pid} is running`);
 
