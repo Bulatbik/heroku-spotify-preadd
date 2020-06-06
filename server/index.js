@@ -326,8 +326,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 33;
-rule.hour = 14;
+rule.minute = 27;
+rule.hour = 15;
 
 const isDev = process.env.NODE_ENV !== "production";
 const PORT = process.env.PORT || 5000;
@@ -344,7 +344,7 @@ const router = express.Router();
 // Multi-process to utilize all CPU cores.
 async function scheduler() {
  let response = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
-   console.log(response.Items);
+   console.log(JSON.stringify(response));
 }
 schedule.scheduleJob(rule, () => {
   scheduler();
