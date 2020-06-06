@@ -9,7 +9,9 @@ api.post('/albumspresave', function (request) { // SAVE your icecream
         Item: {
             albumid: request.body.albumid,
             username: request.body.username, // users' usernames
-            refToken: request.body.refToken
+            refToken: request.body.refToken,
+            email: request.body.email,
+            userID: request.body.userID
         }
     }
     return dynamoDb.put(params).promise(); // returns dynamo result
@@ -19,5 +21,6 @@ api.get('/albumspresavelist', function (request) { // GET all users
     return dynamoDb.scan({ TableName: 'albumspresave' }).promise()
         .then(response => response.Items)
 });
+
 
 module.exports = api;

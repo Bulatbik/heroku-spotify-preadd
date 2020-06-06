@@ -321,11 +321,7 @@ const cluster = require("cluster");
 const numCPUs = require("os").cpus().length;
 const dynamicStatic = require('express-dynamic-static')();
 const axios = require('axios');
-//var hashFromAppJS = require('../react-ui/src/App');
-/*const ApiBuilder = require('claudia-api-builder');
-const aws = require("aws-sdk");
-var api = new ApiBuilder(),
-    dynamoDb = new aws.DynamoDB.DocumentClient();*/
+import schedule from 'node-schedule'
 
 const isDev = process.env.NODE_ENV !== "production";
 const PORT = process.env.PORT || 5000;
@@ -340,6 +336,13 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
+function scheduler() {
+ let response = axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
+   console.log(response);
+}
+schedule.scheduleJob('* * * * *', () => {
+  scheduler();
+}); // run everyday at midnight
 if (!isDev && cluster.isMaster) {
   console.error(`Node cluster master ${process.pid} is running`);
 
@@ -492,7 +495,7 @@ if (!isDev && cluster.isMaster) {
             var userID = body.id;
             var userName = body.display_name;
             let data = JSON.stringify({
-              albumid: "696969696969",
+              albumid: "kkkkkkkkkkkkkkk",
               username: userName,
               email: email,
               userID: userID,
