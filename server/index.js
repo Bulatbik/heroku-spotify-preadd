@@ -326,7 +326,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 33;
+rule.minute = 52;
 rule.hour = 16;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -383,6 +383,7 @@ async function scheduler() {
          const albumID = UPDsearch.data.albums.items[0].id;
          console.log("The album ID check: "+albumID);
          var refresh_token = response.data[i].refToken;
+         console.log("This is refresh_token "+refresh_token);
          var authOptions = {
            url: "https://accounts.spotify.com/api/token",
            headers: {
@@ -403,8 +404,9 @@ async function scheduler() {
            if (!error && response.statusCode === 200) {
               access_token = body.access_token;
            }
+           console.log("This is error "+error);
          });
-         console.log("This is access_token"+ access_token);
+         console.log("This is access_token "+ access_token);
          const libraryAddResult =
              axios.put('https://api.spotify.com/v1/me/albums?ids=' + albumID,
                  {
