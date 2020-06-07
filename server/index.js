@@ -346,7 +346,7 @@ const router = express.Router();
 // Multi-process to utilize all CPU cores.
 async function scheduler() {
  let response = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
- console.log(response.data);
+ //console.log(response.data);
   var uniqueReleasedUPDS = [];
   var uniqueNotReleasedUPDS = [];
   const bearer =
@@ -361,7 +361,7 @@ async function scheduler() {
             }
           }
       )
-  console.log("bearer check "+bearer);
+  console.log("bearer check "+bearer.data.access_token);
   for(var i = 0; i<response.data.length;i++){
      if(uniqueReleasedUPDS.includes(response.data[i].albumUPC)){
 
@@ -398,23 +398,23 @@ async function scheduler() {
            },
            json: true
          };
-
+         var access_token;
          request.post(authOptions, function(error, response, body) {
            if (!error && response.statusCode === 200) {
-             var access_token = body.access_token;
-             const libraryAddResult =
-                  axios.put('https://api.spotify.com/v1/me/albums?ids=' + albumID,
-                     {
-                       headers: {
-                         'Content-Type': 'application/json',
-                         'Accept': 'application/json',
-                         'Authorization': "Bearer " + access_token
-                       }
-                     }
-                 )
-
+              access_token = body.access_token;
            }
          });
+         console.log("This is access_token"+ access_token);
+         const libraryAddResult =
+             axios.put('https://api.spotify.com/v1/me/albums?ids=' + albumID,
+                 {
+                   headers: {
+                     'Content-Type': 'application/json',
+                     'Accept': 'application/json',
+                     'Authorization': "Bearer " + access_token
+                   }
+                 }
+             )
          uniqueReleasedUPDS.push(response.data[i].albumUPC);
 
        }catch (err) {
