@@ -329,7 +329,7 @@ rule.second = 0;
 rule.minute = 30;
 rule.hour = 15;
 //import { v4 as uuidv4 } from 'uuid';
-const uuidv4 = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 
 const isDev = process.env.NODE_ENV !== "production";
 const PORT = process.env.PORT || 5000;
