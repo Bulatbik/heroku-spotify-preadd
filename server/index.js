@@ -326,7 +326,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 37;
+rule.minute = 41;
 rule.hour = 17;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -384,7 +384,7 @@ async function scheduler() {
          console.log("The album ID check: "+albumID);
          var refresh_token = response.data[i].refToken;
          console.log("This is refresh_token "+refresh_token);
-         var access_token = await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
+         var access_tokenRaw = await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
                grant_type: "refresh_token", refresh_token: refresh_token
              }).toString(),
              {
@@ -394,7 +394,8 @@ async function scheduler() {
                  'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
                }
              }
-         ).access_token;
+         );
+         var access_token = access_tokenRaw.data.access_token;
         /* var authOptions = {
            url: "https://accounts.spotify.com/api/token",
            headers: {
