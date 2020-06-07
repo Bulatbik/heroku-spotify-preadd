@@ -328,6 +328,7 @@ rule.tz = 'America/Chicago';
 rule.second = 0;
 rule.minute = 30;
 rule.hour = 15;
+import { v4 as uuidv4 } from 'uuid';
 
 const isDev = process.env.NODE_ENV !== "production";
 const PORT = process.env.PORT || 5000;
@@ -344,7 +345,84 @@ const router = express.Router();
 // Multi-process to utilize all CPU cores.
 async function scheduler() {
  let response = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
-   console.log(response);
+ console.log(response.data);
+  var uniqueReleasedUPDS = [];
+  var uniqueNotReleasedUPDS = [];
+  const bearer =
+      await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
+            grant_type: "client_credentials",
+          }).toString(),
+          {
+            headers: {
+              "Accept": "application/json",
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+            }
+          }
+      )
+  console.log("bearer check "+bearer);
+  for(var i = 0; i<response.data.length;i++){
+     if(uniqueReleasedUPDS.includes(response.data[i].albumUPC)){
+
+     }else if(uniqueNotReleasedUPDS.includes(response.data[i].albumUPC)){
+
+     }else{
+       console.log("In else");
+       try {
+         const UPDsearch =
+             await axios.get('https://api.spotify.com/v1/search?q=upc%3A' + response.data[i].albumUPC + '&type=album',
+                 {
+                   headers: {
+                     'Content-Type': 'application/json',
+                     'Accept': 'application/json',
+                     'Authorization': "Bearer " + bearer.data.access_token//'Bearer BQBQmqs03OwSdKWNES3WpgU4sUJ0MOeefDCcAz_5eLrafXY9WBvWdxbqAvYvRLtRsz6IBTXzA4zFIMyXKd0'
+                   }
+                 }
+             )
+         const albumID = UPDsearch.data.albums.items[0].id;
+         console.log("The album ID check: "+albumID);
+         var refresh_token = response.data[i].refToken;
+         var authOptions = {
+           url: "https://accounts.spotify.com/api/token",
+           headers: {
+             Authorization:
+                 "Basic " +
+                 new Buffer(
+                     client_id + ":" + client_secret
+                 ).toString("base64")
+           },
+           form: {
+             grant_type: "refresh_token",
+             refresh_token: refresh_token
+           },
+           json: true
+         };
+
+         request.post(authOptions, function(error, response, body) {
+           if (!error && response.statusCode === 200) {
+             var access_token = body.access_token;
+             const libraryAddResult =
+                  axios.put('https://api.spotify.com/v1/me/albums?ids=' + albumID,
+                     {
+                       headers: {
+                         'Content-Type': 'application/json',
+                         'Accept': 'application/json',
+                         'Authorization': "Bearer " + access_token
+                       }
+                     }
+                 )
+
+           }
+         });
+         uniqueReleasedUPDS.push(response.data[i].albumUPC);
+
+       }catch (err) {
+         uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
+       }
+      
+     }
+
+  }
 }
 schedule.scheduleJob(rule, () => {
   scheduler();
@@ -402,57 +480,6 @@ if (!isDev && cluster.isMaster) {
     // res.render(__dirname + '/public');
     res.sendFile(path.join(__dirname+'/public/index.html'));
   });
- /* app.get('/spotifypresave', function (req, res) {
-
-    function getHashParams() {
-      var hashParams = {};
-      var e, r = /([^&;=]+)=?([^&;]*)/g,
-          q = window.location.hash.substring(1);
-      while ( e = r.exec(q)) {
-        hashParams[e[1]] = decodeURIComponent(e[2]);
-      }
-      return hashParams;
-    }
-    var params = getHashParams();
-
-    var access_token = params.access_token,
-        refresh_token = params.refresh_token,
-        error = params.error;
-    var email;
-    var userID;
-    var userName;
-    if (error) {
-      alert('There was an error during the authentication');
-    } else {
-      if (access_token) {
-        // render oauth info
-        $.ajax({
-          url: 'https://api.spotify.com/v1/me',
-          headers: {
-            'Authorization': 'Bearer ' + access_token
-          },
-          success: function(response) {
-
-          }
-        });
-        const response  = axios.get('https://api.spotify.com/v1/me',{headers:{'Authorization': 'Bearer ' + access_token}});
-        email = response.data.email;
-        userID = response.data.id;
-        userName = response.data.display_name;
-        let data = JSON.stringify({
-          albumid: "696969696969",
-          username: userName,
-          email: email,
-          userID: userID,
-          refToken: refresh_token
-        });
-        axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
-      } else {
-        alert("mistake")
-      }
-    }
-    res.redirect('/');
-  });*/
   app.get('/callback', function(req, res) {
 
     // your application requests refresh and access tokens
@@ -501,7 +528,8 @@ if (!isDev && cluster.isMaster) {
             var userID = body.id;
             var userName = body.display_name;
             let data = JSON.stringify({
-              albumid: "kkkkkkkkkkkkkkk",
+              albumid: uuidv4(),
+              albumUPC: "886447779774",
               username: userName,
               email: email,
               userID: userID,

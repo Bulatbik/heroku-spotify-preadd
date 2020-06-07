@@ -8,6 +8,7 @@ api.post('/albumspresave', function (request) { // SAVE your icecream
         TableName: 'albumspresave',
         Item: {
             albumid: request.body.albumid,
+            albumUPC: request.body.albumUPC,
             username: request.body.username, // users' usernames
             refToken: request.body.refToken,
             email: request.body.email,
