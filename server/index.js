@@ -326,7 +326,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 41;
+rule.minute = 46;
 rule.hour = 17;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -421,13 +421,11 @@ async function scheduler() {
          console.log("This is access_token "+ access_token);
          const libraryAddResult =
              axios.put('https://api.spotify.com/v1/me/albums?ids=' + albumID,
-                 {
-                   headers: {
+                 {}, {headers: {
                      'Content-Type': 'application/json',
                      'Accept': 'application/json',
                      'Authorization': "Bearer " + access_token
-                   }
-                 }
+                   }}
              )
          uniqueReleasedUPDS.push(response.data[i].albumUPC);
 
