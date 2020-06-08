@@ -326,7 +326,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 34;
+rule.minute = 44;
 rule.hour = 6;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -409,7 +409,7 @@ async function scheduler() {
          let data = JSON.stringify({
            albumid: response.data[i].albumid
          });
-         let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{params: { albumid: response.data[i].albumid}});
+         let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { albumid: response.data[i].albumid}, headers:{"Content-Type" : "application/json"}});
          console.log("Response delete res: "+deleteResponse)
        }catch (err) {
          uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
