@@ -26,7 +26,7 @@ api.delete('/albumdeletepresave', function (request) { // GET all users
     var params = {
         TableName:'albumspresave',
         Key:{
-            "albumid": request.body.albumid
+            albumid: request.body.albumid
         }
     };
     return dynamoDb.delete(params).promise();
