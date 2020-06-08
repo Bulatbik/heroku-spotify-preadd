@@ -326,8 +326,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 46;
-rule.hour = 17;
+rule.minute = 16;
+rule.hour = 3;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -396,28 +396,6 @@ async function scheduler() {
              }
          );
          var access_token = access_tokenRaw.data.access_token;
-        /* var authOptions = {
-           url: "https://accounts.spotify.com/api/token",
-           headers: {
-             Authorization:
-                 "Basic " +
-                 new Buffer(
-                     client_id + ":" + client_secret
-                 ).toString("base64")
-           },
-           form: {
-             grant_type: "refresh_token",
-             refresh_token: refresh_token
-           },
-           json: true
-         };
-         var access_token;
-         request.post(authOptions, function(error, response, body) {
-           if (!error && response.statusCode === 200) {
-              access_token = body.access_token;
-           }
-           console.log("This is error "+error);
-         });*/
          console.log("This is access_token "+ access_token);
          const libraryAddResult =
              axios.put('https://api.spotify.com/v1/me/albums?ids=' + albumID,
@@ -428,6 +406,10 @@ async function scheduler() {
                    }}
              )
          uniqueReleasedUPDS.push(response.data[i].albumUPC);
+         let data = JSON.stringify({
+           albumid: response.data[i].albumid
+         });
+         await axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',data,{headers:{"Content-Type" : "application/json"}});
 
        }catch (err) {
          uniqueNotReleasedUPDS.push(response.data[i].albumUPC);

@@ -22,6 +22,15 @@ api.get('/albumspresavelist', function (request) { // GET all users
     return dynamoDb.scan({ TableName: 'albumspresave' }).promise()
         .then(response => response.Items)
 });
+api.post('/albumdeletepresave', function (request) { // GET all users
+    var params = {
+        TableName:'albumspresave',
+        Key:{
+            "albumid": request.body.albumid
+        }
+    };
+    return dynamoDb.delete(params);
+});
 
 
 module.exports = api;
