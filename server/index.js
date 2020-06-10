@@ -326,8 +326,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 44;
-rule.hour = 6;
+rule.minute = 20;
+rule.hour = 15;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -349,6 +349,7 @@ async function scheduler() {
  //console.log(response.data);
   var uniqueReleasedUPDS = [];
   var uniqueNotReleasedUPDS = [];
+  var uniqueReleasedSpotifyID = [];
   const bearer =
       await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
             grant_type: "client_credentials",
@@ -364,9 +365,35 @@ async function scheduler() {
   console.log("bearer check "+bearer.data.access_token);
   for(var i = 0; i<response.data.length;i++){
      if(uniqueReleasedUPDS.includes(response.data[i].albumUPC)){
-
+       var index = uniqueReleasedUPDS.findIndex(response.data[i].albumUPC);
+       var albumID = uniqueReleasedSpotifyID[index];
+       var refresh_token = response.data[i].refToken;
+       console.log("This is refresh_token "+refresh_token);
+       var access_tokenRaw = await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
+             grant_type: "refresh_token", refresh_token: refresh_token
+           }).toString(),
+           {
+             headers: {
+               "Accept": "application/json",
+               'Content-Type': 'application/x-www-form-urlencoded',
+               'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+             }
+           }
+       );
+       var access_token = access_tokenRaw.data.access_token;
+       console.log("This is access_token "+ access_token);
+       const libraryAddResult =
+           axios.put('https://api.spotify.com/v1/me/albums?ids=' + albumID,
+               {}, {headers: {
+                   'Content-Type': 'application/json',
+                   'Accept': 'application/json',
+                   'Authorization': "Bearer " + access_token
+                 }}
+           )
+       let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { albumid: response.data[i].albumid}, headers:{"Content-Type" : "application/json"}});
+       console.log("Response delete res: "+deleteResponse)
      }else if(uniqueNotReleasedUPDS.includes(response.data[i].albumUPC)){
-
+       console.log("Do nothing");
      }else{
        console.log("In else");
        try {
@@ -406,12 +433,11 @@ async function scheduler() {
                    }}
              )
          uniqueReleasedUPDS.push(response.data[i].albumUPC);
-         let data = JSON.stringify({
-           albumid: response.data[i].albumid
-         });
+         uniqueReleasedSpotifyID.push(albumID);
          let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { albumid: response.data[i].albumid}, headers:{"Content-Type" : "application/json"}});
          console.log("Response delete res: "+deleteResponse)
        }catch (err) {
+         console.log("Added to not released array");
          uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
        }
       
@@ -523,7 +549,7 @@ if (!isDev && cluster.isMaster) {
             var userName = body.display_name;
             let data = JSON.stringify({
               albumid: uuidv4(),
-              albumUPC: "886447779774",
+              albumUPC: "2",
               username: userName,
               email: email,
               userID: userID,
