@@ -326,8 +326,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 52;
-rule.hour = 15;
+rule.minute = 3;
+rule.hour = 16;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -551,7 +551,7 @@ if (!isDev && cluster.isMaster) {
             var userName = body.display_name;
             let data = JSON.stringify({
               albumid: uuidv4(),
-              albumUPC: "2",
+              albumUPC: "886447779774",
               username: userName,
               email: email,
               userID: userID,
