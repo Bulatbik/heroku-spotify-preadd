@@ -326,7 +326,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 20;
+rule.minute = 52;
 rule.hour = 15;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -365,7 +365,9 @@ async function scheduler() {
   console.log("bearer check "+bearer.data.access_token);
   for(var i = 0; i<response.data.length;i++){
      if(uniqueReleasedUPDS.includes(response.data[i].albumUPC)){
-       var index = uniqueReleasedUPDS.findIndex(response.data[i].albumUPC);
+         console.log("UPD already added")
+         const isLargeNumber = (element) => element === response.data[i].albumUPC;
+       var index = uniqueReleasedUPDS.findIndex(isLargeNumber);
        var albumID = uniqueReleasedSpotifyID[index];
        var refresh_token = response.data[i].refToken;
        console.log("This is refresh_token "+refresh_token);
