@@ -150,9 +150,11 @@ class App extends Component {
         return (
             <div className="App">
                 <Helmet>
-                    <meta charSet="utf-8" />
-                    <title>My Title</title>
-                    <link rel="canonical" href="http://mysite.com/example" />
+                    <head>
+                    <meta name="apple-music-developer-token" content="DEVELOPER-TOKEN"/>
+                        <meta name="apple-music-app-name" content="My Cool Web App"/>
+                            <meta name="apple-music-app-build" content="1978.4.1"/>
+                    </head>
                 </Helmet>
                 <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
                 <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
