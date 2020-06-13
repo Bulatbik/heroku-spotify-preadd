@@ -511,7 +511,6 @@ if (!isDev && cluster.isMaster) {
 
     app.get("/applemusic", function(req, res) {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
-        console.log(jwtToken);
         var state = generateRandomString(16);
         res.cookie(stateKey, state);
         // your application requests authorization
@@ -536,7 +535,8 @@ if (!isDev && cluster.isMaster) {
   app.get('/loginOne', function (req, res) {
     // dynamicStatic.setPath(__dirname + '/public');
     // res.render(__dirname + '/public');
-    res.sendFile(path.join(__dirname+'/public/index.html'));
+      console.log(jwtToken);
+    res.sendFile(path.join(__dirname+'/public/index.html'), {data: jwtToken});
   });
   app.get('/callback', function(req, res) {
 
