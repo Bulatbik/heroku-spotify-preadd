@@ -325,7 +325,7 @@ const schedule = require("node-schedule");
 const fs      = require("fs");
 const jwt     = require("jsonwebtoken");
 
-const privateKey = fs.readFileSync("./AuthKey.p8").toString();
+const privateKey = fs.readFileSync(__dirname+"/AuthKey.p8").toString();
 const teamId     = "6UD2Y7J6SN";
 const keyId      = "6PAGB4SZ4L";
 
