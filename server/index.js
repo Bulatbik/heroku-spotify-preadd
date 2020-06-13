@@ -487,7 +487,7 @@ if (!isDev && cluster.isMaster) {
  // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
   //app.use(dynamicStatic);
 
-  app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
+  app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
   var stateKey = "spotify_auth_state";
   //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
   app.get("/login", function(req, res) {
@@ -536,8 +536,8 @@ if (!isDev && cluster.isMaster) {
     // dynamicStatic.setPath(__dirname + '/public');
     // res.render(__dirname + '/public');
       console.log(jwtToken);
-      res.sendFile(path.join(__dirname+'/public/index.html'), {jwtToken: jwtToken});
-     // res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
+     // res.sendFile(path.join(__dirname+'/public/index.html'), {jwtToken: jwtToken});
+      res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
     //  res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
   });
   app.get('/callback', function(req, res) {
