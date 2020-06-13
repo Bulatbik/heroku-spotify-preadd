@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState, Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
+import {Helmet} from "react-helmet";
 const spotifyApi = new SpotifyWebApi();
 /*function App() {
   const [message, setMessage] = useState(null);
@@ -67,11 +68,43 @@ const spotifyApi = new SpotifyWebApi();
 }*/
 //export default App;
 
+const meta1 = {
+    title: 'Some Meta Title',
+    description: 'I am a description, and I can create multiple tags',
+    canonical: 'http://example.com/path/to/page',
+    meta: {
+        charset: 'utf-8',
+        name: "apple-music-developer-token",
+        content: "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZQQUdCNFNaNEwifQ.eyJpYXQiOjE1OTIwNzAxNTksImV4cCI6MTYwNzYyMjE1OSwiaXNzIjoiNlVEMlk3SjZTTiJ9.u-KKSe1kASGkxWKv12YaNcovI4d4h-48pHVVzV9v5rex4yB_Guqso1E5r02HiujOStdSeQP8nyDDnD3Rk2cFzw"
+    }
+}
+const meta2 = {
+    title: 'Some Meta Title',
+    description: 'I am a description, and I can create multiple tags',
+    canonical: 'http://example.com/path/to/page',
+    meta: {
+        charset: 'utf-8',
+        name: "apple-music-app-name",
+        content: "PreAdd for Apple Music"
+    }
+}
+const meta3 = {
+    title: 'Some Meta Title',
+    description: 'I am a description, and I can create multiple tags',
+    canonical: 'http://example.com/path/to/page',
+    meta: {
+        charset: 'utf-8',
+        name: "apple-music-app-build",
+        content: "1978.4.1"
+    }
+}
+
 class App extends Component {
     constructor(){
         super();
         const params = this.getHashParams();
         const token = params.access_token;
+
         if (token) {
             spotifyApi.setAccessToken(token);
         }
@@ -116,6 +149,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>My Title</title>
+                    <link rel="canonical" href="http://mysite.com/example" />
+                </Helmet>
                 <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
                 <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
                 <a href='https://young-peak-41948.herokuapp.com/loginOne' > PreAdd Album with Apple Music </a>
