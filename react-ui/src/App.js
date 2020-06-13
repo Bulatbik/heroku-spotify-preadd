@@ -116,8 +116,14 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
+                <meta name="apple-music-developer-token" content="DEVELOPER-TOKEN">
+                    <meta name="apple-music-app-name" content="My Cool Web App">
+                        <meta name="apple-music-app-build" content="1978.4.1">
                 <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
                 <a href='https://young-peak-41948.herokuapp.com/loginOne' > PreAdd Album with Apple Music </a>
+                <button id="apple-music-authorize">apple-music-authorize</button>
+                <button id="apple-music-unauthorize">apple-music-unauthorize</button>
                 <div>
                     Now Playing: { this.state.nowPlaying.name }
                 </div>
