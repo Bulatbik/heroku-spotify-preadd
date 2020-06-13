@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
 const spotifyApi = new SpotifyWebApi();
-//import MetaTags from 'react-meta-tags';
+import MetaTags from 'react-meta-tags';
 /*function App() {
   const [message, setMessage] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
