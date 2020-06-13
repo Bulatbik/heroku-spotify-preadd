@@ -537,7 +537,7 @@ if (!isDev && cluster.isMaster) {
     // res.render(__dirname + '/public');
       console.log(jwtToken);
    // res.sendFile(path.join(__dirname+'/public/index.html'), {data: jwtToken});
-      res.render(__dirname + "/public/index.html", {data: jwtToken});
+      res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
   });
   app.get('/callback', function(req, res) {
 
