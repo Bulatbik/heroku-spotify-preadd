@@ -536,8 +536,8 @@ if (!isDev && cluster.isMaster) {
     // dynamicStatic.setPath(__dirname + '/public');
     // res.render(__dirname + '/public');
       console.log(jwtToken);
-    //res.sendFile(path.join(__dirname+'/public/index.html'), {data: jwtToken});
-      res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
+      res.sendFile(path.join(__dirname+'/public/index.html'), {data: jwtToken});
+     // res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
     //  res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
   });
   app.get('/callback', function(req, res) {
