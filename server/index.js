@@ -491,7 +491,6 @@ if (!isDev && cluster.isMaster) {
   var stateKey = "spotify_auth_state";
   //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
   app.get("/login", function(req, res) {
-      console.log(jwtToken);
     //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
@@ -512,6 +511,7 @@ if (!isDev && cluster.isMaster) {
 
     app.get("/applemusic", function(req, res) {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
+        console.log(jwtToken);
         var state = generateRandomString(16);
         res.cookie(stateKey, state);
         // your application requests authorization
