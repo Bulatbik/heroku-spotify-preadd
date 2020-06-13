@@ -116,7 +116,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album on Spotify </a>
+                <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
+                <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Apple Music </a>
                 <div>
                     Now Playing: { this.state.nowPlaying.name }
                 </div>

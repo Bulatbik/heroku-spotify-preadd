@@ -322,6 +322,22 @@ const numCPUs = require("os").cpus().length;
 const dynamicStatic = require('express-dynamic-static')();
 const axios = require('axios');
 const schedule = require("node-schedule");
+const fs      = require("fs");
+const jwt     = require("jsonwebtoken");
+
+const privateKey = fs.readFileSync("AuthKey.p8").toString();
+const teamId     = "6UD2Y7J6SN";
+const keyId      = "6PAGB4SZ4L";
+
+const jwtToken = jwt.sign({}, privateKey, {
+    algorithm: "ES256",
+    expiresIn: "180d",
+    issuer: teamId,
+    header: {
+        alg: "ES256",
+        kid: keyId
+    }
+});
 let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
@@ -475,6 +491,7 @@ if (!isDev && cluster.isMaster) {
   var stateKey = "spotify_auth_state";
   //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
   app.get("/login", function(req, res) {
+      console.log(jwtToken);
     //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
@@ -492,6 +509,25 @@ if (!isDev && cluster.isMaster) {
         })
     );
   });
+
+    app.get("/applemusic", function(req, res) {
+        //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
+        var state = generateRandomString(16);
+        res.cookie(stateKey, state);
+        // your application requests authorization
+        var scope =
+            "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read user-library-modify";
+        res.redirect(
+            "https://accounts.spotify.com/authorize?" +
+            querystring.stringify({
+                response_type: "code",
+                client_id: client_id,
+                scope,
+                redirect_uri: redirect_uri,
+                state
+            })
+        );
+    });
  /* app.get('*', function(req, res) {
     dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
 
