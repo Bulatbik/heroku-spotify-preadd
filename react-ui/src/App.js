@@ -151,6 +151,7 @@ class App extends Component {
             <div className="App">
                 <div>
                 <Helmet>
+                    <div>
                     <meta name="apple-music-developer-token" content="DEVELOPER-TOKEN"/>
                         <meta name="apple-music-app-name" content="My Cool Web App"/>
                             <meta name="apple-music-app-build" content="1978.4.1"/>
@@ -159,6 +160,7 @@ class App extends Component {
                     <a href='https://young-peak-41948.herokuapp.com/loginOne' > PreAdd Album with Apple Music </a>
                     <button id="apple-music-authorize">apple-music-authorize</button>
                     <button id="apple-music-unauthorize">apple-music-unauthorize</button>
+                    </div>
                 </Helmet>
             </div>
                 <div>
