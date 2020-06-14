@@ -3,9 +3,6 @@
 <head>
     <title>Example of the Authorization Code flow with Spotify</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <meta name="apple-music-developer-token" content="eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZQQUdCNFNaNEwifQ.eyJpYXQiOjE1OTIwNzAxNTksImV4cCI6MTYwNzYyMjE1OSwiaXNzIjoiNlVEMlk3SjZTTiJ9.u-KKSe1kASGkxWKv12YaNcovI4d4h-48pHVVzV9v5rex4yB_Guqso1E5r02HiujOStdSeQP8nyDDnD3Rk2cFzw">
-    <meta name="apple-music-app-name" content="PreAdd for Apple Music">
-    <meta name="apple-music-app-build" content="1978.4.1">
     <style type="text/css">
         #login, #loggedin {
             display: none;
@@ -39,7 +36,7 @@
 <script>(function() {
     document.addEventListener('musickitloaded', () => {
         // MusicKit global is now defined
-        fetch('/token').then(response => response.json()).then(res => {
+        fetch('/applemusictoken').then(response => response.json()).then(res => {
             /***
              Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
              https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
@@ -47,7 +44,7 @@
             const music = MusicKit.configure({
                 developerToken: res.token,
                 app: {
-                    name: 'AppleMusicKitExample',
+                    name: 'PreAdd for Apple Music',
                     build: '1978.4.1'
                 }
             });

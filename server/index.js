@@ -329,15 +329,6 @@ const privateKey = fs.readFileSync(__dirname+"/AuthKey.p8").toString();
 const teamId     = "6UD2Y7J6SN";
 const keyId      = "6PAGB4SZ4L";
 
-const jwtToken = jwt.sign({}, privateKey, {
-    algorithm: "ES256",
-    expiresIn: "180d",
-    issuer: teamId,
-    header: {
-        alg: "ES256",
-        kid: keyId
-    }
-});
 let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
@@ -509,6 +500,19 @@ if (!isDev && cluster.isMaster) {
         })
     );
   });
+    app.get('/applemusictoken', function (req, res) {
+        res.setHeader('Content-Type', 'application/json');
+        const jwtToken = jwt.sign({}, privateKey, {
+            algorithm: "ES256",
+            expiresIn: "180d",
+            issuer: teamId,
+            header: {
+                alg: "ES256",
+                kid: keyId
+            }
+        });
+        res.send(JSON.stringify({token: jwtToken}));
+    });
 
     app.get("/applemusic", function(req, res) {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
@@ -536,7 +540,7 @@ if (!isDev && cluster.isMaster) {
   app.get('/loginOne', function (req, res) {
     // dynamicStatic.setPath(__dirname + '/public');
     // res.render(__dirname + '/public');
-      console.log(jwtToken);
+     // console.log(jwtToken);
      res.sendFile(path.join(__dirname+'/public/index.html'));
   //    res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
     //  res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
