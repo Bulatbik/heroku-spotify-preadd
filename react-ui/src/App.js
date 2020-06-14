@@ -114,6 +114,14 @@ class App extends Component {
             trackToAdd: {trackIds: []}
         }
     }
+    componentDidMount () {
+        const script = document.createElement("script");
+
+        script.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
+        script.async = true;
+
+        document.body.appendChild(script);
+    }
     getHashParams() {
         var hashParams = {};
         var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -152,7 +160,6 @@ class App extends Component {
                 <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
                 <a href='https://young-peak-41948.herokuapp.com/loginOne' > PreAdd Album with Apple Music </a>
                 <button id="apple-music-authorize">apple-music-authorize</button>
-                <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
                 <script>(function() {
                     document.addEventListener('musickitloaded', () => {
                         // MusicKit global is now defined
