@@ -133,7 +133,7 @@ class App extends Component {
                  Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
                  https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
                  ***/
-                const music = MusicKit.configure({
+                const music = this.instance.configure({
                     developerToken: res.token,
                     app: {
                         name: 'PreAdd for Apple Music',
