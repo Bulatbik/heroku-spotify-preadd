@@ -149,7 +149,6 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Helmet>
                     <div>
                     <meta name="apple-music-developer-token" content="DEVELOPER-TOKEN"/>
                         <meta name="apple-music-app-name" content="My Cool Web App"/>
@@ -160,7 +159,6 @@ class App extends Component {
                     <button id="apple-music-authorize">apple-music-authorize</button>
                     <button id="apple-music-unauthorize">apple-music-unauthorize</button>
                     </div>
-                </Helmet>
                 <div>
                     Now Playing: { this.state.nowPlaying.name }
                 </div>
