@@ -180,17 +180,17 @@ class App extends Component {
 
         })
     }
-    loginAppleMusic(){
+  /*  loginAppleMusic(){
         this.state.music.authorize().then(musicUserToken => {
             console.log(`Authorized, music-user-token: ${musicUserToken}`);
         });
-    }
+    }*/
     render() {
         return (
             <div className="App">
                 <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
                 <a href='https://young-peak-41948.herokuapp.com/loginOne' > PreAdd Album with Apple Music </a>
-                <button onClick={() => this.loginAppleMusic()} id="apple-music-authorize">apple-music-authorize</button>
+                <button id="apple-music-authorize">apple-music-authorize</button>
                 <div>
                     Now Playing: { this.state.nowPlaying.name }
                 </div>
