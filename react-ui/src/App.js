@@ -188,8 +188,7 @@ class App extends Component {
         return (
             <div className="App">
                 <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
-                <a href='https://young-peak-41948.herokuapp.com/loginOne' > PreAdd Album with Apple Music </a>
-                <button onClick={() => this.signIn()} id="apple-music-authorize">apple-music-authorize</button>
+                <button onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
                 <button onClick={() => this.signOut()}>apple-music-logout</button>
                 <div>
                     Now Playing: { this.state.nowPlaying.name }
