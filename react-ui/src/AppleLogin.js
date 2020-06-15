@@ -1,3 +1,4 @@
+var MusicKit;
 document.addEventListener('musickitloaded', () => {
     // MusicKit global is now defined
     fetch('/applemusictoken').then(response => response.json()).then(res => {
