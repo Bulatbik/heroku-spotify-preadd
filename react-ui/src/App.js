@@ -172,7 +172,7 @@ class App extends Component {
             if(key) {
                 that.setState({isLoginApple: true});
             }
-            console.log(that.musicInstance.api.addToLibrary({ ["album"]: ["1106659171"] }));
+            console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
         });
 
     }
