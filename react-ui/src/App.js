@@ -209,7 +209,7 @@ class App extends Component {
         })
     }
     loginAppleMusic(){
-        this.music.authorize().then(musicUserToken => {
+        window.music.authorize().then(musicUserToken => {
             console.log(`Authorized, music-user-token: ${musicUserToken}`);
         });
     }
