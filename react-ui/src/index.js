@@ -15,7 +15,7 @@ musicProvider.configure();
 let musicInstance = musicProvider.getMusicInstance();
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <App musicInstance={musicInstance}/>
     </React.StrictMode>,
     document.getElementById('root')
 );

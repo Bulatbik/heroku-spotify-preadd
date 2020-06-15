@@ -13,7 +13,8 @@ export default class MusicProvider {
              Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
              https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
              ***/
-            const music =  window.MusicKit.configure({
+            console.log(res.token);
+            window.MusicKit.configure({
                 developerToken: res.token,
                 app: {
                     name: 'PreAdd for Apple Music',
