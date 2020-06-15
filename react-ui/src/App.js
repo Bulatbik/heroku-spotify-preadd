@@ -98,6 +98,20 @@ const meta3 = {
         content: "1978.4.1"
     }
 }
+const useScript = url => {
+    useEffect(() => {
+        const script = document.createElement('script');
+
+        script.src = url;
+        script.async = true;
+
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        }
+    }, [url]);
+};
 
 class App extends Component {
     constructor(){
@@ -119,12 +133,12 @@ class App extends Component {
         //script.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
         //script.async = true;
         //document.body.appendChild(script);
-        const s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.innerHTML = "document.write('This is output by document.write()!')";
-        s.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
-        this.instance.appendChild(s);
+     //   const s = document.createElement('script');
+      //  s.type = 'text/javascript';
+      //  s.async = true;
+      //  s.innerHTML = "document.write('This is output by document.write()!')";
+      //  s.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
+      //  this.instance.appendChild(s);
 
         document.addEventListener('musickitloaded', () => {
             // MusicKit global is now defined
@@ -133,7 +147,7 @@ class App extends Component {
                  Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
                  https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
                  ***/
-                const music = this.instance.configure({
+                const music =  useScript('https://js-cdn.music.apple.com/musickit/v1/musickit.js').configure({
                     developerToken: res.token,
                     app: {
                         name: 'PreAdd for Apple Music',
