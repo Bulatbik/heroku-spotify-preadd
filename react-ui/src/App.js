@@ -145,7 +145,6 @@ class App extends Component {
       //  const script2 = document.createElement("script");
       //  script2.src = "appleLogin";
       //  script2.async = true;
-        document.body.
        // document.body.appendChild(script2);
         document.addEventListener('musickitloaded', () => {
             // MusicKit global is now defined
@@ -154,7 +153,7 @@ class App extends Component {
                  Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
                  https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
                  ***/
-                const music = MusicKit.configure({
+                const music =  document.body.MusicKit.configure({
                     developerToken: res.token,
                     app: {
                         name: 'PreAdd for Apple Music',
