@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, Component} from 'react';
+import co from 'co';
 import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
@@ -69,36 +70,6 @@ const appleLogin = require("./AppleLogin")
 }*/
 //export default App;
 
-const meta1 = {
-    title: 'Some Meta Title',
-    description: 'I am a description, and I can create multiple tags',
-    canonical: 'http://example.com/path/to/page',
-    meta: {
-        charset: 'utf-8',
-        name: "apple-music-developer-token",
-        content: "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZQQUdCNFNaNEwifQ.eyJpYXQiOjE1OTIwNzAxNTksImV4cCI6MTYwNzYyMjE1OSwiaXNzIjoiNlVEMlk3SjZTTiJ9.u-KKSe1kASGkxWKv12YaNcovI4d4h-48pHVVzV9v5rex4yB_Guqso1E5r02HiujOStdSeQP8nyDDnD3Rk2cFzw"
-    }
-}
-const meta2 = {
-    title: 'Some Meta Title',
-    description: 'I am a description, and I can create multiple tags',
-    canonical: 'http://example.com/path/to/page',
-    meta: {
-        charset: 'utf-8',
-        name: "apple-music-app-name",
-        content: "PreAdd for Apple Music"
-    }
-}
-const meta3 = {
-    title: 'Some Meta Title',
-    description: 'I am a description, and I can create multiple tags',
-    canonical: 'http://example.com/path/to/page',
-    meta: {
-        charset: 'utf-8',
-        name: "apple-music-app-build",
-        content: "1978.4.1"
-    }
-}
 const useScript = url => {
     useEffect(() => {
         const script = document.createElement('script');
@@ -127,28 +98,15 @@ class App extends Component {
             loggedIn: token ? true : false,
             nowPlaying: { name: 'Not Checked', albumArt: '' },
             trackToAdd: {trackIds: []},
-            music: []
+            music: [],
+            isLoginApple: false
         }
+        this.musicInstance = this.props.musicInstance;
     }
-    componentDidMount () {
-     //   const s = document.createElement('script');
-      //  s.type = 'text/javascript';
-      //  s.async = true;
-      //  s.innerHTML = "document.write('This is output by document.write()!')";
-      //  s.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
-      //  this.instance.appendChild(s);
-      //  var v = useScript('https://js-cdn.music.apple.com/musickit/v1/musickit.js');
-      //  const script2 = document.createElement("script");
-      //  script2.src = "appleLogin";
-      //  script2.async = true;
-       // document.body.appendChild(script2);
+   /* componentDidMount () {
         document.addEventListener('musickitloaded', () => {
             // MusicKit global is now defined
             fetch('/applemusictoken').then(response => response.json()).then(res => {
-                /***
-                 Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
-                 https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
-                 ***/
                 const music =  window.MusicKit.configure({
                     developerToken: res.token,
                     app: {
@@ -161,10 +119,7 @@ class App extends Component {
                 // setup click handlers
 
                 document.getElementById('apple-music-authorize').addEventListener('click', () => {
-                    /***
-                     Returns a promise which resolves with a music-user-token when a user successfully authenticates and authorizes
-                     https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance/2992701-authorize
-                     ***/
+
                     music.authorize().then(musicUserToken => {
                         console.log(`Authorized, music-user-token: ${musicUserToken}`);
                     });
@@ -175,7 +130,7 @@ class App extends Component {
             });
         });
 
-    }
+    }*/
     getHashParams() {
         var hashParams = {};
         var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -208,9 +163,15 @@ class App extends Component {
 
         })
     }
-    loginAppleMusic(){
-        window.music.authorize().then(musicUserToken => {
-            console.log(`Authorized, music-user-token: ${musicUserToken}`);
+
+    signIn() {
+        let that = this;
+        co(function*() {
+            let key  = yield that.musicInstance.authorize();
+            console.log(`Authorized, music-user-token: ${key}`);
+            if(key) {
+                that.setState({isLoginApple: true});
+            }
         });
     }
     render() {
@@ -218,7 +179,7 @@ class App extends Component {
             <div className="App">
                 <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
                 <a href='https://young-peak-41948.herokuapp.com/loginOne' > PreAdd Album with Apple Music </a>
-                <button onClick={() => this.loginAppleMusic()} id="apple-music-authorize">apple-music-authorize</button>
+                <button onClick={() => this.signIn()} id="apple-music-authorize">apple-music-authorize</button>
                 <div>
                     Now Playing: { this.state.nowPlaying.name }
                 </div>
