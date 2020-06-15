@@ -149,7 +149,7 @@ class App extends Component {
                  Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
                  https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
                  ***/
-                const music =  MusicKit.configure({
+                const music =  window.MusicKit.configure({
                     developerToken: res.token,
                     app: {
                         name: 'PreAdd for Apple Music',
@@ -209,7 +209,7 @@ class App extends Component {
         })
     }
     loginAppleMusic(){
-        MusicKit.authorize().then(musicUserToken => {
+        this.music.authorize().then(musicUserToken => {
             console.log(`Authorized, music-user-token: ${musicUserToken}`);
         });
     }
