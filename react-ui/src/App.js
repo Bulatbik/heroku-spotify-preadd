@@ -4,12 +4,8 @@ import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
 import {Helmet} from "react-helmet";
-import MusicProvider from './MusicProvider';
 const spotifyApi = new SpotifyWebApi();
-const appleLogin = require("./AppleLogin");
-let musicProvider = MusicProvider.sharedProvider();
-musicProvider.configure();
-let musicInstance = musicProvider.getMusicInstance();
+const appleLogin = require("./AppleLogin")
 /*function App() {
   const [message, setMessage] = useState(null);
   const [isFetching, setIsFetching] = useState(false);

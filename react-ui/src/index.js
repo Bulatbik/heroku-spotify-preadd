@@ -3,13 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import MusicProvider from './MusicProvider';
 //ReactDOM.render(<App />, document.getElementById('root'));
 //var script = document.createElement("script");
 //script.src = 'https://js-cdn.music.apple.com/musickit/v1/musickit.js';
 //document.body.appendChild(script);
 //script.async = true;
 
+const script = document.createElement("script");
+
+script.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
+script.async = true;
+
+document.body.appendChild(script);
+let musicProvider = MusicProvider.sharedProvider();
+musicProvider.configure();
+let musicInstance = musicProvider.getMusicInstance();
 ReactDOM.render(
     <React.StrictMode>
         <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
