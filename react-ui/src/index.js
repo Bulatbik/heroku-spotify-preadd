@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
-var script = document.createElement("script");
+var script = document.createElement("MusicKit");
 script.src = 'https://js-cdn.music.apple.com/musickit/v1/musickit.js';
 document.body.appendChild(script);
 script.async = true;
