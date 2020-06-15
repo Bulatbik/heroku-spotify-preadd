@@ -86,8 +86,8 @@ const useScript = url => {
 };
 
 class App extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         const params = this.getHashParams();
         const token = params.access_token;
 
