@@ -10,18 +10,11 @@ import MusicProvider from './MusicProvider';
 //document.body.appendChild(script);
 //script.async = true;
 
-const script = document.createElement("script");
-
-script.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
-script.async = true;
-
-document.body.appendChild(script);
 let musicProvider = MusicProvider.sharedProvider();
 musicProvider.configure();
 let musicInstance = musicProvider.getMusicInstance();
 ReactDOM.render(
     <React.StrictMode>
-        <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
         <App />
     </React.StrictMode>,
     document.getElementById('root')
