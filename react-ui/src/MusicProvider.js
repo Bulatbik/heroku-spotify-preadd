@@ -7,8 +7,8 @@ export default class MusicProvider {
         return MusicProvider.instance;
     }
 
-    configure() {
-        fetch('/applemusictoken').then(response => response.json()).then(res => {
+    async configure() {
+       await fetch('/applemusictoken').then(response => response.json()).then(res => {
             /***
              Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
              https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
