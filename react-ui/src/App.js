@@ -131,10 +131,6 @@ class App extends Component {
         }
     }
     componentDidMount () {
-        const script = document.createElement("script");
-        script.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
-        script.async = true;
-        document.body.appendChild(script);
      //   const s = document.createElement('script');
       //  s.type = 'text/javascript';
       //  s.async = true;
@@ -153,7 +149,7 @@ class App extends Component {
                  Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
                  https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
                  ***/
-                const music =  document.body.MusicKit.configure({
+                const music =  MusicKit.configure({
                     developerToken: res.token,
                     app: {
                         name: 'PreAdd for Apple Music',
@@ -213,7 +209,7 @@ class App extends Component {
         })
     }
     loginAppleMusic(){
-        this.music.authorize().then(musicUserToken => {
+        MusicKit.authorize().then(musicUserToken => {
             console.log(`Authorized, music-user-token: ${musicUserToken}`);
         });
     }
