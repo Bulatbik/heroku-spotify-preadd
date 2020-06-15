@@ -160,6 +160,7 @@ class App extends Component {
                         build: '1978.4.1'
                     }
                 });
+                this.setState({music:music});
 
                 // setup click handlers
 
@@ -212,7 +213,7 @@ class App extends Component {
         })
     }
     loginAppleMusic(){
-        window.music.authorize().then(musicUserToken => {
+        this.music.authorize().then(musicUserToken => {
             console.log(`Authorized, music-user-token: ${musicUserToken}`);
         });
     }
