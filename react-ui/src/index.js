@@ -11,8 +11,9 @@ import MusicProvider from './MusicProvider';
 //script.async = true;
 
 let musicProvider = MusicProvider.sharedProvider();
-musicProvider.configure();
-let musicInstance = musicProvider.getMusicInstance();
+let musicInstance;
+ musicProvider.configure().then( musicInstance = musicProvider.getMusicInstance());
+//let musicInstance = musicProvider.getMusicInstance();
 ReactDOM.render(
     <React.StrictMode>
         <App musicInstance={musicInstance}/>
