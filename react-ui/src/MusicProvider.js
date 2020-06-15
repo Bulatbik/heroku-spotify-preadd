@@ -8,20 +8,14 @@ export default class MusicProvider {
     }
 
     async configure() {
-       await fetch('/applemusictoken').then(response => response.json()).then(res => {
-            /***
-             Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
-             https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
-             ***/
-            console.log(res.token);
             window.MusicKit.configure({
-                developerToken: res.token,
+                developerToken: "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZQQUdCNFNaNEwifQ.eyJpYXQiOjE1OTIyMzEwNTIsImV4cCI6MTYwNzc4MzA1MiwiaXNzIjoiNlVEMlk3SjZTTiJ9.TYi_nXC0gLSpkKbT4q6WVCD7FNu49HqG7gh-oEmdExMxypbjgqcWS7wL_s1zRzGsoR2UkfHgu-ctBBxTU64m4Q",
                 app: {
                     name: 'PreAdd for Apple Music',
                     build: '1978.4.1'
                 }
             });
-        });
+
 
     }
 
