@@ -131,7 +131,6 @@ class App extends Component {
         }
     }
     componentDidMount () {
-        var MusicKit;
         const script = document.createElement("script");
         script.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
         script.async = true;
@@ -146,6 +145,7 @@ class App extends Component {
       //  const script2 = document.createElement("script");
       //  script2.src = "appleLogin";
       //  script2.async = true;
+        document.body.
        // document.body.appendChild(script2);
         document.addEventListener('musickitloaded', () => {
             // MusicKit global is now defined
