@@ -130,17 +130,17 @@ class App extends Component {
         }
     }
     componentDidMount () {
-        //const script = document.createElement("script");
-        //script.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
-        //script.async = true;
-        //document.body.appendChild(script);
+        const script = document.createElement("script");
+        script.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
+        script.async = true;
+        document.body.appendChild(script);
      //   const s = document.createElement('script');
       //  s.type = 'text/javascript';
       //  s.async = true;
       //  s.innerHTML = "document.write('This is output by document.write()!')";
       //  s.src = "https://js-cdn.music.apple.com/musickit/v1/musickit.js";
       //  this.instance.appendChild(s);
-        var v = useScript('https://js-cdn.music.apple.com/musickit/v1/musickit.js');
+      //  var v = useScript('https://js-cdn.music.apple.com/musickit/v1/musickit.js');
         document.addEventListener('musickitloaded', () => {
             // MusicKit global is now defined
             fetch('/applemusictoken').then(response => response.json()).then(res => {
@@ -148,7 +148,7 @@ class App extends Component {
                  Configure our MusicKit instance with the signed token from server, returns a configured MusicKit Instance
                  https://developer.apple.com/documentation/musickitjs/musickit/musickitinstance
                  ***/
-                const music =  v.configure({
+                const music =  MusicKit.configure({
                     developerToken: res.token,
                     app: {
                         name: 'PreAdd for Apple Music',
