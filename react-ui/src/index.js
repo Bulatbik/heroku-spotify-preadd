@@ -5,12 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
-var script = document.createElement("MusicKit");
-script.src = 'https://js-cdn.music.apple.com/musickit/v1/musickit.js';
-document.body.appendChild(script);
-script.async = true;
+//var script = document.createElement("script");
+//script.src = 'https://js-cdn.music.apple.com/musickit/v1/musickit.js';
+//document.body.appendChild(script);
+//script.async = true;
 ReactDOM.render(
     <React.StrictMode>
+        <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
         <App />
     </React.StrictMode>,
     document.getElementById('root')
