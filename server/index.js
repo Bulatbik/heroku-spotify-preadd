@@ -558,7 +558,9 @@ if (!isDev && cluster.isMaster) {
         const options = {
             headers: {
                 'Music-User-Token': token,
-                Authorization: 'Bearer ' + jwtToken
+                Authorization: 'Bearer ' + jwtToken,
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
             }
         };
         axios.post(url, options)
