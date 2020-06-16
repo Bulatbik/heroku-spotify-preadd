@@ -172,7 +172,7 @@ class App extends Component {
             if(key) {
                 that.setState({isLoginApple: true});
             }
-            axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key})
+            axios.post('https://young-peak-41948.herokuapp.com/applemusic', {'X-Requested-With': 'XMLHttpRequest'},{userToken:key})
                 .then(response => console.log(response))
                 .catch(err => console.log(err));
 
