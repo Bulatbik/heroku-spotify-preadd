@@ -555,15 +555,26 @@ if (!isDev && cluster.isMaster) {
         });
         console.log(token+ ": token");
         const url = 'https://api.music.apple.com/v1/me/library/?ids[albums]=1106659171';
-        const headers = {
+        const options = {
+            headers: {
                 'Music-User-Token': token,
                 Authorization: 'Bearer ' + jwtToken,
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
-
+            }
         };
-        axios.post(url, headers)
-            .then(res => res.json())
+      //  axios.post(url, options)
+       //     .then(res => res.json())
+        axios({
+            method: 'post',
+            url: "https://api.music.apple.com/v1/me/library/?ids[albums]=1106659171",
+            headers: {
+                'Music-User-Token': token,
+                Authorization: 'Bearer ' + jwtToken,
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            }
+        });
      //   res.send(req.body.userToken);
 
     });
