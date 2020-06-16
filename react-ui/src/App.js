@@ -176,7 +176,7 @@ class App extends Component {
                 .then(response => console.log(response))
                 .catch(err => console.log(err));
 
-            console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
+         //   console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
         });
 
     }

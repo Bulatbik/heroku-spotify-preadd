@@ -544,8 +544,27 @@ if (!isDev && cluster.isMaster) {
     });*/
     app.post('/applemusic', jsonParser, (req, res) => {
         let token = req.body.userToken;
+        const jwtToken = jwt.sign({}, privateKey, {
+            algorithm: "ES256",
+            expiresIn: "180d",
+            issuer: teamId,
+            header: {
+                alg: "ES256",
+                kid: keyId
+            }
+        });
         console.log(token+ ": token");
-        res.send(req.body.userToken);
+        const url = 'https://api.music.apple.com/v1/me/library/?ids[albums]=1106659171';
+        const options = {
+            headers: {
+                'Music-User-Token': token,
+                Authorization: 'Bearer ' + jwtToken
+            }
+        };
+        fetch(url, options)
+            .then(res => res.json())
+     //   res.send(req.body.userToken);
+
     });
  /* app.get('*', function(req, res) {
     dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
