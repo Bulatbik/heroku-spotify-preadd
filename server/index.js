@@ -555,15 +555,14 @@ if (!isDev && cluster.isMaster) {
         });
         console.log(token+ ": token");
         const url = 'https://api.music.apple.com/v1/me/library/?ids[albums]=1106659171';
-        const options = {
-            headers: {
+        const headers = {
                 'Music-User-Token': token,
                 Authorization: 'Bearer ' + jwtToken,
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
-            }
+
         };
-        axios.post(url, options)
+        axios.post(url, headers)
             .then(res => res.json())
      //   res.send(req.body.userToken);
 
