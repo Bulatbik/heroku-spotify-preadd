@@ -553,18 +553,6 @@ if (!isDev && cluster.isMaster) {
                 kid: keyId
             }
         });
-        console.log(token+ ": token");
-        const url = 'https://api.music.apple.com/v1/me/library/?ids[albums]=1106659171';
-        const options = {
-            headers: {
-                'Music-User-Token': token,
-                Authorization: 'Bearer ' + jwtToken,
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            }
-        };
-      //  axios.post(url, options)
-       //     .then(res => res.json())
         axios({
             method: 'post',
             url: "https://api.music.apple.com/v1/me/library/?ids[albums]=1106659171",
@@ -575,7 +563,14 @@ if (!isDev && cluster.isMaster) {
                 'Content-Type': 'application/json'
             }
         });
-     //   res.send(req.body.userToken);
+        let data = JSON.stringify({
+            presaveid: uuidv4(),
+            albumUPC: "886447779774",
+            userToken: req.body.userToken
+        });
+        axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
+
+        res.send(req.body.userToken);
 
     });
  /* app.get('*', function(req, res) {

@@ -18,6 +18,18 @@ api.post('/albumspresave', function (request) { // SAVE your icecream
     return dynamoDb.put(params).promise(); // returns dynamo result
 }, { success: 201 }); // returns HTTP status 201 - Created if successful
 
+api.post('/albumspresaveapple', function (request) { // SAVE your icecream
+    var params = {
+        TableName: 'albumspresaveapple',
+        Item: {
+            presaveid: request.body.presaveid,
+            albumUPC: request.body.albumUPC,
+            userToken: request.body.userToken
+        }
+    }
+    return dynamoDb.put(params).promise(); // returns dynamo result
+}, { success: 201 });
+
 api.get('/albumspresavelist', function (request) { // GET all users
     return dynamoDb.scan({ TableName: 'albumspresave' }).promise()
         .then(response => response.Items)
