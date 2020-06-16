@@ -323,7 +323,8 @@ const dynamicStatic = require('express-dynamic-static')();
 const axios = require('axios');
 const schedule = require("node-schedule");
 var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+//var urlencodedParser = bodyParser.urlencoded({ extended: false });
+var jsonParser = bodyParser.json();
 const fs      = require("fs");
 const jwt     = require("jsonwebtoken");
 
@@ -541,7 +542,7 @@ if (!isDev && cluster.isMaster) {
             })
         );
     });*/
-    app.post('/applemusic', urlencodedParser, (req, res) => {
+    app.post('/applemusic', jsonParser, (req, res) => {
         let token = req.body.userToken;
         console.log(token+ ": token");
         res.send(req.body.userToken);
