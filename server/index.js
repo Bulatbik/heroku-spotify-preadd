@@ -561,7 +561,7 @@ if (!isDev && cluster.isMaster) {
                 Authorization: 'Bearer ' + jwtToken
             }
         };
-        fetch(url, options)
+        axios.post(url, options)
             .then(res => res.json())
      //   res.send(req.body.userToken);
 
