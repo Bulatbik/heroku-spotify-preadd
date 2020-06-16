@@ -322,6 +322,8 @@ const numCPUs = require("os").cpus().length;
 const dynamicStatic = require('express-dynamic-static')();
 const axios = require('axios');
 const schedule = require("node-schedule");
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const fs      = require("fs");
 const jwt     = require("jsonwebtoken");
 
@@ -539,10 +541,10 @@ if (!isDev && cluster.isMaster) {
             })
         );
     });*/
-    app.get('/applemusic', (req, res) => {
+    app.post('/applemusic', urlencodedParser, (req, res) => {
         let token = req.body.userToken;
         console.log(token+ ": token");
-        res = req.body.userToken;
+        res.send(req.body.userToken);
     });
  /* app.get('*', function(req, res) {
     dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
