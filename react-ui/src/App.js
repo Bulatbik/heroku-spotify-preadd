@@ -5,7 +5,7 @@ import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
 import {Helmet} from "react-helmet";
 const spotifyApi = new SpotifyWebApi();
-const appleLogin = require("./AppleLogin")
+const axios = require('axios');
 /*function App() {
   const [message, setMessage] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
@@ -172,6 +172,10 @@ class App extends Component {
             if(key) {
                 that.setState({isLoginApple: true});
             }
+            axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key})
+                .then(response => console.log(response))
+                .catch(err => console.log(err));
+
             console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
         });
 

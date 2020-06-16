@@ -335,6 +335,7 @@ rule.tz = 'America/Chicago';
 rule.second = 0;
 rule.minute = 3;
 rule.hour = 16;
+const MusicKit = window.MusicKit;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -514,10 +515,17 @@ if (!isDev && cluster.isMaster) {
         res.send(JSON.stringify({token: jwtToken}));
     });
 
-    app.get("/applemusic", function(req, res) {
+  /*  app.get("/applemusic", function(req, res) {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
         var state = generateRandomString(16);
         res.cookie(stateKey, state);
+        MusicKit.configure({
+            developerToken: 'eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ1RFFMUTk2NkYifQ.eyJpYXQiOjE1NzkxNDg1NDQsImV4cCI6MTU5NDcwMDU0NCwiaXNzIjoiOUE0M1ZKTFZFOCJ9.4dJKKnVXtwFyb-ejfK0N-SO66PtmcSe_Zb53UDZMt5JIldVRgauquuOb8N7np598rXZCwDxcJkjBV9_JkX2azw',
+            app: {
+                name: 'app-name',
+                build: '0000'
+            }
+        });
         // your application requests authorization
         var scope =
             "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read user-library-modify";
@@ -531,6 +539,11 @@ if (!isDev && cluster.isMaster) {
                 state
             })
         );
+    });*/
+    app.post('/applemusic', (req, res) => {
+        let token = req.body.userToken;
+        console.log(token+ ": token");
+        res = req.body.userToken;
     });
  /* app.get('*', function(req, res) {
     dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
