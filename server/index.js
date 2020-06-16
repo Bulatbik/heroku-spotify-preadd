@@ -539,7 +539,7 @@ if (!isDev && cluster.isMaster) {
             })
         );
     });*/
-    app.post('/applemusic', (req, res) => {
+    app.get('/applemusic', (req, res) => {
         let token = req.body.userToken;
         console.log(token+ ": token");
         res = req.body.userToken;
