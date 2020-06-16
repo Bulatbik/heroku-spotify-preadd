@@ -335,7 +335,6 @@ rule.tz = 'America/Chicago';
 rule.second = 0;
 rule.minute = 3;
 rule.hour = 16;
-const MusicKit = window.MusicKit;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
