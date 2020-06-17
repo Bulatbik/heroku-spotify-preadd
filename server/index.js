@@ -336,7 +336,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 29;
+rule.minute = 38;
 rule.hour = 11;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -479,7 +479,7 @@ async function scheduler() {
         }else{
             try
             {
-               const track = await axios({
+               const {track} = await axios({
                     method: 'get',
                     url: "https://api.music.apple.com/v1/catalog/us/songs?filter[isrc]="+applepresaves.data[i].albumUPC,
                     headers: {
@@ -492,7 +492,7 @@ async function scheduler() {
                 console.log(applepresaves.data[i].albumUPC+": ISRC code");
                 console.log(jwtToken+": jwtToken");
                console.log("option 3"+track.data.type);
-               console.dir(track.data.type)
+               console.dir(track.data[0])
 
             }catch(e){
                 uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
