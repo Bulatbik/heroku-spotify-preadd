@@ -553,6 +553,7 @@ if (!isDev && cluster.isMaster) {
                 kid: keyId
             }
         });
+        console.log(jwtToken);
         axios({
             method: 'post',
             url: "https://api.music.apple.com/v1/me/library/?ids[albums]=1106659171",
