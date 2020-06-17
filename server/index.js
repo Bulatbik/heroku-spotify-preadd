@@ -336,7 +336,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 24;
+rule.minute = 30;
 rule.hour = 10;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -472,9 +472,9 @@ async function scheduler() {
     for(var i = 0; i<applepresaves.data.length;i++){
         if(uniqueReleasedAppleISRC.includes(applepresaves.data[i].albumUPC)) {
 
-
+            console.log("Option 1");
         }else if(uniqueNotReleasedAppleISRC.includes(applepresaves.data[i].albumUPC)){
-
+            console.log("Option 2");
         }else{
             try
             {
@@ -487,10 +487,11 @@ async function scheduler() {
                         'Content-Type': 'application/json'
                     }
                 });
-               console.log(track.data[0].type);
+               console.log("option 3"+track.data[0].type);
 
             }catch(e){
                 uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
+                console.log("option 4");
             }
         }
     }
