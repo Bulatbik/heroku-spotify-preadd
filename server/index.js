@@ -336,8 +336,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 3;
-rule.hour = 16;
+rule.minute = 0;
+rule.hour = 9;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -456,6 +456,44 @@ async function scheduler() {
      }
 
   }
+    const jwtToken = jwt.sign({}, privateKey, {
+        algorithm: "ES256",
+        expiresIn: "180d",
+        issuer: teamId,
+        header: {
+            alg: "ES256",
+            kid: keyId
+        }
+    });
+    let applepresaves = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumsapplepresavelist',{headers:{"Content-Type" : "application/json"}});
+    var uniqueReleasedAppleISRC = [];
+    var uniqueNotReleasedAppleISRC = [];
+    var uniqueReleasedApplePreaddIDs = [];
+    for(var i = 0; i<applepresaves.data.length;i++){
+        if(uniqueReleasedAppleISRC.includes(applepresaves.data[i].albumUPC)) {
+
+
+        }else if(uniqueNotReleasedAppleISRC.includes(applepresaves.data[i].albumUPC)){
+
+        }else{
+            try
+            {
+               const track = axios({
+                    method: 'get',
+                    url: "https://api.music.apple.com/v1/catalog/us/songs?filter[isrc]="+applepresaves.data[i].albumUPC,
+                    headers: {
+                        Authorization: 'Bearer ' + jwtToken,
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+               console.log(track);
+
+            }catch(e){
+                uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
+            }
+        }
+    }
 }
 schedule.scheduleJob(rule, () => {
   scheduler();
@@ -503,45 +541,7 @@ if (!isDev && cluster.isMaster) {
         })
     );
   });
-    app.get('/applemusictoken', function (req, res) {
-        res.setHeader('Content-Type', 'application/json');
-        const jwtToken = jwt.sign({}, privateKey, {
-            algorithm: "ES256",
-            expiresIn: "180d",
-            issuer: teamId,
-            header: {
-                alg: "ES256",
-                kid: keyId
-            }
-        });
-        res.send(JSON.stringify({token: jwtToken}));
-    });
 
-  /*  app.get("/applemusic", function(req, res) {
-        //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
-        var state = generateRandomString(16);
-        res.cookie(stateKey, state);
-        MusicKit.configure({
-            developerToken: 'eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ1RFFMUTk2NkYifQ.eyJpYXQiOjE1NzkxNDg1NDQsImV4cCI6MTU5NDcwMDU0NCwiaXNzIjoiOUE0M1ZKTFZFOCJ9.4dJKKnVXtwFyb-ejfK0N-SO66PtmcSe_Zb53UDZMt5JIldVRgauquuOb8N7np598rXZCwDxcJkjBV9_JkX2azw',
-            app: {
-                name: 'app-name',
-                build: '0000'
-            }
-        });
-        // your application requests authorization
-        var scope =
-            "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read user-library-modify";
-        res.redirect(
-            "https://accounts.spotify.com/authorize?" +
-            querystring.stringify({
-                response_type: "code",
-                client_id: client_id,
-                scope,
-                redirect_uri: redirect_uri,
-                state
-            })
-        );
-    });*/
     app.post('/applemusic', jsonParser, (req, res) => {
         let token = req.body.userToken;
         const jwtToken = jwt.sign({}, privateKey, {
@@ -565,7 +565,7 @@ if (!isDev && cluster.isMaster) {
         });
         let data = JSON.stringify({
             presaveid: uuidv4(),
-            albumUPC: "886447779774",
+            albumUPC: "USQX91700278",
             userToken: req.body.userToken
         });
         axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});

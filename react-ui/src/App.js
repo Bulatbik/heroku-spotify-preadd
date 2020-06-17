@@ -175,7 +175,6 @@ class App extends Component {
             axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key})
                 .then(response => console.log(response))
                 .catch(err => console.log(err));
-
          //   console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
         });
 

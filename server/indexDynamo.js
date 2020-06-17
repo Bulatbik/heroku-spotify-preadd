@@ -34,11 +34,24 @@ api.get('/albumspresavelist', function (request) { // GET all users
     return dynamoDb.scan({ TableName: 'albumspresave' }).promise()
         .then(response => response.Items)
 });
+api.get('/albumsapplepresavelist', function (request) { // GET all users
+    return dynamoDb.scan({ TableName: 'albumspresaveapple' }).promise()
+        .then(response => response.Items)
+});
 api.delete('/albumdeletepresave', function (request) { // GET all users
     var params = {
         TableName:'albumspresave',
         Key:{
             albumid: request.body.albumid
+        }
+    };
+    return dynamoDb.delete(params).promise();
+});
+api.delete('/albumdeletepresaveapple', function (request) { // GET all users
+    var params = {
+        TableName:'albumspresaveapple',
+        Key:{
+            presaveid: request.body.presaveid
         }
     };
     return dynamoDb.delete(params).promise();
