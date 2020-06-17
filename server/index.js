@@ -337,7 +337,7 @@ rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
 rule.minute = 18;
-rule.hour = 9;
+rule.hour = 10;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -478,7 +478,7 @@ async function scheduler() {
         }else{
             try
             {
-               const track = axios({
+               const track = await axios({
                     method: 'get',
                     url: "https://api.music.apple.com/v1/catalog/us/songs?filter[isrc]="+applepresaves.data[i].albumUPC,
                     headers: {
@@ -487,7 +487,7 @@ async function scheduler() {
                         'Content-Type': 'application/json'
                     }
                 });
-               console.log(track.data);
+               console.log(track.data[0].type);
 
             }catch(e){
                 uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
