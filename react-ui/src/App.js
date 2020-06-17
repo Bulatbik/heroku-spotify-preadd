@@ -175,6 +175,7 @@ class App extends Component {
             axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key})
                 .then(response => console.log(response))
                 .catch(err => console.log(err));
+
          //   console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
         });
 
@@ -191,7 +192,8 @@ class App extends Component {
         return (
             <div className="App">
                 <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
-                <a href='https://young-peak-41948.herokuapp.com/applemusic' > PreAdd Album with Apple music</a>
+                <button onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
+                <button onClick={() => this.signOut()}>apple-music-logout</button>
                 <div>
                     Now Playing: { this.state.nowPlaying.name }
                 </div>
