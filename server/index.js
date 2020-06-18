@@ -336,7 +336,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 30;
+rule.minute = 39;
 rule.hour = 6;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -492,7 +492,7 @@ async function scheduler() {
            //     console.log(applepresaves.data[i].albumUPC+": ISRC code");
              //   console.log(jwtToken+": jwtToken");
               // console.dir(track.data[0]);
-               console.dir(track.data.id)
+               console.dir(JSON.parse(track.data)[0])
             }catch(e){
                 uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
                 console.log("option 4"+ e);
