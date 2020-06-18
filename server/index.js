@@ -336,8 +336,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 11;
-rule.hour = 7;
+rule.minute = 29;
+rule.hour = 9;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -488,10 +488,20 @@ async function scheduler() {
                         'Content-Type': 'application/json'
                     }
                 });
-
-               console.dir(track.data.data[0].relationships.albums.data[0].id);
-
-           //     console.dir(JSON.parse(JSON.stringify(track.data)).data[0].id)
+               var albumAppleID = track.data.data[0].relationships.albums.data[0].id;
+                axios({
+                    method: 'post',
+                    url: "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID,
+                    headers: {
+                        'Music-User-Token': applepresaves.data[i].userToken,
+                        Authorization: 'Bearer ' + jwtToken,
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+                let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
+              console.log("deleteResponse: "+deleteResponse)
+                //     console.dir(JSON.parse(JSON.stringify(track.data)).data[0].id)
               // console.dir(JSON.parse(JSON.stringify(track.data))[0])
             }catch(e){
                 uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
@@ -559,7 +569,7 @@ if (!isDev && cluster.isMaster) {
             }
         });
         console.log(jwtToken);
-        axios({
+      /*  axios({
             method: 'post',
             url: "https://api.music.apple.com/v1/me/library/?ids[albums]=1106659171",
             headers: {
@@ -568,7 +578,7 @@ if (!isDev && cluster.isMaster) {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             }
-        });
+        });*/
         let data = JSON.stringify({
             presaveid: uuidv4(),
             albumUPC: "NLH851300057",
