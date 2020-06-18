@@ -586,7 +586,7 @@ if (!isDev && cluster.isMaster) {
         });*/
         let data = JSON.stringify({
             presaveid: uuidv4(),
-            albumUPC: "NLH851300057",
+            albumUPC: "USCJY1750003",
             userToken: req.body.userToken
         });
         axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
