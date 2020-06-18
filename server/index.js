@@ -336,8 +336,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 59;
-rule.hour = 9;
+rule.minute = 5;
+rule.hour = 14;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -479,7 +479,7 @@ async function scheduler() {
         }else{
             try
             {
-               const track = await axios({
+            /*   const track = await axios({
                     method: 'get',
                     url: "https://api.music.apple.com/v1/catalog/us/songs?filter[isrc]="+applepresaves.data[i].albumUPC,
                     headers: {
@@ -509,7 +509,16 @@ async function scheduler() {
                 let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
               console.log("deleteResponse: "+deleteResponse)
                 //     console.dir(JSON.parse(JSON.stringify(track.data)).data[0].id)
-              // console.dir(JSON.parse(JSON.stringify(track.data))[0])
+              // console.dir(JSON.parse(JSON.stringify(track.data))[0])*/
+               const albumInfo = await axios({
+                    method: 'get',
+                    url: "https://itunes.apple.com/lookup?upc="+applepresaves.data[i].albumUPC,
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+               console.dir(albumInfo.data)
             }catch(e){
                 uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
                 console.log("option 4"+ e);
@@ -588,7 +597,7 @@ if (!isDev && cluster.isMaster) {
         });*/
         let data = JSON.stringify({
             presaveid: uuidv4(),
-            albumUPC: "USCJY1750003",
+            albumUPC: "886447779774",
             userToken: req.body.userToken
         });
         axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
