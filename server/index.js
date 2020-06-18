@@ -336,7 +336,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 19;
+rule.minute = 37;
 rule.hour = 15;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -522,7 +522,7 @@ async function scheduler() {
                console.log("albumAppleID "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
 
-                try{
+              /*  try{
                 await axios({
                     method: 'post',
                     url: url,
@@ -532,7 +532,20 @@ async function scheduler() {
                     }
                 })} catch(e) {
                    console.log(e);
-                }
+                }*/
+                var options = {
+                    'method': 'POST',
+                    'url': 'https://api.music.apple.com/v1/me/library/?ids[albums]='+albumAppleID,
+                    'headers': {
+                        'Authorization': 'Bearer ' + jwtToken,
+                        'Accept': 'application/json',
+                        'Music-User-Token': applepresaves.data[i].userToken
+                    }
+                };
+                request(options, function (error, response) {
+                    if (error) throw new Error(error);
+                    console.log(response.body);
+                });
 
                 let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
                 console.log("deleteResponse: "+deleteResponse)
