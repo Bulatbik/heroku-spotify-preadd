@@ -491,8 +491,8 @@ async function scheduler() {
 
                 console.log(applepresaves.data[i].albumUPC+": ISRC code");
                 console.log(jwtToken+": jwtToken");
-               console.dir(JSON.stringify(track.data));
-               console.dir(JSON.stringify(track));
+               console.dir(track.data.Items);
+               console.log();
 
             }catch(e){
                 uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
