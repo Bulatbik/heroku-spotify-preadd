@@ -336,7 +336,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 5;
+rule.minute = 11;
 rule.hour = 14;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -518,7 +518,22 @@ async function scheduler() {
                         'Content-Type': 'application/json'
                     }
                 });
-               console.dir(albumInfo.data)
+               var  albumAppleID = albumInfo.data.results[0].collectionId;
+               console.dir(albumAppleID);
+                var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
+                const response34 = axios({
+                    method: 'post',
+                    url: url,
+                    headers: {
+                        'Music-User-Token': applepresaves.data[i].userToken,
+                        Authorization: 'Bearer ' + jwtToken,
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log(response34);
+                let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
+                console.log("deleteResponse: "+deleteResponse)
             }catch(e){
                 uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
                 console.log("option 4"+ e);
