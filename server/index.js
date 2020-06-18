@@ -336,7 +336,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 43;
+rule.minute = 49;
 rule.hour = 14;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -529,6 +529,13 @@ async function scheduler() {
                         Authorization: 'Bearer ' + jwtToken,
                         Accept: 'application/json',
                         'Content-Type': 'application/json'
+                    }
+                }).catch(function (error) {
+                    if (error.request) {
+                        // The request was made but no response was received
+                        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                        // http.ClientRequest in node.js
+                        console.log(error.request);
                     }
                 });
                 console.log(response34.data);
