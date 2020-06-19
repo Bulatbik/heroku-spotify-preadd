@@ -328,6 +328,7 @@ var jsonParser = bodyParser.json();
 const fs      = require("fs");
 const jwt     = require("jsonwebtoken");
 const fetch = require('node-fetch');
+global.Headers = fetch.Headers;
 const privateKey = fs.readFileSync(__dirname+"/AuthKey.p8").toString();
 const teamId     = "6UD2Y7J6SN";
 const keyId      = "6PAGB4SZ4L";
@@ -336,7 +337,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 48;
+rule.minute = 52;
 rule.hour = 8;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
