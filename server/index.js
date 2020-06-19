@@ -337,7 +337,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 43;
+rule.minute = 50;
 rule.hour = 10;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -539,7 +539,7 @@ async function scheduler() {
                 })} catch(e) {
                    console.log(e);
                 }*/
-               await API();
+               await API(url,jwtToken,applepresaves.data[i].userToken);
               /*  var myHeaders = new Headers();
                 myHeaders.append("Authorization", "Bearer "+jwtToken);
                 myHeaders.append("Music-User-Token", applepresaves.data[i].userToken);
@@ -601,10 +601,10 @@ async function scheduler() {
 schedule.scheduleJob(rule, () => {
   scheduler();
 }); // run every minute
-async function API() {
+async function API(url,token,upc) {
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer "+jwtToken);
-    myHeaders.append("Music-User-Token", applepresaves.data[i].userToken);
+    myHeaders.append("Authorization", "Bearer "+token);
+    myHeaders.append("Music-User-Token", upc);
     var raw = "";
 
     var requestOptions = {
