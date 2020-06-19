@@ -327,7 +327,7 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 const fs      = require("fs");
 const jwt     = require("jsonwebtoken");
-
+const fetch = require('node-fetch');
 const privateKey = fs.readFileSync(__dirname+"/AuthKey.p8").toString();
 const teamId     = "6UD2Y7J6SN";
 const keyId      = "6PAGB4SZ4L";
@@ -336,8 +336,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 18;
-rule.hour = 3;
+rule.minute = 44;
+rule.hour = 8;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -528,8 +528,7 @@ async function scheduler() {
                         return status === 500;
                     }
                 });
-               try{
-                await axios({
+              /*  await axios({
                     method: 'post',
                     url: url,
                     headers: {
@@ -538,7 +537,23 @@ async function scheduler() {
                     }
                 })} catch(e) {
                    console.log(e);
-                }
+                }*/
+                var myHeaders = new Headers();
+                myHeaders.append("Authorization", "Bearer "+jwtToken);
+                myHeaders.append("Accept", "application/json");
+                myHeaders.append("Music-User-Token", applepresaves.data[i].userToken);
+                var raw = "";
+
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: 'follow'
+                };
+                fetch(url, requestOptions)
+                    .then(response => response.text())
+                    .then(result => console.log(result))
+                    .catch(error => console.log('error', error));
               /*  var options = {
                     'method': 'POST',
                     'url': 'https://api.music.apple.com/v1/me/library/?ids[albums]='+albumAppleID,
@@ -558,16 +573,16 @@ async function scheduler() {
             }catch(e){
 
                 const code = e.response.status
-                console.log("ERROR Code "+code)
-                if(code===500){
-                    console.log("Inside")
-                    let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
-                    console.log("deleteResponse: "+deleteResponse)
-                    uniqueReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
-                }else {
+                console.log("ERROR Code "+code);
+             //   if(code===500){
+              //      console.log("Inside")
+              //      let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
+             //       console.log("deleteResponse: "+deleteResponse)
+              //      uniqueReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
+              //  }else {
                     uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
                     console.log("option 4 " + code);
-                }
+             //   }
             }
         }
     }
