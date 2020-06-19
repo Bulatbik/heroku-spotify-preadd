@@ -336,7 +336,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 44;
+rule.minute = 48;
 rule.hour = 8;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -572,8 +572,6 @@ async function scheduler() {
                 console.log("deleteResponse: "+deleteResponse)
             }catch(e){
 
-                const code = e.response.status
-                console.log("ERROR Code "+code);
              //   if(code===500){
               //      console.log("Inside")
               //      let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
@@ -581,7 +579,7 @@ async function scheduler() {
               //      uniqueReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
               //  }else {
                     uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
-                    console.log("option 4 " + code);
+                    console.log("option 4 " + e);
              //   }
             }
         }
