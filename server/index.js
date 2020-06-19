@@ -337,7 +337,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 27;
+rule.minute = 43;
 rule.hour = 10;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -539,16 +539,15 @@ async function scheduler() {
                 })} catch(e) {
                    console.log(e);
                 }*/
-                var myHeaders = new Headers();
+               await API();
+              /*  var myHeaders = new Headers();
                 myHeaders.append("Authorization", "Bearer "+jwtToken);
                 myHeaders.append("Music-User-Token", applepresaves.data[i].userToken);
                 var raw = "";
 
                 var requestOptions = {
                     method: 'POST',
-                    headers: myHeaders,
-                    body: raw,
-                    redirect: 'follow'
+                    headers: myHeaders
                 };
                 await fetch(url, requestOptions).then(
                     function(response) {
@@ -566,7 +565,7 @@ async function scheduler() {
                 )
                     .catch(function(err) {
                         console.log('Fetch Error :-S', err);
-                    });
+                    });*/
 
               /*  var options = {
                     'method': 'POST',
@@ -602,7 +601,34 @@ async function scheduler() {
 schedule.scheduleJob(rule, () => {
   scheduler();
 }); // run every minute
+async function API() {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer "+jwtToken);
+    myHeaders.append("Music-User-Token", applepresaves.data[i].userToken);
+    var raw = "";
 
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders
+    };
+    await fetch(url, requestOptions).then(
+        function(response) {
+            if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                return;
+            }
+
+            // Examine the text in the response
+            response.json().then(function(data) {
+                console.log(data);
+            });
+        }
+    )
+        .catch(function(err) {
+            console.log('Fetch Error :-S', err);
+        });
+}
 if (!isDev && cluster.isMaster) {
   console.error(`Node cluster master ${process.pid} is running`)
   // Fork workers.
