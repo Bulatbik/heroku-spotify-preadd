@@ -337,8 +337,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 57;
-rule.hour = 10;
+rule.minute = 32;
+rule.hour = 11;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -478,8 +478,6 @@ async function scheduler() {
         }else if(uniqueNotReleasedAppleISRC.includes(applepresaves.data[i].albumUPC)){
             console.log("Option 2");
         }else{
-            try
-            {
             /*   const track = await axios({
                     method: 'get',
                     url: "https://api.music.apple.com/v1/catalog/us/songs?filter[isrc]="+applepresaves.data[i].albumUPC,
@@ -511,24 +509,33 @@ async function scheduler() {
               console.log("deleteResponse: "+deleteResponse)
                 //     console.dir(JSON.parse(JSON.stringify(track.data)).data[0].id)
               // console.dir(JSON.parse(JSON.stringify(track.data))[0])*/
-               const albumInfo = await axios({
-                    method: 'get',
-                    url: "https://itunes.apple.com/lookup?upc="+applepresaves.data[i].albumUPC,
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json'
-                    }
-                });
+            var albumInfo;
+              try {
+                   albumInfo = await axios({
+                      method: 'get',
+                      url: "https://itunes.apple.com/lookup?upc=" + applepresaves.data[i].albumUPC,
+                      headers: {
+                          Accept: 'application/json',
+                          'Content-Type': 'application/json'
+                      }
+                  });
+              }catch(e){
+
+                  //   if(code===500){
+                  //      console.log("Inside")
+                  //      let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
+                  //       console.log("deleteResponse: "+deleteResponse)
+                  //      uniqueReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
+                  //  }else {
+                  uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
+                  return
+                  console.log("option 4 " + e);
+                  //   }
+              }
                var  albumAppleID = albumInfo.data.results[0].collectionId;
                console.log("albumAppleID "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
 
-                var instance = axios.create({
-
-                    validateStatus: function (status) {
-                        return status === 500;
-                    }
-                });
               /*  await axios({
                     method: 'post',
                     url: url,
@@ -583,18 +590,6 @@ async function scheduler() {
 
       //          let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
        //         console.log("deleteResponse: "+deleteResponse)
-            }catch(e){
-
-             //   if(code===500){
-              //      console.log("Inside")
-              //      let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
-             //       console.log("deleteResponse: "+deleteResponse)
-              //      uniqueReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
-              //  }else {
-                    uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
-                    console.log("option 4 " + e);
-             //   }
-            }
         }
     }
 }
@@ -811,6 +806,7 @@ if (!isDev && cluster.isMaster) {
       },
       json: true
     };
+
 
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
