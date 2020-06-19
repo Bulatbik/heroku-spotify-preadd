@@ -337,7 +337,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 8;
+rule.minute = 27;
 rule.hour = 10;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -550,7 +550,23 @@ async function scheduler() {
                     body: raw,
                     redirect: 'follow'
                 };
-                await fetch(url, requestOptions);
+                await fetch(url, requestOptions).then(
+                    function(response) {
+                        if (response.status !== 200) {
+                            console.log('Looks like there was a problem. Status Code: ' +
+                                response.status);
+                            return;
+                        }
+
+                        // Examine the text in the response
+                        response.json().then(function(data) {
+                            console.log(data);
+                        });
+                    }
+                )
+                    .catch(function(err) {
+                        console.log('Fetch Error :-S', err);
+                    });
 
               /*  var options = {
                     'method': 'POST',
