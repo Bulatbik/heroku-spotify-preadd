@@ -337,7 +337,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 6;
+rule.minute = 12;
 rule.hour = 12;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -587,7 +587,7 @@ async function scheduler() {
                     if (error) throw new Error(error);
                     console.log(response.body);
                 });*/
-
+              console.log(applepresaves.data[i].presaveid);
                let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
                 console.log("deleteResponse: "+deleteResponse)
         }
