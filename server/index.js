@@ -535,8 +535,6 @@ async function scheduler() {
                     headers: {
                         'Music-User-Token': applepresaves.data[i].userToken,
                         Authorization: 'Bearer ' + jwtToken
-                    },  validateStatus: function (status) {
-                        return status === 500; // Reject only if the status code is greater than or equal to 500
                     }
                 })} catch(e) {
                    console.log(e);
@@ -560,7 +558,9 @@ async function scheduler() {
             }catch(e){
 
                 const code = e.response.status
+                console.log("ERROR Code "+code)
                 if(code===500){
+                    console.log("Inside")
                     let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
                     console.log("deleteResponse: "+deleteResponse)
                     uniqueReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
