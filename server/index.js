@@ -336,8 +336,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 37;
-rule.hour = 15;
+rule.minute = 17;
+rule.hour = 2;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -522,18 +522,26 @@ async function scheduler() {
                console.log("albumAppleID "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
 
-              /*  try{
+                var instance = axios.create({
+
+                    validateStatus: function (status) {
+                        return status < 600;
+                    }
+                });
+               try{
                 await axios({
                     method: 'post',
                     url: url,
                     headers: {
                         'Music-User-Token': applepresaves.data[i].userToken,
                         Authorization: 'Bearer ' + jwtToken
+                    },  validateStatus: function (status) {
+                        return status < 600; // Reject only if the status code is greater than or equal to 500
                     }
                 })} catch(e) {
                    console.log(e);
-                }*/
-                var options = {
+                }
+              /*  var options = {
                     'method': 'POST',
                     'url': 'https://api.music.apple.com/v1/me/library/?ids[albums]='+albumAppleID,
                     'headers': {
@@ -545,11 +553,13 @@ async function scheduler() {
                 request(options, function (error, response) {
                     if (error) throw new Error(error);
                     console.log(response.body);
-                });
+                });*/
 
                 let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
                 console.log("deleteResponse: "+deleteResponse)
             }catch(e){
+
+                if(e.http_code)
                 uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
                 console.log("option 4"+ e);
             }
