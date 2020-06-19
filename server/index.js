@@ -336,7 +336,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 17;
+rule.minute = 29;
 rule.hour = 2;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -525,7 +525,7 @@ async function scheduler() {
                 var instance = axios.create({
 
                     validateStatus: function (status) {
-                        return status < 600;
+                        return status === 500;
                     }
                 });
                try{
@@ -536,7 +536,7 @@ async function scheduler() {
                         'Music-User-Token': applepresaves.data[i].userToken,
                         Authorization: 'Bearer ' + jwtToken
                     },  validateStatus: function (status) {
-                        return status < 600; // Reject only if the status code is greater than or equal to 500
+                        return status === 500; // Reject only if the status code is greater than or equal to 500
                     }
                 })} catch(e) {
                    console.log(e);
