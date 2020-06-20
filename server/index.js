@@ -337,7 +337,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 28;
+rule.minute = 34;
 rule.hour = 6;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -477,7 +477,7 @@ async function scheduler() {
 
             console.log("Option 1");
             const isLargeNumber = (element) => element === applepresaves.data[i].albumUPC;
-            var index2 = uniqueReleasedUPDS.findIndex(isLargeNumber);
+            var index2 = uniqueReleasedAppleUPDs.findIndex(isLargeNumber);
             var albumAppleID = uniqueReleasedAppleIDs[index2];
             var url2 = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
             await API(url2,jwtToken,applepresaves.data[i].userToken);
