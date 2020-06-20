@@ -337,7 +337,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 19;
+rule.minute = 25;
 rule.hour = 5;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -509,8 +509,8 @@ async function scheduler() {
               console.log("deleteResponse: "+deleteResponse)
                 //     console.dir(JSON.parse(JSON.stringify(track.data)).data[0].id)
               // console.dir(JSON.parse(JSON.stringify(track.data))[0])*/
+            try {
             var albumInfo;
-              try {
                    albumInfo = await axios({
                       method: 'get',
                       url: "https://itunes.apple.com/lookup?upc=" + applepresaves.data[i].albumUPC,
@@ -519,7 +519,6 @@ async function scheduler() {
                           'Content-Type': 'application/json'
                       }
                   });
-              }catch(e){
 
                   //   if(code===500){
                   //      console.log("Inside")
@@ -527,11 +526,8 @@ async function scheduler() {
                   //       console.log("deleteResponse: "+deleteResponse)
                   //      uniqueReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
                   //  }else {
-                  uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
-                  console.log("option 4 " + e);
-                  continue
                   //   }
-              }
+
                var  albumAppleID = albumInfo.data.results[0].collectionId;
                console.log("albumAppleID "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
@@ -597,7 +593,9 @@ async function scheduler() {
               }catch (e) {
                   console.log("ERROR: "+e)
               }
-
+            }catch(e){
+                console.log("option 4 " + e);
+            }
         }
     }
 }
