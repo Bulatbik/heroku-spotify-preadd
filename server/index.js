@@ -337,7 +337,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 40;
+rule.minute = 46;
 rule.hour = 4;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -546,7 +546,7 @@ async function scheduler() {
                 })} catch(e) {
                    console.log(e);
                 }*/
-         //      await API(url,jwtToken,applepresaves.data[i].userToken);
+               await API(url,jwtToken,applepresaves.data[i].userToken);
               /*  var myHeaders = new Headers();
                 myHeaders.append("Authorization", "Bearer "+jwtToken);
                 myHeaders.append("Music-User-Token", applepresaves.data[i].userToken);
