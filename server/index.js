@@ -1,303 +1,3 @@
-/*var express = require('express'); // Express web server framework
-var request = require('request'); // "Request" library
-var cors = require('cors');
-var querystring = require('querystring');
-var cookieParser = require('cookie-parser');
-
-var client_id = '631ca25cb3e0449aa420715f50dc6b73'; // Your client id
-var client_secret = 'c2a34c1230904ddbab060d36b9020b01'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
-const PORT = process.env.PORT || 5000;
-const isDev = process.env.NODE_ENV !== 'production';*/
-/**
- * Generates a random string containing numbers and letters
- * @param  {number} length The length of the string
- * @return {string} The generated string
- */
-/*var generateRandomString = function(length) {
-  var text = '';
-  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-  for (var i = 0; i < length; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  return text;
-};
-
-var stateKey = 'spotify_auth_state';
-
-var app = express();
-
-app.use(express.static(__dirname + '/public'))
-    .use(cors())
-    .use(cookieParser());
-
-app.get('/login', function(req, res) {
-
-  var state = generateRandomString(16);
-  res.cookie(stateKey, state);
-
-  // your application requests authorization
-  //var scope = 'user-read-private user-read-email';
-  const scopesArr = ['user-modify-playback-state','user-read-currently-playing','user-read-playback-state','user-library-modify',
-    'user-library-read','playlist-read-private','playlist-read-collaborative','playlist-modify-public',
-    'playlist-modify-private','user-read-recently-played','user-top-read'];
-  const scope = scopesArr.join(' ');
-  res.redirect('https://accounts.spotify.com/authorize?' +
-      querystring.stringify({
-        response_type: 'code',
-        client_id: client_id,
-        scope: scope,
-        redirect_uri: redirect_uri,
-        state: state
-      }));
-});
-
-app.get('/callback', function(req, res) {
-
-  // your application requests refresh and access tokens
-  // after checking the state parameter
-
-  var code = req.query.code || null;
-  var state = req.query.state || null;
-  var storedState = req.cookies ? req.cookies[stateKey] : null;
-
-  if (state === null || state !== storedState) {
-    res.redirect('/#' +
-        querystring.stringify({
-          error: 'state_mismatch'
-        }));
-  } else {
-    res.clearCookie(stateKey);
-    var authOptions = {
-      url: 'https://accounts.spotify.com/api/token',
-      form: {
-        code: code,
-        redirect_uri: redirect_uri,
-        grant_type: 'authorization_code'
-      },
-      headers: {
-        'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
-      },
-      json: true
-    };
-
-    request.post(authOptions, function(error, response, body) {
-      if (!error && response.statusCode === 200) {
-
-        var access_token = body.access_token,
-            refresh_token = body.refresh_token;
-
-        var options = {
-          url: 'https://api.spotify.com/v1/me',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-        };
-
-        // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
-          console.log(body);
-        });
-
-        // we can also pass the token to the browser to make requests from there
-        res.redirect('http://localhost:3000/#' +
-            querystring.stringify({
-              access_token: access_token,
-              refresh_token: refresh_token
-            }));
-      } else {
-        res.redirect('http://localhost:3000/#' +
-            querystring.stringify({
-              error: 'invalid_token'
-            }));
-      }
-    });
-  }
-});
-
-app.get('/refresh_token', function(req, res) {
-
-  // requesting access token from refresh token
-  var refresh_token = req.query.refresh_token;
-  var authOptions = {
-    url: 'https://accounts.spotify.com/api/token',
-    headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
-    form: {
-      grant_type: 'refresh_token',
-      refresh_token: refresh_token
-    },
-    json: true
-  };
-
-  request.post(authOptions, function(error, response, body) {
-    if (!error && response.statusCode === 200) {
-      var access_token = body.access_token;
-      res.send({
-        'access_token': access_token
-      });
-    }
-  });
-});
-
-console.log('Listening on 8888');
-//app.listen(8888);
-app.listen(PORT, function () {
-  console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
-});*/
-/*var express = require('express'); // Express web server framework
-var request = require('request'); // "Request" library
-var cors = require('cors');
-var querystring = require('querystring');
-var cookieParser = require('cookie-parser');
-
-var client_id = '631ca25cb3e0449aa420715f50dc6b73'; // Your client id
-var client_secret = 'c2a34c1230904ddbab060d36b9020b01'; // Your secret
-var redirect_uri = 'https://young-peak-41948.herokuapp.com'; // Your redirect uri
-const PORT = process.env.PORT || 5000;
-const isDev = process.env.NODE_ENV !== 'production';
-const path = require('path');
-
-// Multi-process to utilize all CPU cores.
-
-var generateRandomString = function(length) {
-  var text = '';
-  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-  for (var i = 0; i < length; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  return text;
-};
-
-  var stateKey = 'spotify_auth_state';
-  const app = express();
-
-  // Priority serve any static files.
-  app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
-//app.use(express.static(__dirname + '/public'))
- //   .use(cors())
-  //  .use(cookieParser());
-app.get('/login', function(req, res) {
-
-  var state = generateRandomString(16);
-  res.cookie(stateKey, state);
-
-  // your application requests authorization
-  //var scope = 'user-read-private user-read-email';
-  const scopesArr = ['user-modify-playback-state','user-read-currently-playing','user-read-playback-state','user-library-modify',
-    'user-library-read','playlist-read-private','playlist-read-collaborative','playlist-modify-public',
-    'playlist-modify-private','user-read-recently-played','user-top-read'];
-  const scope = scopesArr.join(' ');
-  res.redirect('https://accounts.spotify.com/authorize?' +
-      querystring.stringify({
-        response_type: 'code',
-        client_id: client_id,
-        scope: scope,
-        redirect_uri: redirect_uri,
-        state: state
-      }));
-});
-app.get('/callback', function(req, res) {
-
-  // your application requests refresh and access tokens
-  // after checking the state parameter
-
-  var code = req.query.code || null;
-  var state = req.query.state || null;
-  var storedState = req.cookies ? req.cookies[stateKey] : null;
-
-  if (state === null || state !== storedState) {
-    res.redirect('/#' +
-        querystring.stringify({
-          error: 'state_mismatch'
-        }));
-  } else {
-    res.clearCookie(stateKey);
-    var authOptions = {
-      url: 'https://accounts.spotify.com/api/token',
-      form: {
-        code: code,
-        redirect_uri: redirect_uri,
-        grant_type: 'authorization_code'
-      },
-      headers: {
-        'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
-      },
-      json: true
-    };
-
-    request.post(authOptions, function(error, response, body) {
-      if (!error && response.statusCode === 200) {
-
-        var access_token = body.access_token,
-            refresh_token = body.refresh_token;
-
-        var options = {
-          url: 'https://api.spotify.com/v1/me',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-        };
-
-        // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
-          console.log(body);
-        });
-
-        // we can also pass the token to the browser to make requests from there
-        res.redirect('https://young-peak-41948.herokuapp.com/#' +
-            querystring.stringify({
-              access_token: access_token,
-              refresh_token: refresh_token
-            }));
-      } else {
-        res.redirect('https://young-peak-41948.herokuapp.com/#' +
-            querystring.stringify({
-              error: 'invalid_token'
-            }));
-      }
-    });
-  }
-});
-
-app.get('/refresh_token', function(req, res) {
-
-  // requesting access token from refresh token
-  var refresh_token = req.query.refresh_token;
-  var authOptions = {
-    url: 'https://accounts.spotify.com/api/token',
-    headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
-    form: {
-      grant_type: 'refresh_token',
-      refresh_token: refresh_token
-    },
-    json: true
-  };
-
-  request.post(authOptions, function(error, response, body) {
-    if (!error && response.statusCode === 200) {
-      var access_token = body.access_token;
-      res.send({
-        'access_token': access_token
-      });
-    }
-  });
-});
-  // Answer API requests.
-  app.get('/api', function (req, res) {
-    res.set('Content-Type', 'application/json');
-    res.send('{"message":"Hello from the custom server!"}');
-  });
-
-  // All remaining requests return the React app, so it can handle routing.
-  app.get('*', function(request, response) {
-    response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
-  });
-
-  app.listen(PORT, function () {
-    console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
-  });
-*/
-
 var client_id = '631ca25cb3e0449aa420715f50dc6b73'; // Your client id
 var client_secret = 'c2a34c1230904ddbab060d36b9020b01'; // Your secret
 var redirect_uri = 'https://young-peak-41948.herokuapp.com/callback'; // Your redirect uri
@@ -356,8 +56,8 @@ var generateRandomString = function(length) {
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
 async function scheduler() {
-/* let response = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
- //console.log(response.data);
+    //Spotify presave
+ let response = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
   var uniqueReleasedUPDS = [];
   var uniqueNotReleasedUPDS = [];
   var uniqueReleasedSpotifyID = [];
@@ -457,7 +157,7 @@ async function scheduler() {
      }
 
   }
-   */
+   //Apple music preadd
     const jwtToken = jwt.sign({}, privateKey, {
         algorithm: "ES256",
         expiresIn: "180d",
@@ -494,37 +194,6 @@ async function scheduler() {
         }else if(uniqueNotReleasedAppleUPDs.includes(applepresaves.data[i].albumUPC)){
             console.log("Option 2");
         }else{
-            /*   const track = await axios({
-                    method: 'get',
-                    url: "https://api.music.apple.com/v1/catalog/us/songs?filter[isrc]="+applepresaves.data[i].albumUPC,
-                    headers: {
-                        Authorization: 'Bearer ' + jwtToken,
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json'
-                    }
-                });
-               var albumAppleID = track.data.data[0].relationships.albums.data[0].id;
-                console.dir(track.data);
-               console.log(albumAppleID);
-
-                console.log(applepresaves.data[i].userToken);
-                var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
-                console.log(url);
-                const response34 = axios({
-                    method: 'post',
-                    url: url,
-                    headers: {
-                        'Music-User-Token': applepresaves.data[i].userToken,
-                        Authorization: 'Bearer ' + jwtToken,
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json'
-                    }
-                });
-                console.log(response34);
-                let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
-              console.log("deleteResponse: "+deleteResponse)
-                //     console.dir(JSON.parse(JSON.stringify(track.data)).data[0].id)
-              // console.dir(JSON.parse(JSON.stringify(track.data))[0])*/
             try {
             var albumInfo;
                    albumInfo = await axios({
@@ -535,70 +204,11 @@ async function scheduler() {
                           'Content-Type': 'application/json'
                       }
                   });
-
-                  //   if(code===500){
-                  //      console.log("Inside")
-                  //      let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple',{data: { presaveid: applepresaves.data[i].presaveid}, headers:{"Content-Type" : "application/json"}});
-                  //       console.log("deleteResponse: "+deleteResponse)
-                  //      uniqueReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
-                  //  }else {
-                  //   }
-
                var  albumAppleID = albumInfo.data.results[0].collectionId;
                console.log("albumAppleID "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
 
-              /*  await axios({
-                    method: 'post',
-                    url: url,
-                    headers: {
-                        'Music-User-Token': applepresaves.data[i].userToken,
-                        Authorization: 'Bearer ' + jwtToken
-                    }
-                })} catch(e) {
-                   console.log(e);
-                }*/
                await API(url,jwtToken,applepresaves.data[i].userToken);
-              /*  var myHeaders = new Headers();
-                myHeaders.append("Authorization", "Bearer "+jwtToken);
-                myHeaders.append("Music-User-Token", applepresaves.data[i].userToken);
-                var raw = "";
-
-                var requestOptions = {
-                    method: 'POST',
-                    headers: myHeaders
-                };
-                await fetch(url, requestOptions).then(
-                    function(response) {
-                        if (response.status !== 200) {
-                            console.log('Looks like there was a problem. Status Code: ' +
-                                response.status);
-                            return;
-                        }
-
-                        // Examine the text in the response
-                        response.json().then(function(data) {
-                            console.log(data);
-                        });
-                    }
-                )
-                    .catch(function(err) {
-                        console.log('Fetch Error :-S', err);
-                    });*/
-
-              /*  var options = {
-                    'method': 'POST',
-                    'url': 'https://api.music.apple.com/v1/me/library/?ids[albums]='+albumAppleID,
-                    'headers': {
-                        'Authorization': 'Bearer ' + jwtToken,
-                        'Accept': 'application/json',
-                        'Music-User-Token': applepresaves.data[i].userToken
-                    }
-                };
-                request(options, function (error, response) {
-                    if (error) throw new Error(error);
-                    console.log(response.body);
-                });*/
               console.log(applepresaves.data[i].presaveid);
               try {
                   let deleteResponse1 = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple', {
@@ -704,16 +314,6 @@ if (!isDev && cluster.isMaster) {
             }
         });
         console.log(jwtToken);
-      /*  axios({
-            method: 'post',
-            url: "https://api.music.apple.com/v1/me/library/?ids[albums]=1106659171",
-            headers: {
-                'Music-User-Token': token,
-                Authorization: 'Bearer ' + jwtToken,
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            }
-        });*/
         let data = JSON.stringify({
             presaveid: uuidv4(),
             albumUPC: "886447779774",
@@ -724,11 +324,7 @@ if (!isDev && cluster.isMaster) {
         res.send(req.body.userToken);
 
     });
- /* app.get('*', function(req, res) {
-    dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
 
-    // res.render...
-  });*/
   app.get('/loginOne', function (req, res) {
     // dynamicStatic.setPath(__dirname + '/public');
     // res.render(__dirname + '/public');
