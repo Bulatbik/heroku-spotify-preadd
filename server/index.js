@@ -337,8 +337,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 46;
-rule.hour = 4;
+rule.minute = 19;
+rule.hour = 5;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -528,8 +528,8 @@ async function scheduler() {
                   //      uniqueReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
                   //  }else {
                   uniqueNotReleasedAppleISRC.push(applepresaves.data[i].albumUPC);
-                  return
                   console.log("option 4 " + e);
+                  continue
                   //   }
               }
                var  albumAppleID = albumInfo.data.results[0].collectionId;
