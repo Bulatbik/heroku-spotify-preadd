@@ -337,8 +337,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 25;
-rule.hour = 5;
+rule.minute = 10;
+rule.hour = 6;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -356,7 +356,7 @@ var generateRandomString = function(length) {
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
 async function scheduler() {
- let response = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
+/* let response = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
  //console.log(response.data);
   var uniqueReleasedUPDS = [];
   var uniqueNotReleasedUPDS = [];
@@ -457,6 +457,7 @@ async function scheduler() {
      }
 
   }
+   */
     const jwtToken = jwt.sign({}, privateKey, {
         algorithm: "ES256",
         expiresIn: "180d",
@@ -467,15 +468,30 @@ async function scheduler() {
         }
     });
     let applepresaves = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumsapplepresavelist',{headers:{"Content-Type" : "application/json"}});
-    var uniqueReleasedAppleISRC = [];
-    var uniqueNotReleasedAppleISRC = [];
-    var uniqueReleasedApplePreaddIDs = [];
+    var uniqueReleasedAppleUPDs = [];
+    var uniqueNotReleasedAppleUPDs = [];
+    var uniqueReleasedAppleIDs = [];
     console.log("Length:  "+applepresaves.data.length)
     for(var i = 0; i<applepresaves.data.length;i++){
-        if(uniqueReleasedAppleISRC.includes(applepresaves.data[i].albumUPC)) {
+        if(uniqueReleasedAppleUPDs.includes(applepresaves.data[i].albumUPC)) {
 
             console.log("Option 1");
-        }else if(uniqueNotReleasedAppleISRC.includes(applepresaves.data[i].albumUPC)){
+            const isLargeNumber = (element) => element === applepresaves.data[i].albumUPC;
+            var index2 = uniqueReleasedUPDS.findIndex(isLargeNumber);
+            var albumAppleID = uniqueReleasedAppleIDs[index2];
+            var url2 = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
+            await API(url2,jwtToken,applepresaves.data[i].userToken);
+            try {
+                let deleteResponse1 = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple', {
+                    data: {presaveid: applepresaves.data[i].presaveid},
+                    headers: {"Content-Type": "application/json"}
+                });
+                console.log("deleteResponse: "+deleteResponse1);
+            }catch (e) {
+                console.log("ERROR: "+e)
+            }
+
+        }else if(uniqueNotReleasedAppleUPDs.includes(applepresaves.data[i].albumUPC)){
             console.log("Option 2");
         }else{
             /*   const track = await axios({
@@ -593,8 +609,11 @@ async function scheduler() {
               }catch (e) {
                   console.log("ERROR: "+e)
               }
+              uniqueReleasedAppleUPDs.push(applepresaves.data[i].albumUPC);
+              uniqueReleasedAppleIDs.push(albumAppleID);
             }catch(e){
                 console.log("option 4 " + e);
+                uniqueNotReleasedAppleUPDs.push(applepresaves.data[i].albumUPC);
             }
         }
     }
