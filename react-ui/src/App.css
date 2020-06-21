@@ -32,7 +32,7 @@
 .App::after {
   content: "";
   opacity: 0.8;
-  background: rgb(26, 31, 41) url("https://young-peak-41948.herokuapp.com/Albumcover.png") no-repeat fixed top;
+  background: rgb(26, 31, 41);
   background-blend-mode: luminosity;
   /* also change the blend mode to what suits you, from darken, to other
   many options as you deem fit*/
