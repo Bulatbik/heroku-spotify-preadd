@@ -192,29 +192,13 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="bg-image"></div>
-                <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
-                <button onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
-                <button onClick={() => this.signOut()}>apple-music-logout</button>
                 <div className="bg-text">
                     <h1>light path 8</h1>
                     <p>Preadd</p>
+                    <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
+                    <button onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
+                    <button onClick={() => this.signOut()}>apple-music-logout</button>
                 </div>
-                <div>
-                    Now Playing: { this.state.nowPlaying.name }
-                </div>
-                <div>
-                    <img src={this.state.nowPlaying.albumArt} style={{ height: 150 }}/>
-                </div>
-                { this.state.loggedIn &&
-                <button onClick={() => this.getNowPlaying()}>
-                    Check Now Playing
-                </button>
-                }
-                { this.state.loggedIn &&
-                  <button onClick={() => this.addToLibrary()}>
-                Add it to your library
-                </button>
-            }
             </div>
 
         );
