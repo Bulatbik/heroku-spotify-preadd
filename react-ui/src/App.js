@@ -191,10 +191,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
-                <button onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
-                <button onClick={() => this.signOut()}>apple-music-logout</button>
-                <div className="bg-image"></div>
+                <div className="bg-image"> <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
+                    <button onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
+                    <button onClick={() => this.signOut()}>apple-music-logout</button></div>
 
                 <div className="bg-text">
                     <h1>light path 8</h1>
