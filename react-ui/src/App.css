@@ -1,4 +1,13 @@
 body, html {
+  /* Full height */
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+.App {
   background-image: url("https://young-peak-41948.herokuapp.com/Albumcover.png");
 
   /* Add the blur effect */
@@ -15,11 +24,10 @@ body, html {
   background-size: cover;
 }
 
-* {
-  box-sizing: border-box;
+.bg-image {
+  /* The image used */
+
 }
-
-
 
 /* Position text in the middle of the page/image */
 .bg-text {
