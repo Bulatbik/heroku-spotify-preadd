@@ -439,6 +439,10 @@ if (!isDev && cluster.isMaster) {
     });
   });
 
+    app.get("/Albumcover.png", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Albumcover.png'));
+    });
+
   app.listen(PORT, function() {
     console.error(
         `Node ${

@@ -194,6 +194,7 @@ class App extends Component {
                 <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
                 <button onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
                 <button onClick={() => this.signOut()}>apple-music-logout</button>
+                <img src="/image.png" />
                 <div>
                     Now Playing: { this.state.nowPlaying.name }
                 </div>
