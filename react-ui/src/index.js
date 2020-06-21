@@ -17,7 +17,7 @@ ReactDOM.render(
     <React.StrictMode>
         <App musicInstance={musicInstance}/>
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById('root').style.filter = 'blur(5px)'
 );
 
 
