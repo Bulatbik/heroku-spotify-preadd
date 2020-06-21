@@ -193,7 +193,7 @@ class App extends Component {
             <div className="App">
                 <div className="bg-image"></div>
                 <div className="bg-text">
-                    <img src="/Albumcover.png" />
+                    <img src="/Albumcover.png" style={{width: "30%", height: "30%"}}/>
                     <h1>light path 8</h1>
                     <p>Preadd</p>
                     <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
