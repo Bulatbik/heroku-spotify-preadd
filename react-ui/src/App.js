@@ -196,9 +196,15 @@ class App extends Component {
                     <img src="/Albumcover.png" style={{width: "30%", height: "30%"}}/>
                     <h1>light path 8</h1>
                     <p>Preadd</p>
+                    <div>
                     <button className="button">Submit</button>
+                    </div>
+                    <div>
                     <a href='https://young-peak-41948.herokuapp.com/login' > PreAdd Album with Spotify </a>
+                    </div>
+                    <div>
                     <button onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
+                    </div>
                 </div>
             </div>
 
