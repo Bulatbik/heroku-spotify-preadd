@@ -200,7 +200,7 @@ class App extends Component {
                     <button className="button">Submit</button>
                     </div>
                     <div>
-                        <form style="display: inline" action="https://young-peak-41948.herokuapp.com/login" method="get">
+                        <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
                             <button>PreAdd Album with Spotify</button>
                         </form>
                     </div>
