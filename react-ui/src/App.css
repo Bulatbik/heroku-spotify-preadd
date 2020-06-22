@@ -64,8 +64,8 @@ body, html {
   outline: none;
 }
 .buttonView{
-  width: 30%;
-  height: 20%;
+  width: 280px;
+  height: 90px;
 }
 
 .button:hover {
