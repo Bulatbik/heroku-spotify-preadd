@@ -197,7 +197,7 @@ class App extends Component {
                     <h1>light path 8</h1>
                     <p>Preadd</p>
                     <div>
-                        <a className="buttonView">
+                        <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
                         <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
                             <button className="button">PreAdd Album with Spotify</button>
                         </form>
