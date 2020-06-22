@@ -63,6 +63,10 @@ body, html {
   cursor: pointer;
   outline: none;
 }
+.buttonView{
+  width: 30%;
+  height: 20%;
+}
 
 .button:hover {
   background-color: #2EE59D;
