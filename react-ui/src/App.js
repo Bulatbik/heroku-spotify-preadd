@@ -197,7 +197,7 @@ class App extends Component {
                     <h1>light path 8</h1>
                     <div>
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
-                            <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" style={{width: "15%", height: "75%"}}/>
+                            <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                         <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
                             <button className="button">PreAdd Album with Spotify</button>
                         </form>
@@ -205,7 +205,7 @@ class App extends Component {
                     </div>
                     <div>
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
-                            <img lassName="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" style={{width: "15%", height: "75%"}}/>
+                            <img lassName="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                             <button className="button" onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
                         </a>
                     </div>
