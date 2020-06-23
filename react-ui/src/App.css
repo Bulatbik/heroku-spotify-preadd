@@ -15,7 +15,7 @@ body, html {
   display: none
 }
 @media (min-width:321px) {
-  .bg-image image {
+  .bg-image img {
 
     /* Add the blur effect */
     position: absolute;
