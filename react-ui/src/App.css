@@ -116,7 +116,7 @@ body, html {
   }
 
   .buttonView:focus .button, .buttonView:hover .button {
-    color: #fff;
+    color: #000000;
     border-color: #222
   }
 
