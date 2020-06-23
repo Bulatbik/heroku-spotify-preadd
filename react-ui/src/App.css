@@ -104,6 +104,13 @@ body, html {
 .spotifyLogo{
   float: left;
   height: 40px;
+  margin-bottom: 5px;
+}
+
+.appleLogo{
+  float: left;
+  height: 30px;
+  margin-bottom: 5px;
 }
 
 .buttonView {
