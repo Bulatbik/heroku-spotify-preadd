@@ -442,6 +442,9 @@ if (!isDev && cluster.isMaster) {
     app.get("/Albumcover.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Albumcover.png'));
     });
+    app.get("/Spotify_Logo_RGB_Green.png", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Spotify_Logo_RGB_Green.png'));
+    });
 
   app.listen(PORT, function() {
     console.error(

@@ -198,6 +198,7 @@ class App extends Component {
                     <p>Preadd Now!</p>
                     <div>
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
+                            <img src="/Spotify_Logo_RGB_Green.png" style={{width: "15%", height: "75%"}}/>
                         <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
                             <button className="button">PreAdd Album with Spotify</button>
                         </form>
