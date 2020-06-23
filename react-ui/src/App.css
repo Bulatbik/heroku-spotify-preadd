@@ -118,7 +118,7 @@ body, html {
   padding: 1.2rem;
   position: relative;
   z-index: 0;
-  height: 120px;
+  height: 60px;
 }
 
 .buttonView:after {
