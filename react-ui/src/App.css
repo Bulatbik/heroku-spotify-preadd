@@ -100,11 +100,27 @@ body, html {
   margin: .5rem;
   letter-spacing: .03rem
 }
-.buttonView{
+.buttonView {
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: initial;
+  -webkit-box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
+  box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
+  text-decoration: none;
   display: block;
-  width: 280px;
-  height: 90px;
-  background-color: #ffffff;
+  -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
+  transition: background-color .3s ease, -webkit-box-shadow .3s ease;
+  transition: background-color .3s ease, box-shadow .3s ease;
+  transition: background-color .3s ease, box-shadow .3s ease, -webkit-box-shadow .3s ease;
+  padding: 1.2rem;
+  position: relative;
+  z-index: 0
+}
+
+.buttonView:after {
+  display: block;
+  clear: both;
+  content: ""
 }
 
 @media (-ms-high-contrast:none), not all and (hover:none) {
