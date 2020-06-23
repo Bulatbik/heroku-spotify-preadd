@@ -191,7 +191,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div className="bg-image"><img src="/Albumcover.png" style={{width: "30%", height: "30%"}}/></div>
+                <div className="bg-image"><img src="/Albumcover.png"/></div>
                 <div className="bg-text">
                     <img src="/Albumcover.png" style={{width: "30%", height: "30%"}}/>
                     <h1>light path 8</h1>
