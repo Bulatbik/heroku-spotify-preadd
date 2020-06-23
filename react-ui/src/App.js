@@ -195,7 +195,7 @@ class App extends Component {
                 <div className="bg-text">
                     <img src="/Albumcover.png" style={{width: "30%", height: "30%"}}/>
                     <h1>light path 8</h1>
-                    <p>Preadd</p>
+                    <p>Preadd Now!</p>
                     <div>
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
                         <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
