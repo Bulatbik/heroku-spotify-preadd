@@ -86,7 +86,6 @@ body, html {
 
 .button {
   width: 33%;
-  height: 57%;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   text-transform: uppercase;
@@ -122,7 +121,7 @@ body, html {
 }
 .spotifyLogo{
   float: left;
-  height: 50%;
+  height: 100%;
   margin-bottom: 5px;
 }
 
