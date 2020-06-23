@@ -202,8 +202,6 @@ class App extends Component {
                             <button className="button">PreAdd Album with Spotify</button>
                         </form>
                         </a>
-                    </div>
-                    <div>
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
                             <img lassName="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                             <button className="button" onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
