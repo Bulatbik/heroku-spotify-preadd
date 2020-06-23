@@ -79,7 +79,8 @@ body, html {
   z-index: 2;
   padding: 20px;
   text-align: center;
-  width: 400px;
+  width: 25%;
+  min-width: 300px;
   margin: 0 auto;
 }
 
