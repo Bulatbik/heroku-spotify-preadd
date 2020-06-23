@@ -86,6 +86,7 @@ body, html {
 
 .button {
   width: 33%;
+  min-width: 100px;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   text-transform: uppercase;
