@@ -199,12 +199,12 @@ class App extends Component {
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
                             <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                         <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
-                            <button className="button">PreAdd Album with Spotify</button>
+                            <button className="button">PreSave Album</button>
                         </form>
                         </a>
                         <a className="buttonViewApple" href='https://young-peak-41948.herokuapp.com/login'>
                             <img className="appleLogo" src="/AppleMusic.png" />
-                            <button className="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">PreAdd Album with Apple Music</button>
+                            <button className="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">PreSave Album</button>
                         </a>
                     </div>
                 </div>
