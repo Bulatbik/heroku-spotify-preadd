@@ -193,7 +193,7 @@ class App extends Component {
             <div className="App">
                 <div className="bg-image"><img src="/Albumcover.png"/></div>
                 <div className="bg-text">
-                    <img src="/Albumcover.png" style={{width: "100%", height: "30%"}}/>
+                    <img src="/Albumcover.png" style={{width: "100%", height: "10%"}}/>
                     <h1>light path 8</h1>
                     <p>Preadd Now!</p>
                     <div>
