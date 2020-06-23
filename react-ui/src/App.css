@@ -98,20 +98,15 @@ body, html {
   outline: none;
   float: right;
   margin: .5rem;
-  background-color: transparent;
   letter-spacing: .03rem
 }
 .buttonView{
   display: block;
   width: 280px;
   height: 90px;
+  background-color: #ffffff;
 }
 
-.button:hover {
-  background-color: #2EE59D;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-  color: #fff;
-}
 @media (-ms-high-contrast:none), not all and (hover:none) {
   .buttonView:focus, .buttonView:hover {
     background-color: #f5f5f5;
