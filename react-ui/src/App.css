@@ -103,8 +103,8 @@ body, html {
   letter-spacing: .03rem
 }
 .buttonApple {
-  width: 100px;
-  height: 40px;
+  width: 33%;
+  min-width: 100px;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   text-transform: uppercase;
@@ -129,7 +129,8 @@ body, html {
 
 .appleLogo{
   float: left;
-  height: 50%;
+  height: 100%;
+  max-width: 50%;
   margin-bottom: 5px;
 }
 
