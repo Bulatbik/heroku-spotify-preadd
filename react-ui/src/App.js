@@ -194,8 +194,8 @@ class App extends Component {
                 <div className="bg-image"><img src="/Albumcover.png"/></div>
                 <div className="bg-text">
                     <img class="artwork" src="/Albumcover.png"/>
-                    <h1>Pre-Save/Pre-Add</h1>
-                    <h2>Light Path 8</h2>
+                    <h1 class="h1">Pre-Save/Pre-Add</h1>
+                    <h2 class="h2">Light Path 8</h2>
                     <div>
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
                             <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
