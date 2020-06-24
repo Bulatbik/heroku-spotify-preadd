@@ -193,7 +193,7 @@ class App extends Component {
             <div className="App">
                 <div className="bg-image"><img src="/Albumcover.png"/></div>
                 <div className="bg-tex-t">
-                    <img src="/Albumcover.png" style={{width: "100%", height: "10%", box-shadow: "5px solid grey"}}/>
+                    <img src="/Albumcover.png" style={{width: "100%", height: "10%"}}/>
                     <h1>Pre-Save/Pre-Add Light Path 8</h1>
                     <div>
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
