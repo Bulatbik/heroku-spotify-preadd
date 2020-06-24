@@ -192,9 +192,9 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="bg-image"><img src="/Albumcover.png"/></div>
-                <div className="bg-text">
-                    <img src="/Albumcover.png" style={{width: "100%", height: "10%"}}/>
-                    <h1>Pre-Save/Pre-Add Light Path 8 by KILLY</h1>
+                <div className="bg-tex-t">
+                    <img src="/Albumcover.png" style={{width: "100%", height: "10%", box-shadow: "5px solid grey"}}/>
+                    <h1>Pre-Save/Pre-Add Light Path 8</h1>
                     <div>
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
                             <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
@@ -205,7 +205,7 @@ class App extends Component {
                         <a className="buttonViewApple" href='https://young-peak-41948.herokuapp.com/login'>
                             <img className="appleLogo" src="/AppleMusic.png" />
                             <button className="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
-                        </a>
+                        </a>----
                     </div>
                 </div>
             </div>
