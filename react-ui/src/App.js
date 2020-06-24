@@ -197,13 +197,13 @@ class App extends Component {
                     <h1>Pre-Save/Pre-Add Light Path 8 by KILLY</h1>
                     <div>
                         <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
-                            <img className="spotifyLogo" src="/Spotify-Icon.png"/>
+                            <img className="spotifyLogo" src="/SpotifyIcon.png" />
                         <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
                             <button className="button">Pre-Save on Spotify</button>
                         </form>
                         </a>
                         <a className="buttonViewApple" href='https://young-peak-41948.herokuapp.com/login'>
-                            <img className="appleLogo" src="/AppleMusicIcon.png"/>
+                            <img className="appleLogo" src="/AppleMusicIcon.png" />
                             <button className="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
                         </a>
                     </div>
