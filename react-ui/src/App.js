@@ -205,7 +205,7 @@ class App extends Component {
                         </a>
                         <div className="emailoptions">
                         <label>
-                        <input type="checkbox" name="emailoptions">
+                        <input type="checkbox" name="emailoptions"</input>
                 <span>Get updates from KILLY</span>
                 </label>
                 </div>
