@@ -117,13 +117,11 @@ body, html {
   display: inline;
 }
 .spotifyLogo{
-  float: left;
-  height: 50%;
+  height: 75%;
 }
 
 .appleLogo{
-  float: left;
-  height: 72%;
+  height: 77%;
 }
 
 .buttonView {
