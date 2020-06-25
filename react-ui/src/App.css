@@ -244,7 +244,7 @@ body, html {
   margin-top: 20%
 }
 
-.a:link {
+a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: white;
 }
