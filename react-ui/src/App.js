@@ -204,6 +204,9 @@ class App extends Component {
                     <div class="emailoptions">
                         <label>
                         <input type="checkbox" name="emailoptions">
+                        ::before
+                        ::after
+                        </input>
                         <span>Get updates from KILLY</span>
                         </label>
                     </div>
