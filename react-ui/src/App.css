@@ -250,6 +250,11 @@ a:link, a:visited, a:hover, a:active {
   color: white;
 }
 
-input{type=checkbox} + label:before {
-    background-color: white;
+.artistupdates .checkmark {
+  background-color: white;
+  color: black;
+}
+
+.artistupdates input:checked + .checkmark {
+  background-color: white;
 }
