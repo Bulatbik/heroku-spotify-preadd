@@ -250,10 +250,6 @@ a:link, a:visited, a:hover, a:active {
   color: white;
 }
 
-input:checked {
-  background-color: white;
-}
-
-input:unchecked {
+input {
   background-color: white;
 }
