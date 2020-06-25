@@ -127,7 +127,7 @@ body, html {
 }
 
 .buttonView {
-  display: -webkit-inline-block;
+  display: -webkit-inline-box;
   cursor: pointer;
   background-color: #fff;
   text-decoration: none;
@@ -151,7 +151,7 @@ body, html {
 }
 
 .buttonViewApple {
-  display: -webkit-inline-block;
+  display: -webkit-inline-box;
   cursor: pointer;
   background-color: #fff;
   text-decoration: none;
