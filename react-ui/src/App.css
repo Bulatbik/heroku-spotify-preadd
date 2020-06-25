@@ -250,6 +250,10 @@ a:link, a:visited, a:hover, a:active {
   color: white;
 }
 
-.artistupdates input:notchecked ~ .checkmark {
+input:checked {
+  background-color: white;
+}
+
+input:unchecked {
   background-color: white;
 }
