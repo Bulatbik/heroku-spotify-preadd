@@ -250,6 +250,6 @@ a:link, a:visited, a:hover, a:active {
   color: white;
 }
 
-input {
-  background-color: white;
+input{type=checkbox} + label:before {
+    background-color: white;
 }
