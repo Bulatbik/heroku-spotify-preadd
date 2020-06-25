@@ -202,7 +202,7 @@ class App extends Component {
                         <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
                             <button className="button">Pre-Save on Spotify</button></form></a>
                             <label class="artistupdates"> Get updates from KILLY
-                                <input type="checkbox">
+                                <input type="checkbox"/>
                                 <span class="checkmark"></span>
                             </label>
                         <a className="buttonViewApple" href='https://young-peak-41948.herokuapp.com/login'>
@@ -212,7 +212,6 @@ class App extends Component {
                     </div>
                 </div>
             </div>
-
         );
     }
 }
