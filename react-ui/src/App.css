@@ -130,7 +130,7 @@ body, html {
 }
 
 .buttonView {
-  display: inline-flex;
+  display: inline-block;
   cursor: pointer;
   background-color: #fff;
   text-decoration: none;
@@ -148,7 +148,7 @@ body, html {
 }
 
 .buttonViewApple {
-  display: inline-flex;
+  display: inline-block;
   cursor: pointer;
   background-color: #fff;
   text-decoration: none;
