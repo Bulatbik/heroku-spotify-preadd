@@ -243,6 +243,9 @@ a:link, a:visited, a:hover, a:active {
   color: white;
 }
 
+.checkboxContainer input {
+  display: none;
+}
 .checkboxContainer {
   display: inline-block;
   padding-left: 30px;
@@ -276,5 +279,4 @@ a:link, a:visited, a:hover, a:active {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%) rotate (-45dege);
-
 }
