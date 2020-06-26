@@ -191,26 +191,26 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="App">
-                <div className="bg-image"><img src="/Albumcover.png"/></div>
-                <div id="contentfadein" className="bg-text">
+            <div class="app">
+                <div class="bg-image"><img src="/Albumcover.png"/></div>
+                <div id="contentfadein" class="bg-text">
                     <img class="artwork" src="/Albumcover.png"/>
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
                     <h2 class="h2">Light Path 8</h2>
                     <div>
-                        <a className="buttonView" href="https://young-peak-41948.herokuapp.com/login" target="_blank">
-                            <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
+                        <a class="buttonView" href="https://young-peak-41948.herokuapp.com/login" target="_blank">
+                            <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                         <form  action="https://young-peak-41948.herokuapp.com/login" target="_blank" method="get">
-                            <button className="button">Pre-Save on Spotify</button></form></a>
+                            <button class="button">Pre-Save on Spotify</button></form></a>
                             <div class="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from KILLY
                                     <input type="checkbox" checked/>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                        <a className="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
-                            <img className="appleLogo" src="/AppleMusic.png" />
-                            <button className="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
+                        <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
+                            <img class="appleLogo" src="/AppleMusic.png" />
+                            <button class="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
                         </a>
                         <div class="legallinks">
                             <a href="https://endlessdigital.co/terms">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
