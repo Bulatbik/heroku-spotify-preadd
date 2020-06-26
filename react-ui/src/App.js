@@ -202,10 +202,10 @@ class App extends Component {
                         <form  action="https://young-peak-41948.herokuapp.com/login" target="_blank" method="get">
                             <button className="button">Pre-Save on Spotify</button></form></a>
                                 <label class="checkboxContainer">Get updates from KILLY
-                                    <input type="checkbox"/>
+                                    <input type="checkbox" checked/>
                                     <span class="checkmark"></span>
                                 </label>
-                        <a className="buttonViewApple" href='https://young-peak-41948.herokuapp.com/login'>
+                        <a className="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img className="appleLogo" src="/AppleMusic.png" />
                             <button className="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
                         </a>
