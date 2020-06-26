@@ -211,7 +211,7 @@ class App extends Component {
                         </a>
                         <div class="legallinks">
                             <a href="https://endlessdigital.co/terms">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                            <small>|</small>
+                            <span class="legal_links_seperator">|</span>
                             <a href="https://endlessdigital.co/privacy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a>
                         </div>
                     </div>
