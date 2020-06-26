@@ -199,7 +199,7 @@ class App extends Component {
                     <div>
                         <a className="buttonView" href="https://young-peak-41948.herokuapp.com/login" target="_blank">
                             <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
-                        <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
+                        <form  action="https://young-peak-41948.herokuapp.com/login" target="_blank" method="get">
                             <button className="button">Pre-Save on Spotify</button></form></a>
                                 <label class="checkboxContainer">Get updates from KILLY
                                     <input type="checkbox"/>
