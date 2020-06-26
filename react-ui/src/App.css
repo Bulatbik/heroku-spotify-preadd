@@ -240,14 +240,9 @@ a:link, a:visited, a:hover, a:active {
   transform: translate(-50%,-50%) rotate(-45deg);
 }
 
-#test {
-    margin-top: 25px;
-    font-size: 21px;
-    text-align: center;
+#contentfadein {
     animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
+    -webkit-animation: fadein 2s;
 }
 @keyframes fadein {
     from {
@@ -257,27 +252,11 @@ a:link, a:visited, a:hover, a:active {
         opacity:1;
     }
 }
-@-moz-keyframes fadein { /* Firefox */
+@-webkit-keyframes fadein {
     from {
         opacity:0;
     }
     to {
         opacity:1;
-    }
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
     }
 }
