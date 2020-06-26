@@ -130,7 +130,7 @@ body, html {
 }
 
 .buttonView {
-  display: inline-block;
+  display: -webkit-box;
   cursor: pointer;
   background-color: #fff;
   text-decoration: none;
@@ -140,15 +140,17 @@ body, html {
   transition: background-color .3s ease, box-shadow .3s ease, -webkit-box-shadow .3s ease;
   padding: 12px 10px;
   position: relative;
+  width: 74%;
   height: 50px;
   align-items: center;
   margin-bottom: 5%;
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   border-radius: 2px;
+  -webkit-box-pack: center;
 }
 
 .buttonViewApple {
-  display: inline-block;
+  display: -webkit-box;
   cursor: pointer;
   background-color: #fff;
   text-decoration: none;
