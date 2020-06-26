@@ -1,13 +1,9 @@
 body, html {
   width: 100%;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
 }
 
-* {
-  box-sizing: border-box;
-}
 .App{
   height: 100%;
   width: 100%;
