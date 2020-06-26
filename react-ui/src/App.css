@@ -251,23 +251,25 @@ a:link, a:visited, a:hover, a:active {
   padding-left: 30px;
   position: relative;
   cursor: pointer;
-  font-family: sans-serif;
+  font-family:roboto-condensed,sans-serif;
+  font-weight: 400;
+  font-size: 12px;
 }
 .checkboxContainer .checkmark {
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 16px;
+  height: 16px;
   background: white;
   position: absolute;
   left: 0;
   top: 0;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 .checkboxContainer input:checked + .checkmark {
-  background-color: white;
+  background-color: black;
 }
 .checkboxContainer:hover .checkmark {
-  background-color: white;
+  background-color: black;
 }
 .checkboxContainer input:checked + .checkmark:after {
   content: "";
