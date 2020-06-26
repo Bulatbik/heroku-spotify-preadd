@@ -158,7 +158,6 @@ body, html {
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   border-radius: 2px;
   margin-top: 10%;
-  width: 76%;
 }
 
 .h1 {
@@ -199,6 +198,11 @@ a:link, a:visited, a:hover, a:active {
   color: white;
 }
 
+.checkboxcolumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .checkboxContainer input {
   display: none;
 }
