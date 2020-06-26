@@ -266,7 +266,7 @@ a:link, a:visited, a:hover, a:active {
   border-radius: 2px;
 }
 .checkboxContainer input:checked + .checkmark {
-  background-color: black;
+  background-color: white;
 }
 .checkboxContainer:hover .checkmark {
   background-color: black;
@@ -278,7 +278,7 @@ a:link, a:visited, a:hover, a:active {
   width: 9x;
   border-left: 2px solid white;
   border-bottom: 2px solid white;
-  top: 45%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate (-45dege);
+  transform: translate(-50%, -50%) rotate (-45deg);
 }
