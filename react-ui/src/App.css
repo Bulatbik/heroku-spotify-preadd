@@ -248,7 +248,7 @@ a:link, a:visited, a:hover, a:active {
 }
 .checkboxContainer {
   display: inline-block;
-  padding-left: 30px;
+  padding-left: 25px;
   position: relative;
   cursor: pointer;
   font-family:roboto-condensed,sans-serif;
