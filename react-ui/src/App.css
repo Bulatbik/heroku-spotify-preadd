@@ -197,7 +197,7 @@ a:link, a:visited, a:hover, a:active {
   cursor: pointer;
   font-family:roboto-condensed,sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75em;
   letter-spacing: 1px;
 }
 .checkboxContainer .checkmark {
