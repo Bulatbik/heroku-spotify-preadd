@@ -269,15 +269,15 @@ a:link, a:visited, a:hover, a:active {
   background-color: white;
 }
 .checkboxContainer:hover .checkmark {
-  background-color: black;
+  background-color: white;
 }
 .checkboxContainer input:checked + .checkmark:after {
   content: "";
   position: absolute;
   height: 4px;
-  width: 9x;
-  border-left: 2px solid white;
-  border-bottom: 2px solid white;
+  width: 9px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate (-45deg);
