@@ -180,7 +180,7 @@ class App extends Component {
         });
 
     }
-    
+
     signOut() {
         let that = this;
         co(function*() {
