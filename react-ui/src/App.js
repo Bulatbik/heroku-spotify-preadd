@@ -180,6 +180,14 @@ class App extends Component {
         });
 
     }
+
+    let btnSend = document.querySelector('button');
+    let message = document.querySelector('h1');
+
+    btnSend.addEventListener('click', () {
+        btnSend.innerText = 'Pre-Saving...';
+    });
+
     signOut() {
         let that = this;
         co(function*() {
