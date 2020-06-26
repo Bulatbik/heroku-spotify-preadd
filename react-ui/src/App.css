@@ -224,6 +224,11 @@ body, html {
   font-size: 25px;
   font-weight: bold;
 }
+.small {
+  font-family: roboto-condensed,sans-serif;
+  font-size: 15px
+  font-weight: 400;
+}
 
 .emailoptions {
   font-family: roboto-condensed,sans-serif;
