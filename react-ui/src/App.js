@@ -192,24 +192,31 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="bg-image"><img src="/Albumcover.png"/></div>
-                <div className="bg-text">
-                    <img src="/Albumcover.png" style={{width: "100%", height: "10%"}}/>
-                    <h1>PRE-SAVE/PRE-ADD LIGHT PATH 8</h1>
+                <div id="contentfadein" className="bg-text">
+                    <img class="artwork" src="/Albumcover.png"/>
+                    <h1 class="h1">Pre-Save/Pre-Add</h1>
+                    <h2 class="h2">Light Path 8</h2>
                     <div>
-                        <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
+                        <a className="buttonView" href="https://young-peak-41948.herokuapp.com/login" target="_blank">
                             <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
-                        <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
-                            <button className="button">Pre-Save on Spotify</button>
-                        </form>
-                        </a>
-                        <a className="buttonViewApple" href='https://young-peak-41948.herokuapp.com/login'>
+                        <form  action="https://young-peak-41948.herokuapp.com/login" target="_blank" method="get">
+                            <button className="button">Pre-Save on Spotify</button></form></a>
+                                <label class="checkboxContainer">Get updates from KILLY
+                                    <input type="checkbox" checked/>
+                                    <span class="checkmark"></span>
+                                </label>
+                        <a className="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img className="appleLogo" src="/AppleMusic.png" />
                             <button className="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
                         </a>
+                        <div class="legallinks">
+                            <a href="https://endlessdigital.co/terms">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            <span class="legal_links_seperator">|</span>
+                            <a href="https://endlessdigital.co/privacy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
         );
     }
 }

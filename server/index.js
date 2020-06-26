@@ -37,8 +37,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 47;
-rule.hour = 7;
+rule.minute = 29;
+rule.hour = 6;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -190,7 +190,6 @@ async function scheduler() {
             }catch (e) {
                 console.log("ERROR: "+e)
             }
-
         }else if(uniqueNotReleasedAppleUPDs.includes(applepresaves.data[i].albumUPC)){
             console.log("Option 2");
         }else{
@@ -215,7 +214,7 @@ async function scheduler() {
                       data: {presaveid: applepresaves.data[i].presaveid},
                       headers: {"Content-Type": "application/json"}
                   });
-                  console.log("deleteResponse: "+deleteResponse1)
+                  console.log("deleteResponse: "+deleteResponse1);
               }catch (e) {
                   console.log("ERROR: "+e)
               }
