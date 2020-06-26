@@ -279,7 +279,7 @@ a:link, a:visited, a:hover, a:active {
   width: 9px;
   border-left: 2px solid black;
   border-bottom: 2px solid black;
-  top: 40%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%,-50%) rotate(-45deg);
 }
