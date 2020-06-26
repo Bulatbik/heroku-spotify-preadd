@@ -267,7 +267,7 @@ a:link, a:visited, a:hover, a:active {
   background-color: white;
 }
 .checkboxContainer input:checked + .checkmark:after {
-  content: ""
+  content: "";
   position: absolute;
   height: 4px;
   width: 9x;
