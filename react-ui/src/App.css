@@ -187,9 +187,7 @@ a:link, a:visited, a:hover, a:active {
   flex-direction: column;
   align-items: center;
 }
-.checkboxContainer input {
-  display: none;
-}
+
 .checkboxContainer {
   display: block;
   position: relative;
