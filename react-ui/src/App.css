@@ -181,15 +181,52 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: white;
 }
-input[type="checkbox"] { position: absolute; opacity: 0; z-index: -1; }
-input[type="checkbox"]+span { font: 16pt sans-serif; color: #000; }
-input[type="checkbox"]+span:before { font: 16pt FontAwesome; content: '\00f096'; display: inline-block; width: 16pt; padding: 2px 0 0 3px; margin-right: 0.5em; }
-input[type="checkbox"]:checked+span:before { content: '\00f046'; }
-input[type="checkbox"]:focus+span:before { outline: 1px dotted #aaa; }
-input[type="checkbox"]:disabled+span { color: #999; }
-input[type="checkbox"]:not(:disabled)+span:hover:before { text-shadow: 0 1px 2px #77F; }
 
-
+.checkboxcolumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkboxContainer input {
+  display: none;
+}
+.checkboxContainer {
+  display: inline-block;
+  padding-left: 25px;
+  position: relative;
+  cursor: pointer;
+  font-family:roboto-condensed,sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.checkboxContainer .checkmark {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 2px;
+}
+.checkboxContainer input:checked + .checkmark {
+  background-color: white;
+}
+.checkboxContainer:hover .checkmark {
+  background-color: white;
+}
+.checkboxContainer input:checked + .checkmark:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 9px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
 
 #contentfadein {
     animation: fadein 2s;
