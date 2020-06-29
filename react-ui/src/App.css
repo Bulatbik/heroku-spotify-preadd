@@ -183,12 +183,15 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .checkboxcolumn {
-  display: flex;
   flex-direction: column;
   align-items: center;
+  display: inline;
 }
-
+.checkboxContainer input {
+  display: none;
+}
 .checkboxContainer {
+  display: block;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -227,11 +230,12 @@ a:link, a:visited, a:hover, a:active {
 .checkmark:after {
   content: "";
   position: absolute;
+  display: none;
 }
 
 /* Show the checkmark when checked */
 .checkboxContainer input:checked ~ .checkmark:after {
-
+  display: block;
 }
 
 /* Style the checkmark/indicator */
