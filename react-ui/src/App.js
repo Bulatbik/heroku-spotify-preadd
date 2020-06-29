@@ -204,8 +204,7 @@ class App extends Component {
                             <button class="button">Pre-Save on Spotify</button></form></a>
                             <div class="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from KILLY
-                                    <input type="checkbox" checked/>
-                                    <span class="checkmark"></span>
+                               <input type="checkbox"/><span>send newsletter</span>
                                 </label>
                             </div>
                         <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
