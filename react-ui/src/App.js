@@ -180,6 +180,7 @@ class App extends Component {
         });
 
     }
+
     signOut() {
         let that = this;
         co(function*() {
@@ -190,26 +191,35 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="App">
-                <div className="bg-image"><img src="/Albumcover.png"/></div>
-                <div className="bg-text">
-                    <img src="/Albumcover.png" style={{width: "100%", height: "10%"}}/>
-                    <h1>Light Path 8 by Killy</h1>
+            <div class="app">
+                <div class="bg-image"><img src="/Albumcover.png"/></div>
+                <div id="contentfadein" class="bg-text">
+                    <img class="artwork" src="/Albumcover.png"/>
+                    <h1 class="h1">Pre-Save/Pre-Add</h1>
+                    <h2 class="h2">Light Path 8</h2>
                     <div>
-                        <a className="buttonView" href='https://young-peak-41948.herokuapp.com/login'>
-                            <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
-                        <form  action="https://young-peak-41948.herokuapp.com/login" method="get">
-                            <button className="button">PreSave Album</button>
-                        </form>
+                        <a class="buttonView" href="https://young-peak-41948.herokuapp.com/login" target="_blank">
+                            <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
+                        <form  action="https://young-peak-41948.herokuapp.com/login" target="_blank" method="get">
+                            <button class="button">Pre-Save on Spotify</button></form></a>
+                            <div class="checkboxcolumn">
+                                <label class="checkboxContainer">Get updates from KILLY
+                                    <input type="checkbox" checked/>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
+                            <img class="appleLogo" src="/AppleMusic.png" />
+                            <button class="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
                         </a>
-                        <a className="buttonViewApple" href='https://young-peak-41948.herokuapp.com/login'>
-                            <img className="appleLogo" src="/AppleMusic.png" />
-                            <button className="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">PreSave Album</button>
-                        </a>
+                        <div class="legallinks">
+                            <a href="https://endless.lnk.to/TOS" target="_blank">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            <span class="legal_links_seperator">|</span>
+                            <a href="https://endless.lnk.to/PrivacyPolicy" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
         );
     }
 }

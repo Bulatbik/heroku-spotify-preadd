@@ -1,77 +1,60 @@
 body, html {
   width: 100%;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 * {
   box-sizing: border-box;
 }
-.App{
-  height: 100%;
+
+.app {
   width: 100%;
+  height: 100%;
 }
+
+.bg-image img {
+
+  /* Add the blur effect */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  min-width: 55%;
+  height: 55%;
+  margin: auto;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+  max-width: none;
+  opacity: .5;
+}
+
 .bg-image {
-  display: none
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  height: 200%;
+  width: 200%;
+  top: -50%;
+  left: -50%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  background-color: black;
+  display: block;
+  position: fixed;
 }
-@media (min-width:321px) {
-  .bg-image img {
 
-    /* Add the blur effect */
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 50%;
-    min-width: 55%;
-    min-height: 55%;
-    margin: auto;
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
-    max-width: none;
-    -webkit-filter: blur(30px);
-    filter: blur(30px);
-    opacity: .7
-  }
-
-  .bg-image {
-    position: absolute;
-    overflow: hidden;
-    z-index: -1;
-    height: 200%;
-    width: 200%;
-    top: -50%;
-    left: -50%;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    background-color: #000;
-    display: block;
-    position: fixed
-  }
-
-  .bg-image:after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%
-  }
-  .is-ie .bg-image img {
-    -webkit-filter: none;
-    filter: none;
-    opacity: 1
-  }
+.artwork {
+  width: 100%;
+  height: 10%;
+  box-shadow: 0px 0px 25px 5px #acacac;
 }
 
 /* Position text in the middle of the page/image */
 .bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
-  border: 3px solid #f1f1f1;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -82,138 +65,186 @@ body, html {
   width: 25%;
   min-width: 350px;
   margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 15px;
 }
 
 .button {
-  width: 33%;
-  min-width: 100px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
+  font-family: roboto-condensed, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: bold;
   color: #000;
   border: none;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer;
-  outline: none;
-  float: right;
-  margin-bottom: 10px;
-  letter-spacing: .03rem
+  background-color: transparent;
+  display: contents;
 }
 .buttonApple {
-  width: 33%;
-  min-width: 100px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
+  font-family: roboto-condensed, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: bold;
   color: #000;
   border: none;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer;
-  outline: none;
-  float: right;
-  margin-bottom: 10px;
-  letter-spacing: .03rem
+  background-color: transparent;
+  display: contents;
 }
 .spotifyLogo{
-  float: left;
-  height: 100%;
-  max-width: 50%;
-  margin-bottom: 5px;
+  height: 75%;
+  padding-right: 5px;
 }
 
 .appleLogo{
-  float: left;
-  height: 80%;
-  max-width: 50%;
-  margin-bottom: 5px;
+  height: 77%;
+  padding-right: 5px;
 }
 
 .buttonView {
+  display: inline-flex;
   cursor: pointer;
   background-color: #fff;
-  border-radius: initial;
-  -webkit-box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
-  box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
   text-decoration: none;
-  display: block;
   -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
   transition: background-color .3s ease, -webkit-box-shadow .3s ease;
   transition: background-color .3s ease, box-shadow .3s ease;
   transition: background-color .3s ease, box-shadow .3s ease, -webkit-box-shadow .3s ease;
-  padding: 1.2rem;
+  padding: 12px 16px;
   position: relative;
-  z-index: 0;
-  height: 70px;
-}
-
-.buttonView:after {
-  display: block;
-  clear: both;
-  content: ""
+  height: 50px;
+  align-items: center;
+  margin-bottom: 5%;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  border-radius: 2px;
 }
 
 .buttonViewApple {
+  display: inline-flex;
   cursor: pointer;
   background-color: #fff;
-  border-radius: initial;
-  -webkit-box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
-  box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
   text-decoration: none;
-  display: block;
   -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
   transition: background-color .3s ease, -webkit-box-shadow .3s ease;
   transition: background-color .3s ease, box-shadow .3s ease;
   transition: background-color .3s ease, box-shadow .3s ease, -webkit-box-shadow .3s ease;
-  padding: 1.2rem;
+  padding: 12px 16px;
   position: relative;
-  z-index: 0;
-  height: 70px;
+  height: 50px;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  border-radius: 2px;
+  margin-top: 10%;
+  white-space: nowrap;
 }
 
-.buttonViewApple:after {
-  display: block;
-  clear: both;
-  content: ""
+.h1 {
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  margin-block-end: -0.5em;
 }
-@media (-ms-high-contrast:none), not all and (hover:none) {
-  .buttonView:focus, .buttonView:hover {
-    background-color: #f5f5f5;
-    -webkit-box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
-    box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
-    z-index: 1
-  }
-  .buttonView:focus .button, .buttonView:hover .button {
-    color: #fff;
-    border-color: #222;
-    background-color: #2EE59D;
-  }
-
-  .buttonView:focus .button .btn-label,
-  .buttonView:hover .button .btn-label {
-    background: #222;
-    border-color: #222
-  }
+.h2 {
+  font-family: roboto, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 25px;
 }
-@media (-ms-high-contrast:none), not all and (hover:none) {
-  .buttonViewApple:focus, .buttonViewApple:hover {
-    background-color: #f5f5f5;
-    -webkit-box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
-    box-shadow: inset 0 -2px 9px 0 rgba(0, 0, 0, .06);
-    z-index: 1
-  }
-  .buttonViewApple:focus .buttonApple, .buttonViewApple:hover .buttonApple {
-    color: #fff;
-    border-color: #222;
-    background-color:rgb(193,67,149);
-  }
 
-  .buttonViewApple:focus .buttonApple .btn-label,
-  .buttonViewApple:hover .buttonApple .btn-label {
-    background: #222;
-    border-color: #222
-  }
+.emailoptions {
+  font-family: roboto-condensed,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 10%;
+}
+
+.legallinks {
+  font-family: roboto-condensed,sans-serif;
+  font-weight: 400;
+  margin-top: 20%
+}
+.legal-links-seperator {
+  font-family: roboto-condensed,sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: white;
+}
+
+.checkboxcolumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkboxContainer input {
+  display: none;
+}
+.checkboxContainer {
+  display: inline-block;
+  padding-left: 25px;
+  position: relative;
+  cursor: pointer;
+  font-family:roboto-condensed,sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.checkboxContainer .checkmark {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 2px;
+}
+.checkboxContainer input:checked + .checkmark {
+  background-color: white;
+}
+.checkboxContainer:hover .checkmark {
+  background-color: white;
+}
+.checkboxContainer input:checked + .checkmark:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 9px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+#contentfadein {
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }
