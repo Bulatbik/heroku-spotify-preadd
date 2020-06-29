@@ -228,7 +228,6 @@ a:link, a:visited, a:hover, a:active {
 .checkmark:after {
   content: "";
   position: absolute;
-  display: none;
 }
 
 /* Show the checkmark when checked */
