@@ -284,8 +284,10 @@ if (!isDev && cluster.isMaster) {
   //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
   app.get("/login", function(req, res) {
     //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
-    var state = generateRandomString(16);
-    res.cookie(stateKey, state);
+   // var state = generateRandomString(16);
+    //res.cookie(stateKey, state);
+     var state =  req.query.updates;
+      res.cookie(stateKey, state);
     // your application requests authorization
     var scope =
         "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read user-library-modify";
@@ -296,7 +298,7 @@ if (!isDev && cluster.isMaster) {
           client_id: client_id,
           scope,
           redirect_uri: redirect_uri,
-          state
+            state
         })
     );
   });
@@ -385,7 +387,8 @@ if (!isDev && cluster.isMaster) {
               username: userName,
               email: email,
               userID: userID,
-              refToken: refresh_token
+              refToken: refresh_token,
+                wantsUpdates: state
             });
             axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
           });
