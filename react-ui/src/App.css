@@ -191,7 +191,7 @@ a:link, a:visited, a:hover, a:active {
   display: none;
 }
 .checkboxContainer {
-  display: inline;
+  display: inline-block;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;

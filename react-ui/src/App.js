@@ -204,7 +204,7 @@ class App extends Component {
                             <button class="button">Pre-Save on Spotify</button></form></a>
                             <div class="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from KILLY
-                                    <input type="checkbox" checked="checked"/>
+                                    <input type="checkbox" checked/>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
