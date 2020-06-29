@@ -183,72 +183,49 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .checkboxcolumn {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  display: inline;
 }
 .checkboxContainer input {
   display: none;
 }
 .checkboxContainer {
   display: inline-block;
+  padding-left: 25px;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  font-family:roboto-condensed,sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
-.checkboxContainer input {
+.checkboxContainer .checkmark {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: white;
   position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-.checkmark {
-  position: absolute;
-  top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
+  top: 0;
+  border-radius: 2px;
 }
-.checkboxContainer:hover input ~ .checkmark {
-  background-color: #ccc;
+.checkboxContainer input:checked + .checkmark {
+  background-color: white;
 }
-
-/* When the checkbox is checked, add a blue background */
-.checkboxContainer input:checked ~ .checkmark {
-  background-color: #2196F3;
+.checkboxContainer:hover .checkmark {
+  background-color: white;
 }
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.checkboxContainer input:checked + .checkmark:after {
   content: "";
   position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.checkboxContainer input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkboxContainer .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  height: 4px;
+  width: 9px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(-45deg);
 }
 
 #contentfadein {
