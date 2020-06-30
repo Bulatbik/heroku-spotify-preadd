@@ -3,7 +3,6 @@ import co from 'co';
 import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
-import {Helmet} from "react-helmet";
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
 
@@ -40,34 +39,7 @@ class App extends Component {
         }
         this.musicInstance = this.props.musicInstance;
     }
-   /* componentDidMount () {
-        document.addEventListener('musickitloaded', () => {
-            // MusicKit global is now defined
-            fetch('/applemusictoken').then(response => response.json()).then(res => {
-                const music =  window.MusicKit.configure({
-                    developerToken: res.token,
-                    app: {
-                        name: 'PreAdd for Apple Music',
-                        build: '1978.4.1'
-                    }
-                });
-                this.setState({music:music});
 
-                // setup click handlers
-
-                document.getElementById('apple-music-authorize').addEventListener('click', () => {
-
-                    music.authorize().then(musicUserToken => {
-                        console.log(`Authorized, music-user-token: ${musicUserToken}`);
-                    });
-                });
-
-                // expose our instance globally for testing
-                window.music = music;
-            });
-        });
-
-    }*/
     getHashParams() {
         var hashParams = {};
         var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -140,9 +112,6 @@ class App extends Component {
         } else {
             form.action ="https://young-peak-41948.herokuapp.com/login?updates=no";
         }
-    //   axios.get('https://young-peak-41948.herokuapp.com/login')
-    //        .then(response => console.log(response))
-    //        .catch(err => console.log(err));
         return true;
     }
     render() {
