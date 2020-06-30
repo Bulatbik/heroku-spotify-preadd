@@ -132,7 +132,7 @@ class App extends Component {
         var button = document.getElementById("buttonSpotify");
         var checkBox = document.getElementById("myCheck");
         var form = document.getElementById("myform");
-        button.value = "Pre-saving...";
+        button.innerHTML = "Pre-saving...";
         if (checkBox.checked === true){
            form.action ="https://young-peak-41948.herokuapp.com/login?updates=yes";
         } else {
