@@ -190,8 +190,19 @@ class App extends Component {
             that.setState({isLoginApple: false});
         });
     }
-    render() {
+    OnSubmitForm()
+    {
         var checkBox = document.getElementById("myCheck");
+        if (checkBox.checked === true){
+            document.myform.action ="https://young-peak-41948.herokuapp.com/login?updates=yes";
+        } else {
+            document.myform.action ="https://young-peak-41948.herokuapp.com/login?updates=no";
+        }
+
+        return true;
+    }
+    render() {
+      //  var checkBox = document.getElementById("myCheck");
         return (
             <div class="app">
                 <div class="bg-image"><img src="/Albumcover.png"/></div>
@@ -202,7 +213,7 @@ class App extends Component {
                     <div>
                         <a class="buttonView" href="https://young-peak-41948.herokuapp.com/login" target="_blank">
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
-                        <form  action="https://young-peak-41948.herokuapp.com/login?updates=yes" target="_blank" method="get">
+                        <form  name="myform" target="_blank" method="get">
                             <button class="button" >Pre-Save on Spotify</button></form></a>
                             <div class="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from KILLY
