@@ -196,9 +196,9 @@ class App extends Component {
         var checkBox = document.getElementById("myCheck");
         var form = document.getElementById("myform");
         if (checkBox.checked === true){
-            form.action ="https://young-peak-41948.herokuapp.com/login";
+            form.action ="https://young-peak-41948.herokuapp.com/lol";
         } else {
-            form.action ="https://young-peak-41948.herokuapp.com/login";
+            form.action ="https://young-peak-41948.herokuapp.com/hey";
         }
 
         return true;
