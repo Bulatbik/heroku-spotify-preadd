@@ -195,12 +195,14 @@ class App extends Component {
         console.log("hey");
         var checkBox = document.getElementById("myCheck");
         var form = document.getElementById("myform");
-        if (checkBox.checked === true){
-            form.action ="https://young-peak-41948.herokuapp.com/lol";
-        } else {
-            form.action ="https://young-peak-41948.herokuapp.com/hey";
-        }
-
+      //  if (checkBox.checked === true){
+     //      form.action ="https://young-peak-41948.herokuapp.com/login?updates=yes";
+     //   } else {
+     //       form.action ="https://young-peak-41948.herokuapp.com/login?updates=no";
+     //   }
+        axios.get('https://young-peak-41948.herokuapp.com/login?updates=yes')
+            .then(response => console.log(response))
+            .catch(err => console.log(err));
         return true;
     }
     render() {
