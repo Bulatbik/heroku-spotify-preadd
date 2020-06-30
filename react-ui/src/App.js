@@ -129,8 +129,10 @@ class App extends Component {
     }
     OnSubmitForm()
     {
+        var button = document.getElementById("buttonSpotify");
         var checkBox = document.getElementById("myCheck");
         var form = document.getElementById("myform");
+        button.value = "Pre-saving...";
         if (checkBox.checked === true){
            form.action ="https://young-peak-41948.herokuapp.com/login?updates=yes";
         } else {
@@ -157,13 +159,13 @@ class App extends Component {
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="button">Pre-Saved !!!</button>
+                                    <button class="button"id="buttonSpotify">Pre-Saved!</button>
                                 </form> )}
                             {(token==null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="button">Pre-Save on Spotify</button>
+                                    <button class="button" id="buttonSpotify">Pre-Save on Spotify</button>
                                 </form> )}
-                                < /a>
+                                </a>
                             <div class="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from KILLY
                                     <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
