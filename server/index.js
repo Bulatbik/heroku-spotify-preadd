@@ -282,7 +282,7 @@ if (!isDev && cluster.isMaster) {
   app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
   var stateKey = "spotify_auth_state";
   //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
-  app.get("/login", function(req, res) {
+  app.post("/login", function(req, res) {
     //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
    // var state = generateRandomString(16);
     //res.cookie(stateKey, state);
