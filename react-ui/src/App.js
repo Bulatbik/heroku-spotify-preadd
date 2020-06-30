@@ -200,9 +200,9 @@ class App extends Component {
      //   } else {
      //       form.action ="https://young-peak-41948.herokuapp.com/login?updates=no";
      //   }
-        axios.get('https://young-peak-41948.herokuapp.com/login')
-            .then(response => console.log(response))
-            .catch(err => console.log(err));
+    //   axios.get('https://young-peak-41948.herokuapp.com/login')
+    //        .then(response => console.log(response))
+    //        .catch(err => console.log(err));
         return true;
     }
     render() {
@@ -215,16 +215,19 @@ class App extends Component {
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
                     <h2 class="h2">Light Path 8</h2>
                     <div>
-                        <a class="buttonView"  onClick={() => this.OnSubmitForm()} target="_blank">
+                        <a class="buttonView"  target="_blank">
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
-                        <form  name="myform" id="myform" target="_blank" method="get">
-                            <button class="button" >Pre-Save on Spotify</button></form></a>
-                            <div class="checkboxcolumn">
-                                <label class="checkboxContainer">Get updates from KILLY
-                                    <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
-                                    <span class="checkmark"></span>
+                        <form  action="https://young-peak-41948.herokuapp.com/login" name="myform" id="myform" target="_blank" method="get">
+                            <button class="button" >Pre-Save on Spotify</button>
+                            <div className="checkboxcolumn">
+                                <label className="checkboxContainer">Get updates from KILLY
+                                    <input type="checkbox" id="myCheck" name="updates" checked
+                                           onClick="this.checked=!this.checked;"/>
+                                    <span className="checkmark"></span>
                                 </label>
                             </div>
+                        </form></a>
+
                         <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
