@@ -115,7 +115,7 @@ class App extends Component {
 
          //   console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
         });
-        var button = document.getElementById("apple-music-authorize");
+        var button = document.getElementById("apple-music-authorize-button");
         button.innerHTML = "Pre-saved!";
 
     }
@@ -177,7 +177,7 @@ class App extends Component {
                             </div>
                         <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
-                            <button class="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
+                            <button class="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
                         <div class="legallinks">
                             <a href="https://endlessdigital.co/terms">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
