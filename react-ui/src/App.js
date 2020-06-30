@@ -152,9 +152,9 @@ class App extends Component {
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
                     <h2 class="h2">Light Path 8</h2>
                     <div>
-                        <a class="buttonView" onClick={() => this.OnSubmitForm()}  target="_blank">
+                        <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
-                        <form name="myform" id="myform" target="_blank" method="post">
+                        <form name="myform" id="myform" method="post">
                             <button class="button" >Pre-Save on Spotify</button>
 
                         </form></a>
