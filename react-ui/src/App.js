@@ -115,6 +115,8 @@ class App extends Component {
 
          //   console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
         });
+        var button = document.getElementById("apple-music-authorize");
+        button.innerHTML = "Pre-saved!";
 
     }
 
