@@ -200,7 +200,7 @@ class App extends Component {
      //   } else {
      //       form.action ="https://young-peak-41948.herokuapp.com/login?updates=no";
      //   }
-        axios('https://young-peak-41948.herokuapp.com/login?updates=yes')
+        axios.get('https://young-peak-41948.herokuapp.com/login?updates=yes')
             .then(response => console.log(response))
             .catch(err => console.log(err));
         return true;
