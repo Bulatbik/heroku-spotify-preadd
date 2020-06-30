@@ -68,7 +68,7 @@ class App extends Component {
         });
 
     }*/
-    componentDidMount () {console.log("Token: "+this.state.token)}
+    componentDidUpdate () {console.log("Token: "+this.state.token)}
     getHashParams() {
         var hashParams = {};
         var e, r = /([^&;=]+)=?([^&;]*)/g,
