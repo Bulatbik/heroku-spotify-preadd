@@ -192,6 +192,7 @@ class App extends Component {
     }
     OnSubmitForm()
     {
+        alert("hey");
         var checkBox = document.getElementById("myCheck");
         if (checkBox.checked === true){
             document.myform.action ="https://young-peak-41948.herokuapp.com/login?updates=yes";
