@@ -219,15 +219,14 @@ class App extends Component {
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                         <form  action="https://young-peak-41948.herokuapp.com/login" name="myform" id="myform" target="_blank" method="get">
                             <button class="button" >Pre-Save on Spotify</button>
-                            <div className="checkboxcolumn">
-                                <label className="checkboxContainer">Get updates from KILLY
-                                    <input type="checkbox" id="myCheck" name="updates" checked
-                                           onClick="this.checked=!this.checked;"/>
-                                    <span className="checkmark"></span>
+
+                        </form></a>
+                            <div class="checkboxcolumn">
+                                <label class="checkboxContainer">Get updates from KILLY
+                                    <input type="checkbox" id="myCheck"name="updates" checked onClick="this.checked=!this.checked;"/>
+                                    <span class="checkmark"></span>
                                 </label>
                             </div>
-                        </form></a>
-
                         <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize">Pre-Add on Apple Music</button>
