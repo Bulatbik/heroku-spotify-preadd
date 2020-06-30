@@ -146,7 +146,8 @@ class App extends Component {
     render() {
         const params = this.getHashParams();
         const token = params.access_token;
-        console.log("Token: "+token)
+        const userToken = params.userToken;
+        console.log(userToken);
         return (
             <div class="app">
                 <div class="bg-image"><img src="/Albumcover.png"/></div>

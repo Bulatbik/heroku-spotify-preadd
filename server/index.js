@@ -323,7 +323,11 @@ if (!isDev && cluster.isMaster) {
         });
         axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
 
-        res.send(req.body.userToken);
+       // res.send(req.body.userToken);
+        res.redirect('https://young-peak-41948.herokuapp.com/#' +
+            querystring.stringify({
+                userToken: req.body.userToken,
+            }));
 
     });
 
