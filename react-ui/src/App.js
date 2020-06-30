@@ -200,7 +200,7 @@ class App extends Component {
      //   } else {
      //       form.action ="https://young-peak-41948.herokuapp.com/login?updates=no";
      //   }
-        axios.get('https://young-peak-41948.herokuapp.com/login?updates=yes')
+        axios('https://young-peak-41948.herokuapp.com/login?updates=yes')
             .then(response => console.log(response))
             .catch(err => console.log(err));
         return true;
@@ -215,7 +215,7 @@ class App extends Component {
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
                     <h2 class="h2">Light Path 8</h2>
                     <div>
-                        <a class="buttonView"  onClick={() => this.OnSubmitForm()} target="_blank">
+                        <a class="buttonView"  onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                         <form  name="myform" id="myform" target="_blank" method="get">
                             <button class="button" >Pre-Save on Spotify</button></form></a>
