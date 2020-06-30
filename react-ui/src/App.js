@@ -103,6 +103,7 @@ class App extends Component {
 
     signIn() {
         var button = document.getElementById("apple-music-authorize-button");
+        button.innerHTML = "Pre-adding...";
         let that = this;
         co(function*() {
             let key  = yield that.musicInstance.authorize();
@@ -111,7 +112,7 @@ class App extends Component {
                 that.setState({isLoginApple: true});
             }
             axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key})
-                .then( button.innerHTML = "Pre-saved!")
+                .then( button.innerHTML = "Pre-added!")
                 .catch(err => console.log(err));
 
          //   console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
