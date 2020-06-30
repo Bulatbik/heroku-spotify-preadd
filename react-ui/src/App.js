@@ -155,10 +155,15 @@ class App extends Component {
                     <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
-                        <form name="myform" id="myform" method="post">
-                            <button class="button" >Pre-Save on Spotify</button>
-
-                        </form></a>
+                            {(token!=null)&&(
+                                <form name="myform" id="myform" method="post">
+                                    <button class="button">Pre-Saved !!!</button>
+                                </form> )}
+                            {(token==null)&&(
+                                <form name="myform" id="myform" method="post">
+                                    <button class="button">Pre-Save on Spotify</button>
+                                </form> )}
+                                < /a>
                             <div class="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from KILLY
                                     <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
