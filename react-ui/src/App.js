@@ -149,9 +149,9 @@ class App extends Component {
                             <button class="buttonApple" onClick={() => this.signIn()} id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
                         <div class="legallinks">
-                            <a href="https://endless.lnk.to/TOS">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            <a href="https://endless.lnk.to/TOS" target="_blank">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             <span class="legal_links_seperator">|</span>
-                            <a href="https://endless.lnk.to/PrivacyPolicy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a>
+                            <a href="https://endless.lnk.to/PrivacyPolicy" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a>
                         </div>
                     </div>
                 </div>
