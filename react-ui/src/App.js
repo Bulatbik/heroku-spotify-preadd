@@ -192,7 +192,6 @@ class App extends Component {
     }
     OnSubmitForm()
     {
-        alert("hey");
         var checkBox = document.getElementById("myCheck");
         if (checkBox.checked === true){
             document.myform.action ="https://young-peak-41948.herokuapp.com/login?updates=yes";
@@ -203,7 +202,7 @@ class App extends Component {
         return true;
     }
     render() {
-      //  var checkBox = document.getElementById("myCheck");
+        var checkBox = document.getElementById("myCheck");
         return (
             <div class="app">
                 <div class="bg-image"><img src="/Albumcover.png"/></div>
@@ -212,9 +211,9 @@ class App extends Component {
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
                     <h2 class="h2">Light Path 8</h2>
                     <div>
-                        <a class="buttonView" href="https://young-peak-41948.herokuapp.com/login" target="_blank">
+                        <a class="buttonView"  onClick={() => this.OnSubmitForm()} target="_blank">
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
-                        <form  name="myform" target="_blank" method="get">
+                        <form  name="myform"  target="_blank" method="get">
                             <button class="button" >Pre-Save on Spotify</button></form></a>
                             <div class="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from KILLY
