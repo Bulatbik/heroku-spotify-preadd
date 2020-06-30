@@ -287,6 +287,7 @@ if (!isDev && cluster.isMaster) {
    // var state = generateRandomString(16);
     //res.cookie(stateKey, state);
      var state =  req.query.updates;
+     console.log("THIS SHows if user allowed: "+state);
       res.cookie(stateKey, state);
     // your application requests authorization
     var scope =
