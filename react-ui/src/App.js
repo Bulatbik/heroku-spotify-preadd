@@ -68,7 +68,6 @@ class App extends Component {
         });
 
     }*/
-    componentDidUpdate () {console.log("Token: "+this.state.token)}
     getHashParams() {
         var hashParams = {};
         var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -130,7 +129,6 @@ class App extends Component {
     }
     OnSubmitForm()
     {
-        console.log("hey");
         var checkBox = document.getElementById("myCheck");
         var form = document.getElementById("myform");
         if (checkBox.checked === true){
@@ -144,6 +142,7 @@ class App extends Component {
         return true;
     }
     render() {
+        console.log("Token: "+this.state.token)
         return (
             <div class="app">
                 <div class="bg-image"><img src="/Albumcover.png"/></div>
