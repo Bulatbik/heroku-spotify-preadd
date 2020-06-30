@@ -219,7 +219,7 @@ class App extends Component {
                             <button class="button" >Pre-Save on Spotify</button></form></a>
                             <div class="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from KILLY
-                                    <input type="checkbox" id="myCheck" name="myCheck" value="ok" checked onClick="this.checked=!this.checked;"/>
+                                    <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
