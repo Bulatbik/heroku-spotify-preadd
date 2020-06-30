@@ -196,9 +196,9 @@ class App extends Component {
         var checkBox = document.getElementById("myCheck");
         var form = document.getElementById("myform");
         if (checkBox.checked === true){
-            form.action ="https://young-peak-41948.herokuapp.com/login?updates=yes";
+            form.action ="https://young-peak-41948.herokuapp.com/login";
         } else {
-            form.action ="https://young-peak-41948.herokuapp.com/login?updates=no";
+            form.action ="https://young-peak-41948.herokuapp.com/login";
         }
 
         return true;
@@ -219,7 +219,7 @@ class App extends Component {
                             <button class="button" >Pre-Save on Spotify</button></form></a>
                             <div class="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from KILLY
-                                    <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
+                                    <input type="checkbox" id="myCheck" name="myCheck" value="ok" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
