@@ -1,9 +1,8 @@
-body {
+body, html {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 * {
@@ -16,7 +15,7 @@ body {
 }
 
 .bg-image img {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -28,10 +27,12 @@ body {
   transform: translate3d(-50%, 0, 0);
   max-width: none;
   opacity: .5;
+  object-fit: cover;
  }
 
 .bg-image {
-  position: fixed;
+  position: absolute;
+  overflow: hidden;
   z-index: -1;
   height: 200%;
   width: 200%;
