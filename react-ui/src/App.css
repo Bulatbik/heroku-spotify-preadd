@@ -10,7 +10,6 @@ body {
   overflow-y: auto;
 }
 
-
 * {
   box-sizing: border-box;
   text-align: center;
@@ -68,6 +67,7 @@ body {
   flex-direction: column;
   overflow-y: auto;
   justify-content: center;
+  text-align: -webkit-center;
 }
 
 .button {
@@ -84,6 +84,7 @@ body {
   background-color: transparent;
   display: contents;
 }
+
 .buttonApple {
   font-family: roboto-condensed, sans-serif;
   font-weight: 700;
@@ -98,6 +99,7 @@ body {
   background-color: transparent;
   display: contents;
 }
+
 .spotifyLogo{
   height: 75%;
   padding-right: 5px;
@@ -198,6 +200,7 @@ a:link, a:visited, a:hover, a:active {
   display: none;
 }
 .checkboxContainer {
+  color: white;
   display: inline-block;
   padding-left: 25px;
   position: relative;
@@ -206,6 +209,7 @@ a:link, a:visited, a:hover, a:active {
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .checkboxContainer .checkmark {
   display: inline-block;
