@@ -1,9 +1,10 @@
-body, html {
+body {
   width: 100vw;
   height: 100vh;
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  position: relative;
 }
 
 * {
@@ -34,7 +35,6 @@ body, html {
 
 .bg-image {
   position: absolute;
-  overflow: hidden;
   z-index: -1;
   height: 200%;
   width: 200%;
