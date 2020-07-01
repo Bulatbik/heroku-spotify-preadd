@@ -17,7 +17,7 @@ body {
 }
 
 .bg-image img {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -32,7 +32,7 @@ body {
  }
 
 .bg-image {
-  position: absolute;
+  position: fixed;
   z-index: -1;
   height: 200%;
   width: 200%;
