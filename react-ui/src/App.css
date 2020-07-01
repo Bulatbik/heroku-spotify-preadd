@@ -27,8 +27,6 @@ body {
 
 /*
 .bg-image img {
-
-  /* Add the blur effect */
   position: absolute;
   top: 0;
   right: 0;
@@ -41,7 +39,7 @@ body {
   transform: translate3d(-50%, 0, 0);
   max-width: none;
   opacity: .5;
-}
+ }
 */
 
 .bg-image {
