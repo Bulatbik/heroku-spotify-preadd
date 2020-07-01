@@ -7,12 +7,13 @@ html, body {
 
 body {
   position: relative;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 
 * {
   box-sizing: border-box;
+  text-align: center;
 }
 
 .app {
@@ -55,23 +56,18 @@ body {
   box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.6);
 }
 
-.bg-text {
-  color: white;
-  font-weight: bold;
-  position: absolute;
+.content-container {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  text-align: center;
   width: 100vw;
-  margin-top: 10%;
-  text-transform: uppercase;
-  font-size: 15px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow-y: auto;
+  justify-content: center;
 }
 
 .button {
@@ -150,17 +146,21 @@ body {
 }
 
 .h1 {
+  color: white;
   font-family: roboto, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 25px;
+  text-transform: uppercase;
   margin-block-end: -0.5em;
 }
 .h2 {
+  color: white;
   font-family: roboto, sans-serif;
   font-weight: 900;
   font-style: normal;
   font-size: 25px;
+  text-transform: uppercase;
 }
 
 .emailoptions {
@@ -183,8 +183,10 @@ body {
 }
 
 a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
   color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .checkboxcolumn {
