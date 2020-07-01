@@ -2,6 +2,8 @@ body, html {
   width: 100vw;
   height: 100vh;
   margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 * {
@@ -66,6 +68,7 @@ body, html {
   text-transform: uppercase;
   font-size: 15px;
   height: 100vh;
+  overflow-x: hidden;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
