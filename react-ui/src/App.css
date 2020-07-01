@@ -1,9 +1,15 @@
-body, html {
+html, body {
   width: 100vw;
   height: 100vh;
   margin: 0;
   overflow: hidden;
 }
+
+body {
+  position: relative;
+  overflow: auto;
+}
+
 
 * {
   box-sizing: border-box;
@@ -27,12 +33,10 @@ body, html {
   transform: translate3d(-50%, 0, 0);
   max-width: none;
   opacity: .5;
-  object-fit: cover;
  }
 
 .bg-image {
   position: absolute;
-  overflow: hidden;
   z-index: -1;
   height: 200%;
   width: 200%;
@@ -51,7 +55,6 @@ body, html {
   box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* Position text in the middle of the page/image */
 .bg-text {
   color: white;
   font-weight: bold;
