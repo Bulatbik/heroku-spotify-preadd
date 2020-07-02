@@ -58,6 +58,7 @@ body {
 .content-container {
   display: inline-block;
   margin: 35px auto;
+  overflow: auto;
 }
 
 .button {
