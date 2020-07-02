@@ -57,7 +57,7 @@ const router = express.Router();
 // Multi-process to utilize all CPU cores.
 async function scheduler() {
     //Spotify presave
- let response = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
+ let response = await axios.get('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresavelist',{headers:{"Content-Type" : "application/json"}});
   var uniqueReleasedUPDS = [];
   var uniqueNotReleasedUPDS = [];
   var uniqueReleasedSpotifyID = [];
@@ -103,7 +103,7 @@ async function scheduler() {
                    'Authorization': "Bearer " + access_token
                  }}
            )
-       let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { albumid: response.data[i].albumid}, headers:{"Content-Type" : "application/json"}});
+       let deleteResponse = await axios.delete('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { albumid: response.data[i].albumid}, headers:{"Content-Type" : "application/json"}});
        console.log("Response delete res: "+deleteResponse)
      }else if(uniqueNotReleasedUPDS.includes(response.data[i].albumUPC)){
        console.log("Do nothing");
@@ -147,7 +147,7 @@ async function scheduler() {
              )
          uniqueReleasedUPDS.push(response.data[i].albumUPC);
          uniqueReleasedSpotifyID.push(albumID);
-         let deleteResponse = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { albumid: response.data[i].albumid}, headers:{"Content-Type" : "application/json"}});
+         let deleteResponse = await axios.delete('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { albumid: response.data[i].albumid}, headers:{"Content-Type" : "application/json"}});
          console.log("Response delete res: "+deleteResponse)
        }catch (err) {
          console.log("Added to not released array");
@@ -167,7 +167,7 @@ async function scheduler() {
             kid: keyId
         }
     });
-    let applepresaves = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumsapplepresavelist',{headers:{"Content-Type" : "application/json"}});
+    let applepresaves = await axios.get('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumsapplepresavelist',{headers:{"Content-Type" : "application/json"}});
     var uniqueReleasedAppleUPDs = [];
     var uniqueNotReleasedAppleUPDs = [];
     var uniqueReleasedAppleIDs = [];
@@ -182,7 +182,7 @@ async function scheduler() {
             var url2 = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
             await API(url2,jwtToken,applepresaves.data[i].userToken);
             try {
-                let deleteResponse1 = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple', {
+                let deleteResponse1 = await axios.delete('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple', {
                     data: {presaveid: applepresaves.data[i].presaveid},
                     headers: {"Content-Type": "application/json"}
                 });
@@ -210,7 +210,7 @@ async function scheduler() {
                await API(url,jwtToken,applepresaves.data[i].userToken);
               console.log(applepresaves.data[i].presaveid);
               try {
-                  let deleteResponse1 = await axios.delete('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple', {
+                  let deleteResponse1 = await axios.delete('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple', {
                       data: {presaveid: applepresaves.data[i].presaveid},
                       headers: {"Content-Type": "application/json"}
                   });
@@ -321,7 +321,7 @@ if (!isDev && cluster.isMaster) {
             albumUPC: "886447779774",
             userToken: req.body.userToken
         });
-        axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
+        axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
 
        // res.send(req.body.userToken);
         res.redirect('https://young-peak-41948.herokuapp.com/#' +
@@ -395,7 +395,7 @@ if (!isDev && cluster.isMaster) {
               refToken: refresh_token,
                 wantsUpdates: state
             });
-            axios.post('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
+            axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
           });
           //////////
 
