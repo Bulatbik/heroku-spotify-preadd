@@ -2,7 +2,6 @@ html, body {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  overflow: hidden;
 }
 
 body {
@@ -32,10 +31,10 @@ body {
   transform: translate3d(-50%, 0, 0);
   max-width: none;
   opacity: .5;
+  overflow: hidden;
  }
 
 .bg-image {
-  position: absolute;
   z-index: -1;
   height: 200%;
   width: 200%;
@@ -46,6 +45,7 @@ body {
   background-color: black;
   display: block;
   position: fixed;
+  overflow: hidden;
 }
 
 .artwork {
