@@ -37,8 +37,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 29;
-rule.hour = 6;
+rule.minute = 10;
+rule.hour = 23;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -317,7 +317,7 @@ if (!isDev && cluster.isMaster) {
         console.log(jwtToken);
         let data = JSON.stringify({
             presaveID: uuidv4(),
-            albumUPC: "886447779774",
+            albumUPC: "195336573523",
             userToken: req.body.userToken
         });
         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
@@ -387,7 +387,7 @@ if (!isDev && cluster.isMaster) {
                         var userName = body.display_name;
                         let data = JSON.stringify({
                             presaveID: uuidv4(),
-                            albumUPC: "886447779774",
+                            albumUPC: "195336573523",
                             username: userName,
                             email: email,
                             userID: userID,
