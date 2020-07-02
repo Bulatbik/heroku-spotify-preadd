@@ -7,7 +7,6 @@ html, body {
 
 body {
   position: relative;
-  overflow-y: auto;
 }
 
 * {
@@ -58,8 +57,9 @@ body {
 .content-container {
   display: inline-block;
   margin: 35px auto;
-  overflow-y: auto;
   overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .button {
