@@ -122,7 +122,7 @@ class App extends Component {
         return (
             <div class="app">
                 <div class="bg-image"><img src="/Albumcover.png"/></div>
-                <div id="contentfadein" class="bg-text">
+                <div id="contentfadein" class="content-container">
                     <img class="artwork" src="/Albumcover.png"/>
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
                     <h2 class="h2">Light Path 8</h2>
@@ -150,7 +150,7 @@ class App extends Component {
                         </a>
                         <div class="legallinks">
                             <a href="https://endless.lnk.to/TOS" target="_blank">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                            <span class="legal_links_seperator">|</span>
+                            <span class="legal-links-seperator">|</span>
                             <a href="https://endless.lnk.to/PrivacyPolicy" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a>
                         </div>
                     </div>

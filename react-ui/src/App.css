@@ -1,11 +1,18 @@
-body, html {
-  width: 100%;
+html, body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   overflow: hidden;
 }
 
+body {
+  position: relative;
+  overflow-y: auto;
+}
+
 * {
   box-sizing: border-box;
+  text-align: center;
 }
 
 .app {
@@ -14,8 +21,6 @@ body, html {
 }
 
 .bg-image img {
-
-  /* Add the blur effect */
   position: absolute;
   top: 0;
   right: 0;
@@ -28,11 +33,10 @@ body, html {
   transform: translate3d(-50%, 0, 0);
   max-width: none;
   opacity: .5;
-}
+ }
 
 .bg-image {
   position: absolute;
-  overflow: hidden;
   z-index: -1;
   height: 200%;
   width: 200%;
@@ -46,27 +50,23 @@ body, html {
 }
 
 .artwork {
-  width: 100%;
-  height: 10%;
-  box-shadow: 0px 0px 25px 5px #acacac;
+  max-width: 275px;
+  max-height: 275px;
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* Position text in the middle of the page/image */
-.bg-text {
-  color: white;
-  font-weight: bold;
-  position: absolute;
+.content-container {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
   padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  justify-content: center;
   text-align: center;
-  width: 25%;
-  min-width: 350px;
-  margin: 0 auto;
-  text-transform: uppercase;
-  font-size: 15px;
 }
 
 .button {
@@ -83,6 +83,7 @@ body, html {
   background-color: transparent;
   display: contents;
 }
+
 .buttonApple {
   font-family: roboto-condensed, sans-serif;
   font-weight: 700;
@@ -97,6 +98,7 @@ body, html {
   background-color: transparent;
   display: contents;
 }
+
 .spotifyLogo{
   height: 75%;
   padding-right: 5px;
@@ -145,17 +147,21 @@ body, html {
 }
 
 .h1 {
+  color: white;
   font-family: roboto, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 25px;
+  text-transform: uppercase;
   margin-block-end: -0.5em;
 }
 .h2 {
+  color: white;
   font-family: roboto, sans-serif;
   font-weight: 900;
   font-style: normal;
   font-size: 25px;
+  text-transform: uppercase;
 }
 
 .emailoptions {
@@ -168,7 +174,7 @@ body, html {
 .legallinks {
   font-family: roboto-condensed,sans-serif;
   font-weight: 400;
-  margin-top: 20%
+  margin-top: 25%
 }
 .legal-links-seperator {
   font-family: roboto-condensed,sans-serif;
@@ -178,8 +184,10 @@ body, html {
 }
 
 a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
   color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .checkboxcolumn {
@@ -191,6 +199,7 @@ a:link, a:visited, a:hover, a:active {
   display: none;
 }
 .checkboxContainer {
+  color: white;
   display: inline-block;
   padding-left: 25px;
   position: relative;
@@ -199,6 +208,7 @@ a:link, a:visited, a:hover, a:active {
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .checkboxContainer .checkmark {
   display: inline-block;
