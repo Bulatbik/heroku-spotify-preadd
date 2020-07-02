@@ -5,9 +5,9 @@ var api = new ApiBuilder(),
 
 api.post('/albumspresave', function (request) { // SAVE your icecream
     var params = {
-        TableName: 'albumspresave',
+        TableName: 'SpotifyPreSave',
         Item: {
-            albumid: request.body.albumid,
+            presaveID: request.body.presaveID,
             albumUPC: request.body.albumUPC,
             username: request.body.username, // users' usernames
             refToken: request.body.refToken,
@@ -21,9 +21,9 @@ api.post('/albumspresave', function (request) { // SAVE your icecream
 
 api.post('/albumspresaveapple', function (request) { // SAVE your icecream
     var params = {
-        TableName: 'albumspresaveapple',
+        TableName: 'AppleMusicPreAdd',
         Item: {
-            presaveid: request.body.presaveid,
+            presaveID: request.body.presaveID,
             albumUPC: request.body.albumUPC,
             userToken: request.body.userToken
         }
@@ -32,27 +32,27 @@ api.post('/albumspresaveapple', function (request) { // SAVE your icecream
 }, { success: 201 });
 
 api.get('/albumspresavelist', function (request) { // GET all users
-    return dynamoDb.scan({ TableName: 'albumspresave' }).promise()
+    return dynamoDb.scan({ TableName: 'SpotifyPreSave' }).promise()
         .then(response => response.Items)
 });
 api.get('/albumsapplepresavelist', function (request) { // GET all users
-    return dynamoDb.scan({ TableName: 'albumspresaveapple' }).promise()
+    return dynamoDb.scan({ TableName: 'AppleMusicPreAdd' }).promise()
         .then(response => response.Items)
 });
 api.delete('/albumdeletepresave', function (request) { // GET all users
     var params = {
-        TableName:'albumspresave',
+        TableName:'SpotifyPreSave',
         Key:{
-            albumid: request.body.albumid
+            presaveID: request.body.presaveID
         }
     };
     return dynamoDb.delete(params).promise();
 });
 api.delete('/albumdeletepresaveapple', function (request) { // GET all users
     var params = {
-        TableName:'albumspresaveapple',
+        TableName:'AppleMusicPreAdd',
         Key:{
-            presaveid: request.body.presaveid
+            presaveID: request.body.presaveID
         }
     };
     return dynamoDb.delete(params).promise();
