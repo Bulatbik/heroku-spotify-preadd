@@ -1,13 +1,6 @@
 html, body {
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin: 0;
-  overflow: hidden;
-}
-
-body {
-  position: relative;
-  overflow-y: auto;
 }
 
 * {
@@ -33,10 +26,10 @@ body {
   transform: translate3d(-50%, 0, 0);
   max-width: none;
   opacity: .5;
+  overscroll-behavior: none;
  }
 
 .bg-image {
-  position: absolute;
   z-index: -1;
   height: 200%;
   width: 200%;
@@ -47,6 +40,7 @@ body {
   background-color: black;
   display: block;
   position: fixed;
+  overflow: hidden;
 }
 
 .artwork {
@@ -56,17 +50,11 @@ body {
 }
 
 .content-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  height: 100vh;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  overflow-y: auto;
   justify-content: center;
-  text-align: center;
+  margin: 35px auto;
+  height: 100%;
 }
 
 .button {
