@@ -7,7 +7,7 @@ api.post('/albumspresave', function (request) { // SAVE your icecream
     var params = {
         TableName: 'SpotifyPreSave',
         Item: {
-            albumid: request.body.presaveID,
+            presaveID: request.body.presaveID,
             albumUPC: request.body.albumUPC,
             username: request.body.username, // users' usernames
             refToken: request.body.refToken,
