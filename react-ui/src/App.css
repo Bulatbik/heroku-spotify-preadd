@@ -4,10 +4,6 @@ html, body {
   margin: 0;
 }
 
-body {
-  position: relative;
-}
-
 * {
   box-sizing: border-box;
   text-align: center;
@@ -45,7 +41,6 @@ body {
   background-color: black;
   display: block;
   position: fixed;
-  overflow: hidden;
 }
 
 .artwork {
@@ -55,11 +50,11 @@ body {
 }
 
 .content-container {
-  display: inline-block;
+  display: block;
   margin: 35px auto;
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  height: 100%;
 }
 
 .button {
