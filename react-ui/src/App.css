@@ -27,7 +27,6 @@ html, body {
   transform: translate3d(-50%, 0, 0);
   max-width: none;
   opacity: .5;
-  overflow: hidden;
  }
 
 .bg-image {
@@ -41,6 +40,7 @@ html, body {
   background-color: black;
   display: block;
   position: fixed;
+  overflow: hidden;
 }
 
 .artwork {
@@ -50,11 +50,11 @@ html, body {
 }
 
 .content-container {
-  display: block;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 35px auto;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .button {
