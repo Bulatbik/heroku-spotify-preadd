@@ -37,8 +37,8 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 10;
-rule.hour = 23;
+rule.minute = 45;
+rule.hour = 11;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -204,7 +204,7 @@ async function scheduler() {
                     }
                 });
                 var  albumAppleID = albumInfo.data.results[0].collectionId;
-                console.log("albumAppleID "+albumAppleID);
+                console.log("collectionId "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
 
                 await API(url,jwtToken,applepresaves.data[i].userToken);
