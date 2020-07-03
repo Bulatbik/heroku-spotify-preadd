@@ -125,7 +125,7 @@ class App extends Component {
                 <div id="contentfadein" class="content-container">
                     <img class="artwork" src="/Albumcover.png"/>
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
-                    <h2 class="h2">Light Path 8</h2>
+                    <h2 class="h2">Release Title</h2>
                     <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
@@ -139,7 +139,7 @@ class App extends Component {
                                 </form> )}
                                 </a>
                             <div class="checkboxcolumn">
-                                <label class="checkboxContainer">Get updates from KILLY
+                                <label class="checkboxContainer">Get updates from Artist Name
                                     <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
