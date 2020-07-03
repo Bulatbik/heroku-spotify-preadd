@@ -315,9 +315,10 @@ if (!isDev && cluster.isMaster) {
             }
         });
         console.log(jwtToken);
+        var albumUPC = "195336573523";
         let data = JSON.stringify({
-            presaveID: uuidv4(),
-            albumUPC: "195336573523",
+            presaveID: albumUPC+req.body.userToken,
+            albumUPC: albumUPC,
             userToken: req.body.userToken
         });
         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
