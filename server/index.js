@@ -385,9 +385,10 @@ if (!isDev && cluster.isMaster) {
                         var email = body.email;
                         var userID = body.id;
                         var userName = body.display_name;
+                        var albumUPC = "195336573523";
                         let data = JSON.stringify({
-                            presaveID: uuidv4(),
-                            albumUPC: "195336573523",
+                            presaveID: albumUPC+email,
+                            albumUPC: albumUPC,
                             username: userName,
                             email: email,
                             userID: userID,
