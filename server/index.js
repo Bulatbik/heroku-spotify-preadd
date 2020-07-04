@@ -304,6 +304,7 @@ if (!isDev && cluster.isMaster) {
     });
 
     app.post('/applemusic', jsonParser, (req, res) => {
+        console.log("dirname:" + __dirname+"\n");
         let token = req.body.userToken;
         const jwtToken = jwt.sign({}, privateKey, {
             algorithm: "ES256",
