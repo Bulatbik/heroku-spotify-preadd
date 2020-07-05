@@ -14,6 +14,7 @@ api.post('/albumspresave', function (request) { // SAVE your icecream
             email: request.body.email,
             userID: request.body.userID,
             wantsUpdates: request.body.wantsUpdates
+            country: request.body.country
         }
     }
     return dynamoDb.put(params).promise(); // returns dynamo result

@@ -388,6 +388,7 @@ if (!isDev && cluster.isMaster) {
                         var userID = body.id;
                         var userName = body.display_name;
                         var albumUPC = "195336573523";
+                        var country = body.country;
                         let data = JSON.stringify({
                             presaveID: albumUPC+email,
                             albumUPC: albumUPC,
@@ -396,6 +397,7 @@ if (!isDev && cluster.isMaster) {
                             userID: userID,
                             refToken: refresh_token,
                             wantsUpdates: state
+                            country: country
                         });
                         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
                     });
