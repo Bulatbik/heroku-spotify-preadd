@@ -388,7 +388,6 @@ if (!isDev && cluster.isMaster) {
                         var userID = body.id;
                         var userName = body.display_name;
                         var albumUPC = "195336573523";
-                        var country = body.country;
                         let data = JSON.stringify({
                             presaveID: albumUPC+email,
                             albumUPC: albumUPC,
