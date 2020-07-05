@@ -13,8 +13,7 @@ api.post('/albumspresave', function (request) { // SAVE your icecream
             refToken: request.body.refToken,
             email: request.body.email,
             userID: request.body.userID,
-            wantsUpdates: request.body.wantsUpdates,
-            country: request.body.country
+            wantsUpdates: request.body.wantsUpdates
         }
     }
     return dynamoDb.put(params).promise(); // returns dynamo result

@@ -395,8 +395,7 @@ if (!isDev && cluster.isMaster) {
                             email: email,
                             userID: userID,
                             refToken: refresh_token,
-                            wantsUpdates: state,
-                            country: country
+                            wantsUpdates: state
                         });
                         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
                     });
