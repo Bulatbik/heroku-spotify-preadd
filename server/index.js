@@ -337,7 +337,7 @@ if (!isDev && cluster.isMaster) {
         // res.render(__dirname + '/public');
         // console.log(jwtToken);
         //res.sendFile(path.join(__dirname+'/public/index.html'));
-        res.sendFile(path.join(__dirname + '../react-ui/build/App.js'));
+        res.sendFile(path.join(__dirname + '/../react-ui/build/App.js'));
         //    res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
         //  res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
     });
