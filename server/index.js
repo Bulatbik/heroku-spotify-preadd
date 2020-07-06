@@ -448,16 +448,16 @@ if (!isDev && cluster.isMaster) {
             }
         });
     });
-    app.post('/submit', urlencodedParser, function(req, res){
-        var nom = req.body.nom;
+   // app.post('/submit', urlencodedParser, function(req, res){
+  //      var nom = req.body.nom;
         /* save nom to database */
-        res.redirect('http://myDomain/' + nom);
-    });
+   //     res.redirect('http://myDomain/' + nom);
+   // });
 
-    app.get('/:nom', function(req, res){
+    //app.get('/:nom', function(req, res){
         /* if nom exists in database -> return ejs template with vars */
         /* else return 404 */
-    });
+   // });
 
     app.get("/Albumcover.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Albumcover.png'));
