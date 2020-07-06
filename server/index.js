@@ -336,10 +336,10 @@ if (!isDev && cluster.isMaster) {
         // dynamicStatic.setPath(__dirname + '/public');
         // res.render(__dirname + '/public');
         // console.log(jwtToken);
-        //res.sendFile(path.join(__dirname+'/public/index.html'));
-        res.sendFile(path.join(__dirname + '/../react-ui/build/App.js'));
-        //    res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
-        //  res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
+        // res.sendFile(path.join(__dirname+'/public/index.html'));
+        // res.sendFile(path.join(__dirname + '/../react-ui/build/static/App.js'));
+        // res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
+        // res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
     });
     app.get('/callback', function(req, res) {
 
@@ -468,7 +468,9 @@ if (!isDev && cluster.isMaster) {
     app.get("/AppleMusic.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/AppleMusic.png'));
     });
-
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Albumcover.png'));
+    });
     app.listen(PORT, function() {
         console.error(
             `Node ${
