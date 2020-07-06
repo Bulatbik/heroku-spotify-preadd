@@ -304,7 +304,7 @@ if (!isDev && cluster.isMaster) {
     });
 
     app.post('/applemusic', jsonParser, (req, res) => {
-        console.log("dirname:" + __dirname+"\n");
+        //dirname:/app/server!!!!
         let token = req.body.userToken;
         const jwtToken = jwt.sign({}, privateKey, {
             algorithm: "ES256",
@@ -336,7 +336,8 @@ if (!isDev && cluster.isMaster) {
         // dynamicStatic.setPath(__dirname + '/public');
         // res.render(__dirname + '/public');
         // console.log(jwtToken);
-        res.sendFile(path.join(__dirname+'/public/index.html'));
+        //res.sendFile(path.join(__dirname+'/public/index.html'));
+        res.sendFile(path.join('/build/static/App.js'));
         //    res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
         //  res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
     });
@@ -446,6 +447,16 @@ if (!isDev && cluster.isMaster) {
                 });
             }
         });
+    });
+    app.post('/submit', urlencodedParser, function(req, res){
+        var nom = req.body.nom;
+        /* save nom to database */
+        res.redirect('http://myDomain/' + nom);
+    });
+
+    app.get('/:nom', function(req, res){
+        /* if nom exists in database -> return ejs template with vars */
+        /* else return 404 */
     });
 
     app.get("/Albumcover.png", (req, res) => {
