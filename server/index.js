@@ -468,7 +468,7 @@ if (!isDev && cluster.isMaster) {
     app.get("/AppleMusic.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/AppleMusic.png'));
     });
-    app.get("*", (req, res) => {
+    app.get('/:id', (req, res) => {
         res.sendFile(path.join(__dirname+'/Albumcover.png'));
     });
     app.listen(PORT, function() {
