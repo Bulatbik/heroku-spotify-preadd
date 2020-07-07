@@ -303,8 +303,8 @@ if (!isDev && cluster.isMaster) {
          console.log("Artist Data");
          console.dir(albumPageInfo.data)
        //res.sendFile(path.join(__dirname+'/publicEJS/index.ejs'));
-         console.log(albumPageInfo.data.Item);
-         console.log(albumPageInfo.data.Item.albumName.S);
+       //  console.log(albumPageInfo.data.Item);
+         //console.log(albumPageInfo.data.Item.albumName.S);
          res.render(__dirname +'/views/index', {
              albumName: albumPageInfo.data.Item.albumName.S,
              ImageLink: albumPageInfo.data.Item.imageLink.S
