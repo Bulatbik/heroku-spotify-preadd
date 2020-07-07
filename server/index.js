@@ -257,6 +257,9 @@ async function API(url,token,upc) {
             console.log('Fetch Error :-S', err);
         });
 }
+async function artistSubDomainInfoGetter(route) {
+    return await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata')
+}
 if (!isDev && cluster.isMaster) {
     console.error(`Node cluster master ${process.pid} is running`)
     // Fork workers.
@@ -468,9 +471,8 @@ if (!isDev && cluster.isMaster) {
     app.get("/AppleMusic.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/AppleMusic.png'));
     });
-    app.get('/:id', (req, res) => {
-        let getArtistSubDomain =  axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata');
-        console.log("Artist Data "+getArtistSubDomain.data);
+     app.get('/:id', (req, res) => {
+        console.log("Artist Data "+artistSubDomainInfoGetter().data);
         res.sendFile(path.join(__dirname+'/Albumcover.png'));
     });
     app.listen(PORT, function() {
