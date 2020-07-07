@@ -86,11 +86,7 @@ async function API(url,token,upc) {
             console.log('Fetch Error :-S', err);
         });
 }
-async function artistSubDomainInfoGetter(route) {
-    let res = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata');
-    console.log(res.data);
-    return res;
-}
+
 if (!isDev && cluster.isMaster) {
     console.error(`Node cluster master ${process.pid} is running`)
     // Fork workers.
@@ -306,7 +302,12 @@ if (!isDev && cluster.isMaster) {
          let albumPageInfo = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata');
          console.log("Artist Data");
          console.dir(albumPageInfo.data)
-        res.sendFile(path.join(__dirname+'/Albumcover.png'));
+         res.sendFile(path.join(__dirname+'/publicEJS/index.ejs'));
+       /*  res.render('pages/index', {
+             drinks: drinks,
+             tagline: tagline
+         });*/
+      //  res.sendFile(path.join(__dirname+'/Albumcover.png'));
     });
     app.listen(PORT, function() {
         console.error(
