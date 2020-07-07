@@ -258,7 +258,9 @@ async function API(url,token,upc) {
         });
 }
 async function artistSubDomainInfoGetter(route) {
-    return await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata')
+    let res = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata');
+    console.log(res.data);
+    return res;
 }
 if (!isDev && cluster.isMaster) {
     console.error(`Node cluster master ${process.pid} is running`)
