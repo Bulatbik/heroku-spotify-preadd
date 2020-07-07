@@ -107,7 +107,7 @@ if (!isDev && cluster.isMaster) {
     // Priority serve any static files.
     // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
     //app.use(dynamicStatic);
-
+    app.set('view engine', 'ejs');
     app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
     var stateKey = "spotify_auth_state";
     //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
