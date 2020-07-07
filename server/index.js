@@ -306,8 +306,8 @@ if (!isDev && cluster.isMaster) {
          console.log(albumPageInfo.data.Item);
          console.log(albumPageInfo.data.Item.albumName);
          res.render(__dirname +'/views/index', {
-             albumName: albumPageInfo.data.Item.albumName,
-             ImageLink: albumPageInfo.data.Item.imageLink
+             albumName: albumPageInfo.data.Item.albumName.data,
+             ImageLink: albumPageInfo.data.Item.imageLink.data
          });
       //  res.sendFile(path.join(__dirname+'/Albumcover.png'));
     });
