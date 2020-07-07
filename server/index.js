@@ -303,7 +303,7 @@ if (!isDev && cluster.isMaster) {
          console.log("Artist Data");
          console.dir(albumPageInfo.data)
        //  res.sendFile(path.join(__dirname+'/publicEJS/index.ejs'));
-         res.render('publicEJS/index');
+         res.render('/index');
       //  res.sendFile(path.join(__dirname+'/Albumcover.png'));
     });
     app.listen(PORT, function() {
