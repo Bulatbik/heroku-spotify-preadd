@@ -304,10 +304,10 @@ if (!isDev && cluster.isMaster) {
          console.dir(albumPageInfo.data)
        //res.sendFile(path.join(__dirname+'/publicEJS/index.ejs'));
          console.log(albumPageInfo.data.Item);
-         console.log(albumPageInfo.data.Item.albumName);
+         console.log(albumPageInfo.data.Item.albumName[0]);
          res.render(__dirname +'/views/index', {
-             albumName: albumPageInfo.data.Item.albumName.data,
-             ImageLink: albumPageInfo.data.Item.imageLink.data
+             albumName: albumPageInfo.data.Item.albumName[0],
+             ImageLink: albumPageInfo.data.Item.imageLink[0]
          });
       //  res.sendFile(path.join(__dirname+'/Albumcover.png'));
     });
