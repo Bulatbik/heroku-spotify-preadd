@@ -469,6 +469,8 @@ if (!isDev && cluster.isMaster) {
         res.sendFile(path.join(__dirname+'/AppleMusic.png'));
     });
     app.get('/:id', (req, res) => {
+        let getArtistSubDomain =  axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata');
+        console.log("Artist Data "+getArtistSubDomain.data);
         res.sendFile(path.join(__dirname+'/Albumcover.png'));
     });
     app.listen(PORT, function() {
