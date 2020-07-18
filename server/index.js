@@ -37,7 +37,7 @@ let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
-rule.minute = 10;
+rule.minute = 0;
 rule.hour = 23;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
@@ -146,7 +146,7 @@ if (!isDev && cluster.isMaster) {
             }
         });
         console.log(jwtToken);
-        var albumUPC = "195336573523";
+        var albumUPC = "195398564521";
         let data = JSON.stringify({
             presaveID: albumUPC+req.body.userToken,
             albumUPC: albumUPC,
@@ -218,7 +218,7 @@ if (!isDev && cluster.isMaster) {
                         var email = body.email;
                         var userID = body.id;
                         var userName = body.display_name;
-                        var albumUPC = "195336573523";
+                        var albumUPC = "195398564521";
                         let data = JSON.stringify({
                             presaveID: albumUPC+email,
                             albumUPC: albumUPC,
