@@ -121,6 +121,7 @@ class App extends Component {
         console.log(userToken);
         return (
             <div class="app">
+                <div class="bg-image"><img src="/Albumcover.png"/></div>
                 <div id="contentfadein" class="content-container">
                     <img class="artwork" src="/Albumcover.png"/>
                     <h1 class="h1">Pre-Save/Pre-Add</h1>

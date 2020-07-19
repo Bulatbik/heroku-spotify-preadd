@@ -1,11 +1,14 @@
 html, body {
   height: 100%;
   margin: 0;
+<<<<<<< HEAD
   background-color: black;
   background-image: url("/Albumcover2.png");
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+=======
+>>>>>>> parent of 7b862b3... Replaced bg-image property w/ background property instead + added black overlay to bg artwork
 }
 
 * {
@@ -23,6 +26,36 @@ html, body {
   }
 }
 
+.bg-image img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  min-width: 55%;
+  height: 55%;
+  margin: auto;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+  max-width: none;
+  opacity: .5;
+  overscroll-behavior: none;
+ }
+
+.bg-image {
+  z-index: -1;
+  height: 200%;
+  width: 200%;
+  top: -50%;
+  left: -50%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  background-color: black;
+  display: block;
+  position: fixed;
+  overflow: hidden;
+}
+
 .artwork {
   max-width: 275px;
   max-height: 275px;
@@ -38,7 +71,7 @@ html, body {
 }
 @media only screen and (min-width: 1080px) {
   .content-container {
-    margin: auto;
+   margin: auto;
   }
 }
 
