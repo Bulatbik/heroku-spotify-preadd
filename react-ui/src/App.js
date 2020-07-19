@@ -122,7 +122,7 @@ class App extends Component {
         return (
             <div class="app">
                 <div id="contentfadein" class="content-container">
-                    <img class="artwork" src="/Albumcover.png"/>
+                    <img class="artwork" src="/releaseartwork.png"/>
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
                     <h2 class="h2">Release Title</h2>
                     <div>
