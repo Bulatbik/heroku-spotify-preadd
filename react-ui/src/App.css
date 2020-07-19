@@ -1,16 +1,7 @@
 html, body {
   height: 100%;
   margin: 0;
-<<<<<<< HEAD
-  background-color: black;
-  background-image: url("/Albumcover2.png");
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
-=======
->>>>>>> parent of 7b862b3... Replaced bg-image property w/ background property instead + added black overlay to bg artwork
-}
-
+  
 * {
   box-sizing: border-box;
   text-align: center;
