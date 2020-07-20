@@ -25,6 +25,7 @@ const schedule = require("node-schedule");
 var bodyParser = require('body-parser');
 //var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var jsonParser = bodyParser.json();
+var FormData = require('form-data');
 const fs      = require("fs");
 const jwt     = require("jsonwebtoken");
 const fetch = require('node-fetch');
@@ -34,7 +35,6 @@ const teamId     = "6UD2Y7J6SN";
 const keyId      = "6PAGB4SZ4L";
 //import { Amplify,API, Storage } from "aws-amplify";
 const Amplify      = require("aws-amplify");
-const API = require("aws-amplify");
 Amplify.default.configure({
     Auth: {
         mandatorySignIn: true,
@@ -296,12 +296,33 @@ if (!isDev && cluster.isMaster) {
     app.get("/AppleMusic.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/AppleMusic.png'));
     });
+
     app.get("/test", async (req, res) => {
        // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
-       var data = await API.default.get("sites", `/storage/sd.sd`);
-       console.log(data);
+        var data = new FormData();
+
+        var config = {
+            method: 'get',
+            url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/storage/sd.sd',
+            headers: {
+                'linkID': '"F"',
+                'X-Amz-Date': '20200720T141442Z',
+                'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAXDN6B3K7VJCHHJQP/20200720/us-east-2/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=d158d7856a29fa81d913a82c69b2f0c84752c70661d2f9aa295e28df82fe7a7c',
+                ...data.getHeaders()
+            },
+            data : data
+        };
+
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
     });
+
     app.post("/createTheSite", jsonParser, async (req, res) => {
         var link = req.body.linkID;
         link = link.substring(1);
