@@ -44,9 +44,9 @@ class App extends Component {
         var datares;
         let data =  await axios.post('https://young-peak-41948.herokuapp.com/createTheSite', {linkID:window.location.pathname})
             .then(function (response) {
-                datares = response;
+                datares = response.data;
             }).catch(err => console.log(err));
-        console.dir(data);
+        console.dir(datares);
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
