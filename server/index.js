@@ -281,7 +281,7 @@ if (!isDev && cluster.isMaster) {
 
     app.post("/createTheSite", jsonParser, async (req, res) => {
         var link = req.body.linkID;
-        link = link.substring(1);
+       // link = link.substring(1);
         console.log(link);
         var data = new FormData();
         var config = {

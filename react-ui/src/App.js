@@ -48,7 +48,7 @@ class App extends Component {
         console.log(sub);
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
-        let data =  await axios.post('https://endlss.to/createTheSite', {linkID:window.location.pathname})
+        let data =  await axios.post('https://endlss.to/createTheSite', {linkID:sub+"."+window.location.pathname.substring(1)})
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
