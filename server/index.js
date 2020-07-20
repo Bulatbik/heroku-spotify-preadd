@@ -35,26 +35,25 @@ const keyId      = "6PAGB4SZ4L";
 //import { Amplify,API, Storage } from "aws-amplify";
 const Amplify      = require("aws-amplify");
 const API = require("aws-amplify");
-import config from './config';
 Amplify.configure({
     Auth: {
         mandatorySignIn: true,
-        region: config.cognito.REGION,
-        userPoolId: config.cognito.USER_POOL_ID,
-        identityPoolId: config.cognito.IDENTITY_POOL_ID,
-        userPoolWebClientId: config.cognito.APP_CLIENT_ID
+        region: "us-east-2",
+        userPoolId: "us-east-2_yToN0O8fm",
+        identityPoolId: "us-east-2:85b868a4-9a4d-473a-86dd-6bb105bae384",
+        userPoolWebClientId: "4ns44et0i2dqf7ac1o1pv01qek"
     },
     Storage: {
-        region: config.s3.REGION,
-        bucket: config.s3.BUCKET,
-        identityPoolId: config.cognito.IDENTITY_POOL_ID
+        region: "us-east-2",
+        bucket: "music-dashboard-uploads",
+        identityPoolId: "us-east-2:85b868a4-9a4d-473a-86dd-6bb105bae384"
     },
     API: {
         endpoints: [
             {
                 name: "sites",
-                endpoint: config.apiGateway.URL,
-                region: config.apiGateway.REGION
+                endpoint: "https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod",
+                region: "us-east-2"
             },
         ]
     }
