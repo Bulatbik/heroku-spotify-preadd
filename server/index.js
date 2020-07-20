@@ -298,7 +298,7 @@ if (!isDev && cluster.isMaster) {
     });
     app.get("/test", async (req, res) => {
        // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
-       var data = await API.get("sites", `/storage/sd.sd`);
+       var data = await API.default.get("sites", `/storage/sd.sd`);
        console.log(data);
 
     });
