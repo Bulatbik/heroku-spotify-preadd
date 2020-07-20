@@ -304,7 +304,7 @@ if (!isDev && cluster.isMaster) {
             .catch(function (error) {
                 console.log(error);
             });
-       // theData = JSON.parse(theData);
+        theData = JSON.parse(JSON.stringify(theData));
         res.send({
             data: theData
         });
@@ -328,14 +328,6 @@ if (!isDev && cluster.isMaster) {
     app.get('*', function(request, response) {
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
     });
-    app.use(vhost('*.endlss.to', function handle (req, res, next) {
-        // for match of "foo.bar.example.com:8080" against "*.*.example.com":
-        console.dir(req.vhost.host) // => 'foo.bar.example.com:8080'
-        console.dir(req.vhost.hostname) // => 'foo.bar.example.com'
-        console.dir(req.vhost.length) // => 2
-        console.dir(req.vhost[0]) // => 'foo'
-        console.dir(req.vhost[1]) // => 'bar'
-    }))
      /*app.get('/:id', async (req, res) => {
          let albumPageInfo = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata');
          console.log("Artist Data");
