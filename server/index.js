@@ -11,6 +11,7 @@ if (env === "development" || env === "test") {
         process.env[key] = envConfig[key];
     });
 }
+var vhost = require('vhost')
 const request = require("request");
 const cors = require("cors");
 const querystring = require("querystring");
@@ -22,6 +23,7 @@ const numCPUs = require("os").cpus().length;
 const dynamicStatic = require('express-dynamic-static')();
 const axios = require('axios');
 const schedule = require("node-schedule");
+var connect = require('connect');
 var bodyParser = require('body-parser');
 //var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var jsonParser = bodyParser.json();
@@ -326,6 +328,14 @@ if (!isDev && cluster.isMaster) {
     app.get('*', function(request, response) {
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
     });
+    app.use(vhost('*.young-peak-41948.herokuapp.com', function handle (req, res, next) {
+        // for match of "foo.bar.example.com:8080" against "*.*.example.com":
+        console.dir(req.vhost.host) // => 'foo.bar.example.com:8080'
+        console.dir(req.vhost.hostname) // => 'foo.bar.example.com'
+        console.dir(req.vhost.length) // => 2
+        console.dir(req.vhost[0]) // => 'foo'
+        console.dir(req.vhost[1]) // => 'bar'
+    }))
      /*app.get('/:id', async (req, res) => {
          let albumPageInfo = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata');
          console.log("Artist Data");
