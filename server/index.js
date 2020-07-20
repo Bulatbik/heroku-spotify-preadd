@@ -35,7 +35,7 @@ const keyId      = "6PAGB4SZ4L";
 //import { Amplify,API, Storage } from "aws-amplify";
 const Amplify      = require("aws-amplify");
 const API = require("aws-amplify");
-Amplify.configure({
+Amplify.default.configure({
     Auth: {
         mandatorySignIn: true,
         region: "us-east-2",
