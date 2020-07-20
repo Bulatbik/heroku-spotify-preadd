@@ -274,11 +274,17 @@ if (!isDev && cluster.isMaster) {
 
     app.get("/test", async (req, res) => {
        // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
-        var data = new FormData();
 
+    });
+
+    app.post("/createTheSite", jsonParser, async (req, res) => {
+        var link = req.body.linkID;
+        link = link.substring(1);
+        console.log(link);
+        var data = new FormData();
         var config = {
             method: 'get',
-            url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/storage/sd.sd',
+            url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/storage/'+link,
             headers: {
                 'linkID': '"F"',
                 'X-Amz-Date': '20200720T141442Z',
@@ -287,21 +293,20 @@ if (!isDev && cluster.isMaster) {
             },
             data : data
         };
-
+        var theData;
         axios(config)
             .then(function (response) {
                 console.log(JSON.stringify(response.data));
+                theData = response.data;
             })
             .catch(function (error) {
                 console.log(error);
             });
-
-    });
-
-    app.post("/createTheSite", jsonParser, async (req, res) => {
-        var link = req.body.linkID;
-        link = link.substring(1);
-        var myHeaders = new Headers();
+        theData = JSON.parse(theData);
+        res.send({
+            data: theData
+        });
+       /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
         console.log("headerValu: " + headerValue);
         myHeaders.append("id", headerValue.toString());
@@ -316,12 +321,7 @@ if (!isDev && cluster.isMaster) {
             .then(result => {
                 theData = result
             })
-            .catch(error => console.log('error', error));
-        console.log("Artist Data: " + theData);
-        theData = JSON.parse(theData);
-        res.send({
-            data: theData
-        });
+            .catch(error => console.log('error', error));*/
     });
     app.get('*', function(request, response) {
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));

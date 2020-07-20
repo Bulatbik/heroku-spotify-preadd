@@ -39,7 +39,19 @@ class App extends Component {
         }
         this.musicInstance = this.props.musicInstance;
     }
-
+    async componentWillMount(){
+        console.log(window.location.pathname);
+        var datares;
+        let data =  await axios.post('https://secret-dusk-07866.herokuapp.com/createTheSite', {linkID:window.location.pathname})
+            .then(function (response) {
+                datares = response;
+            }).catch(err => console.log(err));
+        console.log(datares.data);
+       // this.setState({albumName: datares.data.data.data.albumName})
+        // console.log(datares.data);
+        // console.dir(data);
+        // console.dir(data.data);
+    }
     getHashParams() {
         var hashParams = {};
         var e, r = /([^&;=]+)=?([^&;]*)/g,
