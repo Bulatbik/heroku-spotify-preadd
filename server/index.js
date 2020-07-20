@@ -302,7 +302,7 @@ if (!isDev && cluster.isMaster) {
             .catch(function (error) {
                 console.log(error);
             });
-        theData = JSON.parse(theData);
+       // theData = JSON.parse(theData);
         res.send({
             data: theData
         });
