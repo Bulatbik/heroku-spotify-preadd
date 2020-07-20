@@ -42,7 +42,7 @@ class App extends Component {
     async componentWillMount(){
         console.log(window.location.pathname);
         var datares;
-        let data =  await axios.post('https://secret-dusk-07866.herokuapp.com/createTheSite', {linkID:window.location.pathname})
+        let data =  await axios.post('https://young-peak-41948.herokuapp.com/createTheSite', {linkID:window.location.pathname})
             .then(function (response) {
                 datares = response;
             }).catch(err => console.log(err));
