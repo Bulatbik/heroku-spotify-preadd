@@ -32,8 +32,9 @@ global.Headers = fetch.Headers;
 const privateKey = fs.readFileSync(__dirname+"/AuthKey.p8").toString();
 const teamId     = "6UD2Y7J6SN";
 const keyId      = "6PAGB4SZ4L";
-import { Amplify } from 'aws-amplify';
-import { API, Storage } from "aws-amplify";
+//import { Amplify,API, Storage } from "aws-amplify";
+const Amplify      = require("aws-amplify");
+const API = require("aws-amplify");
 import config from './config';
 Amplify.configure({
     Auth: {
@@ -83,34 +84,7 @@ const router = express.Router();
 //schedule.scheduleJob(rule, () => {
 //    scheduler();
 //}); // run every minute
-async function API(url,token,upc) {
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer "+token);
-    myHeaders.append("Music-User-Token", upc);
-    var raw = "";
 
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders
-    };
-    await fetch(url, requestOptions).then(
-        function(response) {
-            if (response.status !== 200) {
-                console.log('Looks like there was a problem. Status Code: ' +
-                    response.status);
-                return;
-            }
-
-            // Examine the text in the response
-            response.json().then(function(data) {
-                console.log(data);
-            });
-        }
-    )
-        .catch(function(err) {
-            console.log('Fetch Error :-S', err);
-        });
-}
 
 if (!isDev && cluster.isMaster) {
     console.error(`Node cluster master ${process.pid} is running`)
