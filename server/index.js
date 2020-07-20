@@ -1,6 +1,6 @@
 var client_id = '631ca25cb3e0449aa420715f50dc6b73'; // Your client id
 var client_secret = 'c2a34c1230904ddbab060d36b9020b01'; // Your secret
-var redirect_uri = 'https://young-peak-41948.herokuapp.com/callback'; // Your redirect uri
+var redirect_uri = 'https://endlss.to/callback'; // Your redirect uri
 var env = process.env.NODE_ENV || "development";
 
 if (env === "development" || env === "test") {
@@ -130,7 +130,7 @@ if (!isDev && cluster.isMaster) {
         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
 
         // res.send(req.body.userToken);
-        res.redirect('https://young-peak-41948.herokuapp.com/#' +
+        res.redirect('https://endlss.to/#' +
             querystring.stringify({
                 userToken: req.body.userToken,
             }));
@@ -209,13 +209,13 @@ if (!isDev && cluster.isMaster) {
 
                     //////////
                     // we can also pass the token to the browser to make requests from there
-                    res.redirect('https://young-peak-41948.herokuapp.com/#' +
+                    res.redirect('https://endlss.to/#' +
                         querystring.stringify({
                             access_token: access_token,
                             refresh_token: refresh_token
                         }));
                 } else {
-                    res.redirect('https://young-peak-41948.herokuapp.com/#' +
+                    res.redirect('https://endlss.to/#' +
                         querystring.stringify({
                             error: 'invalid_token'
                         }));
@@ -328,7 +328,7 @@ if (!isDev && cluster.isMaster) {
     app.get('*', function(request, response) {
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
     });
-    app.use(vhost('*.young-peak-41948.herokuapp.com', function handle (req, res, next) {
+    app.use(vhost('*.endlss.to', function handle (req, res, next) {
         // for match of "foo.bar.example.com:8080" against "*.*.example.com":
         console.dir(req.vhost.host) // => 'foo.bar.example.com:8080'
         console.dir(req.vhost.hostname) // => 'foo.bar.example.com'

@@ -41,8 +41,14 @@ class App extends Component {
     }
     async componentWillMount(){
         console.log(window.location.pathname);
+        var full = window.location.host
+        //window.location.host is subdomain.domain.com
+        var parts = full.split('.')
+        var sub = parts[0]
+        console.log(sub);
+//sub is 'subdomain', 'domain', type is 'com'
         var datares;
-        let data =  await axios.post('https://young-peak-41948.herokuapp.com/createTheSite', {linkID:window.location.pathname})
+        let data =  await axios.post('https://endlss.to/createTheSite', {linkID:window.location.pathname})
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
@@ -95,7 +101,7 @@ class App extends Component {
             if(key) {
                 that.setState({isLoginApple: true});
             }
-            axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key})
+            axios.post('https://endlss.to/applemusic', {userToken:key})
                 .then( button.innerHTML = "Pre-added!")
                 .catch(err => console.log(err));
 
@@ -120,9 +126,9 @@ class App extends Component {
         var form = document.getElementById("myform");
         button.innerHTML = "Pre-saving...";
         if (checkBox.checked === true){
-           form.action ="https://young-peak-41948.herokuapp.com/login?updates=yes";
+           form.action ="https://endlss.to/login?updates=yes";
         } else {
-            form.action ="https://young-peak-41948.herokuapp.com/login?updates=no";
+            form.action ="https://endlss.to/login?updates=no";
         }
         return true;
     }
