@@ -33,31 +33,6 @@ global.Headers = fetch.Headers;
 const privateKey = fs.readFileSync(__dirname+"/AuthKey.p8").toString();
 const teamId     = "6UD2Y7J6SN";
 const keyId      = "6PAGB4SZ4L";
-//import { Amplify,API, Storage } from "aws-amplify";
-const Amplify      = require("aws-amplify");
-Amplify.default.configure({
-    Auth: {
-        mandatorySignIn: true,
-        region: "us-east-2",
-        userPoolId: "us-east-2_yToN0O8fm",
-        identityPoolId: "us-east-2:85b868a4-9a4d-473a-86dd-6bb105bae384",
-        userPoolWebClientId: "4ns44et0i2dqf7ac1o1pv01qek"
-    },
-    Storage: {
-        region: "us-east-2",
-        bucket: "music-dashboard-uploads",
-        identityPoolId: "us-east-2:85b868a4-9a4d-473a-86dd-6bb105bae384"
-    },
-    API: {
-        endpoints: [
-            {
-                name: "sites",
-                endpoint: "https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod",
-                region: "us-east-2"
-            },
-        ]
-    }
-});
 let rule = new schedule.RecurrenceRule();
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
