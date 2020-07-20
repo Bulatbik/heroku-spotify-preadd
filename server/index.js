@@ -33,6 +33,7 @@ const privateKey = fs.readFileSync(__dirname+"/AuthKey.p8").toString();
 const teamId     = "6UD2Y7J6SN";
 const keyId      = "6PAGB4SZ4L";
 import { Amplify } from 'aws-amplify';
+import { API, Storage } from "aws-amplify";
 import config from './config';
 Amplify.configure({
     Auth: {
@@ -322,19 +323,49 @@ if (!isDev && cluster.isMaster) {
     app.get("/AppleMusic.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/AppleMusic.png'));
     });
-     app.get('/:id', async (req, res) => {
+    app.get("/test", async (req, res) => {
+       // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
+       var data = await API.get("sites", `/storage/sd.sd`);
+       console.log(data);
+
+    });
+    app.post("/createTheSite", jsonParser, async (req, res) => {
+        var link = req.body.linkID;
+        link = link.substring(1);
+        var myHeaders = new Headers();
+        var headerValue = `\"${link}\"`
+        console.log("headerValu: " + headerValue);
+        myHeaders.append("id", headerValue.toString());
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+        var theData;
+        await fetch("https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                theData = result
+            })
+            .catch(error => console.log('error', error));
+        console.log("Artist Data: " + theData);
+        theData = JSON.parse(theData);
+        res.send({
+            data: theData
+        });
+    });
+    app.get('*', function(request, response) {
+        response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
+    });
+     /*app.get('/:id', async (req, res) => {
          let albumPageInfo = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata');
          console.log("Artist Data");
          console.dir(albumPageInfo.data)
-       //res.sendFile(path.join(__dirname+'/publicEJS/index.ejs'));
-       //  console.log(albumPageInfo.data.Item);
-         //console.log(albumPageInfo.data.Item.albumName.S);
          res.render(__dirname +'/views/index', {
              albumName: albumPageInfo.data.Item.albumName.S,
              ImageLink: albumPageInfo.data.Item.imageLink.S
          });
-      //  res.sendFile(path.join(__dirname+'/Albumcover.png'));
-    });
+    });*/
     app.listen(PORT, function() {
         console.error(
             `Node ${
