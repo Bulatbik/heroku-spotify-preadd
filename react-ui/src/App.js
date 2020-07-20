@@ -46,7 +46,7 @@ class App extends Component {
             .then(function (response) {
                 datares = response;
             }).catch(err => console.log(err));
-        console.log(datares.data);
+        console.dir(datares);
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
