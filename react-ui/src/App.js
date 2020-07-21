@@ -55,7 +55,7 @@ class App extends Component {
                 datares = response.data;
             }).catch(err => console.log(err));
         console.dir(datares.data.albumName);
-        var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId;
+        var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
         this.setState({title:datares.data.albumName,artworkLink: artwork})
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
