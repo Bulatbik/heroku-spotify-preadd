@@ -35,7 +35,8 @@ class App extends Component {
             nowPlaying: { name: 'Not Checked', albumArt: '' },
             trackToAdd: {trackIds: []},
             music: [],
-            isLoginApple: false
+            isLoginApple: false,
+            title: ""
         }
         this.musicInstance = this.props.musicInstance;
     }
@@ -52,7 +53,8 @@ class App extends Component {
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
-        console.dir(datares);
+        console.dir(datares.data.albumName);
+        this.setState({title:datares.data.albumName})
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
@@ -143,7 +145,7 @@ class App extends Component {
                 <div id="contentfadein" class="content-container">
                     <img class="artwork" src="/Albumcover.png"/>
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
-                    <h2 class="h2">Release Title</h2>
+                    <h2 class="h2">{this.state.title}</h2>
                     <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
