@@ -37,6 +37,7 @@ class App extends Component {
             music: [],
             isLoginApple: false,
             title: "",
+            artistName: "",
             artworkLink:""
         }
         this.musicInstance = this.props.musicInstance;
@@ -56,7 +57,7 @@ class App extends Component {
             }).catch(err => console.log(err));
         console.dir(datares.data.albumName);
         var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
-        this.setState({title:datares.data.albumName,artworkLink: artwork})
+        this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName})
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
@@ -145,9 +146,9 @@ class App extends Component {
             <div class="app">
                 <div class="bg-image"><img src={this.state.artworkLink}/></div>
                 <div id="contentfadein" class="content-container">
-                    <img class="artwork" src="/Albumcover.png"/>
+                    <img class="artwork" src={this.state.artworkLink}/>
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
-                    <h2 class="h2">{this.state.title}</h2>
+                    <h2 class="h2">{this.state.title} by {this.state.artistName}</h2>
                     <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
@@ -161,7 +162,7 @@ class App extends Component {
                                 </form> )}
                                 </a>
                             <div class="checkboxcolumn">
-                                <label class="checkboxContainer">Get updates from Artist Name
+                                <label class="checkboxContainer">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
