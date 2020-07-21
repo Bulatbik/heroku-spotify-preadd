@@ -38,7 +38,8 @@ class App extends Component {
             isLoginApple: false,
             title: "",
             artistName: "",
-            artworkLink:""
+            artworkLink:"",
+            byTitle: ""
         }
         this.musicInstance = this.props.musicInstance;
     }
@@ -57,7 +58,7 @@ class App extends Component {
             }).catch(err => console.log(err));
         console.dir(datares.data.albumName);
         var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
-        this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName})
+        this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, byTitle: this.state.title+ " by "+this.state.artistName})
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
@@ -148,7 +149,7 @@ class App extends Component {
                 <div id="contentfadein" class="content-container">
                     <img class="artwork" src={this.state.artworkLink}/>
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
-                    <h2 class="h2">{this.state.title} by {this.state.artistName}</h2>
+                    <h2 class="h2">{this.state.byTitle}</h2>
                     <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
