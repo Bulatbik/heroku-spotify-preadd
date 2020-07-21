@@ -36,7 +36,8 @@ class App extends Component {
             trackToAdd: {trackIds: []},
             music: [],
             isLoginApple: false,
-            title: ""
+            title: "",
+            artworkLink:""
         }
         this.musicInstance = this.props.musicInstance;
     }
@@ -54,7 +55,8 @@ class App extends Component {
                 datares = response.data;
             }).catch(err => console.log(err));
         console.dir(datares.data.albumName);
-        this.setState({title:datares.data.albumName})
+        var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId;
+        this.setState({title:datares.data.albumName,artworkLink: artwork})
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
@@ -141,7 +143,7 @@ class App extends Component {
         console.log(userToken);
         return (
             <div class="app">
-                <div class="bg-image"><img src="/Albumcover.png"/></div>
+                <div class="bg-image"><img src={this.state.artworkLink}/></div>
                 <div id="contentfadein" class="content-container">
                     <img class="artwork" src="/Albumcover.png"/>
                     <h1 class="h1">Pre-Save/Pre-Add</h1>
