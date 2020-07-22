@@ -100,7 +100,8 @@ class App extends Component {
         })
     }
 
-    signIn= () => {
+    signIn() {
+        console.log("This is UPC: "+this.state.UPC)
         var button = document.getElementById("apple-music-authorize-button");
         button.innerHTML = "Pre-adding...";
         let that = this;
