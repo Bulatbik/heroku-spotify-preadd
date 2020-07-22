@@ -134,9 +134,9 @@ class App extends Component {
         var form = document.getElementById("myform");
         button.innerHTML = "Pre-saving...";
         if (checkBox.checked === true){
-           form.action ="https://endlss.to/login?updates=yes&upc="+this.state.UPC;
+           form.action ="https://young-peak-41948.herokuapp.com/login?updates=yes&upc="+this.state.UPC;
         } else {
-            form.action ="https://endlss.to/login?updates=no&upc="+this.state.UPC;
+            form.action ="https://young-peak-41948.herokuapp.com/login?updates=no&upc="+this.state.UPC;
         }
         return true;
     }
