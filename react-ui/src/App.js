@@ -101,7 +101,7 @@ class App extends Component {
     }
 
     signIn() {
-        console.log("This is UPC: "+this.state.UPC)
+        console.log("This is UPC: "+this.state.byTitle)
         var button = document.getElementById("apple-music-authorize-button");
         button.innerHTML = "Pre-adding...";
         let that = this;
@@ -119,8 +119,6 @@ class App extends Component {
         });
 
     }
-
-
     signOut() {
         let that = this;
         co(function*() {
@@ -172,9 +170,9 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                        <a class="buttonViewApple" onClick={this.signIn.bind(this)} id="apple-music-authorize">
+                        <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
-                            <button class="buttonApple" onClick={this.signIn.bind(this)} id="apple-music-authorize-button">Pre-Add on Apple Music</button>
+                            <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
                         <div class="legallinks">
                             <a href="https://endless.lnk.to/TOS" target="_blank">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
