@@ -129,7 +129,7 @@ if (!isDev && cluster.isMaster) {
             }
         });
         console.log(jwtToken);
-        var albumUPC = "195398564521";
+        var albumUPC = req.body.upc;
         let data = JSON.stringify({
             presaveID: albumUPC+req.body.userToken,
             albumUPC: albumUPC,
@@ -138,7 +138,7 @@ if (!isDev && cluster.isMaster) {
         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
 
         // res.send(req.body.userToken);
-        res.redirect('https://endlss.to/#' +
+        res.redirect(req.body.urlLink+'/#' +
             querystring.stringify({
                 userToken: req.body.userToken,
             }));
