@@ -101,7 +101,6 @@ class App extends Component {
     }
 
     signIn() {
-        console.log("This is UPC: "+this.state.byTitle)
         var button = document.getElementById("apple-music-authorize-button");
         button.innerHTML = "Pre-adding...";
         let that = this;
@@ -114,8 +113,6 @@ class App extends Component {
             axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
                 .then( button.innerHTML = "Pre-added!")
                 .catch(err => console.log(err));
-
-         //   console.log(that.musicInstance.api.addToLibrary({ ["albums"]: ["1106659171"] }));
         });
 
     }
