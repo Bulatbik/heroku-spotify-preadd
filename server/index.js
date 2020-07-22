@@ -86,7 +86,7 @@ if (!isDev && cluster.isMaster) {
     app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
     var stateKey = "spotify_auth_state";
     //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
-    self.app.all(/.*/, function(req, res, next) {
+    app.all(/.*/, function(req, res, next) {
         var host = req.header("host");
         if (host.match(/^herokuapp\..*/i)) {
             res.redirect(301, "http://www." + host + req.url);
