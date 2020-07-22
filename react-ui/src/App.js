@@ -52,7 +52,7 @@ class App extends Component {
         console.log(sub);
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
-        let data =  await axios.post('https://young-peak-41948.herokuapp.com/createTheSite', {linkID:sub+"."+window.location.pathname.substring(1)})
+        let data =  await axios.post('https://young-peak-41948.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+window.location.pathname.substring(1).toLowerCase()})
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
