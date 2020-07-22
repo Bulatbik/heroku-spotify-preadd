@@ -171,9 +171,9 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                        <a class="buttonViewApple" onClick={() => this.signIn.bind(this)} id="apple-music-authorize">
+                        <a class="buttonViewApple" onClick={() => this.signIn().bind(this)} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
-                            <button class="buttonApple" onClick={() => this.signIn.bind(this)} id="apple-music-authorize-button">Pre-Add on Apple Music</button>
+                            <button class="buttonApple" onClick={() => this.signIn().bind(this)} id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
                         <div class="legallinks">
                             <a href="https://endless.lnk.to/TOS" target="_blank">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
