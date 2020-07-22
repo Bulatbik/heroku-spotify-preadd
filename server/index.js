@@ -153,6 +153,7 @@ if (!isDev && cluster.isMaster) {
 
         var code = req.query.code || null;
         var state = req.query.state || null;
+        var UPC = req.query.upc || null;
         var storedState = req.cookies ? req.cookies[stateKey] : null;
 
         if (state === null || state !== storedState) {
@@ -193,7 +194,7 @@ if (!isDev && cluster.isMaster) {
                         var email = body.email;
                         var userID = body.id;
                         var userName = body.display_name;
-                        var albumUPC = "195398564521";
+                        var albumUPC = UPC;
                         let data = JSON.stringify({
                             presaveID: albumUPC+email,
                             albumUPC: albumUPC,

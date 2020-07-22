@@ -39,7 +39,8 @@ class App extends Component {
             title: "",
             artistName: "",
             artworkLink:"",
-            byTitle: ""
+            byTitle: "",
+            UPC: ""
         }
         this.musicInstance = this.props.musicInstance;
     }
@@ -59,7 +60,7 @@ class App extends Component {
         console.dir(datares.data.albumName);
         var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
         var byTitle = datares.data.albumName;
-        this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, byTitle: byTitle})
+        this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, byTitle: byTitle, UPC: datares.data.UPC})
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
@@ -133,9 +134,9 @@ class App extends Component {
         var form = document.getElementById("myform");
         button.innerHTML = "Pre-saving...";
         if (checkBox.checked === true){
-           form.action ="https://endlss.to/login?updates=yes";
+           form.action ="https://endlss.to/login?updates=yes&upc="+this.state.UPC;
         } else {
-            form.action ="https://endlss.to/login?updates=no";
+            form.action ="https://endlss.to/login?updates=no&upc="+this.state.UPC;
         }
         return true;
     }
