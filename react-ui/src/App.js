@@ -22,7 +22,7 @@ const useScript = url => {
 };
 
 class App extends Component {
-    async constructor(props){
+    constructor(props){
         super(props);
         const params = this.getHashParams();
         const token = params.access_token;
@@ -44,24 +44,8 @@ class App extends Component {
         }
         this.musicInstance = this.props.musicInstance;
         this.signIn = this.signIn.bind(this);
-        console.log(window.location.pathname);
-        var full = window.location.host
-        //window.location.host is subdomain.domain.com
-        var parts = full.split('.')
-        var sub = parts[0]
-        console.log(sub);
-//sub is 'subdomain', 'domain', type is 'com'
-        var datares;
-        let data =  await axios.post('https://young-peak-41948.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+window.location.pathname.substring(1).toLowerCase()})
-            .then(function (response) {
-                datares = response.data;
-            }).catch(err => console.log(err));
-        console.dir(datares.data.albumName);
-        var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
-        var byTitle = datares.data.albumName;
-        await this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, byTitle: byTitle, UPC: datares.data.UPC})
     }
-    async componentWillMount(){
+    async componentDidMount(){
         console.log(window.location.pathname);
         var full = window.location.host
         //window.location.host is subdomain.domain.com
