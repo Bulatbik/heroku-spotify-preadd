@@ -100,7 +100,7 @@ class App extends Component {
         })
     }
 
-    signIn() {
+    signIn= () => {
         var button = document.getElementById("apple-music-authorize-button");
         button.innerHTML = "Pre-adding...";
         let that = this;
@@ -110,7 +110,7 @@ class App extends Component {
             if(key) {
                 that.setState({isLoginApple: true});
             }
-            axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key, upc:this.state.UPC,urlLink: window.location.href})
+            axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key, upc:this.state.UPC, urlLink: window.location.href})
                 .then( button.innerHTML = "Pre-added!")
                 .catch(err => console.log(err));
 
