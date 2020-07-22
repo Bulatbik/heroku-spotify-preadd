@@ -43,6 +43,7 @@ class App extends Component {
             UPC: ""
         }
         this.musicInstance = this.props.musicInstance;
+        this.signIn = this.signIn.bind(this);
     }
     async componentWillMount(){
         console.log(window.location.pathname);
