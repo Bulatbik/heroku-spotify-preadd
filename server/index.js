@@ -90,7 +90,7 @@ if (!isDev && cluster.isMaster) {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
         // var state = generateRandomString(16);
         //res.cookie(stateKey, state);
-        var state =  req.query.updates;
+        var state =  req.query.updates+"@"+req.query.upc+"@"+req.query.url;
         console.log("THIS SHows if user allowed: "+state);
         res.cookie(stateKey, state);
         // your application requests authorization
@@ -153,7 +153,6 @@ if (!isDev && cluster.isMaster) {
 
         var code = req.query.code || null;
         var state = req.query.state || null;
-        var UPC = req.query.upc || null;
         var storedState = req.cookies ? req.cookies[stateKey] : null;
 
         if (state === null || state !== storedState) {
@@ -175,7 +174,8 @@ if (!isDev && cluster.isMaster) {
                 },
                 json: true
             };
-
+            const finalData = state.split('@');
+            console.log("Debug: "+finalData);
             request.post(authOptions, function(error, response, body) {
                 if (!error && response.statusCode === 200) {
 
@@ -187,22 +187,20 @@ if (!isDev && cluster.isMaster) {
                         headers: { 'Authorization': 'Bearer ' + access_token },
                         json: true
                     };
-
                     // use the access token to access the Spotify Web API
                     request.get(options, function(error, response, body) {
                         console.log(body);
                         var email = body.email;
                         var userID = body.id;
                         var userName = body.display_name;
-                        var albumUPC = UPC;
                         let data = JSON.stringify({
-                            presaveID: albumUPC+email,
-                            albumUPC: albumUPC,
+                            presaveID: finalData[1]+email,
+                            albumUPC: finalData[1],
                             username: userName,
                             email: email,
                             userID: userID,
                             refToken: refresh_token,
-                            wantsUpdates: state
+                            wantsUpdates: finalData[0]
                         });
                         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
                     });
@@ -210,13 +208,13 @@ if (!isDev && cluster.isMaster) {
 
                     //////////
                     // we can also pass the token to the browser to make requests from there
-                    res.redirect('https://endlss.to/#' +
+                    res.redirect(finalData[2]+'/#' +
                         querystring.stringify({
                             access_token: access_token,
                             refresh_token: refresh_token
                         }));
                 } else {
-                    res.redirect('https://endlss.to/#' +
+                    res.redirect(finalData[2]+'/#' +
                         querystring.stringify({
                             error: 'invalid_token'
                         }));
