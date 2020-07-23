@@ -148,7 +148,7 @@ html, body {
 .h1 {
   color: white;
   font-family: roboto, sans-serif;
-  font-weight: 400;
+  font-weight: 900;
   font-style: normal;
   font-size: 25px;
   text-transform: uppercase;
@@ -160,6 +160,13 @@ html, body {
   font-weight: 900;
   font-style: normal;
   font-size: 25px;
+  text-transform: uppercase;
+}
+.h3 {
+  color: white;
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
