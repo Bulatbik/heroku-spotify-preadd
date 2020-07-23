@@ -149,7 +149,7 @@ class App extends Component {
                     <img class="artwork" src={this.state.artworkLink}/>
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
-                    <h3 class="h3">{this.state.react-datepicker}</h3>
+                    <h3 class="h3">{this.state.date}</h3>
                     <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
