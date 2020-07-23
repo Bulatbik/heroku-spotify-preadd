@@ -171,6 +171,12 @@ class App extends Component {
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
+                            <div class="checkboxcolumn">
+                                <label class="checkboxContainer">Get updates from {this.state.artistName}
+                                    <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
                         <div class="legallinks">
                             <a href="https://endless.lnk.to/TOS" target="_blank">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             <span class="legal-links-seperator">|</span>
