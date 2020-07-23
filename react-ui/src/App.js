@@ -147,7 +147,7 @@ class App extends Component {
                 <div class="bg-image"><img src={this.state.artworkLink}/></div>
                 <div id="contentfadein" class="content-container">
                     <img class="artwork" src={this.state.artworkLink}/>
-                    <h1 class="h1">Pre-Save/Pre-Add</h1>
+                    <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
                     <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
