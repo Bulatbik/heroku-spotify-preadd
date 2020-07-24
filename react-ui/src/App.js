@@ -178,7 +178,7 @@ class App extends Component {
                                 </label>
                             </div>
                         <div class="legalfooter">
-                                <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co">Terms of Service</a> &amp;
+                                <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co">Terms of Service</a> & 
                                 <a class="legallinks" href="https://privacy.endlessdigital.co">Privacy Policy</a>.</p>
                         </div>
                     </div>
