@@ -144,8 +144,8 @@ class App extends Component {
         console.log(userToken);
         return (
             <div class="app">
+                <div class="bg-image"><img src={this.state.artworkLink}/></div>
                 <div id="contentfadein" class="content-container">
-                    <img class="artwork" src={this.state.artworkLink}/>
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
                     <h3 class="h3">Available</h3>
