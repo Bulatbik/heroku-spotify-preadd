@@ -177,10 +177,9 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                        <div class="legallinks">
-                            <a href="https://endless.lnk.to/TOS" target="_blank">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                            <span class="legal-links-seperator">|</span>
-                            <a href="https://endless.lnk.to/PrivacyPolicy" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a>
+                        <div class="legalfooter">
+                                <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co">Terms of Service</a> &amp;
+                                <a class="legallinks" href="https://privacy.endlessdigital.co">Privacy Policy</a>.</p>
                         </div>
                     </div>
                 </div>

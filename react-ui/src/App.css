@@ -120,7 +120,7 @@ html, body {
   position: relative;
   height: 50px;
   align-items: center;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   border-radius: 2px;
 }
@@ -142,7 +142,7 @@ html, body {
   border-radius: 2px;
   margin-top: 10%;
   white-space: nowrap;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 
 .h1 {
@@ -170,23 +170,26 @@ html, body {
   margin-bottom: 10%;
 }
 
-.legallinks {
-  font-family: roboto-condensed,sans-serif;
-  font-weight: 400;
-  margin-top: 25%;
+.legalfooter {
+  padding: 11%;
 }
-.legal-links-seperator {
-  font-family: roboto-condensed,sans-serif;
-  font-size: 15px;
-  font-weight: 400;
+.legaltext {
   color: white;
+  font-size: 12px;
+  font-family: roboto, sans-serif;
+  text-transform: uppercase;
+}
+.legallinks {
+  margin-top: 25%;
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: white;
-  font-size: 15px;
+  color: #fff;
+  font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
+  font-family: roboto, sans-serif;
+  font-weight: 600;
 }
 
 .checkboxcolumn {
