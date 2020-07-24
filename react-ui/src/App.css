@@ -58,7 +58,7 @@ html, body {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  margin: 6% auto;
+  margin: 8% auto;
   height: 100%;
 }
 @media only screen and (min-width: 1080px) {
@@ -171,7 +171,7 @@ html, body {
 }
 
 .legalfooter {
-  padding: 11%;
+  padding-top: 20%;
 }
 .legaltext {
   color: white;
