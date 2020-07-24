@@ -58,7 +58,7 @@ html, body {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  margin: 8% auto;
+  margin: 9.2% auto;
   height: 100%;
 }
 @media only screen and (min-width: 1080px) {
