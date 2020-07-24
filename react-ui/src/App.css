@@ -171,6 +171,9 @@ html, body {
   font-weight: 500;
   margin: 30% 0 30% 0;
 }
+p {
+  margin: auto;
+}
 
 .emailoptions {
   font-family: roboto-condensed,sans-serif;
