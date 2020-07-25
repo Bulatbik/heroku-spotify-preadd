@@ -145,7 +145,7 @@ html, body {
   white-space: nowrap;
 }
 
-h1, h2 {
+.h1, .h2 {
   color: white;
   font-family: roboto, sans-serif;
   font-weight: 400;
