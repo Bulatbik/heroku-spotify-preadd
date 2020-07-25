@@ -58,7 +58,7 @@ html, body {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  margin: 16.6% auto;
+  margin: 13.4% auto;
   height: 100%;
 }
 @media only screen and (min-width: 1080px) {
@@ -174,7 +174,7 @@ p {
 }
 
 .legalfooter {
-  margin-top: 59%;
+  margin-top: 70%;
 }
 .legaltext {
   color: white;
