@@ -58,7 +58,7 @@ html, body {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  margin: 9.2% auto;
+  margin: 17.6% auto;
   height: 100%;
 }
 @media only screen and (min-width: 1080px) {
@@ -145,19 +145,10 @@ html, body {
   white-space: nowrap;
 }
 
-.h1 {
+h1, h2 {
   color: white;
   font-family: roboto, sans-serif;
   font-weight: 400;
-  font-style: normal;
-  font-size: 25px;
-  text-transform: uppercase;
-  margin: 0;
-}
-.h2 {
-  color: white;
-  font-family: roboto, sans-serif;
-  font-weight: 900;
   font-style: normal;
   font-size: 25px;
   text-transform: uppercase;
@@ -169,7 +160,7 @@ html, body {
   font-family: roboto, sans-serif;
   font-size: 18px;
   font-weight: 500;
-  margin: 30% 0 30% 0;
+  margin: 5% 0 30% 0;
 }
 p {
   margin: auto;
