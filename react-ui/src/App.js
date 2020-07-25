@@ -1,8 +1,3 @@
-import ReactGA from 'react-ga';
-function initializeReactGA() {
-    ReactGA.initialize('UA-92470005-11');
-    ReactGA.pageview('/homepage');
-}
 import React, { useCallback, useEffect, useState, Component} from 'react';
 import co from 'co';
 import logo from './logo.svg';
