@@ -3,6 +3,16 @@ import co from 'co';
 import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
+import ReactGA from 'react-ga';
+import auth from './auth.ts'; // Sample authentication provider
+
+const trackingId = "UA-92470005-11"; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
+ReactGA.set({
+  userId: auth.currentUserId(),
+  // any data that is relevant to the user session
+  // that you would like to track with google analytics
+})
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
 
