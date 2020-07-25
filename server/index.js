@@ -206,6 +206,7 @@ if (!isDev && cluster.isMaster) {
                             albumUPC: finalData[1],
                             username: userName,
                             email: email,
+                            country: body.country,
                             userID: userID,
                             refToken: refresh_token,
                             wantsUpdates: finalData[0]

@@ -11,6 +11,7 @@ api.post('/albumspresave', function (request) { // SAVE your icecream
             albumUPC: request.body.albumUPC,
             username: request.body.username, // users' usernames
             refToken: request.body.refToken,
+            country: request.body.country,
             email: request.body.email,
             userID: request.body.userID,
             wantsUpdates: request.body.wantsUpdates
