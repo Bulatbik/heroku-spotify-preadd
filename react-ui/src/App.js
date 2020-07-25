@@ -1,13 +1,13 @@
-import React, { useCallback, useEffect, useState, Component} from 'react';
-import co from 'co';
-import logo from './logo.svg';
-import './App.css';
-import SpotifyWebApi from "spotify-web-api-js";
 import ReactGA from 'react-ga';
 function initializeReactGA() {
     ReactGA.initialize('UA-92470005-11');
     ReactGA.pageview('/homepage');
 }
+import React, { useCallback, useEffect, useState, Component} from 'react';
+import co from 'co';
+import logo from './logo.svg';
+import './App.css';
+import SpotifyWebApi from "spotify-web-api-js";
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
 const useScript = url => {
