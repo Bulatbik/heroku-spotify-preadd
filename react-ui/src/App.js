@@ -5,7 +5,6 @@ import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
-
 const useScript = url => {
     useEffect(() => {
         const script = document.createElement('script');
@@ -146,9 +145,9 @@ class App extends Component {
             <div class="app">
                 <div class="bg-image"><img src={this.state.artworkLink}/></div>
                 <div id="contentfadein" class="content-container">
-                    <img class="artwork" src={this.state.artworkLink}/>
-                    <h1 class="h1">Pre-Save/Pre-Add</h1>
+                    <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
+                    <h3 class="h3">Available</h3>
                     <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
@@ -171,14 +170,20 @@ class App extends Component {
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
-                        <div class="legallinks">
-                            <a href="https://endless.lnk.to/TOS" target="_blank">Terms of Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                            <span class="legal-links-seperator">|</span>
-                            <a href="https://endless.lnk.to/PrivacyPolicy" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a>
+                            <div class="checkboxcolumn">
+                                <label class="checkboxContainer">Get updates from {this.state.artistName}
+                                    <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        <div class="legalfooter">
+                                <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
+                                <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         );
     }
 }

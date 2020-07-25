@@ -19,19 +19,18 @@ html, body {
 }
 
 .bg-image img {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
   bottom: 0;
   left: 50%;
-  min-width: 55%;
-  height: 55%;
+  min-width: 50%;
+  height: 50%;
   margin: auto;
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
-  max-width: none;
   opacity: .5;
   overscroll-behavior: none;
+  object-fit: cover;
  }
 
 .bg-image {
@@ -49,8 +48,8 @@ html, body {
 }
 
 .artwork {
-  max-width: 275px;
-  max-height: 275px;
+  max-width: 250px;
+  max-height: 250px;
   box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.6);
   align-self: center;
 }
@@ -59,7 +58,7 @@ html, body {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  margin: 35px auto;
+  margin: 8.3% auto;
   height: 100%;
 }
 @media only screen and (min-width: 1080px) {
@@ -141,26 +140,30 @@ html, body {
   align-items: center;
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   border-radius: 2px;
-  margin-top: 10%;
+  margin-top: 25%;
+  margin-bottom: 5%;
   white-space: nowrap;
 }
 
-.h1 {
-  color: white;
-  font-family: roboto, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 25px;
-  text-transform: uppercase;
-  margin-block-end: -0.5em;
-}
-.h2 {
+.h1, .h2 {
   color: white;
   font-family: roboto, sans-serif;
   font-weight: 900;
   font-style: normal;
   font-size: 25px;
   text-transform: uppercase;
+  margin: 0;
+}
+.h3 {
+  color: white;
+  text-transform: uppercase;
+  font-family: roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5% 0 47% 0;
+}
+p {
+  margin: auto;
 }
 
 .emailoptions {
@@ -170,23 +173,26 @@ html, body {
   margin-bottom: 10%;
 }
 
-.legallinks {
-  font-family: roboto-condensed,sans-serif;
-  font-weight: 400;
-  margin-top: 25%
+.legalfooter {
+  margin-top: 70%;
 }
-.legal-links-seperator {
-  font-family: roboto-condensed,sans-serif;
-  font-size: 15px;
-  font-weight: 400;
+.legaltext {
   color: white;
+  font-size: 12px;
+  font-family: roboto, sans-serif;
+  text-transform: uppercase;
+}
+.legallinks {
+  margin-top: 25%;
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: white;
-  font-size: 15px;
+  color: #fff;
+  font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
+  font-family: roboto, sans-serif;
+  font-weight: 600;
 }
 
 .checkboxcolumn {
