@@ -58,7 +58,7 @@ html, body {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  margin: 13.4% auto;
+  margin: 7.5% auto;
   height: 100%;
 }
 @media only screen and (min-width: 1080px) {
@@ -160,7 +160,7 @@ html, body {
   font-family: roboto, sans-serif;
   font-size: 18px;
   font-weight: 500;
-  margin: 5% 0 30% 0;
+  margin: 5% 0 50% 0;
 }
 p {
   margin: auto;
