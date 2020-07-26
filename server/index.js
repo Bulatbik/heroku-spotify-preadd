@@ -211,34 +211,28 @@ if (!isDev && cluster.isMaster) {
                             refToken: refresh_token,
                             wantsUpdates: finalData[0]
                         });
-                      //  axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
-                        var data2 = new FormData();
-                        console.log("Before");
-                        var config = {
-                            method: 'post',
-                            url:  'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/download',
-                            headers: {
-                                'linkID': '"F"',
-                                'X-Amz-Date': '20200726T172546Z',
-                                'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAXDN6B3K7VJCHHJQP/20200726/us-east-2/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=d158d7856a29fa81d913a82c69b2f0c84752c70661d2f9aa295e28df82fe7a7c',
-                                ...data2.getHeaders()
-                            },
-                            body:{
-                                "presaveID": "test",
-                                "albumUPC": "test"
-                            },
-                            data : data2
-                        };
-                        var theData;
-                        await axios(config)
-                            .then(function (response) {
-                                console.log(JSON.stringify(response.data));
-                                theData = response.data;
-                            })
-                            .catch(function (error) {
-                                console.log(error);
-                            });
-                        console.log("After");
+                        axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
+                         var data2 = `{\n    "presaveID":${finalData[1]+email},\n    "albumUPC": ${finalData[1]+email}\n}`;
+
+                         var config = {
+                             method: 'post',
+                             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/download',
+                             headers: {
+                                 'X-Amz-Content-Sha256': 'beaead3198f7da1e70d03ab969765e0821b24fc913697e929e726aeaebf0eba3',
+                                 'X-Amz-Date': '20200726T211855Z',
+                                 'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAXDN6B3K7VJCHHJQP/20200726/us-east-2/execute-api/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=dc0eed8e238a7737b98f87fd6d67504cf92364f22b6e7d983d40254ec93d497d',
+                                 'Content-Type': 'text/plain'
+                             },
+                             data : data2
+                         };
+
+                         axios(config)
+                             .then(function (response) {
+                                 console.log(JSON.stringify(response.data));
+                             })
+                             .catch(function (error) {
+                                 console.log(error);
+                             });
                     });
                     //////////
 
