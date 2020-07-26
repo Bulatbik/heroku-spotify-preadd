@@ -154,7 +154,7 @@ if (!isDev && cluster.isMaster) {
         // res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
         // res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
     });
-    app.get('/callback', function(req, res) {
+    app.get('/callback', async function(req, res) {
 
         // your application requests refresh and access tokens
         // after checking the state parameter
@@ -196,7 +196,7 @@ if (!isDev && cluster.isMaster) {
                         json: true
                     };
                     // use the access token to access the Spotify Web API
-                    request.get(options, function(error, response, body) {
+                     request.get(options, async function(error, response, body) {
                         console.log(body);
                         var email = body.email;
                         var userID = body.id;
@@ -211,7 +211,7 @@ if (!isDev && cluster.isMaster) {
                             refToken: refresh_token,
                             wantsUpdates: finalData[0]
                         });
-                        axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
+                      //  axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
                         var data2 = new FormData();
                         console.log("Before");
                         var config = {
@@ -221,7 +221,7 @@ if (!isDev && cluster.isMaster) {
                                 'linkID': '"F"',
                                 'X-Amz-Date': '20200720T141442Z',
                                 'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAXDN6B3K7VJCHHJQP/20200720/us-east-2/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=d158d7856a29fa81d913a82c69b2f0c84752c70661d2f9aa295e28df82fe7a7c',
-                                ...data.getHeaders()
+                                ...data2.getHeaders()
                             },
                             body:{
                                 "presaveID": "test",
@@ -230,7 +230,7 @@ if (!isDev && cluster.isMaster) {
                             data : data2
                         };
                         var theData;
-                         axios(config)
+                        await axios(config)
                             .then(function (response) {
                                 console.log(JSON.stringify(response.data));
                                 theData = response.data;
