@@ -212,8 +212,8 @@ if (!isDev && cluster.isMaster) {
                             wantsUpdates: finalData[0]
                         });
                         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
-                         var data2 = `{\n    "presaveID":${finalData[1]+email},\n    "albumUPC": ${finalData[1]+email}\n}`;
-
+                         var data2 = `{\n    "presaveID":\"${finalData[1]+email}\",\n    "albumUPC": \"${finalData[1]}\"\n}`;
+                         `\"${link}\"`
                          var config = {
                              method: 'post',
                              url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/download',
