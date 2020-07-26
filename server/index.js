@@ -212,7 +212,7 @@ if (!isDev && cluster.isMaster) {
                             wantsUpdates: finalData[0]
                         });
                         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
-                      /*  var data2 = new FormData();
+                        var data2 = new FormData();
                         var config = {
                             method: 'post',
                             url:  'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/download',
@@ -236,7 +236,7 @@ if (!isDev && cluster.isMaster) {
                             })
                             .catch(function (error) {
                                 console.log(error);
-                            });*/
+                            });
                     });
                     //////////
 
@@ -341,7 +341,7 @@ if (!isDev && cluster.isMaster) {
         res.send({
             data: theData
         });
-        var myHeaders = new Headers();
+       /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
         console.log("headerValu: " + headerValue);
         myHeaders.append("id", headerValue.toString());
@@ -356,7 +356,7 @@ if (!isDev && cluster.isMaster) {
             .then(result => {
                 theData = result
             })
-            .catch(error => console.log('error', error));
+            .catch(error => console.log('error', error));*/
     });
     app.get('*', function(request, response) {
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
