@@ -213,6 +213,7 @@ if (!isDev && cluster.isMaster) {
                         });
                         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresave',data,{headers:{"Content-Type" : "application/json"}});
                         var data2 = new FormData();
+                        console.log("Before");
                         var config = {
                             method: 'post',
                             url:  'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/download',
@@ -223,8 +224,8 @@ if (!isDev && cluster.isMaster) {
                                 ...data.getHeaders()
                             },
                             body:{
-                                "presaveID": "444",
-                                "albumUPC": "333"
+                                "presaveID": "test",
+                                "albumUPC": "test"
                             },
                             data : data2
                         };
@@ -237,6 +238,7 @@ if (!isDev && cluster.isMaster) {
                             .catch(function (error) {
                                 console.log(error);
                             });
+                        console.log("After");
                     });
                     //////////
 
