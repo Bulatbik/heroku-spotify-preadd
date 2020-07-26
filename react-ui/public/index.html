@@ -30,6 +30,12 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
+    <div class="loader"></div>
     <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
+        <script>
+        $(window).on("load",function(){
+            $(".loader").fadeout("slow");
+        });
+    </script>
   </body>
 </html>
