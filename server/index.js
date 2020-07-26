@@ -341,7 +341,7 @@ if (!isDev && cluster.isMaster) {
         res.send({
             data: theData
         });
-       /* var myHeaders = new Headers();
+        var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
         console.log("headerValu: " + headerValue);
         myHeaders.append("id", headerValue.toString());
@@ -356,7 +356,7 @@ if (!isDev && cluster.isMaster) {
             .then(result => {
                 theData = result
             })
-            .catch(error => console.log('error', error));*/
+            .catch(error => console.log('error', error));
     });
     app.get('*', function(request, response) {
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
