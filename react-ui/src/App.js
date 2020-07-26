@@ -60,7 +60,7 @@ class App extends Component {
         console.dir(datares.data.albumName);
         var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
         var byTitle = datares.data.albumName;
-       await this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, byTitle: byTitle, UPC: datares.data.UPC})
+       await this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, description: datares.data.description, byTitle: byTitle, UPC: datares.data.UPC})
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
@@ -147,7 +147,7 @@ class App extends Component {
                 <div id="contentfadein" class="content-container">
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
-                    <h3 class="h3">Available</h3>
+                    <h3 class="h3">{this.state.description}</h3>
                     <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
