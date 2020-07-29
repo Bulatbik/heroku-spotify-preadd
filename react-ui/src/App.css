@@ -28,7 +28,8 @@ html, body {
   margin: auto;
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
-  opacity: .5;
+  opacity: .8;
+  filter: blur(15px);
   overscroll-behavior: none;
   object-fit: cover;
  }
