@@ -29,7 +29,7 @@ html, body {
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
   opacity: .8;
-  filter: blur(15px);
+  filter: blur(10px);
   overscroll-behavior: none;
   object-fit: cover;
  }
