@@ -338,11 +338,11 @@ if (!isDev && cluster.isMaster) {
         });
        /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
+
         console.log("headerValu: " + headerValue);
         myHeaders.append("id", headerValue.toString());
         var requestOptions = {
             method: 'GET',
-            headers: myHeaders,
             redirect: 'follow'
         };
         var theData;
