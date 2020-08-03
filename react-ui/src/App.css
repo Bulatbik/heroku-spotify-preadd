@@ -29,7 +29,7 @@ html, body {
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
   opacity: .8;
-  filter: blur(10px);
+  filter: blur(8px);
   overscroll-behavior: none;
   object-fit: cover;
  }
@@ -98,7 +98,7 @@ html, body {
 
 .appleLogo{
   height: 77%;
-  padding-right: 5px;
+  padding-right: 3px;
 }
 
 .buttonView {
@@ -168,7 +168,7 @@ p {
 }
 
 .legalfooter {
-  margin-top: 70%;
+  margin-top: 75%;
 }
 .legaltext {
   color: white;
@@ -215,7 +215,7 @@ a:link, a:visited, a:hover, a:active {
   background: white;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 1px;
   border-radius: 2px;
 }
 .checkboxContainer input:checked + .checkmark {
