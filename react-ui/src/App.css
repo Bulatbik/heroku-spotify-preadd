@@ -13,6 +13,7 @@ html, body {
   height: 100%;
   align-items: center;
   justify-content: center;
+  display: flex;
 }
 @media only screen and (min-width: 1080px) {
   .app {
@@ -58,7 +59,6 @@ html, body {
   height: 100%;
 }
 .loading-container {
-  display: inline-flex;
   flex-direction: column;
   justify-content: center;
 }
