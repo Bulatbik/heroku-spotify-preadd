@@ -4,7 +4,6 @@ import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
 import Spinner from 'react-bootstrap/Spinner';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import useProgressiveImg from "./useProgressiveImg";
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
