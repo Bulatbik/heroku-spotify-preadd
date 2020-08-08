@@ -3,7 +3,6 @@ import co from 'co';
 import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
-import ReactLoading from "react-loading";
 import useProgressiveImg from "./useProgressiveImg";
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
@@ -151,9 +150,9 @@ class App extends Component {
             <div class="app">
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
-                    <div class="loading-container">
-                    <ReactLoading type={"spinner"} color={"white"} />
-                    </div>
+                <Spinner animation="border" role="status">
+                    <span className="loading-container">Loading...</span>
+                </Spinner>
                 ) : (
                 <div id="contentfadein" class="content-container">
                     <h1 class="h1">{this.state.artistName}</h1>
