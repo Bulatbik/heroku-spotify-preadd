@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import MusicProvider from './MusicProvider';
+<script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
 //import { Amplify } from 'aws-amplify';
 //import config from './config';
 //ReactDOM.render(<App />, document.getElementById('root'));
