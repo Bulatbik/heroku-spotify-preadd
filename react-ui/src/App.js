@@ -3,6 +3,7 @@ import co from 'co';
 import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
+import ReactLoading from "react-loading";
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
 const useScript = url => {
@@ -39,7 +40,8 @@ class App extends Component {
             artistName: "",
             artworkLink:"",
             byTitle: "",
-            UPC: ""
+            UPC: "",
+            done: undefined
         }
         this.musicInstance = this.props.musicInstance;
         this.signIn = this.signIn.bind(this);
@@ -60,7 +62,7 @@ class App extends Component {
         console.dir(datares.data.albumName);
         var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
         var byTitle = datares.data.albumName;
-       await this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, description: datares.data.description, byTitle: byTitle, UPC: datares.data.UPC})
+       await this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, description: datares.data.description, byTitle: byTitle, UPC: datares.data.UPC}).then(this.setState({ done: true }));
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
@@ -144,6 +146,9 @@ class App extends Component {
         return (
             <div class="app">
                 <div class="bg-image"><img src={this.state.artworkLink}/></div>
+                {!this.state.done ? (
+                    <ReactLoading type={"bars"} color={"white"} />
+                ) : (
                 <div id="contentfadein" class="content-container">
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
@@ -183,6 +188,7 @@ class App extends Component {
                     </div>
                 </div>
             </div>
+                )}
         </div>
         );
     }
