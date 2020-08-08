@@ -147,10 +147,10 @@ class App extends Component {
         return (
             <div class="app">
                 <div class="bg-image"><img src={this.state.artworkLink}/></div>
-                {!this.state.done ? (
-                    <ReactLoading type={"bars"} color={"white"} />
-                ) : (
                 <div id="contentfadein" class="content-container">
+                    {!this.state.done ? (
+                        <ReactLoading type={"bars"} color={"white"} />
+                    ) : (
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
                     <h3 class="h3">{this.state.description}</h3>
@@ -188,8 +188,8 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
+                        )}
             </div>
-                )}
         </div>
         );
     }
