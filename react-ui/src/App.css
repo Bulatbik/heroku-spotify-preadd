@@ -57,6 +57,7 @@ html, body {
 }
 .loading-container {
   display: inline-flex;
+  flex-direction: column;
   justify-content: center;
 }
 
