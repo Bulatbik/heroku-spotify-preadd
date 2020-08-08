@@ -58,14 +58,10 @@ html, body {
   margin: 8.3% auto;
   height: 100%;
 }
-.loading-container {
-  flex-direction: column;
-  justify-content: center;
-}
 
 @media only screen and (min-width: 1080px) {
   .content-container {
-   margin: auto;
+    margin: auto;
   }
 }
 
