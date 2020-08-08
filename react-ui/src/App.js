@@ -147,25 +147,9 @@ class App extends Component {
         const token = params.access_token;
         const userToken = params.userToken;
         console.log(userToken);
-        const [src, { blur }] = useProgressiveImg(
-            this.state.artworkLink,
-            this.state.artworkLink
-        );
         return (
             <div class="app">
                 <div class="bg-image"><img src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
-                <img
-                    src={src}
-                    style={{
-                        width: 200,
-                        filter: blur
-                            ? "blur(20px)"
-                            : "none",
-                        transition: blur
-                            ? "none"
-                            : "filter 0.3s ease-out"
-                    }}
-                />
                 {!this.state.done ? (
                     <div class="loading-container">
                     <ReactLoading type={"bars"} color={"white"} />
