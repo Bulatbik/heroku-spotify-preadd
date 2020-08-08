@@ -3,7 +3,7 @@ import co from 'co';
 import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js";
-import Spinner from 'react-bootstrap/Spinner'
+import Spinner from 'react-bootstrap/Spinner';
 import useProgressiveImg from "./useProgressiveImg";
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
