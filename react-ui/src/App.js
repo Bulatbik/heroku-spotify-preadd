@@ -62,7 +62,8 @@ class App extends Component {
         console.dir(datares.data.albumName);
         var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
         var byTitle = datares.data.albumName;
-       await this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, description: datares.data.description, byTitle: byTitle, UPC: datares.data.UPC}).then(this.setState({ done: true }));
+       await this.setState({title:datares.data.albumName,artworkLink: artwork, artistName: datares.data.artistName, description: datares.data.description, byTitle: byTitle, UPC: datares.data.UPC});
+        this.setState({ done: true })
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
