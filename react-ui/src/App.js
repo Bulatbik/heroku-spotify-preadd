@@ -149,7 +149,7 @@ class App extends Component {
         console.log(userToken);
         return (
             <div class="app">
-                <div class="bg-image"><img src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
+                <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
                     <ReactLoading type={"bars"} color={"white"} />
