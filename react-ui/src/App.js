@@ -194,7 +194,7 @@ class App extends Component {
             </div>
                 )}
         </div>
-        );
+        ):
     }
 }
 //module.exports = window.location.hash.substring(1);
