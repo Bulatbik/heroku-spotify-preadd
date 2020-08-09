@@ -152,6 +152,7 @@ class App extends Component {
                 {!this.state.done ? (
                 <div class="loading-container">
                     <ReactLoading type={"bars"} color={"white"} />
+                </div>
                 ) : (
                 <div id="contentfadein" class="content-container">
                     <h1 class="h1">{this.state.artistName}</h1>
@@ -194,6 +195,8 @@ class App extends Component {
             </div>
                 )}
         </div>
-        ):
+        );
+    }
+}
 //module.exports = window.location.hash.substring(1);
 export default App;
