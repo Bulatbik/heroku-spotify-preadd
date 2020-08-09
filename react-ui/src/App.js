@@ -195,7 +195,6 @@ class App extends Component {
                 )}
         </div>
         ):
-    }
 }
 //module.exports = window.location.hash.substring(1);
 export default App;
