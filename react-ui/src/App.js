@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState, Component} from 'react';
 import co from 'co';
 import logo from './logo.svg';
 import './App.css';
+import ReactLoading from "react-loading";
 import SpotifyWebApi from "spotify-web-api-js"; 
 import useProgressiveImg from "./useProgressiveImg";
 const spotifyApi = new SpotifyWebApi();
