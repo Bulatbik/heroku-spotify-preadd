@@ -152,7 +152,7 @@ class App extends Component {
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
-                    <ReactLoading type={"bars"} color={"white"} />
+                    <ReactLoading type={"spin"} color={"white"} />
                     </div>
                 ) : (
                 <div id="contentfadein" class="content-container">
