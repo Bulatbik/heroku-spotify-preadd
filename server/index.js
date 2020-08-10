@@ -369,7 +369,7 @@ if (!isDev && cluster.isMaster) {
     });
     server.get('*', function(request, response) {
      //   response.redirect('https://' + request.headers.host + request.url);
-        response.writeHead(301, { "Location": "https://" + request.headers['host'] + request.url });
+        //response.writeHead(301, { "Location": "https://" + request.headers['host'] + request.url });
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
     });
      /*app.get('/:id', async (req, res) => {
