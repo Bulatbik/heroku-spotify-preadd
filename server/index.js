@@ -94,7 +94,11 @@ if (!isDev && cluster.isMaster) {
     //        next();
     //    }
     //});
-
+    var http = require('http');
+    http.createServer(function (req, res) {
+        res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+        res.end();
+    }).listen(80);
     app.all(/.*/, function(req, res, next) {
            var host = req.header("host");
             if (host.match(/^herokuapp\..*/i)) {
@@ -364,7 +368,7 @@ if (!isDev && cluster.isMaster) {
             .catch(error => console.log('error', error));*/
     });
     app.get('*', function(request, response) {
-        response.redirect('https://' + request.headers.host + request.url);
+     //   response.redirect('https://' + request.headers.host + request.url);
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
     });
      /*app.get('/:id', async (req, res) => {
