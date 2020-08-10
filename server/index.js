@@ -101,20 +101,25 @@ if (!isDev && cluster.isMaster) {
     //    }
     //});
     app.use (function (req, res, next) {
-        console.log("hey!!!!!!!!!!!!!!!!!!!!");
+        console.log("Step1!!!!!!!!!!!!!!!!!!!!");
         if (req.secure) {
             // request was via https, so do no special handling
+            console.log("Step2!!!!!!!!!!!!!!!!!!!!");
             next();
         } else {
             // request was via http, so redirect to https
+            console.log("Step3!!!!!!!!!!!!!!!!!!!!");
             res.redirect('https://' + req.headers.host + req.url);
         }
     });
     app.all(/.*/, function(req, res, next) {
+        console.log("Step4!!!!!!!!!!!!!!!!!!!!");
            var host = req.header("host");
             if (host.match(/^herokuapp\..*/i)) {
+                console.log("Step5!!!!!!!!!!!!!!!!!!!!");
                 res.redirect(301, "https://www." + host + req.url);
             } else {
+                console.log("Step6!!!!!!!!!!!!!!!!!!!!");
                 next();
             }
         });
