@@ -83,12 +83,13 @@ if (!isDev && cluster.isMaster) {
         key: path.join(__dirname+'/server.key'),
         cert: path.join(__dirname+'/ssl.crt')
     };
+    //var server = https.createServer(certOpts, app);
+
     // Priority serve any static files.
     // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
     //app.use(dynamicStatic);
   //  app.set('view engine', 'ejs');
     app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
-    var server = https.createServer(certOpts, app);
     var stateKey = "spotify_auth_state";
 
 //    app.all(/.*/, function(req, res, next) {
@@ -99,7 +100,17 @@ if (!isDev && cluster.isMaster) {
     //        next();
     //    }
     //});
-    server.all(/.*/, function(req, res, next) {
+    app.use (function (req, res, next) {
+        console.log("hey!!!!!!!!!!!!!!!!!!!!");
+        if (req.secure) {
+            // request was via https, so do no special handling
+            next();
+        } else {
+            // request was via http, so redirect to https
+            res.redirect('https://' + req.headers.host + req.url);
+        }
+    });
+    app.all(/.*/, function(req, res, next) {
            var host = req.header("host");
             if (host.match(/^herokuapp\..*/i)) {
                 res.redirect(301, "https://www." + host + req.url);
@@ -108,7 +119,7 @@ if (!isDev && cluster.isMaster) {
             }
         });
 
-    server.post("/login", function(req, res) {
+    app.post("/login", function(req, res) {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
         // var state = generateRandomString(16);
         //res.cookie(stateKey, state);
@@ -130,7 +141,7 @@ if (!isDev && cluster.isMaster) {
         );
     });
 
-    server.post('/applemusic', jsonParser, (req, res) => {
+    app.post('/applemusic', jsonParser, (req, res) => {
         //dirname:/app/server!!!!
         let token = req.body.userToken;
         const jwtToken = jwt.sign({}, privateKey, {
@@ -159,7 +170,7 @@ if (!isDev && cluster.isMaster) {
 
     });
 
-    server.get('/loginOne', function (req, res) {
+    app.get('/loginOne', function (req, res) {
         // dynamicStatic.setPath(__dirname + '/public');
         // res.render(__dirname + '/public');
         // console.log(jwtToken);
@@ -168,7 +179,7 @@ if (!isDev && cluster.isMaster) {
         // res.render(__dirname+ '/public/index.html', {jwtToken: jwtToken});
         // res.render(path.join(__dirname + "/public/index.html"), {data: jwtToken});
     });
-    server.get('/callback', async function(req, res) {
+    app.get('/callback', async function(req, res) {
 
         // your application requests refresh and access tokens
         // after checking the state parameter
@@ -266,7 +277,7 @@ if (!isDev && cluster.isMaster) {
         }
     });
 
-    server.get("/refresh_token", function(req, res) {
+    app.get("/refresh_token", function(req, res) {
         // requesting access token from refresh token
         var refresh_token = req.query.refresh_token;
         var authOptions = {
@@ -306,22 +317,22 @@ if (!isDev && cluster.isMaster) {
         /* else return 404 */
    // });
 
-    server.get("/Albumcover.png", (req, res) => {
+    app.get("/Albumcover.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Albumcover.png'));
     });
-    server.get("/Spotify_Logo_RGB_Green.png", (req, res) => {
+    app.get("/Spotify_Logo_RGB_Green.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Logo_RGB_Green.png'));
     });
-    server.get("/AppleMusic.png", (req, res) => {
+    app.get("/AppleMusic.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/AppleMusic.png'));
     });
 
-    server.get("/test", async (req, res) => {
+    app.get("/test", async (req, res) => {
        // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
 
     });
 
-    server.post("/createTheSite", jsonParser, async (req, res) => {
+    app.post("/createTheSite", jsonParser, async (req, res) => {
         var link = req.body.linkID;
        // link = link.substring(1);
         console.log(link);
@@ -367,9 +378,9 @@ if (!isDev && cluster.isMaster) {
             })
             .catch(error => console.log('error', error));*/
     });
-    server.get('*', function(request, response) {
+    app.get('*', function(request, response) {
      //   response.redirect('https://' + request.headers.host + request.url);
-        //response.writeHead(301, { "Location": "https://" + request.headers['host'] + request.url });
+     //   response.writeHead(301, { "Location": "https://" + request.headers['host'] + request.url });
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
     });
      /*app.get('/:id', async (req, res) => {
@@ -381,7 +392,7 @@ if (!isDev && cluster.isMaster) {
              ImageLink: albumPageInfo.data.Item.imageLink.S
          });
     });*/
-    server.listen(PORT, function() {
+    app.listen(PORT, function() {
         console.error(
             `Node ${
                 isDev ? "dev server" : "cluster worker " + process.pid
