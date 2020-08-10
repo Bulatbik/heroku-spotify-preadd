@@ -36,6 +36,7 @@ const privateKey = fs.readFileSync(__dirname+"/AuthKey.p8").toString();
 const teamId     = "6UD2Y7J6SN";
 const keyId      = "6PAGB4SZ4L";
 let rule = new schedule.RecurrenceRule();
+var https = require('https');
 rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
@@ -78,7 +79,11 @@ if (!isDev && cluster.isMaster) {
     });
 } else {
     const app = express();
-
+    var certOpts = {
+        key: path.join(__dirname+'/server.key'),
+        cert: path.join(__dirname+'/ssl.crt')
+    };
+    var server = https.createServer(certOpts, app);
     // Priority serve any static files.
     // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
     //app.use(dynamicStatic);
@@ -376,7 +381,7 @@ if (!isDev && cluster.isMaster) {
              ImageLink: albumPageInfo.data.Item.imageLink.S
          });
     });*/
-    app.listen(PORT, function() {
+    server.listen(PORT, function() {
         console.error(
             `Node ${
                 isDev ? "dev server" : "cluster worker " + process.pid
