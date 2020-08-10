@@ -79,12 +79,6 @@ if (!isDev && cluster.isMaster) {
     });
 } else {
     const app = express();
-    var certOpts = {
-        key: path.join(__dirname+'/server.key'),
-        cert: path.join(__dirname+'/ssl.crt')
-    };
-    //var server = https.createServer(certOpts, app);
-
     // Priority serve any static files.
     // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
     //app.use(dynamicStatic);
