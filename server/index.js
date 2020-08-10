@@ -85,15 +85,25 @@ if (!isDev && cluster.isMaster) {
   //  app.set('view engine', 'ejs');
     app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
     var stateKey = "spotify_auth_state";
-    //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
+
+//    app.all(/.*/, function(req, res, next) {
+    //    var host = req.header("host");
+    //    if (host.match(/^herokuapp\..*/i)) {
+    //        res.redirect(301, "https://www." + host + req.url);
+    //    } else {
+    //        next();
+    //    }
+    //});
+
     app.all(/.*/, function(req, res, next) {
-        var host = req.header("host");
-        if (host.match(/^herokuapp\..*/i)) {
-            res.redirect(301, "https://www." + host + req.url);
-        } else {
-            next();
-        }
-    });
+           var host = req.header("host");
+            if (host.match(/^herokuapp\..*/i)) {
+                res.redirect(301, "https://www." + host + req.url);
+            } else {
+                next();
+            }
+        });
+
     app.post("/login", function(req, res) {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
         // var state = generateRandomString(16);
@@ -354,6 +364,7 @@ if (!isDev && cluster.isMaster) {
             .catch(error => console.log('error', error));*/
     });
     app.get('*', function(request, response) {
+        res.redirect('https://' + request.headers.host + request.url);
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
     });
      /*app.get('/:id', async (req, res) => {
