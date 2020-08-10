@@ -364,7 +364,7 @@ if (!isDev && cluster.isMaster) {
             .catch(error => console.log('error', error));*/
     });
     app.get('*', function(request, response) {
-        res.redirect('https://' + request.headers.host + request.url);
+        response.redirect('https://' + request.headers.host + request.url);
         response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
     });
      /*app.get('/:id', async (req, res) => {
