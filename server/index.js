@@ -89,7 +89,7 @@ if (!isDev && cluster.isMaster) {
     app.all(/.*/, function(req, res, next) {
         var host = req.header("host");
         if (host.match(/^herokuapp\..*/i)) {
-            res.redirect(301, "http://www." + host + req.url);
+            res.redirect(301, "https://www." + host + req.url);
         } else {
             next();
         }
