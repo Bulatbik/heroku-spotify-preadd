@@ -339,7 +339,7 @@ if (!isDev && cluster.isMaster) {
       //  res.sendFile(path.join(__dirname,'/index.ejs'));
         dynamicStatic.setPath(__dirname);
         res.render('index');
-      //  res.end();
+     //   res.end();
       //  res.status(404).end();
       //  res.sendFile(path.join(__dirname+'/public/404.html'));
      /*   res.sendFile(__dirname + '/index.html', function(err) {
@@ -381,8 +381,8 @@ if (!isDev && cluster.isMaster) {
                 // res.redirect("/AppleMusic.png");
                // res.sendFile(path.join(__dirname+ '/public/404.html'));
                 res.redirect(301,"/notfound");
-             //   res.end();
-             //   res.status(404).end();
+                res.end();
+                res.status(404).end();
             });
        /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
