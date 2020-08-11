@@ -61,11 +61,8 @@ class App extends Component {
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
-        try {
-            console.dir(datares.data.albumName);
-        }catch{
+        if (datares.data===null){
             await axios.get('https://young-peak-41948.herokuapp.com/notfound').then(function (response) {
-                console.log(response);
                 document.getElementById("mydiv").innerHTML = response.data;
             });
         }

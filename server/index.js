@@ -334,8 +334,7 @@ if (!isDev && cluster.isMaster) {
       //  res.render(path.join(__dirname + "/public/404.html"));
        // res.render(__dirname + '/public');
       //  next();
-        console.log("Im in notfound");
-      //  res.sendFile(path.join(__dirname+'/public/404.html'));
+        //  res.sendFile(path.join(__dirname+'/public/404.html'));
       //  res.sendFile(path.join(__dirname,'/index.ejs'));
         dynamicStatic.setPath(__dirname);
         res.render('index');
@@ -380,9 +379,12 @@ if (!isDev && cluster.isMaster) {
                // console.log(error);
                 // res.redirect("/AppleMusic.png");
                // res.sendFile(path.join(__dirname+ '/public/404.html'));
-                res.redirect(301,"/notfound");
-                res.end();
-                res.status(404).end();
+                res.send({
+                    data: null
+                });
+              //  res.redirect(301,"/notfound");
+             //   res.end();
+             //   res.status(404).end();
             });
        /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
