@@ -335,7 +335,7 @@ if (!isDev && cluster.isMaster) {
       //  next();
         console.log("Im in notfound");
         //res.sendFile(path.join(__dirname+'/public/404.html'));
-        res.sendFile(path.join(__dirname, '../public', '404.html'));
+        res.sendFile('./404.html');
 
     });
 
