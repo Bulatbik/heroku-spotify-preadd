@@ -349,6 +349,7 @@ if (!isDev && cluster.isMaster) {
                 theData = response.data;
             })
             .catch(function (error) {
+                console.log("ERROR");
                 console.log(error);
                 res.status(404).send('what???');
             });
