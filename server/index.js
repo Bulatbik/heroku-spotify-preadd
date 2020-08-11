@@ -335,7 +335,7 @@ if (!isDev && cluster.isMaster) {
       //  next();
     });
 
-    app.post("/createTheSite", jsonParser, async (req, res) => {
+    app.post("/createTheSite", jsonParser,  (req, res) => {
         var link = req.body.linkID;
        // link = link.substring(1);
         console.log(link);
@@ -352,7 +352,7 @@ if (!isDev && cluster.isMaster) {
             data : data
         };
         var theData;
-        await axios(config)
+         axios(config)
             .then(function (response) {
                 console.log("This is data!! ="+JSON.stringify(response.data));
                 theData = response.data;
@@ -360,7 +360,7 @@ if (!isDev && cluster.isMaster) {
             .catch(function (error) {
                 console.log("ERROR");
                // console.log(error);
-                return res.redirect("/notfound");
+                 res.redirect("/notfound");
             });
         theData = JSON.parse(JSON.stringify(theData));
         res.send({
