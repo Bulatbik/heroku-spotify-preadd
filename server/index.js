@@ -357,16 +357,16 @@ if (!isDev && cluster.isMaster) {
             .then(function (response) {
                 console.log("This is data!! ="+JSON.stringify(response.data));
                 theData = response.data;
+                theData = JSON.parse(JSON.stringify(theData));
+                res.send({
+                    data: theData
+                });
             })
             .catch(function (error) {
                 console.log("ERROR");
                // console.log(error);
                  res.redirect("/notfound");
             });
-        theData = JSON.parse(JSON.stringify(theData));
-        res.send({
-            data: theData
-        });
        /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
 
