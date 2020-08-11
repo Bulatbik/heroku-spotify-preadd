@@ -342,7 +342,7 @@ if (!isDev && cluster.isMaster) {
         });
     });
 
-    app.post("/createTheSite", jsonParser,  (req, res) => {
+    app.post("/createTheSite", jsonParser,  async (req, res) => {
         var link = req.body.linkID;
        // link = link.substring(1);
         console.log(link);
@@ -359,7 +359,7 @@ if (!isDev && cluster.isMaster) {
             data : data
         };
         var theData;
-         axios(config)
+         await axios(config)
             .then(function (response) {
                 console.log("This is data!! ="+JSON.stringify(response.data));
                 theData = response.data;
@@ -372,7 +372,10 @@ if (!isDev && cluster.isMaster) {
                 console.log("ERROR");
                // console.log(error);
                 // res.redirect("/AppleMusic.png");
-                res.sendFile(path.join(__dirname+ '/public/404.html'));
+               // res.sendFile(path.join(__dirname+ '/public/404.html'));
+                res.send({
+                    data: null
+                });
             });
        /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
