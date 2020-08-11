@@ -334,12 +334,14 @@ if (!isDev && cluster.isMaster) {
        // res.render(__dirname + '/public');
       //  next();
         console.log("Im in notfound");
+        res.end();
+        res.status(404).end();
       //  res.sendFile(path.join(__dirname+'/public/404.html'));
-        res.sendFile(__dirname + '/index.html', function(err) {
+     /*   res.sendFile(__dirname + '/index.html', function(err) {
             if (err) {
                 res.status(err.status).end();
             }
-        });
+        });*/
     });
 
     app.post("/createTheSite", jsonParser,  async (req, res) => {
