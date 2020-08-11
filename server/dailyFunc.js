@@ -1,6 +1,6 @@
 const axios = require('axios');
-var client_id = '631ca25cb3e0449aa420715f50dc6b73'; // Your client id
-var client_secret = 'c2a34c1230904ddbab060d36b9020b01'; // Your secret
+var client_id = 'bd981a15dab84776b11094bbf8622dd0'; // Your client id
+var client_secret = 'b7f54e137d354d96bfdd2afcf426af74'; // Your secret
 var redirect_uri = 'https://young-peak-41948.herokuapp.com/callback'; // Your redirect uri
 const jwt     = require("jsonwebtoken");
 const fs      = require("fs");
