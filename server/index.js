@@ -329,6 +329,7 @@ if (!isDev && cluster.isMaster) {
         // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
       //  res.status(404).send('what???');
         res.sendFile(path.join(__dirname+'/public/404.html'));
+        next();
     });
 
     app.post("/createTheSite", jsonParser, async (req, res) => {
