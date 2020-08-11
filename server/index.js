@@ -84,7 +84,7 @@ if (!isDev && cluster.isMaster) {
     //app.use(dynamicStatic);
   //  app.set('view engine', 'ejs');
     app.enable('trust proxy');
-    app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
+    app.use(express.static(path.resolve(__dirname, '../react-ui/build', '/404'))).use(cors()).use(cookieParser());
     var stateKey = "spotify_auth_state";
 
 //    app.all(/.*/, function(req, res, next) {
