@@ -360,8 +360,7 @@ if (!isDev && cluster.isMaster) {
             .catch(function (error) {
                 console.log("ERROR");
                // console.log(error);
-                res.redirect("/notfound");
-                next();
+                return res.redirect("/notfound");
             });
         theData = JSON.parse(JSON.stringify(theData));
         res.send({
