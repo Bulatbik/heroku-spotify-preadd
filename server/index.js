@@ -352,7 +352,7 @@ if (!isDev && cluster.isMaster) {
                 console.log("ERROR");
                // console.log(error);
                 res.status(404).send('what???');
-                res.sendFile(path.join(__dirname+'/public/404.html'));
+            //    res.sendFile(path.join(__dirname+'/public/404.html'));
             });
         theData = JSON.parse(JSON.stringify(theData));
         res.send({
@@ -378,7 +378,7 @@ if (!isDev && cluster.isMaster) {
     app.get('*', function(request, response) {
      //   response.redirect('https://' + request.headers.host + request.url);
      //   response.writeHead(301, { "Location": "https://" + request.headers['host'] + request.url });
-        response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
+        response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html', '404.html'));
     });
      /*app.get('/:id', async (req, res) => {
          let albumPageInfo = await axios.get('https://n3owwdpps6.execute-api.us-east-2.amazonaws.com/latest/getdata');
