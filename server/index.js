@@ -361,7 +361,7 @@ if (!isDev && cluster.isMaster) {
                 console.log("ERROR");
                // console.log(error);
                 res.redirect("/notfound");
-                return;
+                next();
             });
         theData = JSON.parse(JSON.stringify(theData));
         res.send({
