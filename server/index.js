@@ -333,6 +333,7 @@ if (!isDev && cluster.isMaster) {
       //  res.render(path.join(__dirname + "/public/404.html"));
        // res.render(__dirname + '/public');
       //  next();
+        console.log("Im in notfound");
     });
 
     app.post("/createTheSite", jsonParser,  (req, res) => {
