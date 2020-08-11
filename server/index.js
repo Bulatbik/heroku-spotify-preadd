@@ -325,6 +325,11 @@ if (!isDev && cluster.isMaster) {
        // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
 
     });
+    app.get("/notfound", async (req, res) => {
+        // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
+      //  res.status(404).send('what???');
+        res.sendFile(__dirname + "/public/404.html");
+    });
 
     app.post("/createTheSite", jsonParser, async (req, res) => {
         var link = req.body.linkID;
@@ -351,8 +356,7 @@ if (!isDev && cluster.isMaster) {
             .catch(function (error) {
                 console.log("ERROR");
                // console.log(error);
-                res.status(404).send('what???');
-            //    res.sendFile(path.join(__dirname+'/public/404.html'));
+                res.redirect("/notfound");
             });
         theData = JSON.parse(JSON.stringify(theData));
         res.send({
