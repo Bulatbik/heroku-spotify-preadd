@@ -61,10 +61,6 @@ class App extends Component {
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
-        if(datares.data===null){
-            window.open('/notfound');
-            return;
-        }
         console.dir(datares.data.albumName);
         document.title = datares.data.artistName+" - "+datares.data.albumName;
         var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
