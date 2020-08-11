@@ -335,7 +335,6 @@ if (!isDev && cluster.isMaster) {
       //  next();
         console.log("Im in notfound");
       //  res.sendFile(path.join(__dirname+'/public/404.html'));
-        app.use(express.static(__dirname));
         res.sendFile(__dirname + '/index.html', function(err) {
             if (err) {
                 res.status(err.status).end();
@@ -372,7 +371,7 @@ if (!isDev && cluster.isMaster) {
             .catch(function (error) {
                 console.log("ERROR");
                // console.log(error);
-                 res.redirect("/notfound");
+                 res.redirect("/AppleMusic.png");
             });
        /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
