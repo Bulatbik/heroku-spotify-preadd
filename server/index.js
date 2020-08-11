@@ -325,7 +325,7 @@ if (!isDev && cluster.isMaster) {
        // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
 
     });
-    app.get("/notfound", async (req, res) => {
+    app.get("/notfound",  (req, res) => {
         // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
       //  res.status(404).send('what???');
     //    res.sendFile(path.join(__dirname+'/public/404.html'));
