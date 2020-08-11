@@ -352,6 +352,7 @@ if (!isDev && cluster.isMaster) {
                 console.log("ERROR");
                // console.log(error);
                 res.status(404).send('what???');
+                res.sendFile(path.join(__dirname+'/public/404.html'));
             });
         theData = JSON.parse(JSON.stringify(theData));
         res.send({
