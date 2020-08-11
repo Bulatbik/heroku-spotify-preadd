@@ -331,7 +331,7 @@ if (!isDev && cluster.isMaster) {
     //    res.sendFile(path.join(__dirname+'/public/404.html'));
      //   app.use(express.static(path.join(__dirname, 'public')));
       //  res.render(path.join(__dirname + "/public/404.html"));
-        res.render(__dirname + '/public');
+       // res.render(__dirname + '/public');
       //  next();
     });
 
@@ -361,6 +361,7 @@ if (!isDev && cluster.isMaster) {
                 console.log("ERROR");
                // console.log(error);
                 res.redirect("/notfound");
+                return;
             });
         theData = JSON.parse(JSON.stringify(theData));
         res.send({
