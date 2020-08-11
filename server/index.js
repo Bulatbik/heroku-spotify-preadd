@@ -82,7 +82,8 @@ if (!isDev && cluster.isMaster) {
     // Priority serve any static files.
     // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
     //app.use(dynamicStatic);
-  //  app.set('view engine', 'ejs');
+   app.set('view engine', 'ejs');
+    app.set('views', path.join(__dirname, 'views'));
     app.enable('trust proxy');
     app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
     var stateKey = "spotify_auth_state";
@@ -334,7 +335,8 @@ if (!isDev && cluster.isMaster) {
        // res.render(__dirname + '/public');
       //  next();
         console.log("Im in notfound");
-        res.sendFile(path.join(__dirname+'/public/404.html'));
+      //  res.sendFile(path.join(__dirname+'/public/404.html'));
+        res.sendFile(path.join(__dirname,'/index.ejs'));
         res.end();
         res.status(404).end();
       //  res.sendFile(path.join(__dirname+'/public/404.html'));
