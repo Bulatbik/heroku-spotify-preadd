@@ -64,7 +64,10 @@ class App extends Component {
         try {
             console.dir(datares.data.albumName);
         }catch{
-            await axios.get('https://young-peak-41948.herokuapp.com/notfound');
+            await axios.get('https://young-peak-41948.herokuapp.com/notfound').then(function (response) {
+                console.log(response);
+                document.getElementById("mydiv").innerHTML = response;
+            });
         }
         document.title = datares.data.artistName+" - "+datares.data.albumName;
         var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/"+datares.data.userId+"/"+datares.data.attachment;
@@ -152,7 +155,7 @@ class App extends Component {
         const userToken = params.userToken;
         console.log(userToken);
         return (
-            <div class="app">
+            <div class="app" id="mydiv">
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">

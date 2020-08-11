@@ -340,7 +340,7 @@ if (!isDev && cluster.isMaster) {
         dynamicStatic.setPath(__dirname);
         res.render('index');
        // res.end();
-        res.status(404).end();
+     //   res.status(404).end();
       //  res.sendFile(path.join(__dirname+'/public/404.html'));
      /*   res.sendFile(__dirname + '/index.html', function(err) {
             if (err) {
