@@ -350,7 +350,7 @@ if (!isDev && cluster.isMaster) {
             })
             .catch(function (error) {
                 console.log("ERROR");
-                console.log(error);
+               // console.log(error);
                 res.status(404).send('what???');
             });
         theData = JSON.parse(JSON.stringify(theData));
