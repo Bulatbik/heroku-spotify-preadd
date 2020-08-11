@@ -373,7 +373,7 @@ if (!isDev && cluster.isMaster) {
                // console.log(error);
                 // res.redirect("/AppleMusic.png");
                // res.sendFile(path.join(__dirname+ '/public/404.html'));
-                res.redirect(301,'https://' + req.headers.host + "/notfound");
+                res.redirect(301,"/notfound");
             });
        /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
