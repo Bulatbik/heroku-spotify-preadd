@@ -84,7 +84,7 @@ if (!isDev && cluster.isMaster) {
     //app.use(dynamicStatic);
   //  app.set('view engine', 'ejs');
     app.enable('trust proxy');
-    app.use(express.static(path.resolve(__dirname, '../react-ui/build', '/404'))).use(cors()).use(cookieParser());
+    app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
     var stateKey = "spotify_auth_state";
 
 //    app.all(/.*/, function(req, res, next) {
@@ -328,8 +328,9 @@ if (!isDev && cluster.isMaster) {
     app.get("/notfound", async (req, res) => {
         // res.sendFile(path.join(__dirname+'/AppleMusic.png'));
       //  res.status(404).send('what???');
-        res.sendFile(path.join(__dirname+'/public/404.html'));
-        next();
+    //    res.sendFile(path.join(__dirname+'/public/404.html'));
+        res.render(path.join(__dirname + "/public/404.html"));
+      //  next();
     });
 
     app.post("/createTheSite", jsonParser, async (req, res) => {
