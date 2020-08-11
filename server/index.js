@@ -335,7 +335,8 @@ if (!isDev && cluster.isMaster) {
       //  next();
         console.log("Im in notfound");
       //  res.sendFile(path.join(__dirname+'/public/404.html'));
-        res.sendFile(__dirname + '/public/index.html', function(err) {
+        app.use(express.static(__dirname));
+        res.sendFile(__dirname + '/index.html', function(err) {
             if (err) {
                 res.status(err.status).end();
             }
