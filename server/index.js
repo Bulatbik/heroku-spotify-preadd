@@ -337,8 +337,8 @@ if (!isDev && cluster.isMaster) {
         console.log("Im in notfound");
       //  res.sendFile(path.join(__dirname+'/public/404.html'));
       //  res.sendFile(path.join(__dirname,'/index.ejs'));
-        dynamicStatic.setPath(__dirname + '/public');
-        res.render(__dirname + '/public');
+        dynamicStatic.setPath(__dirname);
+        res.render(__dirname + '/index.ejs');
       //  res.end();
       //  res.status(404).end();
       //  res.sendFile(path.join(__dirname+'/public/404.html'));
