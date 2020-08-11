@@ -345,11 +345,12 @@ if (!isDev && cluster.isMaster) {
         var theData;
         await axios(config)
             .then(function (response) {
-                console.log(JSON.stringify(response.data));
+                console.log("This is data!! ="+JSON.stringify(response.data));
                 theData = response.data;
             })
             .catch(function (error) {
                 console.log(error);
+                res.status(404).send('what???');
             });
         theData = JSON.parse(JSON.stringify(theData));
         res.send({
