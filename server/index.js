@@ -371,7 +371,8 @@ if (!isDev && cluster.isMaster) {
             .catch(function (error) {
                 console.log("ERROR");
                // console.log(error);
-                 res.redirect("/AppleMusic.png");
+                // res.redirect("/AppleMusic.png");
+                res.sendFile(path.resolve(__dirname, '404.html'));
             });
        /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
