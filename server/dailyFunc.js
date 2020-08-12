@@ -186,16 +186,19 @@ async function scheduler() {
                         'Content-Type': 'application/json'
                     }
                 });
-                var requestOptions = {
-                    method: 'GET',
-                    redirect: 'follow'
+                var request = require('request');
+                var options = {
+                    'method': 'GET',
+                    'url': 'https://itunes.apple.com/lookup?upc=808391092099\n',
+                    'headers': {
+                    }
                 };
+                request(options, function (error, response) {
+                    if (error) throw new Error(error);
+                    console.log(response.body);
+                });
 
-                fetch("https://itunes.apple.com/lookup?upc=808391092099\n", requestOptions)
-                    .then(response => response.text())
-                    .then(result => console.log(result))
-                    .catch(error => console.log('error', error));
-               // console.log("Tje JSON: "+albumInfo.data.results);
+                // console.log("Tje JSON: "+albumInfo.data.results);
                 var  albumAppleID = albumInfo.data.results[0].collectionId;
                 console.log("collectionId "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
