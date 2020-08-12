@@ -185,8 +185,19 @@ async function scheduler() {
 
                     }
                 });
+                const lookupItunes = require("node-itunes-search");
+                const ItunesLookupOptions = require("node-itunes-search");
+                const ItunesResult = require("node-itunes-search");
+                const ItunesLookupType = require("node-itunes-search");
+                const lookupOptions = new ItunesLookupOptions({
+                    keys: [applepresaves.data[i].albumUPC],
+                    keyType: ItunesLookupType.UPC
+                });
 
-                 console.log("Tje JSON: "+JSON.stringify(albumInfo.data));
+                lookupItunes(lookupOptions).then((result) => {
+                    console.log("RESULT"+result);
+                });
+               //  console.log("Tje JSON: "+JSON.stringify(albumInfo.data));
                 var  albumAppleID = albumInfo.data.results[0].collectionId;
                 console.log("collectionId "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
