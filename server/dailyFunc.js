@@ -185,16 +185,13 @@ async function scheduler() {
 
                     }
                 });
-                const lookupItunes = require("node-itunes-search");
-                const ItunesLookupOptions = require("node-itunes-search");
-                const ItunesResult = require("node-itunes-search");
-                const ItunesLookupType = require("node-itunes-search");
-                const lookupOptions = new ItunesLookupOptions({
+                const itunesApi = require("node-itunes-search");
+                const lookupOptions = new itunesApi.ItunesLookupOptions({
                     keys: [applepresaves.data[i].albumUPC],
-                    keyType: ItunesLookupType.UPC
+                    keyType: itunesApi.ItunesLookupType.UPC
                 });
 
-                lookupItunes(lookupOptions).then((result) => {
+                itunesApi.lookupItunes(lookupOptions).then((result) => {
                     console.log("RESULT"+result);
                 });
                //  console.log("Tje JSON: "+JSON.stringify(albumInfo.data));
