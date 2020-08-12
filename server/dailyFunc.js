@@ -186,6 +186,7 @@ async function scheduler() {
                         'Content-Type': 'application/json'
                     }
                 });
+                console.log("Tje JSON: "+albumInfo.data.results);
                 var  albumAppleID = albumInfo.data.results[0].collectionId;
                 console.log("collectionId "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
