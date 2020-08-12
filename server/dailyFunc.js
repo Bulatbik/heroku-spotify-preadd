@@ -186,18 +186,15 @@ async function scheduler() {
                         'Content-Type': 'application/json'
                     }
                 });
-                var config = {
-                    method: 'get',
-                    url: 'https://itunes.apple.com/lookup?upc=808391092099\n',
-                    headers: { }
+                var requestOptions = {
+                    method: 'GET',
+                    redirect: 'follow'
                 };
-                axios(config)
-                    .then(function (response) {
-                        console.log("Tje JSON: "+JSON.stringify(response.data));
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
+
+                fetch("https://itunes.apple.com/lookup?upc=808391092099\n", requestOptions)
+                    .then(response => response.text())
+                    .then(result => console.log(result))
+                    .catch(error => console.log('error', error));
                // console.log("Tje JSON: "+albumInfo.data.results);
                 var  albumAppleID = albumInfo.data.results[0].collectionId;
                 console.log("collectionId "+albumAppleID);
