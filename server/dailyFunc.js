@@ -180,25 +180,13 @@ async function scheduler() {
                 var albumInfo;
                 albumInfo = await axios({
                     method: 'get',
-                    url: "https://itunes.apple.com/lookup?upc=" + applepresaves.data[i].albumUPC,
+                    url: "https://itunes.apple.com/lookup?upc=" + applepresaves.data[i].albumUPC+'\n',
                     headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json'
+
                     }
-                });
-                var request = require('request');
-                var options = {
-                    'method': 'GET',
-                    'url': 'https://itunes.apple.com/lookup?upc=808391092099\n',
-                    'headers': {
-                    }
-                };
-                await request(options, function (error, response) {
-                    if (error) throw new Error(error);
-                    console.log(response.body);
                 });
 
-                // console.log("Tje JSON: "+albumInfo.data.results);
+                 console.log("Tje JSON: "+JSON.stringify(albumInfo.data));
                 var  albumAppleID = albumInfo.data.results[0].collectionId;
                 console.log("collectionId "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
