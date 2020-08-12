@@ -188,7 +188,7 @@ async function scheduler() {
                 });
                 var config = {
                     method: 'get',
-                    url: 'https://itunes.apple.com/lookup?upc='+ applepresaves.data[i].albumUPC+'\n',
+                    url: 'https://itunes.apple.com/lookup?upc=808391092099\n',
                     headers: { }
                 };
                 axios(config)
