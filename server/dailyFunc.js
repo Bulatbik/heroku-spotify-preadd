@@ -176,6 +176,7 @@ async function scheduler() {
             console.log("Option 2");
         }else{
             try {
+                console.log("https://itunes.apple.com/lookup?upc=" + applepresaves.data[i].albumUPC);
                 var albumInfo;
                 albumInfo = await axios({
                     method: 'get',
