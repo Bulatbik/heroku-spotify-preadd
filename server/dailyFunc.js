@@ -192,7 +192,7 @@ async function scheduler() {
                 });
 
                 itunesApi.lookupItunes(lookupOptions).then((result) => {
-                    console.log("RESULT"+result);
+                    console.log("RESULT"+JSON.stringify(result));
                 });
                //  console.log("Tje JSON: "+JSON.stringify(albumInfo.data));
                 var  albumAppleID = albumInfo.data.results[0].collectionId;
