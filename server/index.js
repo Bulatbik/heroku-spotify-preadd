@@ -58,7 +58,7 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
-schedule.scheduleJob(rule, () => {
+schedule.scheduleJob('1 * * * *', () => {
     scheduler();
 }); // run every minute
 async function API(url,token,upc) {
@@ -236,15 +236,6 @@ async function scheduler() {
                     headers: {
 
                     }
-                });
-                const itunesApi = require("node-itunes-search");
-                const lookupOptions = new itunesApi.ItunesLookupOptions({
-                    keys: [applepresaves.data[i].albumUPC],
-                    keyType: itunesApi.ItunesLookupType.UPC
-                });
-
-                itunesApi.lookupItunes(lookupOptions).then((result) => {
-                    console.log("RESULT"+JSON.stringify(result));
                 });
                 //  console.log("Tje JSON: "+JSON.stringify(albumInfo.data));
                 var  albumAppleID = albumInfo.data.results[0].collectionId;
