@@ -263,7 +263,7 @@ async function scheduler() {
 }
 
 
-/*if (!isDev && cluster.isMaster) {
+if (!isDev && cluster.isMaster) {
     console.error(`Node cluster master ${process.pid} is running`)
     // Fork workers.
     for (let i = 0; i < numCPUs; i++) {
@@ -277,7 +277,7 @@ async function scheduler() {
             } exited: code ${code}, signal ${signal}`
         );
     });
-} else {*/
+} else {
     const app = express();
     // Priority serve any static files.
     // app.use(express.static(path.resolve(__dirname, '../react-ui/build', __dirname+'/public'))).use(cors()).use(cookieParser());
@@ -625,4 +625,4 @@ async function scheduler() {
         );
     });
 
-//}
+}
