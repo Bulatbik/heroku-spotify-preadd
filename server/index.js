@@ -318,6 +318,8 @@ async function scheduler() {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
         // var state = generateRandomString(16);
         //res.cookie(stateKey, state);
+        var ret = req.query.url.substring(8).replace('endlss.to/','');
+        console.log("!!!!!!!"+ret+"!!!!!!")
         var config = {
             method: 'put',
             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/hey.hey',
