@@ -318,17 +318,15 @@ async function scheduler() {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
         // var state = generateRandomString(16);
         //res.cookie(stateKey, state);
-        var ret = req.query.url.substring(8).replace('endlss.to/','');
-        console.log("!!!!!!!"+ret+"!!!!!!")
+        var albumId = req.query.url.substring(8).replace('endlss.to/','');
         var config = {
             method: 'put',
-            url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/hey.hey',
+            url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/'+albumId,
             headers: {
                 'X-Amz-Date': '20200817T120432Z',
                 'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAXDN6B3K7VJCHHJQP/20200817/us-east-2/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=085749cb9782ff07449373766a003100b40f08de10d61bc29e1d35220bcef09a'
             }
         };
-
         axios(config)
             .then(function (response) {
                 console.log(JSON.stringify(response.data));
