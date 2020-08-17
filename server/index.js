@@ -354,6 +354,22 @@ async function scheduler() {
 
     app.post('/applemusic', jsonParser, (req, res) => {
         //dirname:/app/server!!!!
+        var albumId = req.body.urlLink.substring(8).replace('endlss.to/','');
+        var config = {
+            method: 'put',
+            url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/'+albumId,
+            headers: {
+                'X-Amz-Date': '20200817T131159Z',
+                'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAXDN6B3K7VJCHHJQP/20200817/us-east-2/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=681b794c381a6a76d36427a1cee905b2e72d60b69a388ccf5955fe8c7defe2e5'
+            }
+        };
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
         let token = req.body.userToken;
         const jwtToken = jwt.sign({}, privateKey, {
             algorithm: "ES256",
