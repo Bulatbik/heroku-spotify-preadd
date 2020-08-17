@@ -359,8 +359,7 @@ async function scheduler() {
             method: 'put',
             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/'+albumId,
             headers: {
-                'X-Amz-Date': '20200817T133342Z',
-                'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAXDN6B3K7VJCHHJQP/20200817/us-east-2/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=1ac319e22936cd160ae9cdd3a032af26a77e4a22d23ab6cae16f23474f522132'
+                'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
             }
         };
         axios(config)
