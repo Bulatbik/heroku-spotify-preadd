@@ -57,12 +57,12 @@ class App extends Component {
         console.log(sub);
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
-        let data =  await axios.post('https://young-peak-41948.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+window.location.pathname.substring(1).toLowerCase()})
+        let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+window.location.pathname.substring(1).toLowerCase()})
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
         if (datares.data===null){
-            await axios.get('https://young-peak-41948.herokuapp.com/notfound').then(function (response) {
+            await axios.get('https://endlss.herokuapp.com/notfound').then(function (response) {
                 document.getElementById("mydiv").innerHTML = response.data;
             });
         }else {
@@ -127,7 +127,7 @@ class App extends Component {
             if(key) {
                 that.setState({isLoginApple: true});
             }
-            axios.post('https://young-peak-41948.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
+            axios.post('https://endlss.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
                 .then( button.innerHTML = "Pre-added!")
                 .catch(err => console.log(err));
         });
@@ -148,9 +148,9 @@ class App extends Component {
         var form = document.getElementById("myform");
         button.innerHTML = "Pre-saving...";
         if (checkBox.checked === true){
-           form.action ="https://young-peak-41948.herokuapp.com/login?updates=yes&upc="+this.state.UPC+"&url="+window.location.href;
+           form.action ="https://endlss.herokuapp.com/login?updates=yes&upc="+this.state.UPC+"&url="+window.location.href;
         } else {
-            form.action ="https://young-peak-41948.herokuapp.com/login?updates=no&upc="+this.state.UPC+"&url="+window.location.href;
+            form.action ="https://endlss.herokuapp.com/login?updates=no&upc="+this.state.UPC+"&url="+window.location.href;
         }
         return true;
     }

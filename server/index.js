@@ -1,6 +1,6 @@
 var client_id = 'bd981a15dab84776b11094bbf8622dd0'; // Your client id
 var client_secret = 'b7f54e137d354d96bfdd2afcf426af74'; // Your secret
-var redirect_uri = 'https://young-peak-41948.herokuapp.com/callback'; // Your redirect uri
+var redirect_uri = 'https://endlss.herokuapp.com/callback'; // Your redirect uri
 var env = process.env.NODE_ENV || "development";
 
 if (env === "development" || env === "test") {
