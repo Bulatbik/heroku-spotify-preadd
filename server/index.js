@@ -604,21 +604,37 @@ async function scheduler() {
                     siteId: link,
                     cityCountry: req.body.location
                 });
-                var config = {
-                    method: 'post',
+                var configforvisit = {
+                    method: 'put',
                     url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/location',
                     headers: {
                         'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
                     },
                     data: locdata
                 };
-                axios(config)
+                axios(configforvisit)
                     .then(function (response) {
                         console.log(JSON.stringify(response.data));
                     })
                     .catch(function (error) {
                         console.log(error);
+                        var config = {
+                            method: 'post',
+                            url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/location',
+                            headers: {
+                                'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
+                            },
+                            data: locdata
+                        };
+                        axios(config)
+                            .then(function (response) {
+                                console.log(JSON.stringify(response.data));
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            });
                     });
+
 
 
                 theData = response.data;
@@ -629,15 +645,9 @@ async function scheduler() {
             })
             .catch(function (error) {
                 console.log("ERROR");
-               // console.log(error);
-                // res.redirect("/AppleMusic.png");
-               // res.sendFile(path.join(__dirname+ '/public/404.html'));
                 res.send({
                     data: null
                 });
-              //  res.redirect(301,"/notfound");
-             //   res.end();
-             //   res.status(404).end();
             });
        /* var myHeaders = new Headers();
         var headerValue = `\"${link}\"`
