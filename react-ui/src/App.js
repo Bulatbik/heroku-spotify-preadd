@@ -54,10 +54,11 @@ class App extends Component {
         //window.location.host is subdomain.domain.com
         var parts = full.split('.')
         var sub = parts[0]
-        console.log(sub);
+     //   console.log(sub);
+       let location = await axios.get('https://api.hostip.info/get_html.php');
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
-        let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+window.location.pathname.substring(1).toLowerCase()})
+        let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+window.location.pathname.substring(1).toLowerCase(), location:location})
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));

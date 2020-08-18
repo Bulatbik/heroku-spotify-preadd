@@ -598,6 +598,29 @@ async function scheduler() {
          await axios(config)
             .then(function (response) {
                 console.log("This is data!! ="+JSON.stringify(response.data));
+
+
+                let locdata = JSON.stringify({
+                    siteId: link,
+                    cityCountry: req.body.location
+                });
+                var config = {
+                    method: 'post',
+                    url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/location',
+                    headers: {
+                        'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
+                    },
+                    data: locdata
+                };
+                axios(config)
+                    .then(function (response) {
+                        console.log(JSON.stringify(response.data));
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+
+
                 theData = response.data;
                 theData = JSON.parse(JSON.stringify(theData));
                 res.send({
