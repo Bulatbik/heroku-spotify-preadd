@@ -584,14 +584,14 @@ async function scheduler() {
         var socialCode = link.slice(-2);
         var locdata;
         if(socialCode==="IN"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"){
-            link = str.slice(0, -2).toLowerCase();
+            link = link.slice(0, -2).toLowerCase();
              locdata = JSON.stringify({
                 siteId: link,
                 cityCountry: req.body.location,
                 social: socialCode
             });
         }else{
-            link= str.slice(0, -2).toLowerCase();
+            link= link.slice(0, -2).toLowerCase();
              locdata = JSON.stringify({
                 siteId: link,
                 cityCountry: req.body.location
