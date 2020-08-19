@@ -599,17 +599,12 @@ async function scheduler() {
             });
         }
         console.log(link);
-        var data = new FormData();
         var config = {
             method: 'get',
             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/storage/'+link,
             headers: {
-                'linkID': '"F"',
-                'X-Amz-Date': '20200720T141442Z',
-                'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAXDN6B3K7VJCHHJQP/20200720/us-east-2/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=d158d7856a29fa81d913a82c69b2f0c84752c70661d2f9aa295e28df82fe7a7c',
-                ...data.getHeaders()
-            },
-            data : data
+                'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
+            }
         };
         var theData;
          await axios(config)
