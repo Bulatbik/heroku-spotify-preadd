@@ -50,6 +50,7 @@ class App extends Component {
     }
     async componentDidMount(){
         console.log(window.location.pathname);
+        var path = window.location.pathname.substring(1).toLowerCase();
         var full = window.location.host
         //window.location.host is subdomain.domain.com
         var parts = full.split('.')
@@ -58,7 +59,7 @@ class App extends Component {
        let location = await axios.get('https://api.hostip.info/get_json.php');
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
-        let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+window.location.pathname.substring(1, window.location.pathname.substring(1).indexOf('/')).toLowerCase(), location:location.data.city+"-"+location.data.country_name})
+        let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+path.substring(0, path.indexOf('/')).toLowerCase(), location:location.data.city+"-"+location.data.country_name})
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
