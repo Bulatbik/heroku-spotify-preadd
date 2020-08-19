@@ -50,7 +50,7 @@ class App extends Component {
     }
     async componentDidMount(){
         console.log(window.location.pathname);
-        var path = window.location.pathname.substring(1).toLowerCase();
+        var path = window.location.pathname.substring(1);
         var full = window.location.host
         //window.location.host is subdomain.domain.com
         var parts = full.split('.')
