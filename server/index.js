@@ -580,10 +580,13 @@ async function scheduler() {
 
     app.post("/createTheSite", jsonParser,  async (req, res) => {
         var link = req.body.linkID;
+        console.log(link);
        // link = link.substring(1);
         var socialCode = link.slice(-2);
+        console.log(socialCode);
         var locdata;
         if(socialCode==="IN"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"){
+            console.log("THERE is A code");
             link = link.slice(0, -2).toLowerCase();
              locdata = JSON.stringify({
                 siteId: link,
@@ -591,6 +594,7 @@ async function scheduler() {
                 social: socialCode
             });
         }else{
+            console.log("NO code");
             link= link.toLowerCase();
              locdata = JSON.stringify({
                 siteId: link,
