@@ -58,7 +58,7 @@ class App extends Component {
        let location = await axios.get('https://api.hostip.info/get_json.php');
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
-        let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+window.location.pathname.substring(1).toLowerCase(), location:location.data.city+"-"+location.data.country_name})
+        let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub.toLowerCase()+"."+window.location.pathname.substring(1, s.indexOf('/')).toLowerCase(), location:location.data.city+"-"+location.data.country_name})
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
@@ -79,7 +79,7 @@ class App extends Component {
                 UPC: datares.data.UPC
             });
         }
-     //   this.setState({ done: true })
+       // this.setState({ done: true })
        // this.setState({albumName: datares.data.data.data.albumName})
         // console.log(datares.data);
         // console.dir(data);
