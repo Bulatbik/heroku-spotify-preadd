@@ -581,6 +581,22 @@ async function scheduler() {
     app.post("/createTheSite", jsonParser,  async (req, res) => {
         var link = req.body.linkID;
        // link = link.substring(1);
+        var socialCode = link.slice(-2);
+        var locdata;
+        if(socialCode==="IN"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"){
+            link = str.slice(0, -2).toLowerCase();
+             locdata = JSON.stringify({
+                siteId: link,
+                cityCountry: req.body.location,
+                social: socialCode
+            });
+        }else{
+            link= str.slice(0, -2).toLowerCase();
+             locdata = JSON.stringify({
+                siteId: link,
+                cityCountry: req.body.location
+            });
+        }
         console.log(link);
         var data = new FormData();
         var config = {
@@ -598,12 +614,6 @@ async function scheduler() {
          await axios(config)
             .then(function (response) {
                 console.log("This is data!! ="+JSON.stringify(response.data));
-
-
-                let locdata = JSON.stringify({
-                    siteId: link,
-                    cityCountry: req.body.location
-                });
                 var configforvisit = {
                     method: 'put',
                     url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/location',
