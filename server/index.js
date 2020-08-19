@@ -591,7 +591,7 @@ async function scheduler() {
                 social: socialCode
             });
         }else{
-            link= link.slice(0, -2).toLowerCase();
+            link= link.toLowerCase();
              locdata = JSON.stringify({
                 siteId: link,
                 cityCountry: req.body.location
