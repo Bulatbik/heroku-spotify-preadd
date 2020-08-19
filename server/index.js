@@ -467,10 +467,7 @@ async function scheduler() {
                              method: 'post',
                              url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/download',
                              headers: {
-                                 'X-Amz-Content-Sha256': 'beaead3198f7da1e70d03ab969765e0821b24fc913697e929e726aeaebf0eba3',
-                                 'X-Amz-Date': '20200726T211855Z',
-                                 'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAXDN6B3K7VJCHHJQP/20200726/us-east-2/execute-api/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=dc0eed8e238a7737b98f87fd6d67504cf92364f22b6e7d983d40254ec93d497d',
-                                 'Content-Type': 'text/plain'
+                                 'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
                              },
                              data : data2
                          };
