@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, Component} from 'react';
+import Popup from "reactjs-popup";
 import co from 'co';
 import logo from './logo.svg';
 import './App.css';
@@ -43,10 +44,19 @@ class App extends Component {
             artworkLink:"",
             byTitle: "",
             UPC: "",
-            done: undefined
+            done: undefined,
+            openEmailModal: false
         }
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
         this.musicInstance = this.props.musicInstance;
         this.signIn = this.signIn.bind(this);
+    }
+    openModal() {
+        this.setState({ openEmailModal: true });
+    }
+    closeModal() {
+        this.setState({ openEmailModal: false });
     }
     async componentDidMount(){
         console.log(window.location.pathname);
@@ -133,6 +143,7 @@ class App extends Component {
                 .then( button.innerHTML = "Pre-added!")
                 .catch(err => console.log(err));
         });
+        this.openModal()
 
     }
     signOut() {
@@ -163,6 +174,21 @@ class App extends Component {
         console.log(userToken);
         return (
             <div class="app" id="mydiv">
+                <Popup
+                    open={this.state.openEmailModal}
+                    closeOnDocumentClick
+                    onClose={this.closeModal}
+                >
+                    <div className="modal">
+                        <a className="close" onClick={this.closeModal}>
+                            &times;
+                        </a>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
+                        omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
+                        ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
+                        doloribus. Odit, aut.
+                    </div>
+                </Popup>
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
