@@ -140,10 +140,10 @@ class App extends Component {
                 that.setState({isLoginApple: true});
             }
             axios.post('https://endlss.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
-                .then( button.innerHTML = "Pre-added!")
+                .then( (value) =>{button.innerHTML = "Pre-added!";that.openModal()})
                 .catch(err => console.log(err));
         });
-        this.openModal()
+
 
     }
     signOut() {
