@@ -214,9 +214,8 @@ class App extends Component {
                                         </div>
                                 ) : (
                                     <div className="checkboxcolumn">
-                                        <h3 className="emailcapture">Available September 3</h3>
-                                <input type="text" id="email" name="email"/>
-                                <input type="submit" value="Submit"/>
+                                        <h3 className="emailcapture">Confirm your email address below <input type="text" id="email" name="email"/>
+                                            <input type="submit" value="Submit"/></h3>
                                     </div>
                                     )}
                         <div class="legalfooter">
