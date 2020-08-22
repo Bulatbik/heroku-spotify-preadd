@@ -180,9 +180,12 @@ class App extends Component {
                     </div>
                 ) : (
                 <div id="contentfadein" class="content-container">
+                    <div>
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
                     <h3 class="h3">Available September 3</h3>
+                    </div>
+                    <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                             {(token!=null)&&(
@@ -200,6 +203,8 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
+                    </div>
+                    <div>
                         <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
@@ -218,12 +223,13 @@ class App extends Component {
                                         <input type="submit" value="Submit"/>
                                     </div>
                                     )}
+                    </div>
                         <div class="legalfooter">
                                 <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
+                                </div>
                         </div>
                     </div>
-            </div>
                 )}
         </div>
         );
