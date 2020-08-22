@@ -205,20 +205,20 @@ class App extends Component {
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
-                            <div class="checkboxcolumn">
                                 {!this.state.openEmailModal ? (
+                                        <div className="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
+                                        </div>
                                 ) : (
-                                    <div>
+                                    <div className="checkboxcolumn">
                                 <label className="checkboxContainer">Confirm your email address below</label>
                                 <input type="text" id="email" name="email"/>
                                 <input type="submit" value="Submit"/>
                                     </div>
                                     )}
-                            </div>
                         <div class="legalfooter">
                                 <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
