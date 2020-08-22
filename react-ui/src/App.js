@@ -187,11 +187,11 @@ class App extends Component {
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                             {(token!=null)&&(
-                                <form name="myform" id="myform" method="post">
+                                <form class="form" name="myform" id="myform" method="post">
                                     <button class="button"id="buttonSpotify">Pre-Saved!</button>
                                 </form> )}
                             {(token==null)&&(
-                                <form name="myform" id="myform" method="post">
+                                <form class="form" name="myform" id="myform" method="post">
                                     <button class="button" id="buttonSpotify">Pre-Save on Spotify</button>
                                 </form> )}
                                 </a>
