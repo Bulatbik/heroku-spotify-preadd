@@ -214,7 +214,7 @@ class App extends Component {
                                         </div>
                                 ) : (
                                     <div className="checkboxcolumn">
-                                        <h3 className="h3">Available September 3</h3>
+                                        <h3 className="emailcapture">Available September 3</h3>
                                 <input type="text" id="email" name="email"/>
                                 <input type="submit" value="Submit"/>
                                     </div>

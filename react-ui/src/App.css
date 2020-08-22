@@ -269,6 +269,17 @@ a:link, a:visited, a:hover, a:active {
   transform: translate(-50%,-50%) rotate(-45deg);
 }
 
+.emailcapture {
+  color: white;
+  display: inline-block;
+  padding-left: 25px;
+  position: relative;
+  cursor: pointer;
+  font-family:roboto-condensed,sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
 #contentfadein {
     animation: fadein 2s;
     -webkit-animation: fadein 2s;
