@@ -151,6 +151,7 @@ html, body {
   margin-top: 25%;
   margin-bottom: 5%;
   white-space: nowrap;
+  align-self: center;
 }
 
 .modal {
