@@ -130,6 +130,7 @@ html, body {
   margin-bottom: 5%;
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   border-radius: 2px;
+  align-self: center;
 }
 
 .buttonViewApple {
