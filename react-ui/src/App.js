@@ -212,10 +212,11 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                                 ) : (
-                                <label className="checkboxContainer">Confirm your email address below
+                                    <div>
+                                <label className="checkboxContainer">Confirm your email address below</label>
                                 <input type="text" id="email" name="email"/>
                                 <input type="submit" value="Submit"/>
-                                </label>
+                                    </div>
                                     )}
                             </div>
                         <div class="legalfooter">
