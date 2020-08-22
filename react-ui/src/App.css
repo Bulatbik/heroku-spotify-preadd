@@ -132,10 +132,6 @@ html, body {
   border-radius: 2px;
 }
 
-.buttonView .form {
-  float: right;
-}
-
 .buttonViewApple {
   display: inline-flex;
   cursor: pointer;

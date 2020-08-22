@@ -183,15 +183,15 @@ class App extends Component {
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
                     <h3 class="h3">Available September 3</h3>
-
+                    <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                             {(token!=null)&&(
-                                <form class="form" name="myform" id="myform" method="post">
+                                <form name="myform" id="myform" method="post">
                                     <button class="button"id="buttonSpotify">Pre-Saved!</button>
                                 </form> )}
                             {(token==null)&&(
-                                <form class="form" name="myform" id="myform" method="post">
+                                <form name="myform" id="myform" method="post">
                                     <button class="button" id="buttonSpotify">Pre-Save on Spotify</button>
                                 </form> )}
                                 </a>
@@ -224,7 +224,7 @@ class App extends Component {
                                 <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                         </div>
                     </div>
-
+                </div>
             </div>
                 )}
         </div>
