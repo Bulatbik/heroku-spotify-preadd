@@ -214,8 +214,9 @@ class App extends Component {
                             {this.state.openEmailModal && (
                             <div class="checkboxcolumn">
                                 <label className="checkboxContainer">Confirm your email address below
-                                    <input/>
-                                </label>
+                                    </label>
+                                <input type="text" id="email" name="email"/>
+                                <input type="submit" value="Submit"/>
                             </div>
                                 )}
                         <div class="legalfooter">
