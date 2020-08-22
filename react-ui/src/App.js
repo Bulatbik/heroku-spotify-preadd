@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState, Component} from 'react';
-import Popup from "reactjs-popup";
 import co from 'co';
 import logo from './logo.svg';
 import './App.css';
@@ -174,21 +173,6 @@ class App extends Component {
         console.log(userToken);
         return (
             <div class="app" id="mydiv">
-                <Popup
-                    open={this.state.openEmailModal}
-                    closeOnDocumentClick
-                    onClose={this.closeModal}
-                >
-                    <div className="modal">
-                        <a className="close" onClick={this.closeModal}>
-                            &times;
-                        </a>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
-                        omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
-                        ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
-                        doloribus. Odit, aut.
-                    </div>
-                </Popup>
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
@@ -227,6 +211,14 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
+                            {this.state.openEmailModal && (
+                            <div className="modal">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
+                                omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
+                                ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
+                                doloribus. Odit, aut.
+                            </div>
+                                )}
                         <div class="legalfooter">
                                 <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
