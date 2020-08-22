@@ -202,7 +202,7 @@ class App extends Component {
                             </div>
                         <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
-                            <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
+                            <button style={{text}} class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
