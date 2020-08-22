@@ -212,12 +212,13 @@ class App extends Component {
                                 </label>
                             </div>
                             {this.state.openEmailModal && (
-                            <div className="modal">
+                            <a class="modal">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
                                 omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
                                 ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
                                 doloribus. Odit, aut.
-                            </div>
+                                <input/>
+                            </a>
                                 )}
                         <div class="legalfooter">
                                 <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
