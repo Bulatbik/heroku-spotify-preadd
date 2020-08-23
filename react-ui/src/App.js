@@ -153,7 +153,7 @@ class App extends Component {
             that.setState({isLoginApple: false});
         });
     }
-    test() {
+    test(e) {
         console.log("Test the input");
         e.preventDefault();
     }
