@@ -222,13 +222,13 @@ class App extends Component {
                                 </label>
                                         </div>
                                 ) : (
-                                    <div className="checkboxcolumn">
-                                        <form style={{height: "100%", width: "100%"}} onSubmit={this.test}>
+
+                                        <form className="checkboxcolumn" style={{height: "100%", width: "100%"}} onSubmit={this.test}>
                                         <h3 className="emailcapture">Confirm your email address below</h3>
                                         <input className="input1" type="text" />
                                         <input type="submit" value="Submit"/>
                                         </form>
-                                    </div>
+
                                     )}
                     </div>
                         <div class="legalfooter">
