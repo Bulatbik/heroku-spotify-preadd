@@ -579,6 +579,25 @@ async function scheduler() {
         var upc = req.body.upc;
         var userToken = req.body.userToken;
         console.log(email+" "+upc+" "+ userToken)
+        var locdata = JSON.stringify({
+            presaveID: upc+userToken,
+            email: email
+        });
+        var config = {
+            method: 'put',
+            url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/addemail',
+            headers: {
+                'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
+            },
+            data: locdata
+        };
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
         res.end();
      });
 
