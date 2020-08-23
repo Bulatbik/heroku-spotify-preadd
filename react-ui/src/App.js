@@ -54,6 +54,7 @@ class App extends Component {
         this.musicInstance = this.props.musicInstance;
         this.signIn = this.signIn.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handleCheckBoxClick = this.handleCheckBoxClick.bind(this);
         this.test = this.test.bind(this);
     }
     openModal() {
