@@ -484,12 +484,11 @@ async function scheduler() {
 
                     //////////
                     // we can also pass the token to the browser to make requests from there
-                    res.end();
-                   /* res.redirect(finalData[2]+'/#' +
+                    res.redirect(finalData[2]+'/#' +
                         querystring.stringify({
                             access_token: access_token,
                             refresh_token: refresh_token
-                        }));*/
+                        }));
                 } else {
                     res.redirect(finalData[2]+'/#' +
                         querystring.stringify({
