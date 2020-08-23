@@ -600,6 +600,7 @@ async function scheduler() {
             });*/
         if(email.indexOf('@')!==-1) {
             var locdata = JSON.stringify({
+                albumUPC: upc,
                 email: email
             });
             var config = {
