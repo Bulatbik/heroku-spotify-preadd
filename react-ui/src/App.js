@@ -158,7 +158,7 @@ class App extends Component {
         });
     }
     handleEmailChange(event) {
-        e.preventDefault();
+        event.preventDefault();
         this.setState({email: event.target.value});
     }
     async test(e) {
