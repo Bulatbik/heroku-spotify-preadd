@@ -54,7 +54,7 @@ html, body {
 .content-container {
   display: inline-flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 8.3% auto;
   height: 100%;
 }
@@ -188,7 +188,6 @@ html, body {
   font-family: roboto, sans-serif;
   font-size: 18px;
   font-weight: 500;
-  margin: 5% 0 47% 0;
 }
 p {
   margin: auto;
@@ -202,7 +201,7 @@ p {
 }
 
 .legalfooter {
-  margin-top: 75%;
+
 }
 .legaltext {
   color: white;
