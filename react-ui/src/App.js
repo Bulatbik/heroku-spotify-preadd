@@ -203,8 +203,7 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                    </div>
-                    <div>
+
                         <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
