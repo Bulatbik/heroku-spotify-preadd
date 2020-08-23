@@ -34,6 +34,7 @@ class App extends Component {
         }
         this.state = {
             loggedIn: token ? true : false,
+            userToken: "userTokennn",
             nowPlaying: { name: 'Not Checked', albumArt: '' },
             trackToAdd: {trackIds: []},
             music: [],
@@ -44,12 +45,15 @@ class App extends Component {
             byTitle: "",
             UPC: "",
             done: undefined,
-            openEmailModal: false
+            openEmailModal: false,
+            email: ""
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.musicInstance = this.props.musicInstance;
         this.signIn = this.signIn.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.test = this.test.bind(this);
     }
     openModal() {
         this.setState({ openEmailModal: true });
@@ -134,9 +138,9 @@ class App extends Component {
         let that = this;
         co(function*() {
             let key  = yield that.musicInstance.authorize();
-            console.log(`Authorized, music-user-token: ${key}`);
+          //  console.log(`Authorized, music-user-token: ${key}`);
             if(key) {
-                that.setState({isLoginApple: true});
+                that.setState({isLoginApple: true, userToken:key});
             }
             axios.post('https://endlss.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
                 .then( (value) =>{button.innerHTML = "Pre-added!";that.openModal()})
@@ -153,8 +157,13 @@ class App extends Component {
             that.setState({isLoginApple: false});
         });
     }
-    test(e) {
-        console.log("Test the input");
+    handleEmailChange(event) {
+        this.setState({email: event.target.value});
+    }
+    async test(e) {
+        await axios.post('https://endlss.herokuapp.com/appleemail', {email:this.state.email, upc:this.state.UPC, userToken: this.state.userToken})
+            .then(function (response) {
+            }).catch(err => console.log(err));
         e.preventDefault();
     }
     OnSubmitForm()
@@ -225,7 +234,7 @@ class App extends Component {
 
                                         <form className="checkboxcolumn" style={{height: "100%", width: "100%"}} onSubmit={this.test}>
                                         <h3 className="emailcapture">Confirm your email address below</h3>
-                                        <input className="input1" type="text" />
+                                        <input className="input1" type="text" value={this.state.email} onChange={this.handleEmailChange}/>
                                         <input type="submit" value="Submit"/>
                                         </form>
 

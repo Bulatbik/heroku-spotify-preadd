@@ -574,6 +574,13 @@ async function scheduler() {
             }
         });*/
     });
+    app.post("/appleemail", jsonParser,  async (req, res) => {
+        var email = req.body.email;
+        var upc = req.body.upc;
+        var userToken = req.body.userToken;
+        console.log(email+" "+upc+" "+ userToken)
+        res.end();
+     });
 
     app.post("/createTheSite", jsonParser,  async (req, res) => {
         var link = req.body.linkID;
