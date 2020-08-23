@@ -579,7 +579,7 @@ async function scheduler() {
         var upc = req.body.upc;
         var userToken = req.body.userToken;
         console.log(email+" "+upc+" "+ userToken)
-        var locdata = JSON.stringify({
+        /*var locdata = JSON.stringify({
             presaveID: upc+userToken,
             email: email
         });
@@ -597,7 +597,27 @@ async function scheduler() {
             })
             .catch(function (error) {
                 console.log(error);
+            });*/
+        if(email.indexOf('@')!==-1) {
+            var locdata = JSON.stringify({
+                email: email
             });
+            var config = {
+                method: 'post',
+                url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/download/apple',
+                headers: {
+                    'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
+                },
+                data: locdata
+            };
+            axios(config)
+                .then(function (response) {
+                    console.log(JSON.stringify(response.data));
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
         res.end();
      });
 
