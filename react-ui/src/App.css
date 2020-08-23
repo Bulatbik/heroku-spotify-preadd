@@ -284,6 +284,9 @@ a:link, a:visited, a:hover, a:active {
   display: inline-block;
   line-height: 200%;
   border: none;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  border-radius: 2px;
 }
 .input1:focus {
   outline: none;
