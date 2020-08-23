@@ -186,6 +186,7 @@ class App extends Component {
                     <h3 class="h3">Available September 3</h3>
                     </div>
                     <div style={{marginBottom: '40%'}}>
+                        <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                             {(token!=null)&&(
@@ -208,6 +209,7 @@ class App extends Component {
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
+                        </div>
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from {this.state.artistName}
