@@ -199,7 +199,7 @@ class App extends Component {
         const token = params.access_token;
         const userToken = params.userToken;
         if(token!=null){
-            window.location.hash = "hello";
+            history.pushState(null, null, '#myhash');
         }
 
         console.log(userToken);
