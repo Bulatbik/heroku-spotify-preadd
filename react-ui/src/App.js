@@ -46,7 +46,8 @@ class App extends Component {
             UPC: "",
             done: undefined,
             openEmailModal: false,
-            email: ""
+            email: "",
+            isChecked: true
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -180,6 +181,10 @@ class App extends Component {
         }
         return true;
     }
+    handleCheckBoxClick(e){
+        let checkbox = e.target.checked;
+        this.setState({isChecked: !checkbox})
+    }
     render() {
         const params = this.getHashParams();
         const token = params.access_token;
@@ -227,7 +232,7 @@ class App extends Component {
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from {this.state.artistName}
-                                    <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
+                                    <input type="checkbox" id="myCheck" checked={this.isChecked} onChange={this.handleCheckBoxClick} />
                                     <span class="checkmark"></span>
                                 </label>
                                         </div>
