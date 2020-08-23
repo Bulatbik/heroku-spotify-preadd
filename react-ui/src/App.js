@@ -134,7 +134,8 @@ class App extends Component {
 
     signIn() {
         var button = document.getElementById("apple-music-authorize-button");
-        var checkBox = document.getElementById("myCheck");
+        var checkBox = document.getElementById("CheckApple");
+      //  var saveCheckBoxState = checkBox.checked;
         button.innerHTML = "Pre-adding...";
         let that = this;
         co(function*() {
