@@ -46,15 +46,13 @@ class App extends Component {
             UPC: "",
             done: undefined,
             openEmailModal: false,
-            email: "",
-            isChecked: true
+            email: ""
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.musicInstance = this.props.musicInstance;
         this.signIn = this.signIn.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
-        this.handleCheckBoxClick = this.handleCheckBoxClick.bind(this);
         this.test = this.test.bind(this);
     }
     openModal() {
@@ -136,6 +134,7 @@ class App extends Component {
 
     signIn() {
         var button = document.getElementById("apple-music-authorize-button");
+        var checkBox = document.getElementById("myCheck");
         button.innerHTML = "Pre-adding...";
         let that = this;
         co(function*() {
@@ -145,7 +144,11 @@ class App extends Component {
                 that.setState({isLoginApple: true, userToken:key});
             }
             axios.post('https://endlss.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
-                .then( (value) =>{button.innerHTML = "Pre-added!";that.openModal()})
+                .then( (value) =>{button.innerHTML = "Pre-added!";
+                if(checkBox.checked === true) {
+                    that.openModal()
+                }
+                })
                 .catch(err => console.log(err));
         });
 
@@ -181,12 +184,6 @@ class App extends Component {
             form.action ="https://endlss.herokuapp.com/login?updates=no&upc="+this.state.UPC+"&url="+window.location.href;
         }
         return true;
-    }
-    handleCheckBoxClick(e){
-        e.preventDefault();
-        let checkbox = e.target.checked;
-        this.setState({isChecked: !checkbox})
-        console.log(this.state.isChecked);
     }
     render() {
         const params = this.getHashParams();
@@ -235,7 +232,7 @@ class App extends Component {
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from {this.state.artistName}
-                                    <input type="checkbox" id="myCheck" checked={this.isChecked} onChange={this.handleCheckBoxClick} />
+                                    <input type="checkbox" id="CheckApple" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
                                         </div>
