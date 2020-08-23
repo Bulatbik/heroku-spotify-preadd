@@ -155,6 +155,7 @@ class App extends Component {
     }
     test() {
         console.log("Test the input");
+        e.preventDefault();
     }
     OnSubmitForm()
     {
