@@ -135,8 +135,10 @@ class App extends Component {
     signIn() {
         var button = document.getElementById("apple-music-authorize-button");
         var checkBox = document.getElementById("CheckApple");
-      //  var saveCheckBoxState = checkBox.checked;
+        var saveCheckBoxState = checkBox.checked;
+        console.log("saveCheckBoxState = "+saveCheckBoxState);
         button.innerHTML = "Pre-adding...";
+        checkBox.checked = true;
         let that = this;
         co(function*() {
             let key  = yield that.musicInstance.authorize();
@@ -146,7 +148,7 @@ class App extends Component {
             }
             axios.post('https://endlss.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
                 .then( (value) =>{button.innerHTML = "Pre-added!";
-                if(checkBox.checked === true) {
+                if(saveCheckBoxState === true) {
                     that.openModal()
                 }
                 })
