@@ -161,10 +161,10 @@ class App extends Component {
         this.setState({email: event.target.value});
     }
     async test(e) {
+        e.preventDefault();
         await axios.post('https://endlss.herokuapp.com/appleemail', {email:this.state.email, upc:this.state.UPC, userToken: this.state.userToken})
             .then(function (response) {
             }).catch(err => console.log(err));
-        e.preventDefault();
     }
     OnSubmitForm()
     {
