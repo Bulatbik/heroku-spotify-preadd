@@ -46,7 +46,8 @@ class App extends Component {
             UPC: "",
             done: undefined,
             openEmailModal: false,
-            email: ""
+            email: "",
+            checkBoxDefaultStatus: true
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -54,6 +55,7 @@ class App extends Component {
         this.signIn = this.signIn.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.test = this.test.bind(this);
+        this.handleCheckBoxClick = this.handleCheckBoxClick.bind(this);
     }
     openModal() {
         this.setState({ openEmailModal: true });
@@ -135,10 +137,10 @@ class App extends Component {
     signIn() {
         var button = document.getElementById("apple-music-authorize-button");
         var checkBox = document.getElementById("CheckApple");
-        var saveCheckBoxState = checkBox.checked;
-        console.log("saveCheckBoxState = "+saveCheckBoxState);
+      // var saveCheckBoxState = checkBox.checked;
+        console.log("checkBoxDefaultStatus = "+this.state.checkBoxDefaultStatus);
         button.innerHTML = "Pre-adding...";
-        checkBox.checked = true;
+       // checkBox.checked = true;
         let that = this;
         co(function*() {
             let key  = yield that.musicInstance.authorize();
@@ -148,7 +150,7 @@ class App extends Component {
             }
             axios.post('https://endlss.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
                 .then( (value) =>{button.innerHTML = "Pre-added!";
-                if(saveCheckBoxState === true) {
+                if(that.state.checkBoxDefaultStatus === true) {
                     that.openModal()
                 }
                 })
@@ -174,6 +176,10 @@ class App extends Component {
         await axios.post('https://endlss.herokuapp.com/appleemail', {email:this.state.email, upc:this.state.UPC, userToken: this.state.userToken})
             .then(function (response) {
             }).catch(err => console.log(err));
+    }
+    handleCheckBoxClick(e){
+        e.preventDefault();
+        this.setState({checkBoxDefaultStatus: !this.state.checkBoxDefaultStatus})
     }
     OnSubmitForm()
     {
@@ -235,7 +241,7 @@ class App extends Component {
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
                                 <label class="checkboxContainer">Get updates from {this.state.artistName}
-                                    <input type="checkbox" id="CheckApple" checked onClick="this.checked=!this.checked;"/>
+                                    <input type="checkbox" id="CheckApple" checked={this.state.checkBoxDefaultStatus} onChange={this.handleCheckBoxClick} />
                                     <span class="checkmark"></span>
                                 </label>
                                         </div>
