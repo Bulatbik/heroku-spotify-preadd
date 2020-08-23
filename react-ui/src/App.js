@@ -153,6 +153,9 @@ class App extends Component {
             that.setState({isLoginApple: false});
         });
     }
+    test() {
+        console.log("Test the input");
+    }
     OnSubmitForm()
     {
         var button = document.getElementById("buttonSpotify");
@@ -219,9 +222,11 @@ class App extends Component {
                                         </div>
                                 ) : (
                                     <div className="checkboxcolumn">
+                                        <form onSubmit={this.handleSubmit}>
                                         <h3 className="emailcapture">Confirm your email address below</h3>
                                         <input className="input1" type="text" id="email" name="email"/>
                                         <input type="submit" value="Submit"/>
+                                        </form>
                                     </div>
                                     )}
                     </div>
