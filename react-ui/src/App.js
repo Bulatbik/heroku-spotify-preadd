@@ -198,6 +198,10 @@ class App extends Component {
         const params = this.getHashParams();
         const token = params.access_token;
         const userToken = params.userToken;
+        if(token!=null){
+            parent.location.hash = "hello";
+        }
+
         console.log(userToken);
         return (
             <div class="app" id="mydiv">
