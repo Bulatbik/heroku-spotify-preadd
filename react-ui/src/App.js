@@ -222,7 +222,7 @@ class App extends Component {
                                         </div>
                                 ) : (
                                     <div className="checkboxcolumn">
-                                        <form onSubmit={this.handleSubmit}>
+                                        <form onSubmit={this.test}>
                                         <h3 className="emailcapture">Confirm your email address below</h3>
                                         <input className="input1" type="text" id="email" name="email"/>
                                         <input type="submit" value="Submit"/>
