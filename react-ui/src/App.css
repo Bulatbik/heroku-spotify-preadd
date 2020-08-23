@@ -272,18 +272,23 @@ a:link, a:visited, a:hover, a:active {
 .emailcapture {
   color: white;
   display: inline-block;
-  padding-left: 25px;
   position: relative;
   cursor: pointer;
   font-family:roboto-condensed,sans-serif;
   font-weight: 400;
   text-transform: uppercase;
+  margin-bottom: 5px;
 }
 .input1 {
   width: 100%;
   display: inline-block;
   line-height: 200%;
+  border: none;
 }
+.input1:focus {
+  outline: none;
+}
+
 #contentfadein {
     animation: fadein 2s;
     -webkit-animation: fadein 2s;
