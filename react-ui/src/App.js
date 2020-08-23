@@ -182,8 +182,10 @@ class App extends Component {
         return true;
     }
     handleCheckBoxClick(e){
+        e.preventDefault();
         let checkbox = e.target.checked;
         this.setState({isChecked: !checkbox})
+        console.log(this.state.isChecked);
     }
     render() {
         const params = this.getHashParams();
