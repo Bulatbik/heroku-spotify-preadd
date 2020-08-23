@@ -220,7 +220,7 @@ class App extends Component {
                                 ) : (
                                     <div className="checkboxcolumn">
                                         <h3 className="emailcapture">Confirm your email address below</h3>
-                                        <input type="text" id="email" name="email"/>
+                                        <input className="input1" type="text" id="email" name="email"/>
                                         <input type="submit" value="Submit"/>
                                     </div>
                                     )}

@@ -279,7 +279,11 @@ a:link, a:visited, a:hover, a:active {
   font-weight: 400;
   text-transform: uppercase;
 }
-
+.input1 {
+  width: 100%;
+  display: inline-block;
+  line-height: 200%;
+}
 #contentfadein {
     animation: fadein 2s;
     -webkit-animation: fadein 2s;
