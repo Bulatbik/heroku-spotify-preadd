@@ -224,7 +224,7 @@ class App extends Component {
                                     <div className="checkboxcolumn">
                                         <form onSubmit={this.test}>
                                         <h3 className="emailcapture">Confirm your email address below</h3>
-                                        <input className="input1" type="text" id="email" name="email"/>
+                                        <input className="input1" type="text" />
                                         <input type="submit" value="Submit"/>
                                         </form>
                                     </div>
