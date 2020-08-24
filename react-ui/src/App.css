@@ -298,9 +298,7 @@ a:link, a:visited, a:hover, a:active {
   outline: none;
 }
 
-input[type="submit"]{ -webkit-appearence: none; }
-
-.submit {
+input[type=submit] {
   background-color: white;
   font-family: roboto-condensed, sans-serif;
   font-weight: 600;
