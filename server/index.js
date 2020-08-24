@@ -540,7 +540,7 @@ async function scheduler() {
    // });
 
     app.get("/Albumcover.png", (req, res) => {
-        res.sendFile(path.join(__dirname+'/Albumcover.png'));
+        res.sendFile(path.join(__dirname+'/Albumcover.jpg'));
     });
     app.get("/Spotify_Logo_RGB_Green.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Logo_RGB_Green.png'));
