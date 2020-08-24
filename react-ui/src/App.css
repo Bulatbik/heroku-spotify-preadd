@@ -190,6 +190,7 @@ html, body {
   font-family: roboto, sans-serif;
   font-size: 18px;
   font-weight: 500;
+  margin-top: 1%;
 }
 p {
   margin: auto;
@@ -277,9 +278,10 @@ a:link, a:visited, a:hover, a:active {
   position: relative;
   cursor: pointer;
   font-family:roboto-condensed,sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 5px;
+  margin-top: auto;
 }
 .input1 {
   width: 100%;
@@ -294,6 +296,20 @@ a:link, a:visited, a:hover, a:active {
 }
 .input1:focus {
   outline: none;
+}
+
+.confirmemailbutton {
+  background-color: white;
+  font-family: roboto-condensed, sans-serif;
+  font-weight: 600;
+  border: none;
+  margin-top: 4%;
+  border-radius: 2px;
+  padding: 6px 8px;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+}
+
+
 }
 
 #contentfadein {
