@@ -298,8 +298,9 @@ a:link, a:visited, a:hover, a:active {
   outline: none;
 }
 
-input.confirmbutton {
-  display: flex;
+input[type="submit"]{ -webkit-appearence: none; }
+
+.submit {
   background-color: white;
   font-family: roboto-condensed, sans-serif;
   font-weight: 600;
@@ -308,6 +309,7 @@ input.confirmbutton {
   border-radius: 2px;
   padding: 6px 8px;
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  cursor: pointer;
 }
 
 #contentfadein {

@@ -253,7 +253,7 @@ class App extends Component {
                                         <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
                                         <h3 className="emailcapture">Confirm your email</h3>
                                         <input className="input1" type="eamil" value={this.state.email} onChange={this.handleEmailChange}/>
-                                        <input className="confirmbutton" type="submit" value="CONTINUE"/>
+                                        <input type="submit" class="submit" value="CONTINUE"/>
                                         </form>
 
                                     )}
