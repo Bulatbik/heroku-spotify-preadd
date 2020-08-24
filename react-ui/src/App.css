@@ -298,7 +298,7 @@ a:link, a:visited, a:hover, a:active {
   outline: none;
 }
 
-.confirmbutton {
+input.confirmbutton {
   display: flex;
   background-color: white;
   font-family: roboto-condensed, sans-serif;
