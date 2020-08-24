@@ -309,9 +309,6 @@ a:link, a:visited, a:hover, a:active {
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
 }
 
-
-}
-
 #contentfadein {
     animation: fadein 2s;
     -webkit-animation: fadein 2s;
