@@ -214,7 +214,7 @@ class App extends Component {
                     <div>
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
-                    <h3 class="h3">Available September 3</h3>
+                    <h3 class="h3">Available September 4</h3>
                     </div>
                     <div style={{marginBottom: '40%', marginTop: '20%'}}>
                         <div>
@@ -250,8 +250,8 @@ class App extends Component {
                                         </div>
                                 ) : (
 
-                                        <form className="checkboxcolumn" style={{height: "100%", width: "100%"}} onSubmit={this.test}>
-                                        <h3 className="emailcapture">Confirm your email address below</h3>
+                                        <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
+                                        <h3 className="emailcapture">Confirm your email</h3>
                                         <input className="input1" type="text" value={this.state.email} onChange={this.handleEmailChange}/>
                                         <input className="confirmbutton" type="submit" value="CONTINUE"/>
                                         </form>
