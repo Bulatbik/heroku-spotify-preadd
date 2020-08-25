@@ -261,6 +261,35 @@ async function scheduler() {
         }
     }
 }
+async function clickCount(linkId, socialCode) {
+    var locdata;
+    if(socialCode==="IN"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"){
+        console.log("THERE is A code");
+        linkId = linkId.slice(0, -2)
+        locdata = JSON.stringify({
+            siteId: linkId,
+            social: socialCode
+        });
+    }else{
+        console.log("NO code");
+        locdata = JSON.stringify({
+            siteId: linkId
+        });
+    }
+    var configforvisit = {
+        method: 'put',
+        url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks',
+        headers: {
+            'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
+        },
+        data: locdata
+    };
+    axios(configforvisit)
+        .then(function (response) {
+            console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {console.log(error)})
+}
 
 
 /*if (!isDev && cluster.isMaster) {
@@ -318,8 +347,10 @@ async function scheduler() {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
         // var state = generateRandomString(16);
         //res.cookie(stateKey, state);
+        var socialCode = req.query.url.substring(8).replace('endlss.to/','').slice(-2);
         var albumId = req.query.url.substring(8).replace('endlss.to/','').toLowerCase();
-        var config = {
+        clickCount(albumId, socialCode);
+       /* var config = {
             method: 'put',
             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/'+albumId,
             headers: {
@@ -332,7 +363,7 @@ async function scheduler() {
             })
             .catch(function (error) {
                 console.log(error);
-            });
+            });*/
         var state =  req.query.updates+"@"+req.query.upc+"@"+req.query.url;
         console.log("THIS SHows if user allowed: "+state);
         res.cookie(stateKey, state);
