@@ -299,7 +299,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 input[type=submit] {
-  background-color: white;
+  background-color: white !important;
   font-family: roboto-condensed, sans-serif;
   font-weight: 600;
   border: none;
@@ -329,4 +329,14 @@ input[type=submit] {
     to {
         opacity:1;
     }
+}
+
+.ssnotice {
+  color: white;
+  font-family: roboto, sans-serif;
+  width: 75%;
+  align-self: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: inherit;
 }

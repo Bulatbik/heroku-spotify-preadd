@@ -71,8 +71,6 @@ class App extends Component {
         var sub = parts[0]
      //   console.log(sub);
        let location = await axios.get('https://api.hostip.info/get_json.php');
-       // let location = await axios.get('http://api.ipstack.com/check?access_key=37591f965e236f741bc6196bef32c8c2').then(function (response) {console.log(response.data)}
-       // ).catch(err => console.log(err));;
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
         let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub+"."+path.split('/')[0], location:location.data.city+"-"+location.data.country_name})
@@ -141,7 +139,6 @@ class App extends Component {
       // var saveCheckBoxState = checkBox.checked;
         console.log("checkBoxDefaultStatus = "+this.state.checkBoxDefaultStatus);
         button.innerHTML = "Pre-adding...";
-        axios.post('https://endlss.herokuapp.com/applemusicclicks', {urlLink: window.location.href})
        // checkBox.checked = true;
         let that = this;
         co(function*() {
@@ -151,11 +148,9 @@ class App extends Component {
                 that.setState({isLoginApple: true, userToken:key});
             }
             axios.post('https://endlss.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
-                .then( (value) =>{
+                .then( (value) =>{button.innerHTML = "Pre-added!";
                 if(that.state.checkBoxDefaultStatus === true) {
                     that.openModal()
-                }else{
-                    button.innerHTML = "Pre-added!";
                 }
                 })
                 .catch(err => console.log(err));
@@ -177,10 +172,8 @@ class App extends Component {
     }
     async test(e) {
         e.preventDefault();
-        let that = this;
-        var button = document.getElementById("apple-music-authorize-button");
         await axios.post('https://endlss.herokuapp.com/appleemail', {email:this.state.email, upc:this.state.UPC, userToken: this.state.userToken})
-            .then(function (response) { button.innerHTML = "Pre-added!"; that.closeModal();
+            .then(function (response) {
             }).catch(err => console.log(err));
     }
     handleCheckBoxClick(e){
@@ -266,7 +259,7 @@ class App extends Component {
                                     )}
                     </div>
                         <div class="ssnotice">
-                                <div class="sstext"><p>Pre-save/pre-add my new EP "Ain't Shit Sweeter", and you'll have the chance to win an exclusive merch bundle (to be revealed).</p></div></div>
+                            <p>Pre-save/pre-add my new EP "Ain't Shit Sweeter", and you'll have the chance to win an exclusive merch bundle (to be revealed).</p></div>
                         <div class="legalfooter">
                                 <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
