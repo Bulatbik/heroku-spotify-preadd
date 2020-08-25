@@ -70,7 +70,8 @@ class App extends Component {
         var parts = full.split('.')
         var sub = parts[0]
      //   console.log(sub);
-       let location = await axios.get('https://api.hostip.info/get_json.php');
+       //let location = await axios.get('https://api.hostip.info/get_json.php');
+        let location = await axios.get('http://api.ipstack.com/check?access_key=37591f965e236f741bc6196bef32c8c2');
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
         let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub+"."+path.split('/')[0], location:location.data.city+"-"+location.data.country_name})
