@@ -148,9 +148,11 @@ class App extends Component {
                 that.setState({isLoginApple: true, userToken:key});
             }
             axios.post('https://endlss.herokuapp.com/applemusic', {userToken:key, upc:that.state.UPC, urlLink: window.location.href})
-                .then( (value) =>{button.innerHTML = "Pre-added!";
+                .then( (value) =>{
                 if(that.state.checkBoxDefaultStatus === true) {
                     that.openModal()
+                }else{
+                    button.innerHTML = "Pre-added!";
                 }
                 })
                 .catch(err => console.log(err));
@@ -172,8 +174,10 @@ class App extends Component {
     }
     async test(e) {
         e.preventDefault();
+        let that = this;
+        var button = document.getElementById("apple-music-authorize-button");
         await axios.post('https://endlss.herokuapp.com/appleemail', {email:this.state.email, upc:this.state.UPC, userToken: this.state.userToken})
-            .then(function (response) {
+            .then(function (response) { button.innerHTML = "Pre-added!"; that.closeModal();
             }).catch(err => console.log(err));
     }
     handleCheckBoxClick(e){
