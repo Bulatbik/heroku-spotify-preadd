@@ -263,7 +263,7 @@ async function scheduler() {
 }
 async function clickCount(linkId, socialCode) {
     var locdata;
-    if(socialCode==="IN"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"){
+    if(socialCode==="IN"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"||socialCode==="CM"){
         console.log("THERE is A code");
         linkId = linkId.slice(0, -2)
         locdata = JSON.stringify({
@@ -660,7 +660,7 @@ async function clickCount(linkId, socialCode) {
         var socialCode = link.slice(-2);
         console.log(socialCode);
         var locdata;
-        if(socialCode==="IN"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"){
+        if(socialCode==="IN"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"||socialCode==="CM"){
             console.log("THERE is A code");
             link = link.slice(0, -2).toLowerCase();
              locdata = JSON.stringify({
