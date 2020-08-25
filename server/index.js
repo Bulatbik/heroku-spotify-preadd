@@ -385,20 +385,6 @@ async function clickCount(linkId, socialCode) {
     app.post('/applemusic', jsonParser, (req, res) => {
         //dirname:/app/server!!!!
         var albumId = req.body.urlLink.substring(8).replace('endlss.to/','').toLowerCase();
-        var config = {
-            method: 'put',
-            url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/'+albumId,
-            headers: {
-                'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
-            }
-        };
-        axios(config)
-            .then(function (response) {
-                console.log(JSON.stringify(response.data));
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
         let token = req.body.userToken;
         const jwtToken = jwt.sign({}, privateKey, {
             algorithm: "ES256",
@@ -425,6 +411,13 @@ async function clickCount(linkId, socialCode) {
             }));
 
     });
+    app.post('/applemusicclicks', jsonParser, (req, res) => {
+    //dirname:/app/server!!!!
+        var socialCode = req.body.urlLink.substring(8).replace('endlss.to/','').slice(-2);
+        var albumId = req.body.urlLink.substring(8).replace('endlss.to/','').toLowerCase();
+        clickCount(albumId, socialCode);
+    });
+
 
     app.get('/loginOne', function (req, res) {
         // dynamicStatic.setPath(__dirname + '/public');
