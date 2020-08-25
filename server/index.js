@@ -318,7 +318,7 @@ async function scheduler() {
         //dynamicStatic.setPath(path.resolve(__dirname, '../react-ui/build'));
         // var state = generateRandomString(16);
         //res.cookie(stateKey, state);
-        var albumId = req.query.url.substring(8).replace('endlss.to/','');
+        var albumId = req.query.url.substring(8).replace('endlss.to/','').toLowerCase();
         var config = {
             method: 'put',
             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/'+albumId,
@@ -353,7 +353,7 @@ async function scheduler() {
 
     app.post('/applemusic', jsonParser, (req, res) => {
         //dirname:/app/server!!!!
-        var albumId = req.body.urlLink.substring(8).replace('endlss.to/','');
+        var albumId = req.body.urlLink.substring(8).replace('endlss.to/','').toLowerCase();
         var config = {
             method: 'put',
             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/'+albumId,
