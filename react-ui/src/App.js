@@ -71,7 +71,7 @@ class App extends Component {
         var sub = parts[0]
      //   console.log(sub);
        //let location = await axios.get('https://api.hostip.info/get_json.php');
-        let location = await axios.get('http://api.ipstack.com/check?access_key=37591f965e236f741bc6196bef32c8c2').then(function (response) {}
+        let location = await axios.get('http://api.ipstack.com/check?access_key=37591f965e236f741bc6196bef32c8c2').then(function (response) {console.log(response.data)}
         ).catch(err => console.log(err));;
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
