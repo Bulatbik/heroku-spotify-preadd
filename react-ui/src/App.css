@@ -309,6 +309,15 @@ input[type=submit] {
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   cursor: pointer;
 }
+.ssnotice {
+  color: white;
+  font-family: roboto-condensed, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: inherit;
+  padding: 0 40px 0 40px;
+}
 
 #contentfadein {
     animation: fadein 2s;

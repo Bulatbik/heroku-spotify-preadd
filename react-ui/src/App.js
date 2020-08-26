@@ -265,6 +265,10 @@ class App extends Component {
 
                                     )}
                     </div>
+                    <div className="ssnotice"><p>Pre-save/pre-add my new EP "Ain't Shit Sweeter", <br/> and you'll have
+                        the chance to win an exclusive merch bundle (to be revealed).<br/><a
+                            href="https://competitions.endlessdigital.co/aintshitsweeter">Competition Rules</a></p>
+                    </div>
                         <div class="legalfooter">
                                 <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
