@@ -266,7 +266,7 @@ class App extends Component {
                                     )}
                         <div className="ssnotice"><p>Pre-save/pre-add my new EP "Ain't Shit Sweeter", <br/> and you'll have
                             the chance to win an exclusive merch bundle (to be revealed).<br/><a class="sslink"
-                            href="https://competitions.endlessdigital.co/aintshitsweeter">Competition Rules</a></p>
+                            href="https://competitions.endlessdigital.co">Competition Rules</a></p>
                         </div>
                     </div>
 
