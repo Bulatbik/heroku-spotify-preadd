@@ -218,12 +218,12 @@ class App extends Component {
                     </div>
                 ) : (
                 <div id="contentfadein" class="content-container">
-                    <div style={{marginTop: '5%'}}>
+                    <div style={{marginTop: '9%'}}>
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
                     <h3 class="h3">Available September 4</h3>
                     </div>
-                    <div>
+                    <div style={{marginTop: '5%'}}>
                         <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
