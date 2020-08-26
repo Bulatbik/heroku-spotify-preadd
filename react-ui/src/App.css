@@ -312,6 +312,7 @@ input[type=submit] {
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   cursor: pointer;
 }
+
 .ssnotice {
   color: white;
   font-family: roboto, sans-serif;
@@ -320,6 +321,9 @@ input[type=submit] {
   text-transform: uppercase;
   padding: 0 40px 0 40px;
   margin-top: 18%;
+}
+a.sslink {
+  font-size: 13px;
 }
 
 #contentfadein {
