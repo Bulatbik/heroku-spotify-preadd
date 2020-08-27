@@ -268,7 +268,7 @@ class App extends Component {
 
                                     )}
                     </div>
-                        <div class="textupdates"><p>For more updates from Ramriddlz<br>Text 647-372-2252</p></div>
+                        <div class="textupdates"><p>For more updates from Ramriddlz<br />Text 647-372-2252</p></div>
                         <div class="legalfooter">
                                 <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
