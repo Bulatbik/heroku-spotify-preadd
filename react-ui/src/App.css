@@ -136,7 +136,11 @@ html, body {
   border-radius: 2px;
   align-self: center;
 }
-
+@media only screen and (min-width: 660px) {
+  .buttonview {
+    margin-bottom: 1%;
+  }
+}
 .buttonViewApple {
   display: inline-flex;
   cursor: pointer;
@@ -157,7 +161,11 @@ html, body {
   white-space: nowrap;
   align-self: center;
 }
-
+@media only screen and (min-width: 660px) {
+  .buttonviewApple {
+    margin-bottom: 1%;
+  }
+}
 .modal {
   display: inline-flex;
   cursor: pointer;
