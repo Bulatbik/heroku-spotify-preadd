@@ -69,6 +69,7 @@ html, body {
 @media only screen and (min-width: 1080px) {
   .content-container {
     margin: auto;
+    margin-top: 3%;
   }
 }
 
@@ -210,7 +211,11 @@ p {
   margin-bottom: 10%;
 }
 
-.legalfooter {
+@media only screen and (min-width: 660px) {
+  .legalfooter {
+    margin-top: inherit;
+    margin-bottom: 4%;
+  }
 }
 .legaltext {
   color: white;
@@ -383,4 +388,10 @@ a.sslink {
 .endlesslogo {
   height: 12px;
   margin-top: 6%;
+}
+
+@media only screen and (min-width: 660px) {
+  .endlesslogo {
+    margin-top: 2%;
+  }
 }
