@@ -1,7 +1,12 @@
-html, body {
+html {
+  overflow: hidden;
   height: 100%;
-  margin: 0;
 }
+body {
+  overflow: auto;
+  height: 100%;
+}
+
   
 * {
   box-sizing: border-box;
@@ -29,7 +34,6 @@ html, body {
   opacity: .8;
   overscroll-behavior: none;
   object-fit: cover;
-  overflow-x: hidden !important;
  }
 
 .bg-image {
@@ -43,7 +47,6 @@ html, body {
   background-color: black;
   display: block;
   position: fixed;
-  overflow-x: hidden !important;
 }
 
 .content-container {
