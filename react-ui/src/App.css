@@ -337,6 +337,7 @@ a.sslink {
 @media only screen and (min-width: 660px) {
   .ssnotice {
     margin: auto;
+    margin-bottom: 3%;
     width: 45%;
   }
 }
@@ -374,8 +375,8 @@ a.sslink {
 }
 @media only screen and (min-width: 660px) {
   .textupdates {
-    margin-top: 0%;
-    margin-bottom: 0%;
+    margin-top: 5%;
+    margin-bottom: 2%;
   }
 }
 
