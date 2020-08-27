@@ -27,7 +27,6 @@ html, body {
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
   opacity: .8;
-  filter: blur(8px);
   overscroll-behavior: none;
   object-fit: cover;
  }
@@ -43,7 +42,7 @@ html, body {
   background-color: black;
   display: block;
   position: fixed;
-  overflow: hidden;
+  overflow-x: hidden !important;
 }
 
 .content-container {
