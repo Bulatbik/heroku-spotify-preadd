@@ -275,7 +275,6 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                                         </div>
-                                        <a class="buttonViewApple"><img class="shoplogo" src="https://shop.ramriddlz.com/images/Ramriddlz-Logo-black.png"><button class="button">Official Shop</button></a>
                                 ) : (
 
                                         <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
@@ -285,6 +284,7 @@ class App extends Component {
                                         </form>
 
                                     )}
+                            <a class="buttonViewApple"><img class="shoplogo" src="https://shop.ramriddlz.com/images/Ramriddlz-Logo-black.png"><button class="button">Official Shop</button></a>
                     </div>
                         <div class="textupdates"><p>For more updates from Ramriddlz<br/>Text 647-372-2252</p></div>
                         <div class="legalfooter">
