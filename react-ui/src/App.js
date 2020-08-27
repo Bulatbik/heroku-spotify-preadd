@@ -201,7 +201,7 @@ class App extends Component {
             }).catch(err => console.log(err));
     }
     handleCheckBoxClick(e){
-        e.preventDefault();
+     //   e.preventDefault();
         this.setState({checkBoxDefaultStatus: !this.state.checkBoxDefaultStatus})
     }
     OnSubmitForm()
