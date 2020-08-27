@@ -653,7 +653,7 @@ async function clickCount(linkId, socialCode) {
         var socialCode = link.slice(-2);
         console.log(socialCode);
         var locdata;
-        if(socialCode==="IGB"||socialCode==="IGS"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"||socialCode==="CM"){
+        if(socialCode==="IB"||socialCode==="IS"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"||socialCode==="CM"){
             console.log("THERE is A code");
             link = link.slice(0, -2).toLowerCase();
              locdata = JSON.stringify({
