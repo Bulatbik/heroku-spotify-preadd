@@ -284,7 +284,7 @@ class App extends Component {
                                         </form>
 
                                     )}
-                            <a class="buttonViewApple" href="https://shop.ramriddlz.com"><img class="shoplogo" src="https://shop.ramriddlz.com/images/Ramriddlz-Logo-black.png"/><button class="button">Official Shop</button></a>
+                            <a class="buttonViewApple" href="https://shop.ramriddlz.com"><button class="button">Official Shop</button></a>
                     </div>
                         <div class="textupdates"><p>For more updates from Ramriddlz<br/>Text 647-372-2252</p></div>
                         <div class="legalfooter">
