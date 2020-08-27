@@ -325,6 +325,13 @@ input[type=submit] {
 a.sslink {
   font-size: 13px;
 }
+@media only screen and (min-width: 660px) {
+  .ssnotice {
+    margin: auto;
+    width: 45%;
+  }
+}
+
 
 #contentfadein {
     animation: fadein 2s;
@@ -355,4 +362,10 @@ a.sslink {
   text-transform: uppercase;
   margin-top: 10%;
   margin-bottom: 15%;
+}
+@media only screen and (min-width: 660px) {
+  .textupdates {
+    margin-top: 0%;
+    margin-bottom 0%;
+  }
 }
