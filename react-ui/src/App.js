@@ -267,7 +267,6 @@ class App extends Component {
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
-                        <a class="buttonViewApple"><img class="shoplogo" src="https://shop.ramriddlz.com/images/Ramriddlz-Logo-black.png"/><button class="button">Official Shop</button></a>
                         </div>
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
@@ -276,6 +275,7 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                                         </div>
+                                        <a class="buttonViewApple"><img class="shoplogo" src="https://shop.ramriddlz.com/images/Ramriddlz-Logo-black.png"><button class="button">Official Shop</button></a>
                                 ) : (
 
                                         <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
