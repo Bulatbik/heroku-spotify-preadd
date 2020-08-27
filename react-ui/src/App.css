@@ -163,6 +163,7 @@ html, body {
 }
 @media only screen and (min-width: 660px) {
   .buttonViewApple {
+    margin-top: 6%;
     margin-bottom: 1%;
   }
 }
