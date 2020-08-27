@@ -207,6 +207,7 @@ p {
 }
 
 .legalfooter {
+  margin-top: 5%;
 }
 .legaltext {
   color: white;
@@ -320,7 +321,7 @@ input[type=submit] {
   text-transform: uppercase;
   padding: 0 40px 0 40px;
   margin-top: 8%;
-  margin-bottom: 8%;
+  margin-bottom: 9%;
 }
 a.sslink {
   font-size: 13px;
