@@ -29,6 +29,7 @@ html, body {
   opacity: .8;
   overscroll-behavior: none;
   object-fit: cover;
+  overflow-x: hidden !important;
  }
 
 .bg-image {
