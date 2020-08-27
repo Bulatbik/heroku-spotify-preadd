@@ -223,10 +223,10 @@ class App extends Component {
                     <h2 class="h2">{this.state.byTitle}</h2>
                     <h3 class="h3">Available September 4</h3>
                     <div className="ssnotice"><p>Pre-save/pre-add my new EP "Ain't Shit Sweeter", and you'll have
-                        the chance to win an exclusive merch bundle (to be revealed).</p>
+                        the chance to win an exclusive merch bundle<br/>(to be revealed).</p>
                     </div>
                     </div>
-                    <div style={{marginTop: '7%'}}>
+                    <div style={{}}>
                         <div>
                         <a class="buttonView" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
@@ -268,7 +268,7 @@ class App extends Component {
 
                                     )}
                     </div>
-                        <div class="textupdates"><p>For more updates from Ramriddlz<br />Text 647-372-2252</p></div>
+                        <div class="textupdates"><p>For more updates from Ramriddlz<br/>Text 647-372-2252</p></div>
                         <div class="legalfooter">
                                 <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>

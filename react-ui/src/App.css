@@ -207,7 +207,6 @@ p {
 }
 
 .legalfooter {
-  margin-top: 8%;
 }
 .legaltext {
   color: white;
@@ -316,10 +315,12 @@ input[type=submit] {
 .ssnotice {
   color: white;
   font-family: roboto, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   text-transform: uppercase;
   padding: 0 40px 0 40px;
+  margin-top: 8%;
+  margin-bottom: 8%;
 }
 a.sslink {
   font-size: 13px;
@@ -349,7 +350,7 @@ a.sslink {
 .textupdates {
   color: white;
   font-family: roboto, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   margin: inherit;
