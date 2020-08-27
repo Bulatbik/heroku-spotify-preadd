@@ -131,13 +131,13 @@ html, body {
   position: relative;
   height: 50px;
   align-items: center;
-  margin-bottom: 3%;
+  margin-bottom: 2%;
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   border-radius: 2px;
   align-self: center;
 }
 @media only screen and (min-width: 660px) {
-  .buttonview {
+  .buttonView {
     margin-bottom: 1%;
   }
 }
@@ -157,12 +157,12 @@ html, body {
   box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   border-radius: 2px;
   margin-top: 12%;
-  margin-bottom: 3%;
+  margin-bottom: 2%;
   white-space: nowrap;
   align-self: center;
 }
 @media only screen and (min-width: 660px) {
-  .buttonviewApple {
+  .buttonViewApple {
     margin-bottom: 1%;
   }
 }
