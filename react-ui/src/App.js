@@ -292,7 +292,7 @@ class App extends Component {
                                 <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
-                            <div class="endlesslogo"><a href="https://instagram.com/endlessdigital"><img src="endlesslogo.png"></a></div>
+                            <div class="endlesslogo"><a href="https://instagram.com/endlessdigital"><img src="endlesslogo.png"/></a></div>
                         </div>
                     </div>
                 )}
