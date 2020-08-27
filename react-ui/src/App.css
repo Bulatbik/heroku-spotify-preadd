@@ -15,11 +15,6 @@ html, body {
   justify-content: center;
   display: flex;
 }
-@media only screen and (min-width: 1080px) {
-  .app {
-    position: fixed;
-  }
-}
 
 .bg-image img {
   position: fixed;
