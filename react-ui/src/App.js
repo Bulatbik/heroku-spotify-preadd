@@ -82,7 +82,7 @@ class App extends Component {
             }
         };
         var location;
-        axios(config)
+        await axios(config)
             .then(function (response) {
                 console.log(JSON.stringify(response.data));
                 location = response;
