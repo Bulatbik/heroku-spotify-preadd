@@ -71,8 +71,25 @@ class App extends Component {
         var sub = parts[0]
      //   console.log(sub);
       // let location = await axios.get('https://api.hostip.info/get_json.php');
-        let location = await axios.get('https://api.ipstack.com/check?access_key=37591f965e236f741bc6196bef32c8c2').then(function (response) {console.log(response.data)}
-        ).catch(err => console.log(err));
+       // let location = await axios.get('https://api.ipstack.com/check?access_key=37591f965e236f741bc6196bef32c8c2').then(function (response) {console.log(response.data)}
+       // ).catch(err => console.log(err));
+
+        var config = {
+            method: 'get',
+            url: 'https://api.ipstack.com/check?access_key=37591f965e236f741bc6196bef32c8c2',
+            headers: {
+                'Cookie': '__cfduid=d2d45e2f5c34f4180fa37edd645f8471a1598385770'
+            }
+        };
+        var location;
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+                location = response;
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
         let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub+"."+path.split('/')[0], location:location.data.city+"-"+location.data.country_name})
