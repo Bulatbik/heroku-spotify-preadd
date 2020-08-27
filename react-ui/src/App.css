@@ -207,7 +207,6 @@ p {
 }
 
 .legalfooter {
-  margin-top: 5%;
 }
 .legaltext {
   color: white;
@@ -354,5 +353,6 @@ a.sslink {
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-  margin: inherit;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }

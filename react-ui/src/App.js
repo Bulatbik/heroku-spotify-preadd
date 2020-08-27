@@ -223,7 +223,7 @@ class App extends Component {
                     <h2 class="h2">{this.state.byTitle}</h2>
                     <h3 class="h3">Available September 4</h3>
                     <div className="ssnotice"><p>Pre-save/pre-add my new EP "Ain't Shit Sweeter", and you'll have
-                        the chance to win an exclusive merch bundle<br/>(to be revealed).</p>
+                        the chance to win an exclusive merch bundle, to be revealed.</p>
                     </div>
                     </div>
                     <div style={{}}>
