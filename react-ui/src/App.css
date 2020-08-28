@@ -1,12 +1,11 @@
 html {
   overflow: hidden;
   height: 100%;
-  color: white;
-  background-color: white;
 }
 body {
   overflow: auto;
   height: 100%;
+  background-color: white;
 }
 
   
