@@ -45,7 +45,7 @@ body {
   left: -50%;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  background-color: black;
+  background-color: white;
   display: block;
   position: fixed;
 }
@@ -59,7 +59,7 @@ body {
 }
 .loading-container {
 
-  color: red;
+  color: white;
 
   position: absolute;
 
