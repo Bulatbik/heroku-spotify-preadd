@@ -239,6 +239,7 @@ async function scheduler() {
                 });
                 //  console.log("Tje JSON: "+JSON.stringify(albumInfo.data));
                // var  albumAppleID = albumInfo.data.results[0].collectionId;
+                var  albumAppleID = "1526063250"
                 console.log("collectionId "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=1526063250";
 
