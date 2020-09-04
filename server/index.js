@@ -184,8 +184,8 @@ async function scheduler() {
                 let deleteResponse = await axios.delete('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { presaveID: response.data[i].presaveID}, headers:{"Content-Type" : "application/json"}});
                 console.log("Response delete res: "+deleteResponse)
             }catch (err) {
-                console.log("Added to not released array");
-                uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
+              //  console.log("Added to not released array");
+               // uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
             }
 
         }
