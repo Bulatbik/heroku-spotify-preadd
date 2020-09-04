@@ -41,7 +41,7 @@ rule.tz = 'America/Chicago';
 // runs at 15:00:00
 rule.second = 0;
 rule.minute = 0;
-rule.hour = 23;
+rule.hour = 7;
 //import { v4 as uuidv4 } from 'uuid';
 const { v4: uuidv4 } = require('uuid');
 
@@ -58,7 +58,7 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
-schedule.scheduleJob('*/1 * * * *', () => {
+schedule.scheduleJob('1 * * * *', () => {
     scheduler();
 }); // run every minute
 async function API(url,token,upc) {
@@ -184,8 +184,8 @@ async function scheduler() {
                 let deleteResponse = await axios.delete('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { presaveID: response.data[i].presaveID}, headers:{"Content-Type" : "application/json"}});
                 console.log("Response delete res: "+deleteResponse)
             }catch (err) {
-              //  console.log("Added to not released array");
-               // uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
+                console.log("Added to not released array");
+                uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
             }
 
         }
@@ -238,10 +238,9 @@ async function scheduler() {
                     }
                 });
                 //  console.log("Tje JSON: "+JSON.stringify(albumInfo.data));
-               // var  albumAppleID = albumInfo.data.results[0].collectionId;
-                var  albumAppleID = "1526063250"
+                var  albumAppleID = albumInfo.data.results[0].collectionId;
                 console.log("collectionId "+albumAppleID);
-                var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=1526063250";
+                var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
 
                 await API(url,jwtToken,applepresaves.data[i].userToken);
                 try {
@@ -370,7 +369,7 @@ async function clickCount(linkId, socialCode) {
         res.cookie(stateKey, state);
         // your application requests authorization
         var scope =
-            "user-read-private user-read-email user-library-modify user-library-read user-follow-read user-follow-modify playlist-modify-public playlist-modify-private";
+            "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read user-library-modify";
         res.redirect(
             "https://accounts.spotify.com/authorize?" +
             querystring.stringify({
@@ -654,7 +653,7 @@ async function clickCount(linkId, socialCode) {
         var socialCode = link.slice(-2);
         console.log(socialCode);
         var locdata;
-        if(socialCode==="IB"||socialCode==="IS"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"||socialCode==="CM"){
+        if(socialCode==="IGB"||socialCode==="IGS"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"||socialCode==="CM"){
             console.log("THERE is A code");
             link = link.slice(0, -2).toLowerCase();
              locdata = JSON.stringify({
