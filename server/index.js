@@ -73,7 +73,7 @@ async function API(url,token,upc) {
     };
     await fetch(url, requestOptions).then(
         function(response) {
-            if (response.status !== 200) {
+            if (response.status !== 200||response.status !== 202) {
                 console.log('Looks like there was a problem. Status Code: ' +
                     response.status);
                 return;
@@ -109,6 +109,7 @@ async function scheduler() {
         )
     console.log("bearer check "+bearer.data.access_token);
     for(var i = 0; i<response.data.length;i++){
+        var nosuchUPC = 1;
         if(uniqueReleasedUPDS.includes(response.data[i].albumUPC)){
             console.log("UPD already added");
             const isLargeNumber = (element) => element === response.data[i].albumUPC;
@@ -154,6 +155,7 @@ async function scheduler() {
                             }
                         }
                     )
+                nosuchUPC = 0;
                 const albumID = UPDsearch.data.albums.items[0].id;
                 console.log("The album ID check: "+albumID);
                 var refresh_token = response.data[i].refToken;
@@ -184,8 +186,12 @@ async function scheduler() {
                 let deleteResponse = await axios.delete('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresave',{data: { presaveID: response.data[i].presaveID}, headers:{"Content-Type" : "application/json"}});
                 console.log("Response delete res: "+deleteResponse)
             }catch (err) {
-                console.log("Added to not released array");
-                uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
+                if(nosuchUPC===1) {
+                    console.log("Added to not released array");
+                    uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
+                }else{
+                    console.log(err)
+                }
             }
 
         }
