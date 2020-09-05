@@ -2,7 +2,8 @@ import React, { useCallback, useEffect, useState, Component} from 'react';
 import co from 'co';
 import './App.css';
 import ReactLoading from "react-loading";
-import SpotifyWebApi from "spotify-web-api-js"; 
+import SpotifyWebApi from "spotify-web-api-js";
+import moment from 'moment';
 import useProgressiveImg from "./useProgressiveImg";
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
@@ -46,7 +47,9 @@ class App extends Component {
             done: undefined,
             openEmailModal: false,
             email: "",
-            checkBoxDefaultStatus: true
+            checkBoxDefaultStatus: true,
+            websiteType: undefined,
+            date: ""
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -104,13 +107,17 @@ class App extends Component {
             document.title = datares.data.artistName + " - " + datares.data.albumName;
             var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/" + datares.data.userId + "/" + datares.data.attachment;
             var byTitle = datares.data.albumName;
+            var date = datares.data.ReleaseDate;
+            const d = new Date(date);
+            const finaldate = moment(d).format('MMMM d');
             await this.setState({
                 title: datares.data.albumName,
                 artworkLink: artwork,
                 artistName: datares.data.artistName,
                 descriptionName: datares.data.descriptionName,
                 byTitle: byTitle,
-                UPC: datares.data.UPC
+                UPC: datares.data.UPC,
+                date: finaldate
             });
         }
        // this.setState({ done: true })
@@ -238,7 +245,7 @@ class App extends Component {
                     <div style={{marginTop: '0%'}}>
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
-                    <h3 class="h3">Available September 4</h3>
+                    <h3 class="h3">Available +{this.state.date}</h3>
                     <div className="ssnotice"><p>Pre-save/pre-add my new EP "Ain't Shit Sweeter", and you'll have
                         the chance to win an exclusive merch bundle, to be revealed.</p>
                     </div>
