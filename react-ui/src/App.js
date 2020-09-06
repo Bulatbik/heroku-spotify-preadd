@@ -111,7 +111,7 @@ class App extends Component {
           //  console.log(date)
           //  const d = new Date(date);
           //  console.log(d)
-            const finaldate = moment(datares.data.ReleaseDate.substring(0,10), "YYYY-MM-DD").format('MMMM d, YYYY');
+            const finaldate = moment(datares.data.ReleaseDate.substring(0,10), "YYYY-MM-DD").format('DD-MMMM-YYYY');
             console.log(finaldate)
             await this.setState({
                 title: datares.data.albumName,
