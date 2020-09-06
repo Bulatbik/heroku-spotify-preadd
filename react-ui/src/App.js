@@ -107,11 +107,11 @@ class App extends Component {
             document.title = datares.data.artistName + " - " + datares.data.albumName;
             var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/" + datares.data.userId + "/" + datares.data.attachment;
             var byTitle = datares.data.albumName;
-            var date = datares.data.ReleaseDate.substring(0,10)+" 00:00";
-            console.log(date)
-            const d = new Date(date);
-            console.log(d)
-            const finaldate = moment(d).format('MMMM d');
+          //  var date = datares.data.ReleaseDate.substring(0,10)+" 00:00";
+          //  console.log(date)
+          //  const d = new Date(date);
+          //  console.log(d)
+            const finaldate = moment(datares.data.ReleaseDate.substring(0,10), "YYYY-MM-DD").format('MMMM d');
             console.log(finaldate)
             await this.setState({
                 title: datares.data.albumName,
