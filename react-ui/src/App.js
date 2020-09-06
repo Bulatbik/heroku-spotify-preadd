@@ -121,7 +121,8 @@ class App extends Component {
                 descriptionName: datares.data.descriptionName,
                 byTitle: byTitle,
                 UPC: datares.data.UPC,
-                date: finaldate
+                date: finaldate,
+                websiteType: datares.data.siteType
             });
         }
        // this.setState({ done: true })
@@ -245,6 +246,8 @@ class App extends Component {
                     <ReactLoading type={"spin"} color={"#FEB46D"} />
                     </div>
                 ) : (
+                    <div>
+                    {(this.state.websiteType===1) && (
                 <div id="contentfadein" class="content-container">
                     <div style={{marginTop: '0%'}}>
                     <h1 class="h1">{this.state.artistName}</h1>
@@ -253,10 +256,6 @@ class App extends Component {
                         {(this.state.descriptionName!==undefined)&&(
                     <div className="ssnotice"><p>{this.state.descriptionName}</p>
                     </div>
-                        )}
-                        {(this.state.descriptionName===undefined)&&(
-                            <div className="ssnotice"><p>{'\n \n \n '}</p>
-                            </div>
                         )}
                     </div>
                     <div style={{}}>
@@ -311,6 +310,89 @@ class App extends Component {
                             <div><a href="https://instagram.com/endlessdigital"><img class="endlesslogo" src="endlesslogo.png"/></a></div>
                         </div>
                     </div>
+                    )}
+                    {(this.state.websiteType===2) && (
+                        <div id="contentfadein" className="content-container">
+                            <div style={{marginTop: '0%'}}>
+                                <h1 className="h1">{this.state.artistName}</h1>
+                                <h2 className="h2">{this.state.byTitle}</h2>
+                                <h3 className="h3">Available {this.state.date}</h3>
+                                {(this.state.descriptionName !== undefined) && (
+                                    <div className="ssnotice"><p>{this.state.descriptionName}</p>
+                                    </div>
+                                )}
+                            </div>
+                            <div style={{}}>
+                                <div>
+                                    <a className="buttonView" onClick={() => this.OnSubmitForm()}>
+                                        <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png"/>
+                                        {(token != null) && (
+                                            <form name="myform" id="myform" method="post">
+                                                <button className="button" id="buttonSpotify">Pre-Saved!</button>
+                                            </form>)}
+                                        {(token == null) && (
+                                            <form name="myform" id="myform" method="post">
+                                                <button className="button" id="buttonSpotify">Pre-Save on Spotify
+                                                </button>
+                                            </form>)}
+                                    </a>
+                                    <div className="checkboxcolumn">
+                                        <label className="checkboxContainer">Get updates from {this.state.artistName}
+                                            <input type="checkbox" id="myCheck" checked
+                                                   onClick="this.checked=!this.checked;"/>
+                                            <span className="checkmark"></span>
+                                        </label>
+                                    </div>
+
+                                    <a className="buttonViewApple" onClick={() => this.signIn()}
+                                       id="apple-music-authorize">
+                                        <img className="appleLogo" src="/AppleMusic.png"/>
+                                        <button className="buttonApple" id="apple-music-authorize-button">Pre-Add on
+                                            Apple Music
+                                        </button>
+                                    </a>
+                                </div>
+                                {!this.state.openEmailModal ? (
+                                    <div className="checkboxcolumn">
+                                        <label className="checkboxContainer">Get updates from {this.state.artistName}
+                                            <input type="checkbox" id="CheckApple"
+                                                   checked={this.state.checkBoxDefaultStatus}
+                                                   onChange={this.handleCheckBoxClick}/>
+                                            <span className="checkmark"></span>
+                                        </label>
+                                    </div>
+                                ) : (
+
+                                    <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
+                                        <h3 className="emailcapture">Confirm your email</h3>
+                                        <input className="input1" type="eamil" value={this.state.email}
+                                               onChange={this.handleEmailChange}/>
+                                        <input type="submit" className="submit" value="CONTINUE"/>
+                                    </form>
+
+                                )}
+                                <a className="buttonViewApple" href="https://shop.ramriddlz.com">
+                                    <button className="button">Official Shop</button>
+                                </a>
+                            </div>
+                            <div className="textupdates"><p>For more updates from Ramriddlz<br/>Text 647-372-2252</p>
+                            </div>
+                            <div className="legalfooter">
+                                <div className="sslink"><a href="https://competitions.endlessdigital.co">Competition
+                                    Rules<br/><br/></a></div>
+                                <div className="legaltext"><p>By using this service, you agree to our <a
+                                    className="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br/>Terms
+                                    of Service</a> &
+                                    <a className="legallinks" href="https://privacy.endlessdigital.co"
+                                       target="_blank"> Privacy Policy</a>.</p>
+                                </div>
+                                <div><a href="https://instagram.com/endlessdigital"><img className="endlesslogo"
+                                                                                         src="endlesslogo.png"/></a>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                        </div>
                 )}
         </div>
         );
