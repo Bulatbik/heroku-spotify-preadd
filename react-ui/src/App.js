@@ -108,8 +108,11 @@ class App extends Component {
             var artwork = "https://music-dashboard-uploads.s3.us-east-2.amazonaws.com/private/" + datares.data.userId + "/" + datares.data.attachment;
             var byTitle = datares.data.albumName;
             var date = datares.data.ReleaseDate;
+            console.log(date)
             const d = new Date(date);
+            console.log(d)
             const finaldate = moment(d).format('MMMM d');
+            console.log(finaldate)
             await this.setState({
                 title: datares.data.albumName,
                 artworkLink: artwork,
