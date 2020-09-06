@@ -245,7 +245,7 @@ class App extends Component {
                     <div style={{marginTop: '0%'}}>
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
-                    <h3 class="h3">Available +{this.state.date}</h3>
+                    <h3 class="h3">Available {this.state.date}</h3>
                     <div className="ssnotice"><p>Pre-save/pre-add my new EP "Ain't Shit Sweeter", and you'll have
                         the chance to win an exclusive merch bundle, to be revealed.</p>
                     </div>
