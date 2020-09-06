@@ -246,7 +246,7 @@ class App extends Component {
                     <ReactLoading type={"spin"} color={"#FEB46D"} />
                     </div>
                 ) : (
-                    <div>
+                    <div style={{height:"100%"}}>
                     {(this.state.websiteType===1) && (
                 <div id="contentfadein" class="content-container">
                     <div style={{marginTop: '0%'}}>
