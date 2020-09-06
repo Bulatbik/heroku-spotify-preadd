@@ -246,9 +246,9 @@ class App extends Component {
                     <ReactLoading type={"spin"} color={"#FEB46D"} />
                     </div>
                 ) : (
-                    <div id="contentfadein" className="content-container">
+                    <div>
                     {(this.state.websiteType===1) && (
-                        <div>
+                <div id="contentfadein" class="content-container">
                     <div style={{marginTop: '0%'}}>
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
@@ -309,7 +309,7 @@ class App extends Component {
                     </div>
                     )}
                     {(this.state.websiteType===2) && (
-                        <div>
+                        <div id="contentfadein" className="content-container">
                             <div style={{marginTop: '0%'}}>
                                 <h1 className="h1">{this.state.artistName}</h1>
                                 <h2 className="h2">{this.state.byTitle}</h2>
