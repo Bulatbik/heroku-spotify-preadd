@@ -114,7 +114,6 @@ class App extends Component {
           //  console.log(d)
             const finaldate = moment(datares.data.ReleaseDate.substring(0,10), "YYYY-MM-DD").format('MMMM DD');
             console.log(finaldate)
-            console.log(datares.data.descriptionName);
             await this.setState({
                 title: datares.data.albumName,
                 artworkLink: artwork,
@@ -251,8 +250,10 @@ class App extends Component {
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
                     <h3 class="h3">Available {this.state.date}</h3>
+                        {(this.state.descriptionName!==undefined)&&(
                     <div className="ssnotice"><p>{this.state.descriptionName}</p>
                     </div>
+                        )}
                     </div>
                     <div style={{}}>
                         <div>
