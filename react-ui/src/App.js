@@ -254,6 +254,10 @@ class App extends Component {
                     <div className="ssnotice"><p>{this.state.descriptionName}</p>
                     </div>
                         )}
+                        {(this.state.descriptionName===undefined)&&(
+                            <div className="ssnotice"><p>{'\n\n\n'}</p>
+                            </div>
+                        )}
                     </div>
                     <div style={{}}>
                         <div>
