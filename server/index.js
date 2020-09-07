@@ -71,12 +71,17 @@ async function API(url,token,upc) {
         method: 'POST',
         headers: myHeaders
     };
+    var statusCodeToReturn;
     await fetch(url, requestOptions).then(
         function(response) {
-            if (response.status !== 200||response.status !== 202) {
+            if (response.status !== 200&&response.status !== 202) {
                 console.log('Looks like there was a problem. Status Code: ' +
                     response.status);
-                return response.status;
+                statusCodeToReturn = response.status;
+            }else{
+                console.log('Added successfully. Status Code: ' +
+                    response.status);
+                statusCodeToReturn = response.status;
             }
 
             // Examine the text in the response
@@ -88,6 +93,7 @@ async function API(url,token,upc) {
         .catch(function(err) {
             console.log('Fetch Error :-S', err);
         });
+    return statusCodeToReturn
 }
 async function scheduler() {
     //Spotify presave
