@@ -301,8 +301,8 @@ class App extends Component {
                                     )}
                     </div>
                         <div class="legalfooter">
-                                <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
-                                <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
+                                <div class="legaltext basic"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
+                                <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
                             <div><a href="https://instagram.com/endlessdigital"><img class="endlesslogo" src="endlesslogo.png"/></a></div>
                         </div>
@@ -377,10 +377,10 @@ class App extends Component {
                             <div className="legalfooter">
                                 <div className="sslink"><a href="https://competitions.endlessdigital.co">Competition
                                     Rules<br/><br/></a></div>
-                                <div className="legaltextbasic"><p>By using this service, you agree to our <a
-                                    className="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br/>Terms
+                                <div className="legaltext"><p>By using this service, you agree to our <a
+                                    className="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br/>Terms
                                     of Service</a> &
-                                    <a className="legallinks basic" href="https://privacy.endlessdigital.co"
+                                    <a className="legallinks" href="https://privacy.endlessdigital.co"
                                        target="_blank"> Privacy Policy</a>.</p>
                                 </div>
                                 <div><a href="https://instagram.com/endlessdigital"><img className="endlesslogo"
