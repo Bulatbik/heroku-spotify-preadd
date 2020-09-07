@@ -243,16 +243,16 @@ class App extends Component {
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
-                    <ReactLoading type={"spin"} color={"#FEB46D"} />
+                    <ReactLoading type={"spin"} color={"#cc4565"} />
                     </div>
                 ) : (
                     <div style={{height:"100%"}}>
                     {(this.state.websiteType===1) && (
                 <div id="contentfadein" class="content-containerOne">
-                    <div style={{marginTop: '0%'}}>
-                    <h1 class="h1">{this.state.artistName}</h1>
-                    <h2 class="h2">{this.state.byTitle}</h2>
-                    <h3 class="h3">Available {this.state.date}</h3>
+                    <div style={{marginTop: '-3%'}}>
+                    <h1 class="h1basic">{this.state.artistName}</h1>
+                    <h2 class="h2basic">{this.state.byTitle}</h2>
+                    <h3 class="h3basic">Available {this.state.date}</h3>
                         {(this.state.descriptionName!==undefined)&&(
                     <div className="ssnotice"><p>{this.state.descriptionName}</p>
                     </div>
@@ -261,31 +261,31 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
+                            <img class="spotifyLogo" src="spotifyicon_sega.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="button"id="buttonSpotify">Pre-Saved!</button>
+                                    <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
                                 </form> )}
                             {(token==null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="button" id="buttonSpotify">Pre-Save on Spotify</button>
+                                    <button class="buttonbasic" id="buttonSpotify">Pre-Save on Spotify</button>
                                 </form> )}
                                 </a>
                             <div class="checkboxcolumn">
-                                <label class="checkboxContainer">Get updates from {this.state.artistName}
+                                <label class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
 
                         <a class="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
-                            <img class="appleLogo" src="/AppleMusic.png" />
-                            <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
+                            <img class="appleLogo" src="/applemusicicon_sega.png" />
+                            <button class="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
                         </div>
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
-                                <label class="checkboxContainer">Get updates from {this.state.artistName}
+                                <label class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="CheckApple" checked={this.state.checkBoxDefaultStatus} onChange={this.handleCheckBoxClick} />
                                     <span class="checkmark"></span>
                                 </label>
@@ -301,10 +301,10 @@ class App extends Component {
                                     )}
                     </div>
                         <div class="legalfooter">
-                                <div class="legaltext"><p>By using this service, you agree to our <a class="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
-                                <a class="legallinks" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
+                                <div class="legaltextbasic basic"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
+                                <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
-                            <div><a href="https://instagram.com/endlessdigital"><img class="endlesslogo" src="endlesslogo.png"/></a></div>
+                            <div><a href="https://instagram.com/endlessdigital"><img class="endlesslogo" src="endlesslogosega.png"/></a></div>
                         </div>
                     </div>
                     )}
@@ -322,7 +322,7 @@ class App extends Component {
                             <div style={{}}>
                                 <div>
                                     <a className="buttonView" onClick={() => this.OnSubmitForm()}>
-                                        <img className="spotifyLogo" src="/Spotify_Logo_RGB_Green.png"/>
+                                        <img className="spotifyLogo" src="/spotifyicon_black.png"/>
                                         {(token != null) && (
                                             <form name="myform" id="myform" method="post">
                                                 <button className="button" id="buttonSpotify">Pre-Saved!</button>
@@ -343,7 +343,7 @@ class App extends Component {
 
                                     <a className="buttonViewApple" onClick={() => this.signIn()}
                                        id="apple-music-authorize">
-                                        <img className="appleLogo" src="/AppleMusic.png"/>
+                                        <img className="appleLogo" src="/applemusicicon_black.png"/>
                                         <button className="buttonApple" id="apple-music-authorize-button">Pre-Add on
                                             Apple Music
                                         </button>
