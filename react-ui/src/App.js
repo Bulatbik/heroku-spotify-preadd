@@ -334,7 +334,7 @@ class App extends Component {
                                             </form>)}
                                     </a>
                                     <div className="checkboxcolumn">
-                                        <label className="checkboxContainerbasic">Get updates from {this.state.artistName}
+                                        <label className="checkboxContainer">Get updates from {this.state.artistName}
                                             <input type="checkbox" id="myCheck" checked
                                                    onClick="this.checked=!this.checked;"/>
                                             <span className="checkmark"></span>
