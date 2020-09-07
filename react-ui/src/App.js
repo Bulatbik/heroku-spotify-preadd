@@ -250,9 +250,9 @@ class App extends Component {
                     {(this.state.websiteType===1) && (
                 <div id="contentfadein" class="content-containerOne">
                     <div style={{marginTop: '0%'}}>
-                    <h1 class="h1">{this.state.artistName}</h1>
-                    <h2 class="h2">{this.state.byTitle}</h2>
-                    <h3 class="h3">Available {this.state.date}</h3>
+                    <h1 class="h1basic">{this.state.artistName}</h1>
+                    <h2 class="h2basic">{this.state.byTitle}</h2>
+                    <h3 class="h3basic">Available {this.state.date}</h3>
                         {(this.state.descriptionName!==undefined)&&(
                     <div className="ssnotice"><p>{this.state.descriptionName}</p>
                     </div>
@@ -264,15 +264,15 @@ class App extends Component {
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="button"id="buttonSpotify">Pre-Saved!</button>
+                                    <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
                                 </form> )}
                             {(token==null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="button" id="buttonSpotify">Pre-Save on Spotify</button>
+                                    <button class="buttonbasic" id="buttonSpotify">Pre-Save on Spotify</button>
                                 </form> )}
                                 </a>
                             <div class="checkboxcolumn">
-                                <label class="checkboxContainer">Get updates from {this.state.artistName}
+                                <label class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
@@ -280,12 +280,12 @@ class App extends Component {
 
                         <a class="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
-                            <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
+                            <button class="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
                         </div>
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
-                                <label class="checkboxContainer">Get updates from {this.state.artistName}
+                                <label class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="CheckApple" checked={this.state.checkBoxDefaultStatus} onChange={this.handleCheckBoxClick} />
                                     <span class="checkmark"></span>
                                 </label>
@@ -334,7 +334,7 @@ class App extends Component {
                                             </form>)}
                                     </a>
                                     <div className="checkboxcolumn">
-                                        <label className="checkboxContainer">Get updates from {this.state.artistName}
+                                        <label className="checkboxContainerbasic">Get updates from {this.state.artistName}
                                             <input type="checkbox" id="myCheck" checked
                                                    onClick="this.checked=!this.checked;"/>
                                             <span className="checkmark"></span>
@@ -351,7 +351,7 @@ class App extends Component {
                                 </div>
                                 {!this.state.openEmailModal ? (
                                     <div className="checkboxcolumn">
-                                        <label className="checkboxContainer">Get updates from {this.state.artistName}
+                                        <label className="checkboxContainerbasic">Get updates from {this.state.artistName}
                                             <input type="checkbox" id="CheckApple"
                                                    checked={this.state.checkBoxDefaultStatus}
                                                    onChange={this.handleCheckBoxClick}/>
@@ -377,10 +377,10 @@ class App extends Component {
                             <div className="legalfooter">
                                 <div className="sslink"><a href="https://competitions.endlessdigital.co">Competition
                                     Rules<br/><br/></a></div>
-                                <div className="legaltext"><p>By using this service, you agree to our <a
-                                    className="legallinks" href="https://terms.endlessdigital.co" target="_blank"><br/>Terms
+                                <div className="legaltextbasic"><p>By using this service, you agree to our <a
+                                    className="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br/>Terms
                                     of Service</a> &
-                                    <a className="legallinks" href="https://privacy.endlessdigital.co"
+                                    <a className="legallinks basic" href="https://privacy.endlessdigital.co"
                                        target="_blank"> Privacy Policy</a>.</p>
                                 </div>
                                 <div><a href="https://instagram.com/endlessdigital"><img className="endlesslogo"
