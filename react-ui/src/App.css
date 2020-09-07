@@ -476,7 +476,6 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
 .input1basic {
   color: #cc4565;
   background-color: black;
-  width: 60%;
   display: inline-block;
   line-height: 200%;
   border: none;
