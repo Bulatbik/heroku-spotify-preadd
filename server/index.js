@@ -384,7 +384,7 @@ async function clickCount(linkId, socialCode) {
         res.cookie(stateKey, state);
         // your application requests authorization
         var scope =
-            "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read user-library-modify";
+            "user-read-private user-read-email user-library-modify user-library-read user-follow-read user-follow-modify playlist-modify-public playlist-modify-private";
         res.redirect(
             "https://accounts.spotify.com/authorize?" +
             querystring.stringify({

@@ -485,6 +485,7 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   border-radius: 2px;
   padding-left: 10px;
   font-size: 15px;
+  text-align: center;
 }
 .input1basic:focus {
   outline: none;
