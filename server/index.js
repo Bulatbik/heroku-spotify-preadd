@@ -58,7 +58,7 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
-schedule.scheduleJob('*/5 * * * *', () => {
+schedule.scheduleJob('* * * * *', () => {
     scheduler();
 }); // run every minute
 async function API(url,token,upc) {
