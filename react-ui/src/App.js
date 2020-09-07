@@ -249,7 +249,7 @@ class App extends Component {
                     <div style={{height:"100%"}}>
                     {(this.state.websiteType===1) && (
                 <div id="contentfadein" class="content-containerOne">
-                    <div style={{marginTop: '0%'}}>
+                    <div style={{marginTop: '-3%'}}>
                     <h1 class="h1basic">{this.state.artistName}</h1>
                     <h2 class="h2basic">{this.state.byTitle}</h2>
                     <h3 class="h3basic">Available {this.state.date}</h3>
