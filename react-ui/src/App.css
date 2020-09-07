@@ -359,6 +359,9 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
 .checkboxContainer input {
   display: none;
 }
+.checkboxContainerbasic input {
+  display: none;
+}
 .checkboxContainer {
   color: white;
   display: inline-block;
