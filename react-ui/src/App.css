@@ -37,7 +37,7 @@ body {
   opacity: .8;
   overscroll-behavior: none;
   object-fit: cover;
-  filter: blur(4px);
+  filter: blur(5px);
  }
 
 .bg-image {
@@ -189,7 +189,7 @@ body {
   height: 50px;
   align-items: center;
   margin-bottom: 3%;
-  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  box-shadow: 0 0 15px #cc4565;
   border-radius: 2px;
   align-self: center;
 }
@@ -231,7 +231,7 @@ body {
   position: relative;
   height: 50px;
   align-items: center;
-  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  box-shadow: 0 0 15px #cc4565;
   border-radius: 2px;
   margin-top: 25%;
   margin-bottom: 3%;
