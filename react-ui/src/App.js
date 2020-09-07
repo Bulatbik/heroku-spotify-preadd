@@ -258,9 +258,9 @@ class App extends Component {
                     </div>
                         )}
                     </div>
-                    <div style={{}}>
+                    <div style={{marginBottom:"20%"}}>
                         <div>
-                        <a class="buttonView" onClick={() => this.OnSubmitForm()}>
+                        <a class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Logo_RGB_Green.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
