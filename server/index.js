@@ -585,8 +585,14 @@ async function clickCount(linkId, socialCode) {
     app.get("/Spotify_Logo_RGB_Green.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Logo_RGB_Green.png'));
     });
+    app.get("/spotifyicon_sega.png", (req, res) => {
+        res.sendFile(path.join(__dirname+'/spotifyicon_sega.png'));
+    });
     app.get("/AppleMusic.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/AppleMusic.png'));
+    });
+    app.get("/applemusicicon_sega", (req, res) => {
+        res.sendFile(path.join(__dirname+'/applemusicicon_sega.png'));
     });
 
     app.get("/test", async (req, res) => {
