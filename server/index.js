@@ -58,7 +58,7 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
-schedule.scheduleJob('1 * * * *', () => {
+schedule.scheduleJob('*/5 * * * *', () => {
     scheduler();
 }); // run every minute
 async function API(url,token,upc) {
@@ -76,7 +76,7 @@ async function API(url,token,upc) {
             if (response.status !== 200||response.status !== 202) {
                 console.log('Looks like there was a problem. Status Code: ' +
                     response.status);
-                return;
+                return response.status;
             }
 
             // Examine the text in the response
@@ -248,15 +248,18 @@ async function scheduler() {
                 console.log("collectionId "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
 
-                await API(url,jwtToken,applepresaves.data[i].userToken);
-                try {
-                    let deleteResponse1 = await axios.delete('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple', {
-                        data: {presaveID: applepresaves.data[i].presaveID},
-                        headers: {"Content-Type": "application/json"}
-                    });
-                    console.log("deleteResponse: "+deleteResponse1);
-                }catch (e) {
-                    console.log("ERROR: "+e)
+                var appleAddResponse = await API(url,jwtToken,applepresaves.data[i].userToken);
+                console.log(appleAddResponse);
+                if (appleAddResponse === 200||appleAddResponse === 202) {
+                    try {
+                        let deleteResponse1 = await axios.delete('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumdeletepresaveapple', {
+                            data: {presaveID: applepresaves.data[i].presaveID},
+                            headers: {"Content-Type": "application/json"}
+                        });
+                        console.log("deleteResponse: " + deleteResponse1);
+                    } catch (e) {
+                        console.log("ERROR: " + e)
+                    }
                 }
                 uniqueReleasedAppleUPDs.push(applepresaves.data[i].albumUPC);
                 uniqueReleasedAppleIDs.push(albumAppleID);
