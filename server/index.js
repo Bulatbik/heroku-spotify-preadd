@@ -422,6 +422,7 @@ async function clickCount(linkId, socialCode) {
         var socialCode = req.body.urlLink.substring(8).replace('endlss.to/','').slice(-2);
         var albumId = req.body.urlLink.substring(8).replace('endlss.to/','').toLowerCase();
         clickCount(albumId, socialCode);
+        next();
     });
 
 
