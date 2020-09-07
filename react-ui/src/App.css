@@ -565,9 +565,17 @@ a.sslink {
   height: 12px;
   margin-top: 6%;
 }
-
+.endlesslogobasic {
+  height: 12px;
+  margin-top: 6%;
+}
 @media only screen and (min-width: 660px) {
   .endlesslogo {
     margin-top: 2%;
+  }
+}
+@media only screen and (min-width: 660px) {
+  .endlesslogobasic {
+    margin-top: 0%;
   }
 }
