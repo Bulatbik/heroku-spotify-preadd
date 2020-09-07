@@ -591,7 +591,7 @@ async function clickCount(linkId, socialCode) {
     app.get("/AppleMusic.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/AppleMusic.png'));
     });
-    app.get("/applemusicicon_sega", (req, res) => {
+    app.get("/applemusicicon_sega.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/applemusicicon_sega.png'));
     });
 
