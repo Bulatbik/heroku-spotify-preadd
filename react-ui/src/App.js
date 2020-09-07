@@ -248,7 +248,7 @@ class App extends Component {
                 ) : (
                     <div style={{height:"100%"}}>
                     {(this.state.websiteType===1) && (
-                <div id="contentfadein" class="content-container">
+                <div id="contentfadein" class="content-containerOne">
                     <div style={{marginTop: '0%'}}>
                     <h1 class="h1">{this.state.artistName}</h1>
                     <h2 class="h2">{this.state.byTitle}</h2>
@@ -278,7 +278,7 @@ class App extends Component {
                                 </label>
                             </div>
 
-                        <a class="buttonViewApple" onClick={() => this.signIn()} id="apple-music-authorize">
+                        <a class="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/AppleMusic.png" />
                             <button class="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
