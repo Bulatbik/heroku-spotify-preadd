@@ -351,7 +351,7 @@ class App extends Component {
                                 </div>
                                 {!this.state.openEmailModal ? (
                                     <div className="checkboxcolumn">
-                                        <label className="checkboxContainerbasic">Get updates from {this.state.artistName}
+                                        <label className="checkboxContainer">Get updates from {this.state.artistName}
                                             <input type="checkbox" id="CheckApple"
                                                    checked={this.state.checkBoxDefaultStatus}
                                                    onChange={this.handleCheckBoxClick}/>
