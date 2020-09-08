@@ -120,10 +120,10 @@ body {
   animation: glowing 4000ms infinite;
 }
 @keyframes glowing {
-  0% { box-shadow: 0 0 0px #CC4565; }
-  30% { box-shadow: 0 0 10px #CC4565; }
-  60% { box-shadow: 0 0 20px #CC4565; }
-  100% { box-shadow: 0 0 0px #CC4565; }
+  0% { box-shadow: 0 0 10px #CC4565; }
+  20% { box-shadow: 0 0 15px #CC4565; }
+  40% { box-shadow: 0 0 20px #CC4565; }
+  100% { box-shadow: 0 0 10px #CC4565; }
 }
 
 .buttonApple {
