@@ -117,13 +117,11 @@ body {
 }
 
 .buttonglow {
-  animation: glowing 3s infinite;
+  animation: glowing 34s infinite;
 }
 @keyframes glowing {
   0% { box-shadow: 0 0 5px #CC4565; }
-  20% { box-shadow: 0 0 10px #CC4565; }
-  40% { box-shadow: 0 0 15px #CC4565; }
-  60% { box-shadow: 0 0 10px #CC4565; }
+  50% { box-shadow: 0 0 20px #CC4565; }
   100% { box-shadow: 0 0 5px #CC4565; }
 }
 
