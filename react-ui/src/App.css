@@ -116,6 +116,16 @@ body {
   padding: 0 0 0 3px;
 }
 
+.buttonglow {
+  animation: glowing 2500ms infinite;
+}
+@keyframes glowing {
+  0% { box-shadow: 0 0 -10px #CC4565; }
+  40% { box-shadow: 0 0 20px #CC4565; }
+  60% { box-shadow: 0 0 20px #CC4565; }
+  100% { box-shadow: 0 0 -10px #CC4565; }
+}
+
 .buttonApple {
   font-family: roboto-condensed, sans-serif;
   font-weight: 700;

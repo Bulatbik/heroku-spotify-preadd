@@ -260,7 +260,7 @@ class App extends Component {
                     </div>
                     <div style={{marginBottom:"20%"}}>
                         <div>
-                        <a class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
+                        <a class="buttonViewTypeOne buttonglow" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/spotifyicon_sega.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
@@ -278,7 +278,7 @@ class App extends Component {
                                 </label>
                             </div>
 
-                        <a class="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
+                        <a class="buttonViewAppleTypeOne buttonglow" onClick={() => this.signIn()} id="apple-music-authorize">
                             <img class="appleLogo" src="/applemusicicon_sega.png" />
                             <button class="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
