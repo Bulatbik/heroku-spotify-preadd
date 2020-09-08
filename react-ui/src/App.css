@@ -63,7 +63,6 @@ body {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: auto;
   height: 100%;
 }
 .loading-container {
@@ -449,6 +448,17 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   margin-bottom: 5px;
   margin-top: auto;
 }
+.emailcapturebasic {
+  color: #cc4565;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-family:roboto-condensed,sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  margin-top: auto;
+}
 .input1 {
   width: 60%;
   display: inline-block;
@@ -461,6 +471,22 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   font-size: 15px;
 }
 .input1:focus {
+  outline: none;
+}
+.input1basic {
+  color: #cc4565;
+  background-color: black;
+  display: inline-block;
+  line-height: 200%;
+  border: none;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  border-radius: 2px;
+  padding-left: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+.input1basic:focus {
   outline: none;
 }
 
@@ -539,9 +565,16 @@ a.sslink {
   height: 12px;
   margin-top: 6%;
 }
-
+.endlesslogobasic {
+  height: 12px;
+  margin-top: 6%;
+}
 @media only screen and (min-width: 660px) {
   .endlesslogo {
     margin-top: 2%;
+  }
+}
+@media only screen and (min-width: 660px) {
+  .endlesslogobasic {
   }
 }

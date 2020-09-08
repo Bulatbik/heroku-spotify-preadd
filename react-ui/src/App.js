@@ -261,7 +261,7 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="spotifyicon_sega.png" />
+                            <img class="spotifyLogo" src="/spotifyicon_sega.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
                                     <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
@@ -293,8 +293,8 @@ class App extends Component {
                                 ) : (
 
                                         <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
-                                        <h3 className="emailcapture">Confirm your email</h3>
-                                        <input className="input1" type="eamil" value={this.state.email} onChange={this.handleEmailChange}/>
+                                        <h3 className="emailcapturebasic">Confirm your email</h3>
+                                        <input className="input1basic" type="eamil" value={this.state.email} onChange={this.handleEmailChange}/>
                                         <input type="submit" class="submit" value="CONTINUE"/>
                                         </form>
 
@@ -304,7 +304,7 @@ class App extends Component {
                                 <div class="legaltextbasic basic"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
-                            <div><a href="https://instagram.com/endlessdigital"><img class="endlesslogo" src="endlesslogosega.png"/></a></div>
+                            <div><a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/endlesslogosega.png"/></a></div>
                         </div>
                     </div>
                     )}
