@@ -688,7 +688,8 @@ async function clickCount(linkId, socialCode) {
             link= link.toLowerCase();
              locdata = JSON.stringify({
                 siteId: link,
-                cityCountry: req.body.location
+                cityCountry: req.body.location,
+                 locationEmoji : req.body.locationEmoji
             });
         }
         console.log(link);

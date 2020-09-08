@@ -88,7 +88,7 @@ class App extends Component {
         var location;
         await axios(config)
             .then(function (response) {
-                console.log(JSON.stringify(response.data));
+              //  console.log(JSON.stringify(response.data));
                 location = response;
             })
             .catch(function (error) {
@@ -96,7 +96,7 @@ class App extends Component {
             });
 //sub is 'subdomain', 'domain', type is 'com'
         var datares;
-        let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub+"."+path.split('/')[0], location:location.data.city+"-"+location.data.country_name})
+        let data =  await axios.post('https://endlss.herokuapp.com/createTheSite', {linkID:sub+"."+path.split('/')[0], location:location.data.city+"-"+location.data.country_name, locationEmoji: location.data.country_flag_emoji})
             .then(function (response) {
                 datares = response.data;
             }).catch(err => console.log(err));
