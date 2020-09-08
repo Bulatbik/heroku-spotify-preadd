@@ -715,9 +715,11 @@ async function clickCount(linkId, socialCode) {
                 axios(configforvisit)
                     .then(function (response) {
                         console.log(JSON.stringify(response.data));
+                        console.log("Location put triggered");
                     })
                     .catch(function (error) {
                         console.log(error);
+                        console.log("Location post triggered");
                         var config = {
                             method: 'post',
                             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/location',
