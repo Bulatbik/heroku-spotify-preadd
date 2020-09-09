@@ -681,14 +681,16 @@ async function clickCount(linkId, socialCode) {
              locdata = JSON.stringify({
                 siteId: link,
                 cityCountry: req.body.location,
-                social: socialCode
+                social: socialCode,
+                 country_flag: req.body.country_flag
             });
         }else{
             console.log("NO code");
             link= link.toLowerCase();
              locdata = JSON.stringify({
                 siteId: link,
-                cityCountry: req.body.location
+                cityCountry: req.body.location,
+                 country_flag: req.body.country_flag
             });
         }
         console.log(link);
@@ -713,7 +715,7 @@ async function clickCount(linkId, socialCode) {
                 };
                 axios(configforvisit)
                     .then(function (response) {
-                        console.log(JSON.stringify(response.data));
+                       // console.log(JSON.stringify(response.data));
                         console.log("Location put triggered");
                     })
                     .catch(function (error) {
