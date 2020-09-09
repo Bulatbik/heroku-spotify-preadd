@@ -50,7 +50,8 @@ class App extends Component {
             email: "",
             checkBoxDefaultStatus: true,
             websiteType: undefined,
-            date: ""
+            date: "",
+            location
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -122,7 +123,8 @@ class App extends Component {
                 byTitle: byTitle,
                 UPC: datares.data.UPC,
                 date: finaldate,
-                websiteType: datares.data.siteType
+                websiteType: datares.data.siteType,
+                location: location.data.city+"-"+location.data.country_name
             });
         }
        // this.setState({ done: true })
@@ -223,9 +225,9 @@ class App extends Component {
         var form = document.getElementById("myform");
         button.innerHTML = "Pre-saving...";
         if (checkBox.checked === true){
-           form.action ="https://endlss.herokuapp.com/login?updates=yes&upc="+this.state.UPC+"&url="+window.location.href;
+           form.action ="https://endlss.herokuapp.com/login?updates=yes&upc="+this.state.UPC+"&url="+window.location.href+"&location="+this.state.location;
         } else {
-            form.action ="https://endlss.herokuapp.com/login?updates=no&upc="+this.state.UPC+"&url="+window.location.href;
+            form.action ="https://endlss.herokuapp.com/login?updates=no&upc="+this.state.UPC+"&url="+window.location.href+"&location="+this.state.location;
         }
         return true;
     }

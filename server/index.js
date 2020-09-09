@@ -276,19 +276,21 @@ async function scheduler() {
         }
     }
 }
-async function clickCount(linkId, socialCode) {
+async function clickCount(linkId, socialCode, location) {
     var locdata;
     if(socialCode==="IGB"||socialCode==="IGS"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"||socialCode==="CM"){
         console.log("THERE is A code");
         linkId = linkId.slice(0, -2)
         locdata = JSON.stringify({
             siteId: linkId,
-            social: socialCode
+            social: socialCode,
+            location: location
         });
     }else{
         console.log("NO code");
         locdata = JSON.stringify({
-            siteId: linkId
+            siteId: linkId,
+            location: location
         });
     }
     var configforvisit = {
@@ -364,7 +366,7 @@ async function clickCount(linkId, socialCode) {
         //res.cookie(stateKey, state);
         var socialCode = req.query.url.substring(8).replace('endlss.to/','').slice(-2);
         var albumId = req.query.url.substring(8).replace('endlss.to/','').toLowerCase();
-        clickCount(albumId, socialCode);
+        clickCount(albumId, socialCode, req.query.location);
        /* var config = {
             method: 'put',
             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/'+albumId,
