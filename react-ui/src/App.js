@@ -172,7 +172,7 @@ class App extends Component {
       // var saveCheckBoxState = checkBox.checked;
         console.log("checkBoxDefaultStatus = "+this.state.checkBoxDefaultStatus);
         button.innerHTML = "Pre-adding...";
-        axios.post('https://endlss.herokuapp.com/applemusicclicks', {urlLink: window.location.href})
+        axios.post('https://endlss.herokuapp.com/applemusicclicks', {urlLink: window.location.href, location: this.state.location})
        // checkBox.checked = true;
         let that = this;
         co(function*() {
