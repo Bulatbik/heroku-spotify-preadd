@@ -51,7 +51,7 @@ class App extends Component {
             checkBoxDefaultStatus: true,
             websiteType: undefined,
             date: "",
-            location
+            location: ""
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
