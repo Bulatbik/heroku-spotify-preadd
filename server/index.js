@@ -276,7 +276,7 @@ async function scheduler() {
         }
     }
 }
-async function clickCount(linkId, socialCode, location) {
+async function clickCount(linkId, socialCode, location, platform) {
     var locdata;
     if(socialCode==="IGB"||socialCode==="IGS"||socialCode==="TW"||socialCode==="FA"||socialCode==="YD"||socialCode==="WE"||socialCode==="IA"||socialCode==="FA"||socialCode==="SN"||socialCode==="TT"||socialCode==="CM"){
         console.log("THERE is A code");
@@ -284,13 +284,15 @@ async function clickCount(linkId, socialCode, location) {
         locdata = JSON.stringify({
             siteId: linkId,
             social: socialCode,
-            location: location
+            location: location,
+            platform: platform
         });
     }else{
         console.log("NO code");
         locdata = JSON.stringify({
             siteId: linkId,
-            location: location
+            location: location,
+            platform: platform
         });
     }
     var configforvisit = {
@@ -366,7 +368,7 @@ async function clickCount(linkId, socialCode, location) {
         //res.cookie(stateKey, state);
         var socialCode = req.query.url.substring(8).replace('endlss.to/','').slice(-2);
         var albumId = req.query.url.substring(8).replace('endlss.to/','').toLowerCase();
-        clickCount(albumId, socialCode, req.query.location);
+        clickCount(albumId, socialCode, req.query.location, "spotify");
        /* var config = {
             method: 'put',
             url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/clicks/'+albumId,
@@ -432,7 +434,7 @@ async function clickCount(linkId, socialCode, location) {
     //dirname:/app/server!!!!
         var socialCode = req.body.urlLink.substring(8).replace('endlss.to/','').slice(-2);
         var albumId = req.body.urlLink.substring(8).replace('endlss.to/','').toLowerCase();
-        clickCount(albumId, socialCode, req.body.location);
+        clickCount(albumId, socialCode, req.body.location, "apple");
         res.end();
     });
 
