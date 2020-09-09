@@ -107,7 +107,7 @@ body {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #CC4565;
+  color: #FF8EFF;
   border: none;
   transition: all 0.3s ease 0s;
   cursor: pointer;
@@ -120,9 +120,9 @@ body {
   animation: glowing 3.5s infinite;
 }
 @keyframes glowing {
-  0% { box-shadow: 0 0 5px #CC4565; }
-  50% { box-shadow: 0 0 20px #CC4565; }
-  100% { box-shadow: 0 0 5px #CC4565; }
+  0% { box-shadow: 0 0 5px #FF8EFF; }
+  50% { box-shadow: 0 0 20px #FF8EFF; }
+  100% { box-shadow: 0 0 5px #FF8EFF; }
 }
 
 .buttonApple {
@@ -147,7 +147,7 @@ body {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #CC4565;
+  color: #FF8EFF;
   border: none;
   transition: all 0.3s ease 0s;
   cursor: pointer;
@@ -197,7 +197,7 @@ body {
   height: 50px;
   align-items: center;
   margin-bottom: 3%;
-  box-shadow: 0 0 15px #cc4565;
+  box-shadow: 0 0 15px #FF8EFF;
   border-radius: 2px;
   align-self: center;
 }
@@ -239,7 +239,7 @@ body {
   position: relative;
   height: 50px;
   align-items: center;
-  box-shadow: 0 0 15px #cc4565;
+  box-shadow: 0 0 15px #FF8EFF;
   border-radius: 2px;
   margin-top: 25%;
   margin-bottom: 3%;
@@ -282,7 +282,7 @@ body {
   margin: 0;
 }
 .h1basic, .h2basic {
-  color: #CC4565;
+  color: #FF8EFF;
   font-family: roboto, sans-serif;
   font-weight: 900;
   font-style: normal;
@@ -299,7 +299,7 @@ body {
   margin-top: 1%;
 }
 .h3basic {
-  color: #cc4565;
+  color: #FF8EFF;
   text-transform: uppercase;
   font-family: roboto, sans-serif;
   font-size: 18px;
@@ -331,7 +331,7 @@ p {
   text-transform: uppercase;
 }
 .legaltextbasic {
-  color: #cc4565;
+  color: #FF8EFF;
   font-size: 12px;
   font-family: roboto, sans-serif;
   text-transform: uppercase;
@@ -350,7 +350,7 @@ a:link, a:visited, a:hover, a:active {
   font-weight: 600;
 }
 a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
-  color: #cc4565;
+  color: #FF8EFF;
   font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
@@ -381,7 +381,7 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   text-transform: uppercase;
 }
 .checkboxContainerbasic {
-  color: #cc4565;
+  color: #FF8EFF;
   display: inline-block;
   padding-left: 25px;
   position: relative;
@@ -439,8 +439,8 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   position: absolute;
   height: 4px;
   width: 9px;
-  border-left: 2px solid #cc4565;
-  border-bottom: 2px solid #cc4565;
+  border-left: 2px solid #FF8EFF;
+  border-bottom: 2px solid #FF8EFF;
   top: 42%;
   left: 50%;
   transform: translate(-50%,-50%) rotate(-45deg);
@@ -458,7 +458,7 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   margin-top: auto;
 }
 .emailcapturebasic {
-  color: #cc4565;
+  color: #FF8EFF;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -483,7 +483,7 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   outline: none;
 }
 .input1basic {
-  color: #cc4565;
+  color: #FF8EFF;
   background-color: black;
   display: inline-block;
   line-height: 200%;
