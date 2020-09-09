@@ -716,6 +716,7 @@ async function clickCount(linkId, socialCode) {
                 axios(configforvisit)
                     .then(function (response) {
                         console.log(JSON.stringify(response.data));
+                        console.log(req.body.country_flag);
                         console.log("Location put triggered");
                     })
                     .catch(function (error) {
