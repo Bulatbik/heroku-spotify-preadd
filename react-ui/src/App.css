@@ -570,13 +570,25 @@ a.sslink {
   }
 }
 
+.poweredby {
+    display: -webkit-inline-box;
+    font-size: 12px;
+    font-family: roboto, sans-serif;
+    color: #ff8eff;
+    text-transform: uppercase;
+    margin-top: 8%;
+}
+p.poweredbytext {
+  padding-right: 3%;
+}
+
 .endlesslogo {
   height: 12px;
   margin-top: 6%;
 }
 .endlesslogobasic {
   height: 12px;
-  margin-top: 6%;
+  margin-top: 3px;
 }
 @media only screen and (min-width: 660px) {
   .endlesslogo {
