@@ -589,7 +589,8 @@ p.poweredbytext {
 }
 .endlesslogobasic {
   height: 12px;
-  margin-top: 3px;
+  margin-top: 2px;
+  margin-left: 5px;
 }
 @media only screen and (min-width: 660px) {
   .endlesslogo {
