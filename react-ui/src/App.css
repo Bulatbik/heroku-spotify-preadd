@@ -571,7 +571,7 @@ a.sslink {
 }
 
 .poweredby {
-    display: -webkit-inline-box;
+    display: inline-flex;
     font-size: 12px;
     font-family: roboto, sans-serif;
     color: #ff8eff;
@@ -579,6 +579,7 @@ a.sslink {
     margin-top: 8%;
 }
 p.poweredbytext {
+  display: grid;
   padding-right: 3%;
 }
 
