@@ -245,7 +245,7 @@ class App extends Component {
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
-                    <ReactLoading type={"spin"} color={"#cc4565"} />
+                    <ReactLoading type={"spin"} color={"#FF8EFF"} />
                     </div>
                 ) : (
                     <div style={{height:"100%"}}>
@@ -306,7 +306,7 @@ class App extends Component {
                                 <div class="legaltextbasic basic"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
-                            <div><a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/endlesslogosega.png"/></a></div>
+                        <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/endlesslogosega.png"/></a></div>
                         </div>
                     </div>
                     )}
