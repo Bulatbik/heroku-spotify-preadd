@@ -58,7 +58,7 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
-schedule.scheduleJob('* * * * *', () => { //* * * * * run every minute. 1 * * * * run every hour at minute 1. */5 * * * * run every 5 minutes
+schedule.scheduleJob('1 * * * *', () => { //* * * * * run every minute. 1 * * * * run every hour at minute 1. */5 * * * * run every 5 minutes
     scheduler();
 }); // run every minute
 async function API(url,token,upc) {
@@ -420,7 +420,7 @@ async function presaveCount(linkId, platform) {
         );
     });
 
-    app.post('/applemusic', jsonParser, (req, res) => {
+    app.post('/applemusic', jsonParser, async (req, res) => {
         //dirname:/app/server!!!!
         var albumId = req.body.urlLink.substring(8).replace('endlss.to/','').toLowerCase();
         let token = req.body.userToken;
@@ -441,8 +441,7 @@ async function presaveCount(linkId, platform) {
             userToken: req.body.userToken
         });
         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
-        console.log("test for correct apple albumID "+albumId)
-        //presaveCount(albumId, "apple");
+        await presaveCount(albumId, "apple");
         // res.send(req.body.userToken);
         res.redirect(req.body.urlLink+'/#' +
             querystring.stringify({
@@ -544,8 +543,7 @@ async function presaveCount(linkId, platform) {
                                  console.log(error);
                              });
                          var albumId = finalData[2].substring(8).replace('endlss.to/','').toLowerCase();
-                         console.log("test for correct spotify albumID "+albumId)
-                       //  await presaveCount(albumId, "spotify")
+                         await presaveCount(albumId, "spotify")
                     });
                     //////////
 
