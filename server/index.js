@@ -310,6 +310,25 @@ async function clickCount(linkId, socialCode, location, platform) {
         .catch(function (error) {console.log(error)})
 }
 
+async function presaveCount(linkId, platform) {
+       var locdata = JSON.stringify({
+           siteId: linkId,
+           platform: platform
+       })
+    var config= {
+        method: 'put',
+        url: 'https://3n7l32gl97.execute-api.us-east-2.amazonaws.com/prod/presaves',
+        headers: {
+            'x-api-key': 'DKPpJ69AkMGfnjZms6e07mQdGCEjHDT9hLP9Itli '
+        },
+        data: locdata
+    };
+    axios(config)
+        .then(function (response) {
+            console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {console.log(error)})
+}
 
 /*if (!isDev && cluster.isMaster) {
     console.error(`Node cluster master ${process.pid} is running`)
@@ -422,7 +441,8 @@ async function clickCount(linkId, socialCode, location, platform) {
             userToken: req.body.userToken
         });
         axios.post('https://dga92g9r39.execute-api.us-east-2.amazonaws.com/latest/albumspresaveapple',data,{headers:{"Content-Type" : "application/json"}});
-
+        console.log("test for correct apple albumID "+albumId)
+        //presaveCount(albumId, "apple");
         // res.send(req.body.userToken);
         res.redirect(req.body.urlLink+'/#' +
             querystring.stringify({
@@ -523,6 +543,9 @@ async function clickCount(linkId, socialCode, location, platform) {
                              .catch(function (error) {
                                  console.log(error);
                              });
+                         var albumId = finalData[2].substring(8).replace('endlss.to/','').toLowerCase();
+                         console.log("test for correct spotify albumID "+albumId)
+                       //  await presaveCount(albumId, "spotify")
                     });
                     //////////
 
