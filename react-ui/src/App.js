@@ -245,7 +245,7 @@ class App extends Component {
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
-                    <ReactLoading type={"spin"} color={"#FF8EFF"} />
+                    <ReactLoading type={"spin"} color={"#C3A48F"} />
                     </div>
                 ) : (
                     <div style={{height:"100%"}}>
@@ -263,7 +263,7 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a class="buttonViewTypeOne buttonglow" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="/spotifyicon_sega.png" />
+                            <img class="spotifyLogo" src="/spotifyicon_black.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
                                     <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
@@ -281,7 +281,7 @@ class App extends Component {
                             </div>
 
                         <a class="buttonViewAppleTypeOne buttonglow" onClick={() => this.signIn()} id="apple-music-authorize">
-                            <img class="appleLogo" src="/applemusicicon_sega.png" />
+                            <img class="appleLogo" src="/applemusicicon_black.png" />
                             <button class="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
                         </a>
                         </div>
