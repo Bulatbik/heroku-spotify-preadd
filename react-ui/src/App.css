@@ -186,7 +186,7 @@ body {
 .buttonViewTypeOne {
   display: inline-flex;
   cursor: pointer;
-  background-color: black;
+  background-color: #c3a48f;
   text-decoration: none;
   -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
   transition: background-color .3s ease, -webkit-box-shadow .3s ease;
@@ -197,7 +197,7 @@ body {
   height: 50px;
   align-items: center;
   margin-bottom: 3%;
-  box-shadow: 0 0 15px #C3A48F;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   border-radius: 2px;
   align-self: center;
 }
@@ -229,7 +229,7 @@ body {
 .buttonViewAppleTypeOne {
   display: inline-flex;
   cursor: pointer;
-  background-color: black;
+  background-color: #c3a48f;
   text-decoration: none;
   -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
   transition: background-color .3s ease, -webkit-box-shadow .3s ease;
@@ -239,7 +239,7 @@ body {
   position: relative;
   height: 50px;
   align-items: center;
-  box-shadow: 0 0 15px #C3A48F;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
   border-radius: 2px;
   margin-top: 25%;
   margin-bottom: 3%;
@@ -422,17 +422,17 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: black;
+  background: #c3a48f;
   position: absolute;
   left: 0;
   top: 1px;
   border-radius: 2px;
 }
 .checkboxContainerbasic input:checked + .checkmark {
-  background-color: black;
+  background-color: #c3a48f;
 }
 .checkboxContainerbasic:hover .checkmark {
-  background-color: black;
+  background-color: #c3a48f;
 }
 .checkboxContainerbasic input:checked + .checkmark:after {
   content: "";
