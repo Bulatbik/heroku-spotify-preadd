@@ -107,7 +107,7 @@ body {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #C3A48F;
+  color: black;
   border: none;
   transition: all 0.3s ease 0s;
   cursor: pointer;
@@ -147,7 +147,7 @@ body {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #C3A48F;
+  color: black;
   border: none;
   transition: all 0.3s ease 0s;
   cursor: pointer;
@@ -439,8 +439,8 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   position: absolute;
   height: 4px;
   width: 9px;
-  border-left: 2px solid #C3A48F;
-  border-bottom: 2px solid #C3A48F;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
   top: 42%;
   left: 50%;
   transform: translate(-50%,-50%) rotate(-45deg);
