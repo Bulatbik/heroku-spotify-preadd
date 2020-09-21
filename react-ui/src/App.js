@@ -61,7 +61,8 @@ class App extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.musicInstance = this.props.musicInstance;
         this.signIn = this.signIn.bind(this);
-        this.AppleInstNotice = this.AppleInstNotice.bind(this);
+        this.OpenAppleInstNotice = this.OpenAppleInstNotice.bind(this);
+        this.CloseAppleInstNotice = this.CloseAppleInstNotice.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.test = this.test.bind(this);
         this.handleCheckBoxClick = this.handleCheckBoxClick.bind(this);
@@ -202,8 +203,11 @@ class App extends Component {
                 .catch(err => console.log(err));
         });
     }
-    AppleInstNotice(){
+    OpenAppleInstNotice(){
        this.setState({isNoticeOpen:true});
+    }
+    CloseAppleInstNotice(){
+        this.setState({isNoticeOpen:false});
     }
     signOut() {
         let that = this;
@@ -291,7 +295,7 @@ class App extends Component {
                                 </label>
                             </div>
                             {this.state.isInstagramBrowser ? (
-                              <a class="buttonViewAppleTypeOne" onClick={() => this.AppleInstNotice()} >
+                              <a class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/applemusicicon_black.png" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
@@ -303,9 +307,9 @@ class App extends Component {
                                 </button>
                             </a>
                             )}
-                                <Popup open={this.state.isNoticeOpen} closeOnDocumentClick onClose={closeModal}>
+                                <Popup open={this.state.isNoticeOpen} closeOnDocumentClick onClose={this.CloseAppleInstNotice}>
                                     <div className="modal">
-                                        <a className="close" onClick={closeModal}>
+                                        <a className="close" onClick={this.CloseAppleInstNotice}>
                                             &times;
                                         </a>
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
