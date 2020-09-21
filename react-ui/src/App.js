@@ -462,13 +462,11 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                                ):(
                                 <a className="buttonViewApple3" onClick={() => this.signIn()} id="apple-music-authorize">
                                 <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
-                                <button className="buttonApple3" id="apple-music-authorize-button">Pre-Add on Apple Music
+                                <button className="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
-                            )}
                                 <Popup open={this.state.isNoticeOpen} closeOnDocumentClick onClose={this.CloseAppleInstNotice}>
                                     <div className="modal">
                                         <a className="close" onClick={this.CloseAppleInstNotice}>
