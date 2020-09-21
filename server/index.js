@@ -604,9 +604,6 @@ async function presaveCount(linkId, platform) {
         /* else return 404 */
    // });
 
-    app.get("/Albumcover.png", (req, res) => {
-        res.sendFile(path.join(__dirname+'/Albumcover.jpg'));
-    });
     app.get("/Spotify_Icon_RGB_Black.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_Black.png'));
     });
@@ -616,11 +613,14 @@ async function presaveCount(linkId, platform) {
     app.get("/Spotify_Icon_RGB_White.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_White.png'));
     });
-    app.get("/applemusicicon_black.png", (req, res) => {
-        res.sendFile(path.join(__dirname+'/applemusicicon_black.png'));
+    app.get("/Apple_Music_Icon_RGB_Black.svg", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_Black.svg'));
     });
-    app.get("/applemusicicon_sega.png", (req, res) => {
-        res.sendFile(path.join(__dirname+'/applemusicicon_sega.png'));
+    app.get("/Apple_Music_Icon_RGB_Color.svg", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_Color.svg'));
+    });
+    app.get("/Apple_Music_Icon_RGB_White.svg", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_White.svg'));
     });
 
     app.get("/test", async (req, res) => {

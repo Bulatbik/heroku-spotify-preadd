@@ -298,13 +298,13 @@ class App extends Component {
                             </div>
                             {!this.state.isInstagramBrowser ? (
                               <a class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/applemusicicon_black.png" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a className="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
-                                <img className="appleLogo" src="/applemusicicon_black.png"/>
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
                                 <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
@@ -315,7 +315,7 @@ class App extends Component {
                                             &times;
                                         </a>
                                         <p>Preadd with Apple Music</p>
-                                        <img className="appleLogo" src="/applemusicicon_black.png"/>
+                                        <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
                                             <button>Copy to clipboard with button</button>
@@ -385,7 +385,7 @@ class App extends Component {
 
                                     <a className="buttonViewApple" onClick={() => this.signIn()}
                                        id="apple-music-authorize">
-                                        <img className="appleLogo" src="/applemusicicon_black.png"/>
+                                        <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
                                         <button className="buttonApple" id="apple-music-authorize-button">Pre-Add on
                                             Apple Music
                                         </button>
