@@ -5,6 +5,8 @@ import ReactLoading from "react-loading";
 import SpotifyWebApi from "spotify-web-api-js";
 import moment from 'moment';
 import useProgressiveImg from "./useProgressiveImg";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
 const useScript = url => {
@@ -51,12 +53,15 @@ class App extends Component {
             checkBoxDefaultStatus: true,
             websiteType: undefined,
             date: "",
-            location: ""
+            location: "",
+            isInstagramBrowser: false,
+            isNoticeOpen: false
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.musicInstance = this.props.musicInstance;
         this.signIn = this.signIn.bind(this);
+        this.AppleInstNotice = this.AppleInstNotice.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.test = this.test.bind(this);
         this.handleCheckBoxClick = this.handleCheckBoxClick.bind(this);
@@ -128,7 +133,8 @@ class App extends Component {
                 UPC: datares.data.UPC,
                 date: finaldate,
                 websiteType: datares.data.siteType,
-                location: location.data.city+"-"+location.data.country_name
+                location: location.data.city+"-"+location.data.country_name,
+                isInstagramBrowser: this.isInstagramApp()
             });
         }
        // this.setState({ done: true })
@@ -195,8 +201,9 @@ class App extends Component {
                 })
                 .catch(err => console.log(err));
         });
-
-
+    }
+    AppleInstNotice(){
+       this.setState({isNoticeOpen:true});
     }
     signOut() {
         let that = this;
@@ -283,11 +290,31 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
+                            {this.state.isInstagramBrowser ? (
+                              <a class="buttonViewAppleTypeOne" onClick={() => this.AppleInstNotice()} >
+                                <img class="appleLogo" src="/applemusicicon_black.png" />
+                                <button class="buttonApplebasic">Pre-Add on Apple Music
+                                </button>
+                              </a>
+                                ):(
+                                <a className="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
+                                <img className="appleLogo" src="/applemusicicon_black.png"/>
+                                <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
+                                </button>
+                            </a>
+                            )}
+                                <Popup open={this.state.isNoticeOpen} closeOnDocumentClick onClose={closeModal}>
+                                    <div className="modal">
+                                        <a className="close" onClick={closeModal}>
+                                            &times;
+                                        </a>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
+                                        omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
+                                        ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
+                                        doloribus. Odit, aut.
+                                    </div>
+                                </Popup>
 
-                        <a class="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
-                            <img class="appleLogo" src="/applemusicicon_black.png" />
-                            <button class="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music</button>
-                        </a>
                         </div>
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">

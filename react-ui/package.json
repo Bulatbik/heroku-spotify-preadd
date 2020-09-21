@@ -10,6 +10,7 @@
     "react-dom": "^16.8.6",
     "react-loading": "^2.0.3",
     "react-scripts": "^2.1.8",
+    "reactjs-popup": "^2.0.3",
     "spotify-web-api-js": "^1.4.0"
   },
   "scripts": {
