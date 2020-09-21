@@ -465,7 +465,7 @@ class App extends Component {
                             {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewApple3" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg" />
-                                <button class="buttonApplebasic">Pre-Add on Apple Music
+                                <button class="buttonApple">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
@@ -510,7 +510,7 @@ class App extends Component {
                                     )}
                     </div>
                         <div class="legalfooter">
-                                <div class="legaltext3 three"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
+                                <div class="legaltext3 three"><p>By using this service, you agree to our <a class="legallinks three" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks three" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
                         <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_White.png"/></a></div>
