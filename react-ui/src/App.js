@@ -280,7 +280,7 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a class="buttonViewTypeOne buttonglow" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_Black.png" />
+                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_Green.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
                                     <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
@@ -297,14 +297,14 @@ class App extends Component {
                                 </label>
                             </div>
                             {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
-                              <a class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg" />
+                              <a class="buttonViewAppleTypeOne buttonglow" onClick={() => this.OpenAppleInstNotice()} >
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Color.svg" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a className="buttonViewAppleTypeOne buttonglow" onClick={() => this.signIn()} id="apple-music-authorize">
-                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_Color.svg"/>
                                 <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
@@ -435,9 +435,9 @@ class App extends Component {
                         {(this.state.websiteType===3) && (
                 <div id="contentfadein" class="content-containerOne">
                     <div style={{marginTop: '-3%'}}>
-                    <h1 class="h1basic">{this.state.artistName}</h1>
-                    <h2 class="h2basic">{this.state.byTitle}</h2>
-                    <h3 class="h3basic">Available {this.state.date}</h3>
+                    <h1 class="h1three">{this.state.artistName}</h1>
+                    <h2 class="h2three">{this.state.byTitle}</h2>
+                    <h3 class="h3three">Available {this.state.date}</h3>
                         {(this.state.descriptionName!==undefined)&&(
                     <div className="ssnotice"><p>{this.state.descriptionName}</p>
                     </div>
@@ -449,11 +449,11 @@ class App extends Component {
                             <img class="spotifyLogo" src="/Spotify_Icon_RGB_Black.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
+                                    <button class="button3"id="buttonSpotify">Pre-Saved!</button>
                                 </form> )}
                             {(token==null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="buttonbasic" id="buttonSpotify">Pre-Save on Spotify</button>
+                                    <button class="button3" id="buttonSpotify">Pre-Save on Spotify</button>
                                 </form> )}
                                 </a>
                             <div class="checkboxcolumn">
@@ -463,7 +463,7 @@ class App extends Component {
                                 </label>
                             </div>
                             {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
-                              <a class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
+                              <a class="buttonViewApple3" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
