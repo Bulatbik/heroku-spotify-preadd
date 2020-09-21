@@ -431,7 +431,7 @@ class App extends Component {
                                 </div>
                             </div>
                         </div>
-                    )}
+                        )}
                         {(this.state.websiteType===3) && (
                 <div id="contentfadein" class="content-containerOne">
                     <div style={{marginTop: '-3%'}}>
@@ -514,7 +514,8 @@ class App extends Component {
                                 <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
                         <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/endlesslogosega.png"/></a></div>
-                        </div>
+                    </div>
+                </div>
                 )}
         </div>
         );
