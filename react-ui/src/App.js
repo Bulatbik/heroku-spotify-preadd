@@ -296,7 +296,7 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            {!this.state.isInstagramBrowser ? (
+                            {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
