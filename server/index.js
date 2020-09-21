@@ -607,13 +607,13 @@ async function presaveCount(linkId, platform) {
     app.get("/Albumcover.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Albumcover.jpg'));
     });
-    app.get("/spotifyicon_black.png", (req, res) => {
+    app.get("/Spotify_Icon_RGB_Black.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_Black.png'));
     });
-    app.get("/spotifyicon_sega.png", (req, res) => {
+    app.get("/Spotify_Icon_RGB_Green.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_Green.png'));
     });
-    app.get("/spotifyicon_sega.png", (req, res) => {
+    app.get("/Spotify_Icon_RGB_White.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_White.png'));
     });
     app.get("/applemusicicon_black.png", (req, res) => {
