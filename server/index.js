@@ -407,7 +407,7 @@ async function presaveCount(linkId, platform) {
         res.cookie(stateKey, state);
         // your application requests authorization
         var scope =
-            "user-read-private user-read-email user-library-modify user-library-read user-follow-read user-follow-modify playlist-modify-public playlist-modify-private";
+            "user-read-private user-read-email user-library-modify user-library-read user-follow-read user-follow-modify";
         res.redirect(
             "https://accounts.spotify.com/authorize?" +
             querystring.stringify({
