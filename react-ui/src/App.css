@@ -120,9 +120,9 @@ body {
   animation: glowing 3.5s infinite;
 }
 @keyframes glowing {
-  0% { box-shadow: 0 0 5px #C3A48F; }
-  50% { box-shadow: 0 0 20px #C3A48F; }
-  100% { box-shadow: 0 0 5px #C3A48F; }
+  0% { box-shadow: 0 0 5px #CC4565; }
+  50% { box-shadow: 0 0 20px #CC4565; }
+  100% { box-shadow: 0 0 5px #CC4565; }
 }
 
 .buttonApple {
@@ -187,7 +187,25 @@ body {
 .buttonViewTypeOne {
   display: inline-flex;
   cursor: pointer;
-  background-color: #c3a48f;
+  background-color: #CC4565;
+  text-decoration: none;
+  -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
+  transition: background-color .3s ease, -webkit-box-shadow .3s ease;
+  transition: background-color .3s ease, box-shadow .3s ease;
+  transition: background-color .3s ease, box-shadow .3s ease, -webkit-box-shadow .3s ease;
+  padding: 12px 16px;
+  position: relative;
+  height: 50px;
+  align-items: center;
+  margin-bottom: 3%;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  border-radius: 2px;
+  align-self: center;
+}
+.buttonView3 {
+  display: inline-flex;
+  cursor: pointer;
+  background-color: #C3A48F;
   text-decoration: none;
   -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
   transition: background-color .3s ease, -webkit-box-shadow .3s ease;
@@ -230,7 +248,27 @@ body {
 .buttonViewAppleTypeOne {
   display: inline-flex;
   cursor: pointer;
-  background-color: #c3a48f;
+  background-color: #CC4565;
+  text-decoration: none;
+  -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
+  transition: background-color .3s ease, -webkit-box-shadow .3s ease;
+  transition: background-color .3s ease, box-shadow .3s ease;
+  transition: background-color .3s ease, box-shadow .3s ease, -webkit-box-shadow .3s ease;
+  padding: 12px 16px;
+  position: relative;
+  height: 50px;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  border-radius: 2px;
+  margin-top: 25%;
+  margin-bottom: 3%;
+  white-space: nowrap;
+  align-self: center;
+}
+.buttonViewApple3 {
+  display: inline-flex;
+  cursor: pointer;
+  background-color: #C3A48F;
   text-decoration: none;
   -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
   transition: background-color .3s ease, -webkit-box-shadow .3s ease;
@@ -283,6 +321,15 @@ body {
   margin: 0;
 }
 .h1basic, .h2basic {
+  color: #CC4565;
+  font-family: roboto, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 25px;
+  text-transform: uppercase;
+  margin: 0; 
+}
+.h1three, .h2three {
   color: #C3A48F;
   font-family: roboto, sans-serif;
   font-weight: 900;
@@ -300,6 +347,14 @@ body {
   margin-top: 1%;
 }
 .h3basic {
+  color: #CC4565;
+  text-transform: uppercase;
+  font-family: roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 1%;
+}
+.h3three {
   color: #C3A48F;
   text-transform: uppercase;
   font-family: roboto, sans-serif;
@@ -332,6 +387,12 @@ p {
   text-transform: uppercase;
 }
 .legaltextbasic {
+  color: #CC4565;
+  font-size: 12px;
+  font-family: roboto, sans-serif;
+  text-transform: uppercase;
+}
+.legaltext3 {
   color: #C3A48F;
   font-size: 12px;
   font-family: roboto, sans-serif;
@@ -351,6 +412,14 @@ a:link, a:visited, a:hover, a:active {
   font-weight: 600;
 }
 a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
+  color: #CC4565;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: roboto, sans-serif;
+  font-weight: 600;
+}
+a.three:link, a.three:visited, a.three:hover, a.three:active {
   color: #C3A48F;
   font-size: 12px;
   text-transform: uppercase;
@@ -382,6 +451,17 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   text-transform: uppercase;
 }
 .checkboxContainerbasic {
+  color: #CC4565;
+  display: inline-block;
+  padding-left: 25px;
+  position: relative;
+  cursor: pointer;
+  font-family:roboto-condensed,sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.checkboxContainer3 {
   color: #C3A48F;
   display: inline-block;
   padding-left: 25px;
@@ -423,17 +503,33 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: #c3a48f;
+  background: #CC4565;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  border-radius: 2px;
+}
+.checkboxContainerbasic .checkmark {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #C3A48F;
   position: absolute;
   left: 0;
   top: 1px;
   border-radius: 2px;
 }
 .checkboxContainerbasic input:checked + .checkmark {
-  background-color: #c3a48f;
+  background-color: #CC4565;
 }
 .checkboxContainerbasic:hover .checkmark {
-  background-color: #c3a48f;
+  background-color: #CC4565;
+}
+.checkboxContainerbasic input:checked + .checkmark {
+  background-color: #C3A48F;
+}
+.checkboxContainerbasic:hover .checkmark {
+  background-color: #C3A48F;
 }
 .checkboxContainerbasic input:checked + .checkmark:after {
   content: "";
@@ -459,6 +555,17 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   margin-top: auto;
 }
 .emailcapturebasic {
+  color: #CC4565;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-family:roboto-condensed,sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  margin-top: auto;
+}
+.emailcapture3 {
   color: #C3A48F;
   display: inline-block;
   position: relative;
@@ -484,6 +591,19 @@ a.basic:link, a.basic:visited, a.basic:hover, a.basic:active {
   outline: none;
 }
 .input1basic {
+  color: #CC4565;
+  background-color: black;
+  display: inline-block;
+  line-height: 200%;
+  border: none;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(82, 82, 82, 0.4);
+  border-radius: 2px;
+  padding-left: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+.input1three {
   color: #C3A48F;
   background-color: black;
   display: inline-block;
@@ -537,7 +657,6 @@ a.sslink {
   white-space: unset;
   box-shadow: unset;
   height: 100%;
-  flex-direction: column;
 }
 .modal > .header {
   width: 100%;
@@ -562,8 +681,8 @@ a.sslink {
   display: block;
   padding: 2px 5px;
   line-height: 20px;
-  right: -18%;
-  top: -2%;
+  right: -10px;
+  top: -10px;
   font-size: 24px;
   background: #ffffff;
   border-radius: 18px;
@@ -617,6 +736,14 @@ a.sslink {
 }
 
 .poweredby {
+    display: inline-flex;
+    font-size: 12px;
+    font-family: roboto, sans-serif;
+    color: #CC4565;
+    text-transform: uppercase;
+    margin-top: 8%;
+}
+.poweredby3 {
     display: inline-flex;
     font-size: 12px;
     font-family: roboto, sans-serif;

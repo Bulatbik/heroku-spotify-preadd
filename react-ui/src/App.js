@@ -262,7 +262,7 @@ class App extends Component {
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
-                    <ReactLoading type={"spin"} color={"#C3A48F"} />
+                    <ReactLoading type={"spin"} color={"black"} />
                     </div>
                 ) : (
                     <div style={{height:"100%"}}>
@@ -279,7 +279,7 @@ class App extends Component {
                     </div>
                     <div style={{marginBottom:"20%"}}>
                         <div>
-                        <a class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
+                        <a class="buttonViewTypeOne buttonglow" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Icon_RGB_Black.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
@@ -303,7 +303,7 @@ class App extends Component {
                                 </button>
                               </a>
                                 ):(
-                                <a className="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
+                                <a className="buttonViewAppleTypeOne buttonglow" onClick={() => this.signIn()} id="apple-music-authorize">
                                 <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
                                 <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
@@ -445,7 +445,7 @@ class App extends Component {
                     </div>
                     <div style={{marginBottom:"20%"}}>
                         <div>
-                        <a class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
+                        <a class="buttonView3" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Icon_RGB_Black.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
@@ -469,9 +469,9 @@ class App extends Component {
                                 </button>
                               </a>
                                 ):(
-                                <a className="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
+                                <a className="buttonViewApple3" onClick={() => this.signIn()} id="apple-music-authorize">
                                 <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
-                                <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
+                                <button className="buttonApple3" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
                             )}
@@ -502,8 +502,8 @@ class App extends Component {
                                 ) : (
 
                                         <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
-                                        <h3 className="emailcapturebasic">Confirm your email</h3>
-                                        <input className="input1basic" type="eamil" value={this.state.email} onChange={this.handleEmailChange}/>
+                                        <h3 className="emailcapture3">Confirm your email</h3>
+                                        <input className="input1three" type="eamil" value={this.state.email} onChange={this.handleEmailChange}/>
                                         <input type="submit" class="submit" value="CONTINUE"/>
                                         </form>
 
