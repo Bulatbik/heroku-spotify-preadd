@@ -294,7 +294,7 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            {this.state.isInstagramBrowser ? (
+                            {!this.state.isInstagramBrowser ? (
                               <a class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/applemusicicon_black.png" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
