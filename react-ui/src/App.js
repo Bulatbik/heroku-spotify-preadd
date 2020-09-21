@@ -74,6 +74,7 @@ class App extends Component {
     async componentDidMount(){
         console.log(window.location.pathname);
         console.log("Is instgram? - "+this.isInstagramApp());
+        alert("Is instgram? - "+this.isInstagramApp());
         var path = window.location.pathname.substring(1);
         var full = window.location.host
         //window.location.host is subdomain.domain.com
