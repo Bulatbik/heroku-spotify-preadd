@@ -457,7 +457,7 @@ class App extends Component {
                                 </form> )}
                                 </a>
                             <div class="checkboxcolumn">
-                                <label class="checkboxContainerbasic">Get updates from {this.state.artistName}
+                                <label class="checkboxContainer3">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
@@ -494,7 +494,7 @@ class App extends Component {
                         </div>
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
-                                <label class="checkboxContainerbasic">Get updates from {this.state.artistName}
+                                <label class="checkboxContainer3">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="CheckApple" checked={this.state.checkBoxDefaultStatus} onChange={this.handleCheckBoxClick} />
                                     <span class="checkmark"></span>
                                 </label>
