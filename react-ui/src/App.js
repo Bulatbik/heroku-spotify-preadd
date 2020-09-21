@@ -432,6 +432,89 @@ class App extends Component {
                             </div>
                         </div>
                     )}
+                    {(this.state.websiteType===3) && (
+                <div id="contentfadein" class="content-containerOne">
+                    <div style={{marginTop: '-3%'}}>
+                    <h1 class="h1basic">{this.state.artistName}</h1>
+                    <h2 class="h2basic">{this.state.byTitle}</h2>
+                    <h3 class="h3basic">Available {this.state.date}</h3>
+                        {(this.state.descriptionName!==undefined)&&(
+                    <div className="ssnotice"><p>{this.state.descriptionName}</p>
+                    </div>
+                        )}
+                    </div>
+                    <div style={{marginBottom:"20%"}}>
+                        <div>
+                        <a class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
+                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_Black.png" />
+                            {(token!=null)&&(
+                                <form name="myform" id="myform" method="post">
+                                    <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
+                                </form> )}
+                            {(token==null)&&(
+                                <form name="myform" id="myform" method="post">
+                                    <button class="buttonbasic" id="buttonSpotify">Pre-Save on Spotify</button>
+                                </form> )}
+                                </a>
+                            <div class="checkboxcolumn">
+                                <label class="checkboxContainerbasic">Get updates from {this.state.artistName}
+                                    <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
+                              <a class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg" />
+                                <button class="buttonApplebasic">Pre-Add on Apple Music
+                                </button>
+                              </a>
+                                ):(
+                                <a className="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
+                                <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
+                                </button>
+                            </a>
+                            )}
+                                <Popup open={this.state.isNoticeOpen} closeOnDocumentClick onClose={this.CloseAppleInstNotice}>
+                                    <div className="modal">
+                                        <a className="close" onClick={this.CloseAppleInstNotice}>
+                                            &times;
+                                        </a>
+                                        Preadd with Apple Music
+                                        <img className="appleLogo" style={{height:"40%"}} src="/Apple_Music_Icon_RGB_Black.svg"/>
+                                        <input value={window.location.href}/>
+                                        <CopyToClipboard text={window.location.href}
+                                                         onCopy={() => this.setState({copied: true})}>
+                                            <button>Copy to clipboard with button</button>
+                                        </CopyToClipboard>
+                                        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+                                    </div>
+                                </Popup>
+
+                        </div>
+                                {!this.state.openEmailModal ? (
+                                        <div className="checkboxcolumn">
+                                <label class="checkboxContainerbasic">Get updates from {this.state.artistName}
+                                    <input type="checkbox" id="CheckApple" checked={this.state.checkBoxDefaultStatus} onChange={this.handleCheckBoxClick} />
+                                    <span class="checkmark"></span>
+                                </label>
+                                        </div>
+                                ) : (
+
+                                        <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
+                                        <h3 className="emailcapturebasic">Confirm your email</h3>
+                                        <input className="input1basic" type="eamil" value={this.state.email} onChange={this.handleEmailChange}/>
+                                        <input type="submit" class="submit" value="CONTINUE"/>
+                                        </form>
+
+                                    )}
+                    </div>
+                        <div class="legalfooter">
+                                <div class="legaltextbasic basic"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
+                                <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
+                                </div>
+                        <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/endlesslogosega.png"/></a></div>
+                        </div>
                         </div>
                 )}
         </div>
