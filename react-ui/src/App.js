@@ -432,7 +432,7 @@ class App extends Component {
                             </div>
                         </div>
                     )}
-                    {(this.state.websiteType===3) && (
+                        {(this.state.websiteType===3) && (
                 <div id="contentfadein" class="content-containerOne">
                     <div style={{marginTop: '-3%'}}>
                     <h1 class="h1basic">{this.state.artistName}</h1>
@@ -515,8 +515,8 @@ class App extends Component {
                                 </div>
                         <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/endlesslogosega.png"/></a></div>
                         </div>
-                        </div>
                 )}
+        </div>
         );
     }
 }
