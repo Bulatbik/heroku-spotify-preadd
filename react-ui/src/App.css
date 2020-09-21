@@ -525,12 +525,17 @@ a.sslink {
   font-size: 13px;
 }
 
+.popup-content {
+  width: 80%;
+  height: 30%;
+}
 .modal {
   font-size: 12px;
   margin-bottom: 0;
   margin-top: 0;
   white-space: unset;
   box-shadow: unset;
+  height: 100%;
 }
 .modal > .header {
   width: 100%;
