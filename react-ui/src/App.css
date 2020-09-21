@@ -451,7 +451,7 @@ a.three:link, a.three:visited, a.three:hover, a.three:active {
   text-transform: uppercase;
 }
 .checkboxContainerbasic {
-  color: black;
+  color: #FF8EFF;
   display: inline-block;
   padding-left: 25px;
   position: relative;
@@ -520,10 +520,10 @@ a.three:link, a.three:visited, a.three:hover, a.three:active {
   border-radius: 2px;
 }
 .checkboxContainerbasic input:checked + .checkmark {
-  background-color: #FF8EFF;
+  background-color: black;
 }
 .checkboxContainerbasic:hover .checkmark {
-  background-color: #FF8EFF;
+  background-color: black;
 }
 .checkboxContainer3 input:checked + .checkmark {
   background-color: #C3A48F;
