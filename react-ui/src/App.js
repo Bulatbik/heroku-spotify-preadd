@@ -280,7 +280,7 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="/spotifyicon_black.png" />
+                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_Black.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
                                     <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
@@ -298,13 +298,13 @@ class App extends Component {
                             </div>
                             {!this.state.isInstagramBrowser ? (
                               <a class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/applemusicicon_black.png" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a className="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
-                                <img className="appleLogo" src="/applemusicicon_black.png"/>
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
                                 <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
@@ -315,7 +315,7 @@ class App extends Component {
                                             &times;
                                         </a>
                                         Preadd with Apple Music
-                                        <img className="appleLogo" style={{height:"40%"}} src="/applemusicicon_black.png"/>
+                                        <img className="appleLogo" style={{height:"40%"}} src="/Apple_Music_Icon_RGB_Black.svg"/>
                                         <input value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
@@ -365,7 +365,7 @@ class App extends Component {
                             <div style={{}}>
                                 <div>
                                     <a className="buttonView" onClick={() => this.OnSubmitForm()}>
-                                        <img className="spotifyLogo" src="/spotifyicon_black.png"/>
+                                        <img className="spotifyLogo" src="/Spotify_Icon_RGB_Black.png"/>
                                         {(token != null) && (
                                             <form name="myform" id="myform" method="post">
                                                 <button className="button" id="buttonSpotify">Pre-Saved!</button>
@@ -386,7 +386,7 @@ class App extends Component {
 
                                     <a className="buttonViewApple" onClick={() => this.signIn()}
                                        id="apple-music-authorize">
-                                        <img className="appleLogo" src="/applemusicicon_black.png"/>
+                                        <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
                                         <button className="buttonApple" id="apple-music-authorize-button">Pre-Add on
                                             Apple Music
                                         </button>
