@@ -7,6 +7,7 @@ import moment from 'moment';
 import useProgressiveImg from "./useProgressiveImg";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 const spotifyApi = new SpotifyWebApi();
 const axios = require('axios');
 const useScript = url => {
@@ -55,7 +56,8 @@ class App extends Component {
             date: "",
             location: "",
             isInstagramBrowser: false,
-            isNoticeOpen: false
+            isNoticeOpen: false,
+            copied: false
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -312,10 +314,13 @@ class App extends Component {
                                         <a className="close" onClick={this.CloseAppleInstNotice}>
                                             &times;
                                         </a>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
-                                        omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
-                                        ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
-                                        doloribus. Odit, aut.
+                                        <p>Preadd with Apple Music</p>
+                                        <img className="appleLogo" src="/applemusicicon_black.png"/>
+                                        <CopyToClipboard text={window.location.href}
+                                                         onCopy={() => this.setState({copied: true})}>
+                                            <button>Copy to clipboard with button</button>
+                                        </CopyToClipboard>
+                                        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
                                     </div>
                                 </Popup>
 
