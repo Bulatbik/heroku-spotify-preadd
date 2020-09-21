@@ -115,7 +115,6 @@ body {
   display: contents;
   padding: 0 0 0 3px;
 }
-
 .buttonglow {
   animation: glowing 3.5s infinite;
 }
@@ -148,21 +147,6 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   color: #ff8eff;
-  border: none;
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  background-color: transparent;
-  display: flex;
-  padding: 0 0 0 0px;
-}
-.buttonApplebasic {
-  font-family: roboto-condensed, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: black;
   border: none;
   transition: all 0.3s ease 0s;
   cursor: pointer;
@@ -454,6 +438,9 @@ a.three:link, a.three:visited, a.three:hover, a.three:active {
 .checkboxContainerbasic input {
   display: none;
 }
+.checkboxContainer3 input {
+  display: none;
+}
 .checkboxContainer {
   color: white;
   display: inline-block;
@@ -477,7 +464,7 @@ a.three:link, a.three:visited, a.three:hover, a.three:active {
   text-transform: uppercase;
 }
 .checkboxContainer3 {
-  color: #C3A48F;
+  color: black;
   display: inline-block;
   padding-left: 25px;
   position: relative;
@@ -518,17 +505,17 @@ a.three:link, a.three:visited, a.three:hover, a.three:active {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: black;
+  background: #ff8eff;
   position: absolute;
   left: 0;
   top: 1px;
   border-radius: 2px;
 }
-.checkboxContainerbasic .checkmark {
+.checkboxContainer3 .checkmark {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: #FF8EFF;
+  background: black;
   position: absolute;
   left: 0;
   top: 1px;
@@ -551,8 +538,8 @@ a.three:link, a.three:visited, a.three:hover, a.three:active {
   position: absolute;
   height: 4px;
   width: 9px;
-  border-left: 2px solid #FF8EFF;
-  border-bottom: 2px solid #FF8EFF;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
   top: 42%;
   left: 50%;
   transform: translate(-50%,-50%) rotate(-45deg);

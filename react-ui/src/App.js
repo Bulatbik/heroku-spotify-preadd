@@ -449,11 +449,11 @@ class App extends Component {
                             <img class="spotifyLogo" src="/Spotify_Icon_RGB_Black.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="button3"id="buttonSpotify">Pre-Saved!</button>
+                                    <button class="button" id="buttonSpotify">Pre-Saved!</button>
                                 </form> )}
                             {(token==null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="button3" id="buttonSpotify">Pre-Save on Spotify</button>
+                                    <button class="button" id="buttonSpotify">Pre-Save on Spotify</button>
                                 </form> )}
                                 </a>
                             <div class="checkboxcolumn">
@@ -510,8 +510,8 @@ class App extends Component {
                                     )}
                     </div>
                         <div class="legalfooter">
-                                <div class="legaltextbasic basic"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
-                                <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
+                                <div class="legaltext3 three"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
+                                <a class="legallinks three" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
                         <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_White.png"/></a></div>
                     </div>
