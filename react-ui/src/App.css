@@ -536,6 +536,7 @@ a.sslink {
   white-space: unset;
   box-shadow: unset;
   height: 100%;
+  flex-direction: column;
 }
 .modal > .header {
   width: 100%;

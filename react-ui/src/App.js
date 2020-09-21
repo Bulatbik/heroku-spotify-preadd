@@ -314,8 +314,9 @@ class App extends Component {
                                         <a className="close" onClick={this.CloseAppleInstNotice}>
                                             &times;
                                         </a>
-                                        <p>Preadd with Apple Music</p>
-                                        <img className="appleLogo" src="/applemusicicon_black.png"/>
+                                        Preadd with Apple Music
+                                        <img className="appleLogo" style={{height:"40%"}} src="/applemusicicon_black.png"/>
+                                        <input value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
                                             <button>Copy to clipboard with button</button>
