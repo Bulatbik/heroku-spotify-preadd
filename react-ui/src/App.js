@@ -463,6 +463,7 @@ class App extends Component {
                                 </label>
                             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                             {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewApple3" onClick={() => this.OpenAppleInstNotice()} >
@@ -472,11 +473,15 @@ class App extends Component {
                               </a>
                                 ):(
 >>>>>>> parent of 4a6f4ba... abort
+=======
+                                ):(
+>>>>>>> parent of e24000e... fix
                                 <a className="buttonViewApple3" onClick={() => this.signIn()} id="apple-music-authorize">
                                 <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
-                                <button className="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music
+                                <button className="buttonApple3" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
+                            )}
                                 <Popup open={this.state.isNoticeOpen} closeOnDocumentClick onClose={this.CloseAppleInstNotice}>
                                     <div className="modal">
                                         <a className="close" onClick={this.CloseAppleInstNotice}>
