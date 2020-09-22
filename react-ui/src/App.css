@@ -291,7 +291,6 @@ body {
   }
 }
 .modal {
-  display: inline-flex;
   cursor: pointer;
   background-color: #fff;
   text-decoration: none;
@@ -664,6 +663,7 @@ a.sslink {
   height: 30%;
 }
 .modal {
+  display: inline-grid;
   font-size: 12px;
   margin-bottom: 0;
   margin-top: 0;
