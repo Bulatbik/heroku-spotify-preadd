@@ -319,7 +319,7 @@ class App extends Component {
                                         <input className="notice" value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
-                                            <button className="noticecopy">Copy</button>
+                                            <button className="noticecopy" id="notice">{this.state.copied ? <span>Copied.</span> : <span>Copy</span>}</button>
                                         </CopyToClipboard>
                                         {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
                                     </div>
@@ -485,7 +485,7 @@ class App extends Component {
                                         <input className="notice" value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
-                                            <button className="noticecopy">Copy</button>
+                                            <button id="notice" className="noticecopy" >Copy</button>
                                         </CopyToClipboard>
                                         {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
                                     </div>
