@@ -481,7 +481,7 @@ class App extends Component {
                                             &times;
                                         </a>
                                         Copy & paste this link into Safari to pre-add {this.state.byTitle} on Apple Music
-                                        <img className="applenoticelogo" style={{}} src="/Apple_Music_Icon_RGB_Black.png"/>
+                                        <img className="applenoticelogo" src="/Apple_Music_Icon_RGB_Black.png"/>
                                         <input className="notice" value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
