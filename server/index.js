@@ -610,14 +610,14 @@ async function presaveCount(linkId, platform) {
     app.get("/Spotify_Icon_RGB_Green.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_Green.png'));
     });
-    app.get("/Spotify_Icon_RGB_#ff8eff.png", (req, res) => {
-        res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_#ff8eff.png'));
+    app.get("/Spotify_Icon_RGB_ff8eff.png", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_ff8eff.png'));
     });
     app.get("/Apple_Music_Icon_RGB_Black.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_Black.png'));
     });
-    app.get("/Apple_Music_Icon_RGB_#ff8eff.png", (req, res) => {
-        res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_#ff8eff.png'));
+    app.get("/Apple_Music_Icon_RGB_ff8eff.png", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_ff8eff.png'));
     });
 
     app.get("/test", async (req, res) => {

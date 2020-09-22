@@ -347,7 +347,7 @@ class App extends Component {
                                 <div class="legaltextbasic basic"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
-                        <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_#ff8eff.png"/></a></div>
+                        <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_AAO.png"/></a></div>
                         </div>
                     </div>
                     )}
@@ -513,7 +513,7 @@ class App extends Component {
                                 <div class="legaltext3 three"><p>By using this service, you agree to our <a class="legallinks three" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks three" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
-                        <div class="poweredby3">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_#c3a48f.png"/></a></div>
+                        <div class="poweredby3">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_PDGI2.png"/></a></div>
                     </div>
                 </div>
                 )}
