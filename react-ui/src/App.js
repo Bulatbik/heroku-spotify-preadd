@@ -262,7 +262,7 @@ class App extends Component {
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
-                    <ReactLoading type={"spin"} color={"ac3a48f"} />
+                    <ReactLoading type={"spin"} color={"#ac3a48f"} />
                     </div>
                 ) : (
                     <div style={{height:"100%"}}>
@@ -296,7 +296,7 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
+                            {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewAppleTypeOne buttonglow" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/Apple_Music_Icon_RGB_ff8eff.png" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
@@ -462,7 +462,7 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
+                            {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewApple3" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.png" />
                                 <button class="buttonApple">Pre-Add on Apple Music
