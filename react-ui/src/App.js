@@ -475,7 +475,7 @@ class App extends Component {
                                 </button>
                             </a>
                             )}
-                                <Popup open={this.state.isNoticeOpen} closeOnDocumentClick onClose={this.CloseAppleInstNotice}>
+                                <Popup open={!this.state.isNoticeOpen} closeOnDocumentClick onClose={this.CloseAppleInstNotice}>
                                     <div className="modal">
                                         <a className="close" onClick={this.CloseAppleInstNotice}>
                                             &times;
