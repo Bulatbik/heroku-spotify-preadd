@@ -298,13 +298,13 @@ class App extends Component {
                             </div>
                             {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewAppleTypeOne buttonglow" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_#ff8eff.png" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_ff8eff.png" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a className="buttonViewAppleTypeOne buttonglow" onClick={() => this.signIn()} id="apple-music-authorize">
-                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_#ff8eff.svg"/>
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_ff8eff.png"/>
                                 <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
@@ -315,7 +315,7 @@ class App extends Component {
                                             &times;
                                         </a>
                                         Preadd with Apple Music
-                                        <img className="appleLogo" style={{height:"40%"}} src="/Apple_Music_Icon_RGB_Black.svg"/>
+                                        <img className="appleLogo" style={{height:"40%"}} src="/Apple_Music_Icon_RGB_Black.png"/>
                                         <input value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
@@ -386,7 +386,7 @@ class App extends Component {
 
                                     <a className="buttonViewApple" onClick={() => this.signIn()}
                                        id="apple-music-authorize">
-                                        <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
+                                        <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.png"/>
                                         <button className="buttonApple" id="apple-music-authorize-button">Pre-Add on
                                             Apple Music
                                         </button>
@@ -464,13 +464,13 @@ class App extends Component {
                             </div>
                             {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewApple3" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.png" />
                                 <button class="buttonApple">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a className="buttonViewApple3" onClick={() => this.signIn()} id="apple-music-authorize">
-                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.svg"/>
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.png"/>
                                 <button className="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
@@ -481,7 +481,7 @@ class App extends Component {
                                             &times;
                                         </a>
                                         Pre-Add {this.state.byTitle} on Apple Music
-                                        <img className="appleLogo" style={{}} src="/Apple_Music_Icon_RGB_Black.svg"/>
+                                        <img className="appleLogo" style={{}} src="/Apple_Music_Icon_RGB_Black.png"/>
                                         <input value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
