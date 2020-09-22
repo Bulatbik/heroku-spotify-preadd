@@ -314,12 +314,12 @@ class App extends Component {
                                         <a className="close" onClick={this.CloseAppleInstNotice}>
                                             &times;
                                         </a>
-                                        Copy & paste this link into Safari to pre-add 
-                                        <img className="appleLogo" style={{height:"40%"}} src="/Apple_Music_Icon_RGB_Black.png"/>
-                                        <input value={window.location.href}/>
+                                        Copy & paste this link into Safari to pre-add {this.state.byTitle} on Apple Music
+                                        <img className="applenoticelogo" src="/Apple_Music_Icon_RGB_Black.png"/>
+                                        <input className="notice" value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
-                                            <button>Copy</button>
+                                            <button className="noticecopy">Copy</button>
                                         </CopyToClipboard>
                                         {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
                                     </div>
