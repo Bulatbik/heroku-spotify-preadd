@@ -665,15 +665,16 @@ a.sslink {
   border-radius: 3px;
 }
 .modal {
-  display: grid;
+  display: flex;
   margin-bottom: 0;
   margin-top: 0;
   white-space: unset;
   box-shadow: unset;
-  height: 108%;
+  height: 100%;
   font-family: roboto, sans-serif;
   font-weight: 600;
   background-color: #c3a48f;
+  text-align: -webkit-center;
 }
 .modal > .header {
   width: 100%;
@@ -703,21 +704,23 @@ a.sslink {
   font-size: 24px;
 }
 .applenoticelogo {
-  height: 40%;
+  display: block;
+  height: 12%;
   justify-self: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 input.notice {
   background-color: #c3a48f;
   color: black;
   border: 2px solid black;
-  border-radius: 2px;
   padding: inherit;
-  font-weight: initial;
+  font-weight: 400;
 }
 button.noticecopy {
   background: black;
   color: #c3a48f;
-  border: none;
+  border: 1px solid black;
   padding: inherit;
   margin-top: -5%;
   font-family: roboto, sans-serif;
