@@ -659,7 +659,7 @@ a.sslink {
 
 .popup-content {
   width: 80%;
-  height: 35%;
+  height: 30%;
   background-color: #c3a48f;
   border: 3px solid #c3a48f;
   border-radius: 3px;
@@ -723,7 +723,6 @@ button.noticecopy {
   padding: inherit;
   margin-top: -5%;
   font-family: roboto, sans-serif;
-  text-transform: uppercase;
 }
 
 @media only screen and (min-width: 660px) {
