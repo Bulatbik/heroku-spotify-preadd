@@ -521,10 +521,10 @@ a.three:link, a.three:visited, a.three:hover, a.three:active {
   border-radius: 2px;
 }
 .checkboxContainerbasic input:checked + .checkmark {
-  background-color: black;
+  background-color: #ff8eff;
 }
 .checkboxContainerbasic:hover .checkmark {
-  background-color: black;
+  background-color: #ff8eff;
 }
 .checkboxContainer3 input:checked + .checkmark {
   background-color: #C3A48F;
@@ -663,7 +663,7 @@ a.sslink {
   height: 30%;
 }
 .modal {
-  display: inline-grid;
+  display: inline-grid
   font-size: 12px;
   margin-bottom: 0;
   margin-top: 0;
@@ -752,7 +752,7 @@ a.sslink {
     display: inline-flex;
     font-size: 12px;
     font-family: roboto, sans-serif;
-    color: white;
+    color: #ff8eff;
     text-transform: uppercase;
     margin-top: 8%;
 }

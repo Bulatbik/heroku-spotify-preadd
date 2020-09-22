@@ -280,7 +280,7 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a class="buttonViewTypeOne buttonglow" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_Green.png" />
+                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_#ff8eff.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
                                     <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
@@ -298,13 +298,13 @@ class App extends Component {
                             </div>
                             {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewAppleTypeOne buttonglow" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Color.svg" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_#ff8eff.png" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a className="buttonViewAppleTypeOne buttonglow" onClick={() => this.signIn()} id="apple-music-authorize">
-                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_Color.svg"/>
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_#ff8eff.svg"/>
                                 <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
@@ -347,7 +347,7 @@ class App extends Component {
                                 <div class="legaltextbasic basic"><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
-                        <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_White.png"/></a></div>
+                        <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_#ff8eff.png"/></a></div>
                         </div>
                     </div>
                     )}
@@ -498,8 +498,8 @@ class App extends Component {
                                     <input type="checkbox" id="CheckApple" checked={this.state.checkBoxDefaultStatus} onChange={this.handleCheckBoxClick} />
                                     <span class="checkmark"></span>
                                 </label>
-                                        </div>
-                                ) : (
+                                        </div> 
+                                         ) : (
 
                                         <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
                                         <h3 className="emailcapture3">Confirm your email</h3>
@@ -513,7 +513,7 @@ class App extends Component {
                                 <div class="legaltext3 three"><p>By using this service, you agree to our <a class="legallinks three" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
                                 <a class="legallinks three" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
                                 </div>
-                        <div class="poweredby">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_White.png"/></a></div>
+                        <div class="poweredby3">powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_#c3a48f.png"/></a></div>
                     </div>
                 </div>
                 )}
