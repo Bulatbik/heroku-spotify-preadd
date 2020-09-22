@@ -462,7 +462,7 @@ class App extends Component {
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
+                            {!this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewApple3" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.png" />
                                 <button class="buttonApple">Pre-Add on Apple Music
@@ -475,7 +475,7 @@ class App extends Component {
                                 </button>
                             </a>
                             )}
-                                <Popup open={!this.state.isNoticeOpen} closeOnDocumentClick onClose={this.CloseAppleInstNotice}>
+                                <Popup open={this.state.isNoticeOpen} closeOnDocumentClick onClose={this.CloseAppleInstNotice}>
                                     <div className="modal">
                                         <a className="close" onClick={this.CloseAppleInstNotice}>
                                             &times;
