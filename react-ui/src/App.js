@@ -262,7 +262,7 @@ class App extends Component {
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
-                    <ReactLoading type={"spin"} color={"#c3a48f"} />
+                    <ReactLoading type={"spin"} color={"ac3a48f"} />
                     </div>
                 ) : (
                     <div style={{height:"100%"}}>
@@ -314,12 +314,12 @@ class App extends Component {
                                         <a className="close" onClick={this.CloseAppleInstNotice}>
                                             &times;
                                         </a>
-                                        Preadd with Apple Music
+                                        Copy & paste this link into Safari to pre-add 
                                         <img className="appleLogo" style={{height:"40%"}} src="/Apple_Music_Icon_RGB_Black.png"/>
                                         <input value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
-                                            <button>Copy to clipboard with button</button>
+                                            <button>Copy</button>
                                         </CopyToClipboard>
                                         {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
                                     </div>
@@ -480,12 +480,12 @@ class App extends Component {
                                         <a className="close" onClick={this.CloseAppleInstNotice}>
                                             &times;
                                         </a>
-                                        Pre-Add {this.state.byTitle} on Apple Music
-                                        <img className="appleLogo" style={{}} src="/Apple_Music_Icon_RGB_Black.png"/>
-                                        <input value={window.location.href}/>
+                                        Copy & paste this link into Safari to pre-add {this.state.byTitle} on Apple Music
+                                        <img className="applenoticelogo" style={{}} src="/Apple_Music_Icon_RGB_Black.png"/>
+                                        <input className="notice" value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
-                                            <button>Copy to clipboard with button</button>
+                                            <button className="noticecopy">Copy</button>
                                         </CopyToClipboard>
                                         {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
                                     </div>
