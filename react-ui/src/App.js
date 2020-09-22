@@ -280,7 +280,7 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a class="buttonViewTypeOne buttonglow" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_#ff8eff.png" />
+                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_ff8eff.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
                                     <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
