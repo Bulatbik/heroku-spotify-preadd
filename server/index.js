@@ -476,12 +476,12 @@ async function presaveCount(linkId, platform) {
         var state = req.query.state || null;
         var storedState = req.cookies ? req.cookies[stateKey] : null;
 
-        if (state === null || state !== storedState) {
-            res.redirect('/#' +
-                querystring.stringify({
-                    error: 'state_mismatch'
-                }));
-        } else {
+    //   if (state === null || state !== storedState) {
+     //       res.redirect('/#' +
+     //           querystring.stringify({
+     //               error: 'state_mismatch'
+     //           }));
+      //  } else {
             res.clearCookie(stateKey);
             var authOptions = {
                 url: 'https://accounts.spotify.com/api/token',
@@ -561,7 +561,7 @@ async function presaveCount(linkId, platform) {
                         }));
                 }
             });
-        }
+      // }
     });
 
     app.get("/refresh_token", function(req, res) {
