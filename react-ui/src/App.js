@@ -547,7 +547,7 @@ class App extends Component {
                             </div>
                             {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewApple4" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_CB3D2B.png" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.png" />
                                 <button class="buttonApple">Pre-Add on Apple Music
                                 </button>
                               </a>
