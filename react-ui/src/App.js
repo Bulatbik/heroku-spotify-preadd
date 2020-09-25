@@ -547,7 +547,7 @@ class App extends Component {
                             </div>
                             {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewApple4" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.png" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_CB3D2B.png" />
                                 <button class="buttonApple">Pre-Add on Apple Music
                                 </button>
                               </a>
@@ -564,7 +564,7 @@ class App extends Component {
                                             &times;
                                         </a>
                                         Copy & paste this link into Safari to pre-add {this.state.byTitle} on Apple Music
-                                        <img className="applenoticelogo" src="/Apple_Music_Icon_RGB_Black.png"/>
+                                        <img className="applenoticelogo" src="/Apple_Music_Icon_RGB_CB3D2B.png"/>
                                         <input className="notice" value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>

@@ -806,7 +806,7 @@ a.sslink {
   height: 100%;
   font-family: roboto, sans-serif;
   font-weight: 600;
-  background-color: #c3a48f;
+  background-color: black;
   text-align: -webkit-center;
 }
 .modal > .header {
@@ -844,16 +844,16 @@ a.sslink {
   margin-bottom: 5%;
 }
 input.notice {
-  background-color: #c3a48f;
-  color: black;
-  border: 2px solid black;
+  background-color: black;
+  color: #cb3d2b;
+  border: 2px solid #cb3d2b;
   padding: inherit;
   font-weight: 400;
 }
 button.noticecopy {
-  background: black;
-  color: #c3a48f;
-  border: 1px solid black;
+  background: #cb3d2b;
+  color: black;
+  border: 1px solid #cb3d2b;
   padding: inherit;
   margin-top: -5%;
   font-family: roboto, sans-serif;
