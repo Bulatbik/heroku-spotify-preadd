@@ -529,7 +529,7 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a class="buttonView4" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_CB3D2B.png" />
+                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_Black.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
                                     <button class="button" id="buttonSpotify">Pre-Saved!</button>
@@ -547,13 +547,13 @@ class App extends Component {
                             </div>
                             {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a class="buttonViewApple4" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_CB3D2B.png" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_Black.png" />
                                 <button class="buttonApple">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a className="buttonViewApple4" onClick={() => this.signIn()} id="apple-music-authorize">
-                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_CB3D2B.png"/>
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_Black.png"/>
                                 <button className="buttonApple" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
@@ -564,7 +564,7 @@ class App extends Component {
                                             &times;
                                         </a>
                                         Copy & paste this link into Safari to pre-add {this.state.byTitle} on Apple Music
-                                        <img className="applenoticelogo" src="/Apple_Music_Icon_RGB_CB3D2B.png"/>
+                                        <img className="applenoticelogo" src="/Apple_Music_Icon_RGB_Black.png"/>
                                         <input className="notice" value={window.location.href}/>
                                         <CopyToClipboard text={window.location.href}
                                                          onCopy={() => this.setState({copied: true})}>
@@ -584,8 +584,8 @@ class App extends Component {
                                          ) : (
 
                                         <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
-                                        <h3 className="emailcapture3">Confirm your email</h3>
-                                        <input className="input1three" type="eamil" value={this.state.email} onChange={this.handleEmailChange}/>
+                                        <h3 className="emailcapture4">Confirm your email</h3>
+                                        <input className="input1four" type="eamil" value={this.state.email} onChange={this.handleEmailChange}/>
                                         <input type="submit" class="submit" value="CONTINUE"/>
                                         </form>
 

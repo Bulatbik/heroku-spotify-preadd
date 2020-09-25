@@ -34,7 +34,7 @@ body {
   margin: auto;
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
-  opacity: .8;
+  opacity: .7;
   overscroll-behavior: none;
   object-fit: cover;
   filter: blur(7px);
@@ -305,7 +305,7 @@ body {
 .buttonViewApple4 {
   display: inline-flex;
   cursor: pointer;
-  background-color: black;
+  background-color: #cb3d2b;
   text-decoration: none;
   -webkit-transition: background-color .3s ease, -webkit-box-shadow .3s ease;
   transition: background-color .3s ease, -webkit-box-shadow .3s ease;
@@ -697,6 +697,17 @@ a.four:link, a.four:visited, a.four:hover, a.four:active {
   margin-bottom: 5px;
   margin-top: auto;
 }
+.emailcapture4 {
+  color: #cb3d2b;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-family:roboto-condensed,sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  margin-top: auto;
+}
 .input1 {
   width: 60%;
   display: inline-block;
@@ -738,8 +749,8 @@ a.four:link, a.four:visited, a.four:hover, a.four:active {
   text-align: center;
 }
 .input1four {
-  color: #CB3D2B;
-  background-color: black;
+  color: black;
+  background-color: #cb3d2b;
   display: inline-block;
   line-height: 200%;
   border: none;
