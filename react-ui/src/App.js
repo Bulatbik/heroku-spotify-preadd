@@ -262,7 +262,7 @@ class App extends Component {
                 <div class="bg-image"><img style={this.state.done ? {} : {display: 'none'}} src={this.state.artworkLink} onLoad={() => this.setState({done: true})}/></div>
                 {!this.state.done ? (
                     <div class="loading-container">
-                    <ReactLoading type={"spin"} color={"#c3a48f"} />
+                    <ReactLoading type={"spin"} color={"#cb3d2b"} />
                     </div>
                 ) : (
                     <div style={{height:"100%"}}>
