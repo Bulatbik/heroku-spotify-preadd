@@ -58,7 +58,7 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
-schedule.scheduleJob('1 * * * *', () => { //* * * * * run every minute. 1 * * * * run every hour at minute 1. */5 * * * * run every 5 minutes
+schedule.scheduleJob('* * * * *', () => { //* * * * * run every minute. 1 * * * * run every hour at minute 1. */5 * * * * run every 5 minutes
     scheduler();
 }); // run every minute
 async function API(url,token,upc) {
@@ -613,11 +613,17 @@ async function presaveCount(linkId, platform) {
     app.get("/Spotify_Icon_RGB_ff8eff.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_ff8eff.png'));
     });
+    app.get("/Spotify_Icon_RGB_CB3D2B.png", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_CB3D2B.png'));
+    });
     app.get("/Apple_Music_Icon_RGB_Black.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_Black.png'));
     });
     app.get("/Apple_Music_Icon_RGB_ff8eff.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_ff8eff.png'));
+    });
+    app.get("/Apple_Music_Icon_RGB_CB3D2B.png", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_CB3D2B.png'));
     });
 
     app.get("/test", async (req, res) => {
