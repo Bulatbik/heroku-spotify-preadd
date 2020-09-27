@@ -293,7 +293,7 @@ class App extends Component {
                                 </form> )}
                                 </a>
                             <div class="checkboxcolumn">
-                                <label style={{color: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
+                                <label style={{color: `rgba(${this.state.colors.CheckBoxText.r},${this.state.colors.CheckBoxText.g},${this.state.colors.CheckBoxText.b}, ${this.state.colors.CheckBoxText.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
                                     <span class="checkmark"></span>
                                 </label>
@@ -329,7 +329,7 @@ class App extends Component {
                         </div>
                                 {!this.state.openEmailModal ? (
                                         <div className="checkboxcolumn">
-                                <label class="checkboxContainerbasic">Get updates from {this.state.artistName}
+                                <label style={{color: `rgba(${this.state.colors.CheckBoxText.r},${this.state.colors.CheckBoxText.g},${this.state.colors.CheckBoxText.b}, ${this.state.colors.CheckBoxText.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="CheckApple" checked={this.state.checkBoxDefaultStatus} onChange={this.handleCheckBoxClick} />
                                     <span class="checkmark"></span>
                                 </label>
