@@ -271,7 +271,7 @@ class App extends Component {
                     {(this.state.websiteType===1) && (
                 <div id="contentfadein" class="content-containerOne">
                     <div style={{marginTop: '-3%'}}>
-                    <h1 style={{color: '#FF8EFF'}} class="h1basic">{this.state.artistName}</h1>
+                    <h1 style={{color: `rgba(${this.state.colors.mainColor.r},${this.state.colors.mainColor.g},${this.state.colors.mainColor.b}, ${this.state.colors.mainColor.a})`}} class="h1basic">{this.state.artistName}</h1>
                     <h2 class="h2basic">{this.state.byTitle}</h2>
                     <h3 class="h3basic">Available {this.state.date}</h3>
                         {(this.state.descriptionName!==undefined)&&(
