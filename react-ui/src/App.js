@@ -57,7 +57,8 @@ class App extends Component {
             location: "",
             isInstagramBrowser: false,
             isNoticeOpen: false,
-            copied: false
+            copied: false,
+            colors: undefined
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -137,6 +138,7 @@ class App extends Component {
                 date: finaldate,
                 websiteType: datares.data.siteType,
                 location: location.data.city+"-"+location.data.country_name,
+                colors: datares.data.colors,
                 isInstagramBrowser: this.isInstagramApp()
             });
         }
@@ -269,7 +271,7 @@ class App extends Component {
                     {(this.state.websiteType===1) && (
                 <div id="contentfadein" class="content-containerOne">
                     <div style={{marginTop: '-3%'}}>
-                    <h1 class="h1basic">{this.state.artistName}</h1>
+                    <h1 style={{color: this.state.colors.mainColor}} class="h1basic">{this.state.artistName}</h1>
                     <h2 class="h2basic">{this.state.byTitle}</h2>
                     <h3 class="h3basic">Available {this.state.date}</h3>
                         {(this.state.descriptionName!==undefined)&&(
@@ -283,7 +285,7 @@ class App extends Component {
                             <img class="spotifyLogo" src="/Spotify_Icon_RGB_ff8eff.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="buttonbasic"id="buttonSpotify">Pre-Saved!</button>
+                                    <button class="buttonbasic" id="buttonSpotify">Pre-Saved!</button>
                                 </form> )}
                             {(token==null)&&(
                                 <form name="myform" id="myform" method="post">
