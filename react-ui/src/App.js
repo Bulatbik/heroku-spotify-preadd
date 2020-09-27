@@ -285,11 +285,11 @@ class App extends Component {
                             <img class="spotifyLogo" src="/Spotify_Icon_RGB_ff8eff.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="buttonbasic" id="buttonSpotify">Pre-Saved!</button>
+                                    <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} class="buttonbasic" id="buttonSpotify">Pre-Saved!</button>
                                 </form> )}
                             {(token==null)&&(
                                 <form name="myform" id="myform" method="post">
-                                    <button class="buttonbasic" id="buttonSpotify">Pre-Save on Spotify</button>
+                                    <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} class="buttonbasic" id="buttonSpotify">Pre-Save on Spotify</button>
                                 </form> )}
                                 </a>
                             <div class="checkboxcolumn">
@@ -301,13 +301,13 @@ class App extends Component {
                             {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/Apple_Music_Icon_RGB_ff8eff.png" />
-                                <button class="buttonApplebasic">Pre-Add on Apple Music
+                                <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} className="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
                                 <img className="appleLogo" src="/Apple_Music_Icon_RGB_ff8eff.png"/>
-                                <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
+                                <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
                             )}
