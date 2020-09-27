@@ -281,7 +281,7 @@ class App extends Component {
                     </div>
                     <div style={{marginBottom:"20%"}}>
                         <div>
-                        <a class="buttonViewTypeOne buttonglow" onClick={() => this.OnSubmitForm()}>
+                        <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} class="buttonViewTypeOne buttonglow" onClick={() => this.OnSubmitForm()}>
                             <img class="spotifyLogo" src="/Spotify_Icon_RGB_ff8eff.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
@@ -299,13 +299,13 @@ class App extends Component {
                                 </label>
                             </div>
                             {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
-                              <a class="buttonViewAppleTypeOne buttonglow" onClick={() => this.OpenAppleInstNotice()} >
+                              <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} class="buttonViewAppleTypeOne buttonglow" onClick={() => this.OpenAppleInstNotice()} >
                                 <img class="appleLogo" src="/Apple_Music_Icon_RGB_ff8eff.png" />
                                 <button class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
-                                <a className="buttonViewAppleTypeOne buttonglow" onClick={() => this.signIn()} id="apple-music-authorize">
+                                <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} className="buttonViewAppleTypeOne buttonglow" onClick={() => this.signIn()} id="apple-music-authorize">
                                 <img className="appleLogo" src="/Apple_Music_Icon_RGB_ff8eff.png"/>
                                 <button className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
