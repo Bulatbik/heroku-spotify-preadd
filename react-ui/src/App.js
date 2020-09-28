@@ -259,7 +259,8 @@ class App extends Component {
             testContainer.style.left = "50%";
             testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";
         }else{
-
+            testContainer.style.borderLeft = "none";
+            testContainer.style.borderBottom = "none";
             testContainer.style.content = '""';
             testContainer.style.position = "absolute";
             testContainer.style.height = "4px";

@@ -630,17 +630,6 @@ a.four:link, a.four:visited, a.four:hover, a.four:active {
 .checkboxContainer4:hover .checkmark {
   background-color: #CB3D2B;
 }
-.checkboxContainerbasic input:checked + .checkmark:after {
-  content: "";
-  position: absolute;
-  height: 4px;
-  width: 9px;
-  border-left: 2px solid black;
-  border-bottom: 2px solid black;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%,-50%) rotate(-45deg);
-}
 .checkboxContainer3 input:checked + .checkmark:after {
   content: "";
   position: absolute;
