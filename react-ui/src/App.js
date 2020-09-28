@@ -239,12 +239,14 @@ class App extends Component {
         event.preventDefault();
         this.setState({email: event.target.value});
     }
-    changeTickSpot(){
-       // console.log("hey");
-       //  document.getElementById("myCheck").click();
-      //  var checkBox = document.getElementById("myCheck");
-      //  checkBox.checked = !this.checkedSpot;
+    changeTickSpot() {
+        // console.log("hey");
+        //  document.getElementById("myCheck").click();
+        //  var checkBox = document.getElementById("myCheck");
+        //  checkBox.checked = !this.checkedSpot;
         this.setState({checkedSpot: !this.state.checkedSpot})
+        document.getElementById("myCheck").style.borderLeft = "2px solid red";
+        document.getElementById("myCheck").style.borderBottom = "2px solid red";
     }
     changeTickApple(){
 
