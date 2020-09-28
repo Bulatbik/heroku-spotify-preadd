@@ -245,7 +245,7 @@ class App extends Component {
         //  var checkBox = document.getElementById("myCheck");
         //  checkBox.checked = !this.checkedSpot;
         this.setState({checkedSpot: !this.state.checkedSpot})
-        var testContainer = document.getElementById('checkmark');
+        var testContainer = document.getElementById('insidecheckS');
         if(this.state.checkedSpot===true) {
             testContainer.style.borderLeft = "2px solid red";
             testContainer.style.borderBottom = "2px solid red";
