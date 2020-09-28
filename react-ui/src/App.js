@@ -141,6 +141,17 @@ class App extends Component {
                 colors: datares.data.colors,
                 isInstagramBrowser: this.isInstagramApp()
             });
+            let sheets = document.styleSheets;
+            let selector = ".checkboxContainerbasic input:checked + .checkmark:after";
+            let replacementContent = '2px solid green';
+            for (let sheet of sheets) {
+                for (let rule of sheet.cssRules) {
+                    if (rule.selectorText === selector) {
+                        rule.style["border-left"] = replacementContent;
+                        rule.style["border-bottom"] = replacementContent;
+                    }
+                }
+            }
         }
        // this.setState({ done: true })
        // this.setState({albumName: datares.data.data.data.albumName})
@@ -331,7 +342,7 @@ class App extends Component {
                                         <div className="checkboxcolumn">
                                 <label style={{color: `rgba(${this.state.colors.CheckBoxText.r},${this.state.colors.CheckBoxText.g},${this.state.colors.CheckBoxText.b}, ${this.state.colors.CheckBoxText.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input  type="checkbox" id="CheckApple" checked={this.state.checkBoxDefaultStatus} onChange={this.handleCheckBoxClick} />
-                                    <span class="checkmark"></span>
+                                    <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} class="checkmark"></span>
                                 </label>
                                         </div>
                                 ) : (
