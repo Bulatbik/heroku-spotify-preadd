@@ -245,7 +245,7 @@ class App extends Component {
         //  var checkBox = document.getElementById("myCheck");
         //  checkBox.checked = !this.checkedSpot;
         this.setState({checkedSpot: !this.state.checkedSpot})
-        var testContainer = document.querySelector('myCheck');
+        var testContainer = document.querySelector('#myCheck');
         var ChildNode = testContainer.querySelector('.checkmark');
         if(this.state.checkedSpot===true) {
             ChildNode.style.borderLeft = "2px solid red";
