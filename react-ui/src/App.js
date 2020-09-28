@@ -58,7 +58,8 @@ class App extends Component {
             isInstagramBrowser: false,
             isNoticeOpen: false,
             copied: false,
-            colors: undefined
+            colors: undefined,
+            checkedSpot:true
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -69,6 +70,8 @@ class App extends Component {
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.test = this.test.bind(this);
         this.handleCheckBoxClick = this.handleCheckBoxClick.bind(this);
+        this.changeTickSpot = this.changeTickSpot.bind(this);
+        this.changeTickApple = this.changeTickApple.bind(this);
     }
     openModal() {
         this.setState({ openEmailModal: true });
@@ -236,6 +239,12 @@ class App extends Component {
         event.preventDefault();
         this.setState({email: event.target.value});
     }
+    changeTickSpot(e){
+        this.setState({checkedSpot: !this.checkedSpot})
+    }
+    changeTickApple(){
+
+    }
     async test(e) {
         e.preventDefault();
         let that = this;
@@ -305,7 +314,7 @@ class App extends Component {
                                 </a>
                             <div class="checkboxcolumn">
                                 <label style={{color: `rgba(${this.state.colors.CheckBoxText.r},${this.state.colors.CheckBoxText.g},${this.state.colors.CheckBoxText.b}, ${this.state.colors.CheckBoxText.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
-                                    <input type="checkbox" id="myCheck" checked onClick="this.checked=!this.checked;"/>
+                                    <input type="checkbox" id="myCheck" checked={this.checkedSpot} onClick={this.changeTickSpot}/>
                                     <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} class="checkmark"></span>
                                 </label>
                             </div>
