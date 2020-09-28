@@ -240,9 +240,9 @@ class App extends Component {
         this.setState({email: event.target.value});
     }
     changeTickSpot(e){
-        var checkBox = document.getElementById("myCheck");
-        checkBox.checked = !this.checkedSpot;
-        this.setState({checkedSpot: !this.checkedSpot})
+         document.getElementById("myCheck").click();
+       // checkBox.checked = !this.checkedSpot;
+       // this.setState({checkedSpot: !this.checkedSpot})
     }
     changeTickApple(){
 
