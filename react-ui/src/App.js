@@ -245,26 +245,25 @@ class App extends Component {
         //  var checkBox = document.getElementById("myCheck");
         //  checkBox.checked = !this.checkedSpot;
         this.setState({checkedSpot: !this.state.checkedSpot})
-        var testContainer = document.querySelector('#myCheck');
-        var ChildNode = testContainer.querySelector('.checkmark');
+        var testContainer = document.getElementById('#myCheck');
         if(this.state.checkedSpot===true) {
-            ChildNode.style.borderLeft = "2px solid red";
-            ChildNode.style.borderBottom = "2px solid red";
-            ChildNode.style.content = '""';
-            ChildNode.style.position = "absolute";
-            ChildNode.style.height = "4px";
-            ChildNode.style.width = "9px";
-            ChildNode.style.top = "42%";
-            ChildNode.style.left = "50%";
-            ChildNode.style.transform = "translate(-50%,-50%) rotate(-45deg)";
+            testContainer.style.borderLeft = "2px solid red";
+            testContainer.style.borderBottom = "2px solid red";
+            testContainer.style.content = '""';
+            testContainer.style.position = "absolute";
+            testContainer.style.height = "4px";
+            testContainer.style.width = "9px";
+            testContainer.style.top = "42%";
+            testContainer.style.left = "50%";
+            testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";
         }else{
-            ChildNode.style.content = '""';
-            ChildNode.style.position = "absolute";
-            ChildNode.style.height = "4px";
-            ChildNode.style.width = "9px";
-            ChildNode.style.top = "42%";
-            ChildNode.style.left = "50%";
-            ChildNode.style.transform = "translate(-50%,-50%) rotate(-45deg)";
+            testContainer.style.content = '""';
+            testContainer.style.position = "absolute";
+            testContainer.style.height = "4px";
+            testContainer.style.width = "9px";
+            testContainer.style.top = "42%";
+            testContainer.style.left = "50%";
+            testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";
         }
 
     }
