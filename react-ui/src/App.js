@@ -245,8 +245,10 @@ class App extends Component {
         //  var checkBox = document.getElementById("myCheck");
         //  checkBox.checked = !this.checkedSpot;
         this.setState({checkedSpot: !this.state.checkedSpot})
-        var testContainer = document.getElementById('insidecheckS');
+        var testContainer = document.getElementById('testcheck');
         if(this.state.checkedSpot===true) {
+         //   testContainer.pseudoStyle("after","content","'test'");
+         //   testContainer.pseudoStyle("after","color","purple");
             testContainer.style.borderLeft = "2px solid red";
             testContainer.style.borderBottom = "2px solid red";
             testContainer.style.content = '""';
@@ -257,6 +259,7 @@ class App extends Component {
             testContainer.style.left = "50%";
             testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";
         }else{
+
             testContainer.style.content = '""';
             testContainer.style.position = "absolute";
             testContainer.style.height = "4px";
@@ -340,7 +343,7 @@ class App extends Component {
                             <div class="checkboxcolumn">
                                 <label style={{color: `rgba(${this.state.colors.CheckBoxText.r},${this.state.colors.CheckBoxText.g},${this.state.colors.CheckBoxText.b}, ${this.state.colors.CheckBoxText.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="myCheck" checked={this.state.checkedSpot} onChange={this.changeTickSpot}/>
-                                    <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} id="insidecheckS" class="checkmark"></span>
+                                    <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} id="insidecheckS" class="checkmark"><span id="testcheck"></span> </span>
                                 </label>
                             </div>
                             {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
