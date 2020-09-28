@@ -239,8 +239,7 @@ class App extends Component {
         event.preventDefault();
         this.setState({email: event.target.value});
     }
-    changeTickSpot(e){
-        e.preventDefault();
+    changeTickSpot(){
         console.log("hey");
          document.getElementById("myCheck").click();
        // checkBox.checked = !this.checkedSpot;
