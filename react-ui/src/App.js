@@ -144,7 +144,7 @@ class App extends Component {
                 colors: datares.data.colors,
                 isInstagramBrowser: this.isInstagramApp()
             });
-            let sheets = document.styleSheets;
+           /* let sheets = document.styleSheets;
             let selector = ".checkboxContainerbasic input:checked + .checkmark:after";
             let replacementContent = '2px solid green';
             for (let sheet of sheets) {
@@ -154,7 +154,7 @@ class App extends Component {
                         rule.style["border-bottom"] = replacementContent;
                     }
                 }
-            }
+            }*/
         }
        // this.setState({ done: true })
        // this.setState({albumName: datares.data.data.data.albumName})
@@ -240,10 +240,11 @@ class App extends Component {
         this.setState({email: event.target.value});
     }
     changeTickSpot(){
-        console.log("hey");
-         document.getElementById("myCheck").click();
-       // checkBox.checked = !this.checkedSpot;
-       // this.setState({checkedSpot: !this.checkedSpot})
+       // console.log("hey");
+       //  document.getElementById("myCheck").click();
+        var checkBox = document.getElementById("myCheck");
+        checkBox.checked = !this.checkedSpot;
+        this.setState({checkedSpot: !this.checkedSpot})
     }
     changeTickApple(){
 
