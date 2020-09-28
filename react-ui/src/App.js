@@ -244,7 +244,7 @@ class App extends Component {
        //  document.getElementById("myCheck").click();
         var checkBox = document.getElementById("myCheck");
         checkBox.checked = !this.checkedSpot;
-        this.setState({checkedSpot: !this.checkedSpot})
+        this.setState({checkedSpot: !this.state.checkedSpot})
     }
     changeTickApple(){
 
