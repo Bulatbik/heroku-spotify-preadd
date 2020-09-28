@@ -245,7 +245,7 @@ class App extends Component {
         //  var checkBox = document.getElementById("myCheck");
         //  checkBox.checked = !this.checkedSpot;
         this.setState({checkedSpot: !this.state.checkedSpot})
-        if(this.state.checkedSpot===true) {
+        /*if(this.state.checkedSpot===true) {
             document.getElementById("insidecheckS").style.borderLeft = "2px solid red";
             document.getElementById("insidecheckS").style.borderBottom = "2px solid red";
             document.getElementById("insidecheckS").style.content = '""';
@@ -265,7 +265,7 @@ class App extends Component {
             document.getElementById("insidecheckS").style.top = "42%";
             document.getElementById("insidecheckS").style.left = "50%";
             document.getElementById("insidecheckS").style.transform = "translate(-50%,-50%) rotate(-45deg)";
-        }
+        }*/
 
     }
     changeTickApple(){
