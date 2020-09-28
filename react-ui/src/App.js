@@ -258,6 +258,13 @@ class App extends Component {
         }else{
             document.getElementById("insidecheckS").style.borderLeft = "0";
             document.getElementById("insidecheckS").style.borderBottom = "0";
+            document.getElementById("insidecheckS").style.content = '""';
+            document.getElementById("insidecheckS").style.position = "absolute";
+            document.getElementById("insidecheckS").style.height = "4px";
+            document.getElementById("insidecheckS").style.width = "9px";
+            document.getElementById("insidecheckS").style.top = "42%";
+            document.getElementById("insidecheckS").style.left = "50%";
+            document.getElementById("insidecheckS").style.transform = "translate(-50%,-50%) rotate(-45deg)";
         }
 
     }
