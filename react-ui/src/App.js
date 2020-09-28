@@ -316,7 +316,7 @@ class App extends Component {
                                 </a>
                             <div class="checkboxcolumn">
                                 <label style={{color: `rgba(${this.state.colors.CheckBoxText.r},${this.state.colors.CheckBoxText.g},${this.state.colors.CheckBoxText.b}, ${this.state.colors.CheckBoxText.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
-                                    <input type="checkbox" id="myCheck" checked={this.checkedSpot} onClick={this.changeTickSpot}/>
+                                    <input type="checkbox" id="myCheck" checked onClick={this.changeTickSpot}/>
                                     <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} class="checkmark"></span>
                                 </label>
                             </div>
