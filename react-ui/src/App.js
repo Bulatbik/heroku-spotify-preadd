@@ -245,26 +245,26 @@ class App extends Component {
         //  var checkBox = document.getElementById("myCheck");
         //  checkBox.checked = !this.checkedSpot;
         this.setState({checkedSpot: !this.state.checkedSpot})
+        var testContainer = document.querySelector('myCheck');
+        var ChildNode = testContainer.querySelector('.checkmark');
         if(this.state.checkedSpot===true) {
-            document.getElementById("insidecheckS").style.borderLeft = "2px solid red";
-            document.getElementById("insidecheckS").style.borderBottom = "2px solid red";
-            document.getElementById("insidecheckS").style.content = '""';
-            document.getElementById("insidecheckS").style.position = "absolute";
-            document.getElementById("insidecheckS").style.height = "4px";
-            document.getElementById("insidecheckS").style.width = "9px";
-            document.getElementById("insidecheckS").style.top = "42%";
-            document.getElementById("insidecheckS").style.left = "50%";
-            document.getElementById("insidecheckS").style.transform = "translate(-50%,-50%) rotate(-45deg)";
+            ChildNode.style.borderLeft = "2px solid red";
+            ChildNode.style.borderBottom = "2px solid red";
+            ChildNode.style.content = '""';
+            ChildNode.style.position = "absolute";
+            ChildNode.style.height = "4px";
+            ChildNode.style.width = "9px";
+            ChildNode.style.top = "42%";
+            ChildNode.style.left = "50%";
+            ChildNode.style.transform = "translate(-50%,-50%) rotate(-45deg)";
         }else{
-            document.getElementById("insidecheckS").style.borderLeft = "0";
-            document.getElementById("insidecheckS").style.borderBottom = "0";
-            document.getElementById("insidecheckS").style.content = '""';
-            document.getElementById("insidecheckS").style.position = "absolute";
-            document.getElementById("insidecheckS").style.height = "4px";
-            document.getElementById("insidecheckS").style.width = "9px";
-            document.getElementById("insidecheckS").style.top = "42%";
-            document.getElementById("insidecheckS").style.left = "50%";
-            document.getElementById("insidecheckS").style.transform = "translate(-50%,-50%) rotate(-45deg)";
+            ChildNode.style.content = '""';
+            ChildNode.style.position = "absolute";
+            ChildNode.style.height = "4px";
+            ChildNode.style.width = "9px";
+            ChildNode.style.top = "42%";
+            ChildNode.style.left = "50%";
+            ChildNode.style.transform = "translate(-50%,-50%) rotate(-45deg)";
         }
 
     }
