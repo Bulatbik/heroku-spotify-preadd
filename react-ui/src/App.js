@@ -59,7 +59,7 @@ class App extends Component {
             isNoticeOpen: false,
             copied: false,
             colors: undefined,
-            checkedSpot:false
+            checkedSpot:true
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -240,9 +240,9 @@ class App extends Component {
         this.setState({email: event.target.value});
     }
     changeTickSpot(e){
-        this.setState({checkedSpot: !this.checkedSpot})
         var checkBox = document.getElementById("myCheck");
-        checkBox.checked = !checkBox.checked;
+        checkBox.checked = !this.checkedSpot;
+        this.setState({checkedSpot: !this.checkedSpot})
     }
     changeTickApple(){
 
