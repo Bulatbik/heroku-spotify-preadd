@@ -355,7 +355,11 @@ class App extends Component {
                             <div class="checkboxcolumn">
                                 <label style={{color: `rgba(${this.state.colors.CheckBoxText.r},${this.state.colors.CheckBoxText.g},${this.state.colors.CheckBoxText.b}, ${this.state.colors.CheckBoxText.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="myCheck" checked={this.state.checkedSpot} onChange={this.changeTickSpot}/>
-                                    <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} id="insidecheckS" class="checkmark"><span id="testcheck"></span> </span>
+                                    <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} id="insidecheckS" class="checkmark">
+                                        <span id="testcheck" style={{borderLeft: 2, borderLeftColor: "red",borderBottom: 2, borderBottomColor: "red", content: "", position: "absolute", height:4, width:9, top: '42%', left: '50%', transform: "translate(-50%,-50%) rotate(-45deg)" }}>
+
+                                        </span>
+                                    </span>
                                 </label>
                             </div>
                             {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
