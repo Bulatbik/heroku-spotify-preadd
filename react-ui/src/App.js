@@ -144,18 +144,6 @@ class App extends Component {
                 colors: datares.data.colors,
                 isInstagramBrowser: this.isInstagramApp()
             });
-            var testContainer = document.getElementById('testcheck');
-                //   testContainer.pseudoStyle("after","content","'test'");
-                //   testContainer.pseudoStyle("after","color","purple");
-                testContainer.style.borderLeft = "2px solid red";
-                testContainer.style.borderBottom = "2px solid red";
-                testContainer.style.content = '""';
-                testContainer.style.position = "absolute";
-                testContainer.style.height = "4px";
-                testContainer.style.width = "9px";
-                testContainer.style.top = "42%";
-                testContainer.style.left = "50%";
-                testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";
            /* let sheets = document.styleSheets;
             let selector = ".checkboxContainerbasic input:checked + .checkmark:after";
             let replacementContent = '2px solid green';
@@ -318,7 +306,18 @@ class App extends Component {
       //  if(token!=null){
       //      window.history.pushState(null, null, '#myhash');
       //  }
-
+        var testContainer = document.getElementById('testcheck');
+        //   testContainer.pseudoStyle("after","content","'test'");
+        //   testContainer.pseudoStyle("after","color","purple");
+        testContainer.style.borderLeft = "2px solid red";
+        testContainer.style.borderBottom = "2px solid red";
+        testContainer.style.content = '""';
+        testContainer.style.position = "absolute";
+        testContainer.style.height = "4px";
+        testContainer.style.width = "9px";
+        testContainer.style.top = "42%";
+        testContainer.style.left = "50%";
+        testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";
         console.log(userToken);
         return (
             <div class="app" id="mydiv">
