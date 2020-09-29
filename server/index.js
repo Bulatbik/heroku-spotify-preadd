@@ -31,6 +31,7 @@ var FormData = require('form-data');
 const fs      = require("fs");
 const jwt     = require("jsonwebtoken");
 const fetch = require('node-fetch');
+var compression = require('compression')
 global.Headers = fetch.Headers;
 const privateKey = fs.readFileSync(__dirname+"/AuthKey.p8").toString();
 const teamId     = "6UD2Y7J6SN";
@@ -352,7 +353,7 @@ async function presaveCount(linkId, platform) {
    app.set('view engine', 'ejs');
     app.set('views', path.join(__dirname, 'views'));
     app.enable('trust proxy');
-    app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
+    app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser().use(compression()));
     var stateKey = "spotify_auth_state";
 
 //    app.all(/.*/, function(req, res, next) {
