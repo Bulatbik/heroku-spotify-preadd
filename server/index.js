@@ -353,7 +353,8 @@ async function presaveCount(linkId, platform) {
    app.set('view engine', 'ejs');
     app.set('views', path.join(__dirname, 'views'));
     app.enable('trust proxy');
-    app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser().use(compression()));
+    app.use(compression());
+    app.use(express.static(path.resolve(__dirname, '../react-ui/build'))).use(cors()).use(cookieParser());
     var stateKey = "spotify_auth_state";
 
 //    app.all(/.*/, function(req, res, next) {
