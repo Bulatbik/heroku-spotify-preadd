@@ -168,6 +168,7 @@ async function scheduler() {
                 var refresh_token = response.data[i].refToken;
                 console.log("This is refresh_token "+refresh_token);
                 console.log(new Buffer(client_id + ':' + client_secret).toString('base64'));
+                console.log(albumID);
                 var access_tokenRaw = await axios.post("https://accounts.spotify.com/api/token?grant_type=refresh_token&refresh_token="+refresh_token,
                     {
                         headers: {
