@@ -59,7 +59,7 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
-schedule.scheduleJob('1 * * * *', () => { //* * * * * run every minute. 1 * * * * run every hour at minute 1. */5 * * * * run every 5 minutes
+schedule.scheduleJob('* * * * *', () => { //* * * * * run every minute. 1 * * * * run every hour at minute 1. */5 * * * * run every 5 minutes
     scheduler();
 }); // run every minute
 async function API(url,token,upc) {
@@ -199,7 +199,7 @@ async function scheduler() {
                     uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
                 }else{
                     console.log("____________________________________");
-                    console.log(err.data);
+                    console.dir(err);
                     console.log("____________________________________");
                 }
             }
