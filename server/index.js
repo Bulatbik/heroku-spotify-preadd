@@ -200,8 +200,7 @@ async function scheduler() {
                 }else{
                     console.log("____________________________________");
                     console.log(err);
-                    console.log(JSON.parse(err));
-                    console.log(JSON.stringify(err));
+                    console.log(JSON.parse(JSON.stringify(err)));
 
                     console.log("____________________________________");
                 }
