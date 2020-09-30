@@ -167,6 +167,7 @@ async function scheduler() {
                 console.log("The album ID check: "+albumID);
                 var refresh_token = response.data[i].refToken;
                 console.log("This is refresh_token "+refresh_token);
+                console.log(new Buffer(client_id + ':' + client_secret).toString('base64'));
                 var access_tokenRaw = await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
                         grant_type: "refresh_token", refresh_token: refresh_token
                     }).toString(),
@@ -197,12 +198,12 @@ async function scheduler() {
                     console.log("Added to not released array");
                     uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
                 }else{
-                    console.log("____________________________________");
-                    console.log(err.response);
-                    console.log("____________________________________");
-                    console.log("____________________________________");
-                    console.log(new Buffer(client_id + ':' + client_secret).toString('base64'));
-                    console.log("____________________________________");
+               //     console.log("____________________________________");
+                //    console.log(err.response);
+               //     console.log("____________________________________");
+               //     console.log("____________________________________");
+               //     console.log(new Buffer(client_id + ':' + client_secret).toString('base64'));
+               //     console.log("____________________________________");
                 }
             }
 
