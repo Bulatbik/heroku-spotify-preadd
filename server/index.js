@@ -197,7 +197,9 @@ async function scheduler() {
                     console.log("Added to not released array");
                     uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
                 }else{
-                    console.log(err)
+                    console.log("____________________________________");
+                    console.log(err);
+                    console.log("____________________________________");
                 }
             }
 
