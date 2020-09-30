@@ -200,6 +200,7 @@ async function scheduler() {
                     console.log("____________________________________");
                     console.log(err.response);
                     console.log("____________________________________");
+                    fs.writeFile('test.json', JSON.stringify({err }, null, 4));
                 }
             }
 
