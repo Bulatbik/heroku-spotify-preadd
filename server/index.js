@@ -201,9 +201,6 @@ async function scheduler() {
                //     console.log("____________________________________");
                 //    console.log(err.response);
                //     console.log("____________________________________");
-               //     console.log("____________________________________");
-               //     console.log(new Buffer(client_id + ':' + client_secret).toString('base64'));
-               //     console.log("____________________________________");
                 }
             }
 
