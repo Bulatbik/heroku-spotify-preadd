@@ -199,7 +199,10 @@ async function scheduler() {
                     uniqueNotReleasedUPDS.push(response.data[i].albumUPC);
                 }else{
                     console.log("____________________________________");
-                    console.dir(err);
+                    console.log(err);
+                    console.log(JSON.parse(err));
+                    console.log(JSON.stringify(err));
+
                     console.log("____________________________________");
                 }
             }
