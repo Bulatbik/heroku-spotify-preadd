@@ -665,7 +665,7 @@ a.four:link, a.four:visited, a.four:hover, a.four:active {
   margin-top: auto;
 }
 .emailcapturebasic {
-  color: #FF8EFF;
+  color: #f3cc30;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -712,8 +712,8 @@ a.four:link, a.four:visited, a.four:hover, a.four:active {
   outline: none;
 }
 .input1basic {
-  color: #FF8EFF;
-  background-color: black;
+  color: #8b630e;
+  background-color: #f3cc30;
   display: inline-block;
   line-height: 200%;
   border: none;
