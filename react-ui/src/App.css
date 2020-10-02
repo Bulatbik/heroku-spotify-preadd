@@ -859,8 +859,8 @@ button.noticecopy {
 
 
 #contentfadein {
-    animation: fadein 0.4s;
-    -webkit-animation: fadein 0.4s;
+    animation: fadein 1s;
+    -webkit-animation: fadein 1s;
 }
 @keyframes fadein {
     from {
