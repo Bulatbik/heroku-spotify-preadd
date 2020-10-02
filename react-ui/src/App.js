@@ -147,7 +147,7 @@ class App extends Component {
             var testContainer = document.getElementById('testcheck');
             //   testContainer.pseudoStyle("after","content","'test'");
             //   testContainer.pseudoStyle("after","color","purple");
-            testContainer.style.borderLeft = "2px solid red";
+          /*  testContainer.style.borderLeft = "2px solid red";
             testContainer.style.borderBottom = "2px solid red";
             testContainer.style.content = '""';
             testContainer.style.position = "absolute";
@@ -155,7 +155,7 @@ class App extends Component {
             testContainer.style.width = "9px";
             testContainer.style.top = "42%";
             testContainer.style.left = "50%";
-            testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";
+            testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";*/
            /* let sheets = document.styleSheets;
             let selector = ".checkboxContainerbasic input:checked + .checkmark:after";
             let replacementContent = '2px solid green';
@@ -261,8 +261,10 @@ class App extends Component {
         if(this.state.checkedSpot===true) {
          //   testContainer.pseudoStyle("after","content","'test'");
          //   testContainer.pseudoStyle("after","color","purple");
-            testContainer.style.borderLeft = "2px solid red";
-            testContainer.style.borderBottom = "2px solid red";
+            testContainer.style.borderLeft = "2px solid";
+            testContainer.style.borderBottom = "2px solid";
+            testContainer.style.borderLeftColor = `rgba(${this.state.colors.CheckBoxMark.r},${this.state.colors.CheckBoxMark.g},${this.state.colors.CheckBoxMark.b}, ${this.state.colors.CheckBoxMark.a})`;
+            testContainer.style.borderBottomColor = `rgba(${this.state.colors.CheckBoxMark.r},${this.state.colors.CheckBoxMark.g},${this.state.colors.CheckBoxMark.b}, ${this.state.colors.CheckBoxMark.a})`;
             testContainer.style.content = '""';
             testContainer.style.position = "absolute";
             testContainer.style.height = "4px";
