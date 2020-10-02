@@ -326,10 +326,10 @@ class App extends Component {
     OnSubmitForm()
     {
         var button = document.getElementById("buttonSpotify");
-        var checkBox = document.getElementById("myCheck");
+        //var checkBox = document.getElementById("myCheck");
         var form = document.getElementById("myform");
         button.innerHTML = "Pre-saving...";
-        if (checkBox.checked === true){
+        if (this.state.checkedSpot === true){
            form.action ="https://endlss.herokuapp.com/login?updates=yes&upc="+this.state.UPC+"&url="+window.location.href+"&location="+this.state.location;
         } else {
             form.action ="https://endlss.herokuapp.com/login?updates=no&upc="+this.state.UPC+"&url="+window.location.href+"&location="+this.state.location;
