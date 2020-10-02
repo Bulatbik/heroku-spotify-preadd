@@ -367,7 +367,7 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_ff8eff.png" />
+                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_8B630E.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
                                     <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} class="buttonbasic" id="buttonSpotify">Pre-Saved!</button>
@@ -389,13 +389,13 @@ class App extends Component {
                             </div>
                             {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_ff8eff.png" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_8B630E.png" />
                                 <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} className="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
-                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_ff8eff.png"/>
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_8B630E.png"/>
                                 <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
