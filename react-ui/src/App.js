@@ -409,8 +409,8 @@ class App extends Component {
                                     )}
                     </div>
                         <div class="legalfooter">
-                                <div class="legaltextbasic basic" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank"><br />Terms of Service</a> &
-                                <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank"> Privacy Policy</a>.</p>
+                                <div class="legaltextbasic basic" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}><br />Terms of Service</a> &
+                                <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}> Privacy Policy</a>.</p>
                                 </div>
                         <div class="poweredby" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}>powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_AAO.png"/></a></div>
                         </div>
