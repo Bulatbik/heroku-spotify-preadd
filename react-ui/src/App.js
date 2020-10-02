@@ -285,9 +285,7 @@ class App extends Component {
         }
 
     }
-    changeTickApple(){
 
-    }
     async test(e) {
         e.preventDefault();
         let that = this;
@@ -298,7 +296,33 @@ class App extends Component {
     }
     handleCheckBoxClick(e){
      //   e.preventDefault();
-        this.setState({checkBoxDefaultStatus: !this.state.checkBoxDefaultStatus})
+        this.setState({checkBoxDefaultStatus: !this.state.checkBoxDefaultStatus});
+        var testContainer = document.getElementById('checkmarkApple');
+        if(this.state.checkBoxDefaultStatus===false) {
+            //   testContainer.pseudoStyle("after","content","'test'");
+            //   testContainer.pseudoStyle("after","color","purple");
+            testContainer.style.borderLeft = "2px solid";
+            testContainer.style.borderBottom = "2px solid";
+            testContainer.style.borderLeftColor = `rgba(${this.state.colors.CheckBoxMark.r},${this.state.colors.CheckBoxMark.g},${this.state.colors.CheckBoxMark.b}, ${this.state.colors.CheckBoxMark.a})`;
+            testContainer.style.borderBottomColor = `rgba(${this.state.colors.CheckBoxMark.r},${this.state.colors.CheckBoxMark.g},${this.state.colors.CheckBoxMark.b}, ${this.state.colors.CheckBoxMark.a})`;
+            testContainer.style.content = '""';
+            testContainer.style.position = "absolute";
+            testContainer.style.height = "4px";
+            testContainer.style.width = "9px";
+            testContainer.style.top = "42%";
+            testContainer.style.left = "50%";
+            testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";
+        }else{
+            testContainer.style.borderLeft = "none";
+            testContainer.style.borderBottom = "none";
+            testContainer.style.content = '""';
+            testContainer.style.position = "absolute";
+            testContainer.style.height = "4px";
+            testContainer.style.width = "9px";
+            testContainer.style.top = "42%";
+            testContainer.style.left = "50%";
+            testContainer.style.transform = "translate(-50%,-50%) rotate(-45deg)";
+        }
     }
     OnSubmitForm()
     {
@@ -397,7 +421,11 @@ class App extends Component {
                                         <div className="checkboxcolumn">
                                 <label style={{color: `rgba(${this.state.colors.CheckBoxText.r},${this.state.colors.CheckBoxText.g},${this.state.colors.CheckBoxText.b}, ${this.state.colors.CheckBoxText.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input  type="checkbox" id="CheckApple" checked={this.state.checkBoxDefaultStatus} onChange={this.handleCheckBoxClick} />
-                                    <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} class="checkmark"></span>
+                                    <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} class="checkmark">
+                                         <span id="checkmarkApple" style={{borderLeft: "2px solid", borderBottom: "2px solid", borderLeftColor:`rgba(${this.state.colors.CheckBoxMark.r},${this.state.colors.CheckBoxMark.g},${this.state.colors.CheckBoxMark.b}, ${this.state.colors.CheckBoxMark.a})`, borderBottomColor:`rgba(${this.state.colors.CheckBoxMark.r},${this.state.colors.CheckBoxMark.g},${this.state.colors.CheckBoxMark.b}, ${this.state.colors.CheckBoxMark.a})`, content: "", position: "absolute", height:4, width:9, top: '42%', left: '50%', transform: "translate(-50%,-50%) rotate(-45deg)" }}>
+
+                                        </span>
+                                    </span>
                                 </label>
                                         </div>
                                 ) : (
