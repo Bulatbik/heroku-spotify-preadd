@@ -258,7 +258,7 @@ class App extends Component {
         //  checkBox.checked = !this.checkedSpot;
         this.setState({checkedSpot: !this.state.checkedSpot})
         var testContainer = document.getElementById('testcheck');
-        if(this.state.checkedSpot===true) {
+        if(this.state.checkedSpot===false) {
          //   testContainer.pseudoStyle("after","content","'test'");
          //   testContainer.pseudoStyle("after","color","purple");
             testContainer.style.borderLeft = "2px solid";
@@ -358,7 +358,7 @@ class App extends Component {
                                 <label style={{color: `rgba(${this.state.colors.CheckBoxText.r},${this.state.colors.CheckBoxText.g},${this.state.colors.CheckBoxText.b}, ${this.state.colors.CheckBoxText.a})`}} class="checkboxContainerbasic">Get updates from {this.state.artistName}
                                     <input type="checkbox" id="myCheck" checked={this.state.checkedSpot} onChange={this.changeTickSpot}/>
                                     <span style={{backgroundColor: `rgba(${this.state.colors.CheckBoxBack.r},${this.state.colors.CheckBoxBack.g},${this.state.colors.CheckBoxBack.b}, ${this.state.colors.CheckBoxBack.a})`}} id="insidecheckS" class="checkmark">
-                                        <span id="testcheck" style={{borderLeft: "2px solid red", borderBottom: "2px solid red", content: "", position: "absolute", height:4, width:9, top: '42%', left: '50%', transform: "translate(-50%,-50%) rotate(-45deg)" }}>
+                                        <span id="testcheck" style={{borderLeft: "2px solid", borderBottom: "2px solid", borderLeftColor:`rgba(${this.state.colors.CheckBoxMark.r},${this.state.colors.CheckBoxMark.g},${this.state.colors.CheckBoxMark.b}, ${this.state.colors.CheckBoxMark.a})`, borderBottomColor:`rgba(${this.state.colors.CheckBoxMark.r},${this.state.colors.CheckBoxMark.g},${this.state.colors.CheckBoxMark.b}, ${this.state.colors.CheckBoxMark.a})`, content: "", position: "absolute", height:4, width:9, top: '42%', left: '50%', transform: "translate(-50%,-50%) rotate(-45deg)" }}>
 
                                         </span>
                                     </span>
