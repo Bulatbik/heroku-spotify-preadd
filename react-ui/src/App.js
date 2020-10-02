@@ -71,7 +71,6 @@ class App extends Component {
         this.test = this.test.bind(this);
         this.handleCheckBoxClick = this.handleCheckBoxClick.bind(this);
         this.changeTickSpot = this.changeTickSpot.bind(this);
-        this.changeTickApple = this.changeTickApple.bind(this);
     }
     openModal() {
         this.setState({ openEmailModal: true });
