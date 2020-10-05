@@ -783,8 +783,8 @@ a.sslink {
 .popup-content {
   width: 80%;
   height: 30%;
-  background-color: black;
-  border: 3px solid black;
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
   border-radius: 3px;
 }
 .modal {
@@ -795,7 +795,7 @@ a.sslink {
   height: 100%;
   font-family: roboto, sans-serif;
   font-weight: 600;
-  background-color: black;
+  background-color: #ffffff;
   text-align: -webkit-center;
   color: #cb3d2b;
 }
@@ -834,16 +834,16 @@ a.sslink {
   margin-bottom: 5%;
 }
 input.notice {
-  background-color: black;
-  color: #cb3d2b;
-  border: 2px solid #cb3d2b;
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
   padding: inherit;
   font-weight: 400;
 }
 button.noticecopy {
-  background: #cb3d2b;
+  background: #000000;
   color: black;
-  border: 1px solid #cb3d2b;
+  border: 1px solid #000000;
   padding: inherit;
   margin-top: -5%;
   font-family: roboto, sans-serif;
@@ -936,9 +936,5 @@ p.poweredbytext {
 @media only screen and (min-width: 660px) {
   .endlesslogo {
     margin-top: 2%;
-  }
-}
-@media only screen and (min-width: 660px) {
-  .endlesslogobasic {
   }
 }
