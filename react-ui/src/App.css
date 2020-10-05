@@ -797,7 +797,7 @@ a.sslink {
   font-weight: 600;
   background-color: #ffffff;
   text-align: -webkit-center;
-  color: #cb3d2b;
+  color: #000000;
 }
 .modal > .header {
   width: 100%;
@@ -825,6 +825,7 @@ a.sslink {
   right: -10px;
   top: -10px;
   font-size: 24px;
+  color: #000000;
 }
 .applenoticelogo {
   display: block;
@@ -842,7 +843,7 @@ input.notice {
 }
 button.noticecopy {
   background: #000000;
-  color: black;
+  color: #ffffff;
   border: 1px solid #000000;
   padding: inherit;
   margin-top: -5%;
