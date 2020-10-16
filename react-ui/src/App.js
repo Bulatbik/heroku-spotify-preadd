@@ -202,7 +202,6 @@ class App extends Component {
         spotifyApi.addToMySavedAlbums(["55zg331p7m1EFA4uRggkwt"]).then((e,r) =>{
             console.dir(e);
             console.dir(r);
-
         })
     }
 
