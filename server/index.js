@@ -59,7 +59,7 @@ var generateRandomString = function(length) {
 };
 const router = express.Router();
 // Multi-process to utilize all CPU cores.
-schedule.scheduleJob('* * * * *', () => { //* * * * * run every minute. 1 * * * * run every hour at minute 1. */5 * * * * run every 5 minutes
+schedule.scheduleJob('1 * * * *', () => { //* * * * * run every minute. 1 * * * * run every hour at minute 1. */5 * * * * run every 5 minutes
     scheduler();
 }); // run every minute
 async function API(url,token,upc) {
@@ -256,8 +256,8 @@ async function scheduler() {
                     }
                 });
                 //  console.log("Tje JSON: "+JSON.stringify(albumInfo.data));
-             //   var  albumAppleID = albumInfo.data.results[0].collectionId;
-                var  albumAppleID = "1533707081";
+                var  albumAppleID = albumInfo.data.results[0].collectionId;
+             //   var  albumAppleID = "1533707081";
                 console.log("collectionId "+albumAppleID);
                 var url = "https://api.music.apple.com/v1/me/library/?ids[albums]=" + albumAppleID;
 
