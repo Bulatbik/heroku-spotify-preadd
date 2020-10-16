@@ -627,6 +627,9 @@ async function presaveCount(linkId, platform) {
     app.get("/Spotify_Icon_RGB_8B630E.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_8B630E.png'));
     });
+    app.get("/Spotify_Icon_RGB_112845.png", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Spotify_Icon_RGB_112845.png'));
+    });
     app.get("/Apple_Music_Icon_RGB_Black.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_Black.png'));
     });
@@ -638,6 +641,9 @@ async function presaveCount(linkId, platform) {
     });
     app.get("/Apple_Music_Icon_RGB_8B630E.png", (req, res) => {
         res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_8B630E.png'));
+    });
+    app.get("/Apple_Music_Icon_RGB_112845.png", (req, res) => {
+        res.sendFile(path.join(__dirname+'/Apple_Music_Icon_RGB_112845.png'));
     });
 
     app.get("/test", async (req, res) => {

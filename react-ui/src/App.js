@@ -366,7 +366,7 @@ class App extends Component {
                     <div style={{marginBottom:"20%"}}>
                         <div>
                         <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} class="buttonViewTypeOne" onClick={() => this.OnSubmitForm()}>
-                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_8B630E.png" />
+                            <img class="spotifyLogo" src="/Spotify_Icon_RGB_112845.png" />
                             {(token!=null)&&(
                                 <form name="myform" id="myform" method="post">
                                     <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} class="buttonbasic" id="buttonSpotify">Pre-Saved!</button>
@@ -388,13 +388,13 @@ class App extends Component {
                             </div>
                             {this.state.isInstagramBrowser ? (  //Right now im showing the notice from any browser for dbg purposes. Remove the "!" to make it work
                               <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} class="buttonViewAppleTypeOne" onClick={() => this.OpenAppleInstNotice()} >
-                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_8B630E.png" />
+                                <img class="appleLogo" src="/Apple_Music_Icon_RGB_112845.png" />
                                 <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} class="buttonApplebasic">Pre-Add on Apple Music
                                 </button>
                               </a>
                                 ):(
                                 <a style={{backgroundColor: `rgba(${this.state.colors.ServiceButtonBack.r},${this.state.colors.ServiceButtonBack.g},${this.state.colors.ServiceButtonBack.b}, ${this.state.colors.ServiceButtonBack.a})`}} className="buttonViewAppleTypeOne" onClick={() => this.signIn()} id="apple-music-authorize">
-                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_8B630E.png"/>
+                                <img className="appleLogo" src="/Apple_Music_Icon_RGB_112845.png"/>
                                 <button style={{color: `rgba(${this.state.colors.ServiceButtonText.r},${this.state.colors.ServiceButtonText.g},${this.state.colors.ServiceButtonText.b}, ${this.state.colors.ServiceButtonText.a})`}} className="buttonApplebasic" id="apple-music-authorize-button">Pre-Add on Apple Music
                                 </button>
                             </a>
@@ -440,7 +440,7 @@ class App extends Component {
                                 <div class="legaltextbasic basic" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}><p>By using this service, you agree to our <a class="legallinks basic" href="https://terms.endlessdigital.co" target="_blank" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}><br />Terms of Service</a> &
                                 <a class="legallinks basic" href="https://privacy.endlessdigital.co" target="_blank" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}> Privacy Policy</a>.</p>
                                 </div>
-                        <div class="poweredby" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}>powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_RetailTherapy.png"/></a></div>
+                        <div class="poweredby" style={{color: `rgba(${this.state.colors.LegalColor.r},${this.state.colors.LegalColor.g},${this.state.colors.LegalColor.b}, ${this.state.colors.LegalColor.a})`}}>powered by<a href="https://instagram.com/endlessdigital"><img class="endlesslogobasic" src="/Endless_Logo_MISSEDCALLS.png"/></a></div>
                         </div>
                     </div>
                     )}
