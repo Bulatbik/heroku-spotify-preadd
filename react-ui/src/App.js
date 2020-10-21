@@ -429,9 +429,9 @@ class App extends Component {
                                 ) : (
 
                                         <form className="checkboxcolumn" style={{width: "100%"}} onSubmit={this.test}>
-                                        <h3 className="emailcapturebasic">Confirm your email</h3>
+                                        <h3 className="emailcapturebasic" style={{color: `rgba(${this.state.colors.AppleEmailText.r},${this.state.colors.AppleEmailText.g},${this.state.colors.AppleEmailText.b}, ${this.state.colors.AppleEmailText.a})`}}>Confirm your email</h3>
                                         <input className="input1basic" type="eamil" value={this.state.email} onChange={this.handleEmailChange}/>
-                                        <input type="submit" class="submit" value="CONTINUE"/>
+                                        <input style={{}} type="submit" class="submit" value="CONTINUE"/>
                                         </form>
 
                                     )}
